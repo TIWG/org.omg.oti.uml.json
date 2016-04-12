@@ -50,28 +50,28 @@ import scala.collection.immutable._
 
 package object uml {
 
-  implicit val formatsOTIElement
-  : Format[OTIElement]
-  = Variants.format[OTIElement]
+  implicit val formatsOTIMOFElement
+  : Format[OTIMOFElement]
+  = Variants.format[OTIMOFElement]
 
-  implicit val writesOTIElement
-  : Writes[OTIElement]
-  = Variants.writes[OTIElement]
+  implicit val writesOTIMOFElement
+  : Writes[OTIMOFElement]
+  = Variants.writes[OTIMOFElement]
 
-  implicit val readsOTIElement
-  : Reads[OTIElement]
-  = Variants.reads[OTIElement]
+  implicit val readsOTIMOFElement
+  : Reads[OTIMOFElement]
+  = Variants.reads[OTIMOFElement]
 
-  implicit val formatsOTIRelationship
-  : Format[OTIRelationship]
-  = Variants.format[OTIRelationship]
+  implicit val formatsOTIMOFLink
+  : Format[OTIMOFLink]
+  = Variants.format[OTIMOFLink]
   
-  implicit val writesOTIRelationship
-  : Writes[OTIRelationship]
-  = Variants.writes[OTIRelationship]
+  implicit val writesOTIMOFLink
+  : Writes[OTIMOFLink]
+  = Variants.writes[OTIMOFLink]
   
-  implicit val readsOTIRelationship
-  : Reads[OTIRelationship]
-  = Variants.reads[OTIRelationship]
+  implicit val readsOTIMOFLink
+  : Reads[OTIMOFLink]
+  = Variants.reads[OTIMOFLink]
   
 }
