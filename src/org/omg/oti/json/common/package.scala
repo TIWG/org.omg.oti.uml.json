@@ -36,25 +36,53 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.omg.oti.json.common
+package org.omg.oti.json
 
-import org.omg.oti.json.common.OTIPrimitiveTypes._
+import common.OTIPrimitiveTypes._
 
+import play.api.libs.json._
+import play.api.libs.functional.syntax._
+
+import scala.StringContext
 import scala.Predef.String
-import scalaz.@@
 
-/**
-  * The OTI characteristics for a UML Package specifying the root of an OTI document of some kind.
-  *
-  * @param packageURI the Package::URI characteristic
-  * @param documentURL the URL where the OTI document is externally accessible as a resource
-  * @param artifactKind the kind of the OTI document
-  * @param nsPrefix the XML namespace prefix for the contents of the OTI document
-  * @param uuidPrefix the XMI uuid prefix for all the contents of the OTI document
-  */
-case class OTISpecificationRootCharacteristics
-(packageURI: String @@ OTI_URI,
- documentURL: String @@ OTI_URL,
- artifactKind: OTIArtifactKind,
- nsPrefix: String @@ OTI_NS_PREFIX,
- uuidPrefix: String @@ OTI_UUID_PREFIX)
+import scalaz._
+
+package object common {
+  
+  implicit def taggedStringFormat[T]
+  : Format[String @@ T]
+  = new Format[String @@ T] {
+    def reads(json: JsValue): JsResult[String @@ T] = json match {
+      case JsString(v) => JsSuccess(Tag.of[T](v))
+      case unknown => JsError(s"String value expected, got: $unknown")
+    }
+
+    def writes(v: String @@ T): JsValue = JsString(Tag.unwrap(v))
+  }
+    
+  implicit val formatsOTIElementDocumentURL
+  : Format[OTIElementDocumentURL]
+  = Json.format[OTIElementDocumentURL]
+
+  implicit val writesOTIElementDocumentURL
+  : Writes[OTIElementDocumentURL]
+  = Json.writes[OTIElementDocumentURL]
+
+  implicit val readsOTIElementDocumentURL
+  : Reads[OTIElementDocumentURL]
+  = Json.reads[OTIElementDocumentURL]
+  
+  implicit val formatsToolSpecificElementDocumentURL
+  : Format[ToolSpecificElementDocumentURL]
+  = Json.format[ToolSpecificElementDocumentURL]
+
+  implicit val writesToolSpecificElementDocumentURL
+  : Writes[ToolSpecificElementDocumentURL]
+  = Json.writes[ToolSpecificElementDocumentURL]
+
+  implicit val readsToolSpecificElementDocumentURL
+  : Reads[ToolSpecificElementDocumentURL]
+  = Json.reads[ToolSpecificElementDocumentURL]
+  
+}

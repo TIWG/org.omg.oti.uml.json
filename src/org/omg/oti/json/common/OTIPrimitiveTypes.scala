@@ -38,9 +38,7 @@
  */
 package org.omg.oti.json.common
 
-import scala.Option
-import scala.Predef.{require,String}
-import scalaz.{@@,Tag}
+import scalaz.Tag
 
 /**
   * Use Scalaz' Tagged type technique, `A @@ T`, enables partitioning the use of a reference type,
@@ -92,14 +90,7 @@ object OTIPrimitiveTypes {
     */
   sealed trait OTI_UUID
   val OTI_UUID = Tag.of[OTI_UUID]
-
-  /**
-    * A 2-tuple of an OTI_ID String and an OTI_UUID String.
-    */
-  case class OTI_ID_UUID
-  ( id: String @@ OTI_ID,
-    uuid: String @@ OTI_UUID) {}
-
+  
   /**
     * The type `String @@ TOOL_SPECIFIC_ID` is the partition of strings representing `TOOL_SPECIFIC_ID` values.
     * An `TOOL_SPECIFIC_ID` string value represents a tool-specific ID
@@ -120,16 +111,5 @@ object OTIPrimitiveTypes {
     */
   sealed trait TOOL_SPECIFIC_URL
   val TOOL_SPECIFIC_URL = Tag.of[TOOL_SPECIFIC_URL]
-
-  /**
-    * A 3-tuple of optional TOOL_SPECIFIC_ID, TOOL_SPECIFIC_UUID and TOOL_SPECIFIC_URL Strings.
-    */
-  case class TOOL_SPECIFIC_ID_UUID_URL
-  ( id: Option[String @@ TOOL_SPECIFIC_ID],
-    uuid: Option[String @@ TOOL_SPECIFIC_UUID],
-    url: Option[String @@ TOOL_SPECIFIC_URL]) {
-
-    require( id.isDefined || uuid.isDefined || url.isDefined )
-
-  }
+  
 }
