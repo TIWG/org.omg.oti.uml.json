@@ -10,5 +10,5 @@ import scalaz.@@
   *                   packages and/or profiles characterized as OTI Documents.
   */
 case class OTIDocumentSetConfiguration
-( documents: Map[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID, OTIDocumentConfiguration] )
+( documents: SortedMap[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID, OTIDocumentConfiguration] )
 {}

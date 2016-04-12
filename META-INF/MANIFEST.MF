@@ -5,10 +5,6 @@ Bundle-SymbolicName: org.omg.oti.uml.json;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.omg.oti.uml.third_party_libraries;bundle-version="1.0.0";visibility:=reexport
-Export-Package: macrame,
- macrame.internal,
- org.omg.oti.json.common,
+Export-Package: org.omg.oti.json.common,
  org.omg.oti.json.uml,
- org.omg.oti.json.uml.enums,
- play.json.extra,
- play.json.extra.tuples
+ org.omg.oti.json.uml.enums

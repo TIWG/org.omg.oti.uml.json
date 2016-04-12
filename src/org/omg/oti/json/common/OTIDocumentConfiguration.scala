@@ -8,7 +8,7 @@ import scalaz.@@
 case class OTIDocumentConfiguration
 ( toolSpecific_packageLocation: ToolSpecificElementDocumentURL,
   otiCharacteristics: OTISpecificationRootCharacteristics,
-  excludeSubPackages: Set[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID],
-  overrideID: Map[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID, String @@ OTIPrimitiveTypes.OTI_ID],
-  overrideUUID: Map[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID, String @@ OTIPrimitiveTypes.OTI_UUID] )
+  excludeSubPackages: SortedSet[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID],
+  overrideID: SortedMap[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID, String @@ OTIPrimitiveTypes.OTI_ID],
+  overrideUUID: SortedMap[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID, String @@ OTIPrimitiveTypes.OTI_UUID] )
 {}

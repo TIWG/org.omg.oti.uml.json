@@ -159,22 +159,9 @@ lazy val core = Project("org-omg-oti-uml-json", file("."))
 
     unmanagedClasspath in Compile <++= unmanagedJars in Compile,
 
-    resolvers += "Sonatype releases" at "https://oss.sonatype.org/content/repositories/releases",
-
-    // https://github.com/aparo/play-json-extra
-    libraryDependencies += "io.megl" %% "play-json-extra" % "2.4.3",
-
     libraryDependencies +=
       "gov.nasa.jpl.imce.thirdParty" %% "other-scala-libraries" % Versions_other_scala_libraries.version artifacts
         Artifact("other-scala-libraries", "zip", "zip", Some("resource"), Seq(), None, Map()),
-
-    specsRoot := baseDirectory.value / "tests",
-
-    parallelExecution in Test := false,
-
-    fork in Test := true,
-
-    libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % "test,compile",
 
     extractArchives := {},
 
@@ -222,11 +209,7 @@ def dynamicScriptsResourceSettings(dynamicScriptsProjectName: Option[String] = N
       packageDoc in Test,
       streams) map {
       (base, bin, src, doc, binT, srcT, docT, s) =>
-        val dir = base / "svn" / "org.omg.oti.magicdraw"
-        val file2name = (dir ** "*.dynamicScripts").pair(relativeTo(dir)) ++
-          (dir ** "*.mdzip").pair(relativeTo(dir)) ++
-          com.typesafe.sbt.packager.MappingsHelper.directory(dir / "resources") ++
-          com.typesafe.sbt.packager.MappingsHelper.directory(dir / "profiles") ++
+        val file2name =
           addIfExists(bin, "lib/" + bin.name) ++
           addIfExists(binT, "lib/" + binT.name) ++
           addIfExists(src, "lib.sources/" + src.name) ++
