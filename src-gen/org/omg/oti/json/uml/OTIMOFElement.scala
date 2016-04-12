@@ -55,16 +55,17 @@ import scala.Predef.String
 /**
   * In OMG MOF 2.5, a MOF Element is an instance of exactly 1 MOF metaclass.
   * This means that for serializing a MOF Element, it is sufficient to have support for concrete MOF metaclasses.
-  * OTIElement is intended to be the single parent of case classes, 1 case class per distinct concrete MOF metaclass.
-  * OTIElement provides the common data attributes necessary for uniquely identifying a MOF Element that is an
+  *
+  * OTIMOFElement is intended to be the single parent of case classes, 1 case class per distinct concrete MOF metaclass.
+  * OTIMOFElement provides the common data attributes necessary for uniquely identifying a MOF Element that is an
   * instance of a single MOF metaclass in an OMG CMOF metamodel (e.g., OMG UML 2.5).
   * The information about the MOF metaclass is represented as a JSon `type` field 
   */
-sealed trait OTIElement {
+sealed trait OTIMOFElement {
   val toolSpecific_elementLocation: ToolSpecificElementDocumentURL
 }
 
-object OTIElement {
+object OTIMOFElement {
 
   // traits for all OMG UML 2.5 metaclasses
   // trait U1 extends U2 if UML 2.5 metaclass U1 has a direct generalization relationship to UML 2.5 metaclass U2
@@ -1809,11 +1810,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Abstraction
+  case class OTIUMLAbstraction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLAbstraction
   {}
 
@@ -1824,14 +1825,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class AcceptCallAction
+  case class OTIUMLAcceptCallAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isUnmarshall: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLAcceptCallAction
   {}
 
@@ -1842,14 +1843,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class AcceptEventAction
+  case class OTIUMLAcceptEventAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isUnmarshall: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLAcceptEventAction
   {}
 
@@ -1857,11 +1858,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ActionExecutionSpecification
+  case class OTIUMLActionExecutionSpecification
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLActionExecutionSpecification
   {}
 
@@ -1875,7 +1876,7 @@ object OTIElement {
     * @param ordering Defined in ObjectNode
     * @param visibility Defined in NamedElement
     */
-  case class ActionInputPin
+  case class OTIUMLActionInputPin
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isControl: Boolean,
     isControlType: Boolean,
@@ -1885,7 +1886,7 @@ object OTIElement {
     name: Option[String],
     ordering: Option[UMLObjectNodeOrderingKind],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLActionInputPin
   {}
 
@@ -1900,7 +1901,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Activity
+  case class OTIUMLActivity
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isActive: Boolean,
@@ -1911,7 +1912,7 @@ object OTIElement {
     isSingleExecution: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLActivity
   {}
 
@@ -1920,12 +1921,12 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ActivityFinalNode
+  case class OTIUMLActivityFinalNode
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLActivityFinalNode
   {}
 
@@ -1936,14 +1937,14 @@ object OTIElement {
     * @param ordering Defined in ObjectNode
     * @param visibility Defined in NamedElement
     */
-  case class ActivityParameterNode
+  case class OTIUMLActivityParameterNode
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isControlType: Boolean,
     isLeaf: Boolean,
     name: Option[String],
     ordering: Option[UMLObjectNodeOrderingKind],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLActivityParameterNode
   {}
 
@@ -1953,13 +1954,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ActivityPartition
+  case class OTIUMLActivityPartition
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isDimension: Boolean,
     isExternal: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLActivityPartition
   {}
 
@@ -1970,14 +1971,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Actor
+  case class OTIUMLActor
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isFinalSpecialization: Boolean,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLActor
   {}
 
@@ -1988,14 +1989,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class AddStructuralFeatureValueAction
+  case class OTIUMLAddStructuralFeatureValueAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isReplaceAll: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLAddStructuralFeatureValueAction
   {}
 
@@ -2006,14 +2007,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class AddVariableValueAction
+  case class OTIUMLAddVariableValueAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isReplaceAll: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLAddVariableValueAction
   {}
 
@@ -2021,11 +2022,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class AnyReceiveEvent
+  case class OTIUMLAnyReceiveEvent
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLAnyReceiveEvent
   {}
 
@@ -2037,7 +2038,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Artifact
+  case class OTIUMLArtifact
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     fileName: Option[String],
     isAbstract: Boolean,
@@ -2045,7 +2046,7 @@ object OTIElement {
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLArtifact
   {}
 
@@ -2057,7 +2058,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Association
+  case class OTIUMLAssociation
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isDerived: Boolean,
@@ -2065,7 +2066,7 @@ object OTIElement {
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLAssociation
   {}
 
@@ -2078,7 +2079,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class AssociationClass
+  case class OTIUMLAssociationClass
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isActive: Boolean,
@@ -2087,7 +2088,7 @@ object OTIElement {
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLAssociationClass
   {}
 
@@ -2095,11 +2096,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class BehaviorExecutionSpecification
+  case class OTIUMLBehaviorExecutionSpecification
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLBehaviorExecutionSpecification
   {}
 
@@ -2109,13 +2110,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class BroadcastSignalAction
+  case class OTIUMLBroadcastSignalAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLBroadcastSignalAction
   {}
 
@@ -2126,14 +2127,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class CallBehaviorAction
+  case class OTIUMLCallBehaviorAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isSynchronous: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLCallBehaviorAction
   {}
 
@@ -2141,11 +2142,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class CallEvent
+  case class OTIUMLCallEvent
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLCallEvent
   {}
 
@@ -2156,14 +2157,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class CallOperationAction
+  case class OTIUMLCallOperationAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isSynchronous: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLCallOperationAction
   {}
 
@@ -2174,14 +2175,14 @@ object OTIElement {
     * @param ordering Defined in ObjectNode
     * @param visibility Defined in NamedElement
     */
-  case class CentralBufferNode
+  case class OTIUMLCentralBufferNode
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isControlType: Boolean,
     isLeaf: Boolean,
     name: Option[String],
     ordering: Option[UMLObjectNodeOrderingKind],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLCentralBufferNode
   {}
 
@@ -2189,11 +2190,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class ChangeEvent
+  case class OTIUMLChangeEvent
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLChangeEvent
   {}
 
@@ -2205,7 +2206,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Class
+  case class OTIUMLClass
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isActive: Boolean,
@@ -2213,25 +2214,25 @@ object OTIElement {
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLClass
   {}
 
   /** 
     * @param allowSubstitutable Defined in ClassifierTemplateParameter
     */
-  case class ClassifierTemplateParameter
+  case class OTIUMLClassifierTemplateParameter
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     allowSubstitutable: Boolean)
-  extends OTIElement
+  extends OTIMOFElement
   with UMLClassifierTemplateParameter
   {}
 
   /** 
     */
-  case class Clause
+  case class OTIUMLClause
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
-  extends OTIElement
+  extends OTIMOFElement
   with UMLClause
   {}
 
@@ -2241,13 +2242,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ClearAssociationAction
+  case class OTIUMLClearAssociationAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLClearAssociationAction
   {}
 
@@ -2257,13 +2258,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ClearStructuralFeatureAction
+  case class OTIUMLClearStructuralFeatureAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLClearStructuralFeatureAction
   {}
 
@@ -2273,13 +2274,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ClearVariableAction
+  case class OTIUMLClearVariableAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLClearVariableAction
   {}
 
@@ -2290,14 +2291,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Collaboration
+  case class OTIUMLCollaboration
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isFinalSpecialization: Boolean,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLCollaboration
   {}
 
@@ -2305,11 +2306,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class CollaborationUse
+  case class OTIUMLCollaborationUse
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLCollaborationUse
   {}
 
@@ -2318,22 +2319,22 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class CombinedFragment
+  case class OTIUMLCombinedFragment
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     interactionOperator: Option[UMLInteractionOperatorKind],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLCombinedFragment
   {}
 
   /** 
     * @param body Defined in Comment
     */
-  case class Comment
+  case class OTIUMLComment
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     body: Option[String])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLComment
   {}
 
@@ -2345,7 +2346,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class CommunicationPath
+  case class OTIUMLCommunicationPath
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isDerived: Boolean,
@@ -2353,7 +2354,7 @@ object OTIElement {
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLCommunicationPath
   {}
 
@@ -2366,7 +2367,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Component
+  case class OTIUMLComponent
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isActive: Boolean,
@@ -2375,7 +2376,7 @@ object OTIElement {
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLComponent
   {}
 
@@ -2383,11 +2384,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class ComponentRealization
+  case class OTIUMLComponentRealization
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLComponentRealization
   {}
 
@@ -2400,7 +2401,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ConditionalNode
+  case class OTIUMLConditionalNode
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAssured: Boolean,
     isDeterminate: Boolean,
@@ -2409,15 +2410,15 @@ object OTIElement {
     mustIsolate: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLConditionalNode
   {}
 
   /** 
     */
-  case class ConnectableElementTemplateParameter
+  case class OTIUMLConnectableElementTemplateParameter
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
-  extends OTIElement
+  extends OTIMOFElement
   with UMLConnectableElementTemplateParameter
   {}
 
@@ -2425,11 +2426,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ConnectionPointReference
+  case class OTIUMLConnectionPointReference
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLConnectionPointReference
   {}
 
@@ -2439,13 +2440,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class Connector
+  case class OTIUMLConnector
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isStatic: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLConnector
   {}
 
@@ -2453,11 +2454,11 @@ object OTIElement {
     * @param isOrdered Defined in MultiplicityElement
     * @param isUnique Defined in MultiplicityElement
     */
-  case class ConnectorEnd
+  case class OTIUMLConnectorEnd
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isOrdered: Boolean,
     isUnique: Boolean)
-  extends OTIElement
+  extends OTIMOFElement
   with UMLConnectorEnd
   {}
 
@@ -2466,12 +2467,12 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ConsiderIgnoreFragment
+  case class OTIUMLConsiderIgnoreFragment
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     interactionOperator: Option[UMLInteractionOperatorKind],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLConsiderIgnoreFragment
   {}
 
@@ -2479,11 +2480,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Constraint
+  case class OTIUMLConstraint
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLConstraint
   {}
 
@@ -2492,12 +2493,12 @@ object OTIElement {
     * @param setting Defined in Continuation
     * @param visibility Defined in NamedElement
     */
-  case class Continuation
+  case class OTIUMLContinuation
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     setting: Boolean,
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLContinuation
   {}
 
@@ -2506,12 +2507,12 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ControlFlow
+  case class OTIUMLControlFlow
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLControlFlow
   {}
 
@@ -2521,13 +2522,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class CreateLinkAction
+  case class OTIUMLCreateLinkAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLCreateLinkAction
   {}
 
@@ -2537,13 +2538,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class CreateLinkObjectAction
+  case class OTIUMLCreateLinkObjectAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLCreateLinkObjectAction
   {}
 
@@ -2553,13 +2554,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class CreateObjectAction
+  case class OTIUMLCreateObjectAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLCreateObjectAction
   {}
 
@@ -2570,14 +2571,14 @@ object OTIElement {
     * @param ordering Defined in ObjectNode
     * @param visibility Defined in NamedElement
     */
-  case class DataStoreNode
+  case class OTIUMLDataStoreNode
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isControlType: Boolean,
     isLeaf: Boolean,
     name: Option[String],
     ordering: Option[UMLObjectNodeOrderingKind],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLDataStoreNode
   {}
 
@@ -2588,14 +2589,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class DataType
+  case class OTIUMLDataType
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isFinalSpecialization: Boolean,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLDataType
   {}
 
@@ -2604,12 +2605,12 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class DecisionNode
+  case class OTIUMLDecisionNode
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLDecisionNode
   {}
 
@@ -2617,11 +2618,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Dependency
+  case class OTIUMLDependency
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLDependency
   {}
 
@@ -2629,11 +2630,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Deployment
+  case class OTIUMLDeployment
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLDeployment
   {}
 
@@ -2647,7 +2648,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class DeploymentSpecification
+  case class OTIUMLDeploymentSpecification
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     deploymentLocation: Option[String],
     executionLocation: Option[String],
@@ -2657,7 +2658,7 @@ object OTIElement {
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLDeploymentSpecification
   {}
 
@@ -2667,13 +2668,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class DestroyLinkAction
+  case class OTIUMLDestroyLinkAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLDestroyLinkAction
   {}
 
@@ -2685,7 +2686,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class DestroyObjectAction
+  case class OTIUMLDestroyObjectAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isDestroyLinks: Boolean,
     isDestroyOwnedObjects: Boolean,
@@ -2693,7 +2694,7 @@ object OTIElement {
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLDestroyObjectAction
   {}
 
@@ -2701,11 +2702,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class DestructionOccurrenceSpecification
+  case class OTIUMLDestructionOccurrenceSpecification
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLDestructionOccurrenceSpecification
   {}
 
@@ -2717,7 +2718,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Device
+  case class OTIUMLDevice
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isActive: Boolean,
@@ -2725,7 +2726,7 @@ object OTIElement {
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLDevice
   {}
 
@@ -2733,11 +2734,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Duration
+  case class OTIUMLDuration
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLDuration
   {}
 
@@ -2746,12 +2747,12 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class DurationConstraint
+  case class OTIUMLDurationConstraint
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     firstEvent: Set[Boolean],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLDurationConstraint
   {}
 
@@ -2759,11 +2760,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class DurationInterval
+  case class OTIUMLDurationInterval
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLDurationInterval
   {}
 
@@ -2772,12 +2773,12 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class DurationObservation
+  case class OTIUMLDurationObservation
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     firstEvent: Seq[Boolean],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLDurationObservation
   {}
 
@@ -2785,11 +2786,11 @@ object OTIElement {
     * @param alias Defined in ElementImport
     * @param visibility Defined in ElementImport
     */
-  case class ElementImport
+  case class OTIUMLElementImport
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     alias: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLElementImport
   {}
 
@@ -2800,14 +2801,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Enumeration
+  case class OTIUMLEnumeration
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isFinalSpecialization: Boolean,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLEnumeration
   {}
 
@@ -2815,19 +2816,19 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class EnumerationLiteral
+  case class OTIUMLEnumerationLiteral
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLEnumerationLiteral
   {}
 
   /** 
     */
-  case class ExceptionHandler
+  case class OTIUMLExceptionHandler
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
-  extends OTIElement
+  extends OTIMOFElement
   with UMLExceptionHandler
   {}
 
@@ -2839,7 +2840,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class ExecutionEnvironment
+  case class OTIUMLExecutionEnvironment
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isActive: Boolean,
@@ -2847,7 +2848,7 @@ object OTIElement {
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLExecutionEnvironment
   {}
 
@@ -2855,11 +2856,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ExecutionOccurrenceSpecification
+  case class OTIUMLExecutionOccurrenceSpecification
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLExecutionOccurrenceSpecification
   {}
 
@@ -2870,14 +2871,14 @@ object OTIElement {
     * @param ordering Defined in ObjectNode
     * @param visibility Defined in NamedElement
     */
-  case class ExpansionNode
+  case class OTIUMLExpansionNode
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isControlType: Boolean,
     isLeaf: Boolean,
     name: Option[String],
     ordering: Option[UMLObjectNodeOrderingKind],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLExpansionNode
   {}
 
@@ -2889,7 +2890,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ExpansionRegion
+  case class OTIUMLExpansionRegion
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
@@ -2897,7 +2898,7 @@ object OTIElement {
     mustIsolate: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLExpansionRegion
   {}
 
@@ -2906,12 +2907,12 @@ object OTIElement {
     * @param symbol Defined in Expression
     * @param visibility Defined in PackageableElement
     */
-  case class Expression
+  case class OTIUMLExpression
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     symbol: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLExpression
   {}
 
@@ -2919,11 +2920,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class Extend
+  case class OTIUMLExtend
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLExtend
   {}
 
@@ -2935,7 +2936,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Extension
+  case class OTIUMLExtension
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isDerived: Boolean,
@@ -2943,7 +2944,7 @@ object OTIElement {
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLExtension
   {}
 
@@ -2960,7 +2961,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ExtensionEnd
+  case class OTIUMLExtensionEnd
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     aggregation: Option[UMLAggregationKind],
     isDerived: Boolean,
@@ -2973,7 +2974,7 @@ object OTIElement {
     isUnique: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLExtensionEnd
   {}
 
@@ -2982,12 +2983,12 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ExtensionPoint
+  case class OTIUMLExtensionPoint
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLExtensionPoint
   {}
 
@@ -2996,12 +2997,12 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class FinalState
+  case class OTIUMLFinalState
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLFinalState
   {}
 
@@ -3010,12 +3011,12 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class FlowFinalNode
+  case class OTIUMLFlowFinalNode
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLFlowFinalNode
   {}
 
@@ -3024,12 +3025,12 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ForkNode
+  case class OTIUMLForkNode
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLForkNode
   {}
 
@@ -3044,7 +3045,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class FunctionBehavior
+  case class OTIUMLFunctionBehavior
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     body: Seq[String],
     isAbstract: Boolean,
@@ -3055,7 +3056,7 @@ object OTIElement {
     language: Seq[String],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLFunctionBehavior
   {}
 
@@ -3063,11 +3064,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class Gate
+  case class OTIUMLGate
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLGate
   {}
 
@@ -3075,21 +3076,21 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class GeneralOrdering
+  case class OTIUMLGeneralOrdering
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLGeneralOrdering
   {}
 
   /** 
     * @param isSubstitutable Defined in Generalization
     */
-  case class Generalization
+  case class OTIUMLGeneralization
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isSubstitutable: Option[Boolean])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLGeneralization
   {}
 
@@ -3099,13 +3100,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class GeneralizationSet
+  case class OTIUMLGeneralizationSet
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isCovering: Boolean,
     isDisjoint: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLGeneralizationSet
   {}
 
@@ -3114,12 +3115,12 @@ object OTIElement {
     * @param format Defined in Image
     * @param location Defined in Image
     */
-  case class Image
+  case class OTIUMLImage
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     content: Option[String],
     format: Option[String],
     location: Option[String])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLImage
   {}
 
@@ -3127,11 +3128,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class Include
+  case class OTIUMLInclude
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLInclude
   {}
 
@@ -3139,11 +3140,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class InformationFlow
+  case class OTIUMLInformationFlow
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLInformationFlow
   {}
 
@@ -3154,14 +3155,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class InformationItem
+  case class OTIUMLInformationItem
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isFinalSpecialization: Boolean,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLInformationItem
   {}
 
@@ -3170,12 +3171,12 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class InitialNode
+  case class OTIUMLInitialNode
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLInitialNode
   {}
 
@@ -3189,7 +3190,7 @@ object OTIElement {
     * @param ordering Defined in ObjectNode
     * @param visibility Defined in NamedElement
     */
-  case class InputPin
+  case class OTIUMLInputPin
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isControl: Boolean,
     isControlType: Boolean,
@@ -3199,7 +3200,7 @@ object OTIElement {
     name: Option[String],
     ordering: Option[UMLObjectNodeOrderingKind],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLInputPin
   {}
 
@@ -3207,11 +3208,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class InstanceSpecification
+  case class OTIUMLInstanceSpecification
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLInstanceSpecification
   {}
 
@@ -3219,11 +3220,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class InstanceValue
+  case class OTIUMLInstanceValue
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLInstanceValue
   {}
 
@@ -3236,7 +3237,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Interaction
+  case class OTIUMLInteraction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isActive: Boolean,
@@ -3245,7 +3246,7 @@ object OTIElement {
     isReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLInteraction
   {}
 
@@ -3253,11 +3254,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class InteractionConstraint
+  case class OTIUMLInteractionConstraint
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLInteractionConstraint
   {}
 
@@ -3265,11 +3266,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class InteractionOperand
+  case class OTIUMLInteractionOperand
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLInteractionOperand
   {}
 
@@ -3277,11 +3278,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class InteractionUse
+  case class OTIUMLInteractionUse
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLInteractionUse
   {}
 
@@ -3292,14 +3293,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Interface
+  case class OTIUMLInterface
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isFinalSpecialization: Boolean,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLInterface
   {}
 
@@ -3307,11 +3308,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class InterfaceRealization
+  case class OTIUMLInterfaceRealization
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLInterfaceRealization
   {}
 
@@ -3319,11 +3320,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class InterruptibleActivityRegion
+  case class OTIUMLInterruptibleActivityRegion
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLInterruptibleActivityRegion
   {}
 
@@ -3331,11 +3332,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Interval
+  case class OTIUMLInterval
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLInterval
   {}
 
@@ -3343,11 +3344,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class IntervalConstraint
+  case class OTIUMLIntervalConstraint
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLIntervalConstraint
   {}
 
@@ -3357,13 +3358,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class JoinNode
+  case class OTIUMLJoinNode
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isCombineDuplicate: Boolean,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLJoinNode
   {}
 
@@ -3371,39 +3372,39 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class Lifeline
+  case class OTIUMLLifeline
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLLifeline
   {}
 
   /** 
     * @param isReplaceAll Defined in LinkEndCreationData
     */
-  case class LinkEndCreationData
+  case class OTIUMLLinkEndCreationData
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isReplaceAll: Boolean)
-  extends OTIElement
+  extends OTIMOFElement
   with UMLLinkEndCreationData
   {}
 
   /** 
     */
-  case class LinkEndData
+  case class OTIUMLLinkEndData
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
-  extends OTIElement
+  extends OTIMOFElement
   with UMLLinkEndData
   {}
 
   /** 
     * @param isDestroyDuplicates Defined in LinkEndDestructionData
     */
-  case class LinkEndDestructionData
+  case class OTIUMLLinkEndDestructionData
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isDestroyDuplicates: Boolean)
-  extends OTIElement
+  extends OTIMOFElement
   with UMLLinkEndDestructionData
   {}
 
@@ -3412,12 +3413,12 @@ object OTIElement {
     * @param value Defined in LiteralBoolean
     * @param visibility Defined in PackageableElement
     */
-  case class LiteralBoolean
+  case class OTIUMLLiteralBoolean
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     value: Boolean,
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLLiteralBoolean
   {}
 
@@ -3426,12 +3427,12 @@ object OTIElement {
     * @param value Defined in LiteralInteger
     * @param visibility Defined in PackageableElement
     */
-  case class LiteralInteger
+  case class OTIUMLLiteralInteger
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     value: Int,
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLLiteralInteger
   {}
 
@@ -3439,11 +3440,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class LiteralNull
+  case class OTIUMLLiteralNull
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLLiteralNull
   {}
 
@@ -3452,12 +3453,12 @@ object OTIElement {
     * @param value Defined in LiteralReal
     * @param visibility Defined in PackageableElement
     */
-  case class LiteralReal
+  case class OTIUMLLiteralReal
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     value: Double,
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLLiteralReal
   {}
 
@@ -3466,12 +3467,12 @@ object OTIElement {
     * @param value Defined in LiteralString
     * @param visibility Defined in PackageableElement
     */
-  case class LiteralString
+  case class OTIUMLLiteralString
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     value: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLLiteralString
   {}
 
@@ -3480,12 +3481,12 @@ object OTIElement {
     * @param value Defined in LiteralUnlimitedNatural
     * @param visibility Defined in PackageableElement
     */
-  case class LiteralUnlimitedNatural
+  case class OTIUMLLiteralUnlimitedNatural
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     value: Int,
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLLiteralUnlimitedNatural
   {}
 
@@ -3497,7 +3498,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class LoopNode
+  case class OTIUMLLoopNode
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
@@ -3505,7 +3506,7 @@ object OTIElement {
     mustIsolate: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLLoopNode
   {}
 
@@ -3513,11 +3514,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Manifestation
+  case class OTIUMLManifestation
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLManifestation
   {}
 
@@ -3526,12 +3527,12 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class MergeNode
+  case class OTIUMLMergeNode
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLMergeNode
   {}
 
@@ -3540,12 +3541,12 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class Message
+  case class OTIUMLMessage
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     messageSort: Option[UMLMessageSort],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLMessage
   {}
 
@@ -3553,11 +3554,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class MessageOccurrenceSpecification
+  case class OTIUMLMessageOccurrenceSpecification
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLMessageOccurrenceSpecification
   {}
 
@@ -3567,13 +3568,13 @@ object OTIElement {
     * @param viewpoint Defined in Model
     * @param visibility Defined in PackageableElement
     */
-  case class Model
+  case class OTIUMLModel
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     URI: Option[String],
     name: Option[String],
     viewpoint: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLModel
   {}
 
@@ -3585,7 +3586,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Node
+  case class OTIUMLNode
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isActive: Boolean,
@@ -3593,7 +3594,7 @@ object OTIElement {
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLNode
   {}
 
@@ -3604,14 +3605,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ObjectFlow
+  case class OTIUMLObjectFlow
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isMulticast: Boolean,
     isMultireceive: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLObjectFlow
   {}
 
@@ -3619,11 +3620,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class OccurrenceSpecification
+  case class OTIUMLOccurrenceSpecification
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLOccurrenceSpecification
   {}
 
@@ -3635,7 +3636,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class OpaqueAction
+  case class OTIUMLOpaqueAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     body: Seq[String],
     isLeaf: Boolean,
@@ -3643,7 +3644,7 @@ object OTIElement {
     language: Seq[String],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLOpaqueAction
   {}
 
@@ -3658,7 +3659,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class OpaqueBehavior
+  case class OTIUMLOpaqueBehavior
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     body: Seq[String],
     isAbstract: Boolean,
@@ -3669,7 +3670,7 @@ object OTIElement {
     language: Seq[String],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLOpaqueBehavior
   {}
 
@@ -3679,13 +3680,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class OpaqueExpression
+  case class OTIUMLOpaqueExpression
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     body: Seq[String],
     language: Seq[String],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLOpaqueExpression
   {}
 
@@ -3698,7 +3699,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class Operation
+  case class OTIUMLOperation
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     concurrency: Option[UMLCallConcurrencyKind],
     isAbstract: Boolean,
@@ -3707,15 +3708,15 @@ object OTIElement {
     isStatic: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLOperation
   {}
 
   /** 
     */
-  case class OperationTemplateParameter
+  case class OTIUMLOperationTemplateParameter
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
-  extends OTIElement
+  extends OTIMOFElement
   with UMLOperationTemplateParameter
   {}
 
@@ -3729,7 +3730,7 @@ object OTIElement {
     * @param ordering Defined in ObjectNode
     * @param visibility Defined in NamedElement
     */
-  case class OutputPin
+  case class OTIUMLOutputPin
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isControl: Boolean,
     isControlType: Boolean,
@@ -3739,7 +3740,7 @@ object OTIElement {
     name: Option[String],
     ordering: Option[UMLObjectNodeOrderingKind],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLOutputPin
   {}
 
@@ -3748,30 +3749,30 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Package
+  case class OTIUMLPackage
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     URI: Option[String],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLPackage
   {}
 
   /** 
     * @param visibility Defined in PackageImport
     */
-  case class PackageImport
+  case class OTIUMLPackageImport
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLPackageImport
   {}
 
   /** 
     */
-  case class PackageMerge
+  case class OTIUMLPackageMerge
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
-  extends OTIElement
+  extends OTIMOFElement
   with UMLPackageMerge
   {}
 
@@ -3785,7 +3786,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class Parameter
+  case class OTIUMLParameter
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     direction: Option[UMLParameterDirectionKind],
     effect: Option[UMLParameterEffectKind],
@@ -3795,7 +3796,7 @@ object OTIElement {
     isUnique: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLParameter
   {}
 
@@ -3803,11 +3804,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ParameterSet
+  case class OTIUMLParameterSet
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLParameterSet
   {}
 
@@ -3815,11 +3816,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class PartDecomposition
+  case class OTIUMLPartDecomposition
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLPartDecomposition
   {}
 
@@ -3839,7 +3840,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class Port
+  case class OTIUMLPort
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     aggregation: Option[UMLAggregationKind],
     isBehavior: Boolean,
@@ -3855,7 +3856,7 @@ object OTIElement {
     isUnique: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLPort
   {}
 
@@ -3866,14 +3867,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class PrimitiveType
+  case class OTIUMLPrimitiveType
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isFinalSpecialization: Boolean,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLPrimitiveType
   {}
 
@@ -3882,22 +3883,22 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Profile
+  case class OTIUMLProfile
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     URI: Option[String],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLProfile
   {}
 
   /** 
     * @param isStrict Defined in ProfileApplication
     */
-  case class ProfileApplication
+  case class OTIUMLProfileApplication
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isStrict: Boolean)
-  extends OTIElement
+  extends OTIMOFElement
   with UMLProfileApplication
   {}
 
@@ -3914,7 +3915,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class Property
+  case class OTIUMLProperty
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     aggregation: Option[UMLAggregationKind],
     isDerived: Boolean,
@@ -3927,15 +3928,15 @@ object OTIElement {
     isUnique: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLProperty
   {}
 
   /** 
     */
-  case class ProtocolConformance
+  case class OTIUMLProtocolConformance
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
-  extends OTIElement
+  extends OTIMOFElement
   with UMLProtocolConformance
   {}
 
@@ -3948,7 +3949,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class ProtocolStateMachine
+  case class OTIUMLProtocolStateMachine
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isActive: Boolean,
@@ -3957,7 +3958,7 @@ object OTIElement {
     isReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLProtocolStateMachine
   {}
 
@@ -3967,13 +3968,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ProtocolTransition
+  case class OTIUMLProtocolTransition
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     kind: Option[UMLTransitionKind],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLProtocolTransition
   {}
 
@@ -3982,20 +3983,20 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class Pseudostate
+  case class OTIUMLPseudostate
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     kind: Option[UMLPseudostateKind],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLPseudostate
   {}
 
   /** 
     */
-  case class QualifierValue
+  case class OTIUMLQualifierValue
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
-  extends OTIElement
+  extends OTIMOFElement
   with UMLQualifierValue
   {}
 
@@ -4005,13 +4006,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class RaiseExceptionAction
+  case class OTIUMLRaiseExceptionAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLRaiseExceptionAction
   {}
 
@@ -4021,13 +4022,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ReadExtentAction
+  case class OTIUMLReadExtentAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLReadExtentAction
   {}
 
@@ -4038,14 +4039,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ReadIsClassifiedObjectAction
+  case class OTIUMLReadIsClassifiedObjectAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isDirect: Boolean,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLReadIsClassifiedObjectAction
   {}
 
@@ -4055,13 +4056,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ReadLinkAction
+  case class OTIUMLReadLinkAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLReadLinkAction
   {}
 
@@ -4071,13 +4072,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ReadLinkObjectEndAction
+  case class OTIUMLReadLinkObjectEndAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLReadLinkObjectEndAction
   {}
 
@@ -4087,13 +4088,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ReadLinkObjectEndQualifierAction
+  case class OTIUMLReadLinkObjectEndQualifierAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLReadLinkObjectEndQualifierAction
   {}
 
@@ -4103,13 +4104,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ReadSelfAction
+  case class OTIUMLReadSelfAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLReadSelfAction
   {}
 
@@ -4119,13 +4120,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ReadStructuralFeatureAction
+  case class OTIUMLReadStructuralFeatureAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLReadStructuralFeatureAction
   {}
 
@@ -4135,13 +4136,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ReadVariableAction
+  case class OTIUMLReadVariableAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLReadVariableAction
   {}
 
@@ -4149,11 +4150,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Realization
+  case class OTIUMLRealization
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLRealization
   {}
 
@@ -4165,7 +4166,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class Reception
+  case class OTIUMLReception
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     concurrency: Option[UMLCallConcurrencyKind],
     isAbstract: Boolean,
@@ -4173,7 +4174,7 @@ object OTIElement {
     isStatic: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLReception
   {}
 
@@ -4184,14 +4185,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ReclassifyObjectAction
+  case class OTIUMLReclassifyObjectAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isReplaceAll: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLReclassifyObjectAction
   {}
 
@@ -4200,12 +4201,12 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class RedefinableTemplateSignature
+  case class OTIUMLRedefinableTemplateSignature
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLRedefinableTemplateSignature
   {}
 
@@ -4216,14 +4217,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ReduceAction
+  case class OTIUMLReduceAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isOrdered: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLReduceAction
   {}
 
@@ -4232,12 +4233,12 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class Region
+  case class OTIUMLRegion
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLRegion
   {}
 
@@ -4248,14 +4249,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class RemoveStructuralFeatureValueAction
+  case class OTIUMLRemoveStructuralFeatureValueAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isRemoveDuplicates: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLRemoveStructuralFeatureValueAction
   {}
 
@@ -4266,14 +4267,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class RemoveVariableValueAction
+  case class OTIUMLRemoveVariableValueAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isRemoveDuplicates: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLRemoveVariableValueAction
   {}
 
@@ -4283,13 +4284,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ReplyAction
+  case class OTIUMLReplyAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLReplyAction
   {}
 
@@ -4299,13 +4300,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class SendObjectAction
+  case class OTIUMLSendObjectAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLSendObjectAction
   {}
 
@@ -4315,13 +4316,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class SendSignalAction
+  case class OTIUMLSendSignalAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLSendSignalAction
   {}
 
@@ -4332,14 +4333,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class SequenceNode
+  case class OTIUMLSequenceNode
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     mustIsolate: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLSequenceNode
   {}
 
@@ -4350,14 +4351,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Signal
+  case class OTIUMLSignal
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isFinalSpecialization: Boolean,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLSignal
   {}
 
@@ -4365,19 +4366,19 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class SignalEvent
+  case class OTIUMLSignalEvent
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLSignalEvent
   {}
 
   /** 
     */
-  case class Slot
+  case class OTIUMLSlot
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
-  extends OTIElement
+  extends OTIMOFElement
   with UMLSlot
   {}
 
@@ -4387,13 +4388,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class StartClassifierBehaviorAction
+  case class OTIUMLStartClassifierBehaviorAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLStartClassifierBehaviorAction
   {}
 
@@ -4404,14 +4405,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class StartObjectBehaviorAction
+  case class OTIUMLStartObjectBehaviorAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isSynchronous: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLStartObjectBehaviorAction
   {}
 
@@ -4420,12 +4421,12 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class State
+  case class OTIUMLState
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLState
   {}
 
@@ -4433,11 +4434,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class StateInvariant
+  case class OTIUMLStateInvariant
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLStateInvariant
   {}
 
@@ -4450,7 +4451,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class StateMachine
+  case class OTIUMLStateMachine
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isActive: Boolean,
@@ -4459,7 +4460,7 @@ object OTIElement {
     isReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLStateMachine
   {}
 
@@ -4471,7 +4472,7 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Stereotype
+  case class OTIUMLStereotype
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isActive: Boolean,
@@ -4479,7 +4480,7 @@ object OTIElement {
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLStereotype
   {}
 
@@ -4488,12 +4489,12 @@ object OTIElement {
     * @param symbol Defined in Expression
     * @param visibility Defined in PackageableElement
     */
-  case class StringExpression
+  case class OTIUMLStringExpression
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     symbol: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLStringExpression
   {}
 
@@ -4504,14 +4505,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class StructuredActivityNode
+  case class OTIUMLStructuredActivityNode
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     mustIsolate: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLStructuredActivityNode
   {}
 
@@ -4519,43 +4520,43 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Substitution
+  case class OTIUMLSubstitution
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLSubstitution
   {}
 
   /** 
     */
-  case class TemplateBinding
+  case class OTIUMLTemplateBinding
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
-  extends OTIElement
+  extends OTIMOFElement
   with UMLTemplateBinding
   {}
 
   /** 
     */
-  case class TemplateParameter
+  case class OTIUMLTemplateParameter
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
-  extends OTIElement
+  extends OTIMOFElement
   with UMLTemplateParameter
   {}
 
   /** 
     */
-  case class TemplateParameterSubstitution
+  case class OTIUMLTemplateParameterSubstitution
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
-  extends OTIElement
+  extends OTIMOFElement
   with UMLTemplateParameterSubstitution
   {}
 
   /** 
     */
-  case class TemplateSignature
+  case class OTIUMLTemplateSignature
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
-  extends OTIElement
+  extends OTIMOFElement
   with UMLTemplateSignature
   {}
 
@@ -4565,13 +4566,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class TestIdentityAction
+  case class OTIUMLTestIdentityAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLTestIdentityAction
   {}
 
@@ -4580,12 +4581,12 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class TimeConstraint
+  case class OTIUMLTimeConstraint
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     firstEvent: Option[Boolean],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLTimeConstraint
   {}
 
@@ -4594,12 +4595,12 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class TimeEvent
+  case class OTIUMLTimeEvent
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isRelative: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLTimeEvent
   {}
 
@@ -4607,11 +4608,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class TimeExpression
+  case class OTIUMLTimeExpression
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLTimeExpression
   {}
 
@@ -4619,11 +4620,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class TimeInterval
+  case class OTIUMLTimeInterval
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLTimeInterval
   {}
 
@@ -4632,12 +4633,12 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class TimeObservation
+  case class OTIUMLTimeObservation
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     firstEvent: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLTimeObservation
   {}
 
@@ -4647,13 +4648,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class Transition
+  case class OTIUMLTransition
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     kind: Option[UMLTransitionKind],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLTransition
   {}
 
@@ -4661,11 +4662,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class Trigger
+  case class OTIUMLTrigger
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLTrigger
   {}
 
@@ -4675,13 +4676,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class UnmarshallAction
+  case class OTIUMLUnmarshallAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLUnmarshallAction
   {}
 
@@ -4689,11 +4690,11 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class Usage
+  case class OTIUMLUsage
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLUsage
   {}
 
@@ -4704,14 +4705,14 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
-  case class UseCase
+  case class OTIUMLUseCase
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isAbstract: Boolean,
     isFinalSpecialization: Boolean,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLUseCase
   {}
 
@@ -4725,7 +4726,7 @@ object OTIElement {
     * @param ordering Defined in ObjectNode
     * @param visibility Defined in NamedElement
     */
-  case class ValuePin
+  case class OTIUMLValuePin
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isControl: Boolean,
     isControlType: Boolean,
@@ -4735,7 +4736,7 @@ object OTIElement {
     name: Option[String],
     ordering: Option[UMLObjectNodeOrderingKind],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLValuePin
   {}
 
@@ -4745,13 +4746,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class ValueSpecificationAction
+  case class OTIUMLValueSpecificationAction
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLValueSpecificationAction
   {}
 
@@ -4761,13 +4762,13 @@ object OTIElement {
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
-  case class Variable
+  case class OTIUMLVariable
   ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
     isOrdered: Boolean,
     isUnique: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
-  extends OTIElement
+  extends OTIMOFElement
   with UMLVariable
   {}
 }
