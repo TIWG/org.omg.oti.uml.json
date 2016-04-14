@@ -38,6 +38,9 @@
  */
 package org.omg.oti.json.common
 
+import play.json.extra._
+import play.api.libs.json._
+
 /**
   * A UML Package can be the root of an OTI artifact of some kind.
   * OTI artifact kinds impose well-formedness constraints on
@@ -137,4 +140,19 @@ case object OTIBuiltInModelLibraryArtifactKind
   extends OTIArtifactKind
     with OTIBuiltInArtifactKind
     with OTIModelLibraryArtifactKind
-    
+
+object OTIArtifactKind {
+
+  implicit val formats
+  : Format[OTIArtifactKind]
+  = Variants.format[OTIArtifactKind]((__ \ "type").format[String])
+
+  implicit val writes
+  : Writes[OTIArtifactKind]
+  = Variants.writes[OTIArtifactKind]((__ \ "type").write[String])
+
+  implicit val reads
+  : Reads[OTIArtifactKind]
+  = Variants.reads[OTIArtifactKind]((__ \ "type").read[String])
+
+}

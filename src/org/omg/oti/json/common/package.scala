@@ -39,17 +39,27 @@
 package org.omg.oti.json
 
 import common.OTIPrimitiveTypes._
-
 import play.api.libs.json._
 import play.api.libs.functional.syntax._
+import play.api.libs.json.Json.JsValueWrapper
 
-import scala.StringContext
-import scala.Predef.String
-
+import scala.collection.immutable._
+import scala.{Ordering, StringContext}
+import scala.Predef.{ArrowAssoc,String}
 import scalaz._
 
 package object common {
-  
+
+  implicit def taggedStringOrdering[T]
+  : Ordering[String @@ T]
+  = new Ordering[String @@ T] {
+
+    def compare(x: String @@ T, y: String @@ T)
+    : Int
+    = Tag.unwrap(x).compareTo(Tag.unwrap(y))
+
+  }
+
   implicit def taggedStringFormat[T]
   : Format[String @@ T]
   = new Format[String @@ T] {
@@ -60,7 +70,7 @@ package object common {
 
     def writes(v: String @@ T): JsValue = JsString(Tag.unwrap(v))
   }
-    
+
   implicit val formatsOTIElementDocumentURL
   : Format[OTIElementDocumentURL]
   = Json.format[OTIElementDocumentURL]

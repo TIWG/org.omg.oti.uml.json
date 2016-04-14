@@ -40,53 +40,39 @@ package org.omg.oti.json.common
 
 import play.api.libs.json._
 
-import org.omg.oti.json.common.OTIPrimitiveTypes._
-
 import scala.Predef.String
 import scalaz.{@@,Tag}
 
-/**
-  * The OTI characteristics for a UML Package specifying the root of an OTI document of some kind.
-  *
-  * @param packageURI the Package::URI characteristic
-  * @param documentURL the URL where the OTI document is externally accessible as a resource
-  * @param artifactKind the kind of the OTI document
-  * @param nsPrefix the XML namespace prefix for the contents of the OTI document
-  * @param uuidPrefix the XMI uuid prefix for all the contents of the OTI document
-  */
-case class OTISpecificationRootCharacteristics
-(packageURI: String @@ OTI_URI,
- documentURL: String @@ OTI_URL,
- artifactKind: OTIArtifactKind,
- nsPrefix: String @@ OTI_NS_PREFIX,
- uuidPrefix: String @@ OTI_UUID_PREFIX)
+case class ToolSpecific2OTI_ID_UUID_Pair
+( toolSpecificID: String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID,
+  oti_uuid: String @@ OTIPrimitiveTypes.OTI_UUID )
+{}
 
-object OTISpecificationRootCharacteristics {
+object ToolSpecific2OTI_ID_UUID_Pair {
 
-  implicit def ordering
-  : Ordering[OTISpecificationRootCharacteristics]
-  = new Ordering[OTISpecificationRootCharacteristics] {
+  implicit val ordering
+  : Ordering[ToolSpecific2OTI_ID_UUID_Pair]
+  = new Ordering[ToolSpecific2OTI_ID_UUID_Pair] {
 
-    def compare(x: OTISpecificationRootCharacteristics, y: OTISpecificationRootCharacteristics)
+    def compare(x: ToolSpecific2OTI_ID_UUID_Pair, y: ToolSpecific2OTI_ID_UUID_Pair)
     : Int
-    = Tag.unwrap(x.packageURI).compareTo(Tag.unwrap(y.packageURI)) match {
+    = Tag.unwrap(x.toolSpecificID).compareTo(Tag.unwrap(y.toolSpecificID)) match {
       case 0 =>
-        Tag.unwrap(x.documentURL).compareTo(Tag.unwrap(y.documentURL))
+        Tag.unwrap(x.oti_uuid).compareTo(Tag.unwrap(y.oti_uuid))
       case c =>
         c
     }
   }
 
-  implicit def formats
-  : Format[OTISpecificationRootCharacteristics]
-  = Json.format[OTISpecificationRootCharacteristics]
+  implicit val formats
+  : Format[ToolSpecific2OTI_ID_UUID_Pair]
+  = Json.format[ToolSpecific2OTI_ID_UUID_Pair]
 
-  implicit def reads
-  : Writes[OTISpecificationRootCharacteristics]
-  = Json.writes[OTISpecificationRootCharacteristics]
+  implicit val writes
+  : Writes[ToolSpecific2OTI_ID_UUID_Pair]
+  = Json.writes[ToolSpecific2OTI_ID_UUID_Pair]
 
-  implicit def writes
-  : Reads[OTISpecificationRootCharacteristics]
-  = Json.reads[OTISpecificationRootCharacteristics]
-
+  implicit val reads
+  : Reads[ToolSpecific2OTI_ID_UUID_Pair]
+  = Json.reads[ToolSpecific2OTI_ID_UUID_Pair]
 }
