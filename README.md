@@ -27,6 +27,13 @@ loaded from the same OTI JSon serialization should produce equivalent results.
 A simple textual difference of the OTI JSon serialization should provide a minimal & complete account of 
 the differences between UML models serialized using the same tool.
 
+## TODO
+
+Add data structures for representing stereotype instances per the OTI:
+
+- [UMLStereotypeTagValue](https://www.omgwiki.org/repos/TIWG/Eclipse%20Scala%20Projects/org.omg.oti/src/org/omg/oti/uml/read/UMLStereotypeTagValue.scala)
+- [TagPropertyClassifierValue](https://www.omgwiki.org/repos/TIWG/Eclipse%20Scala%20Projects/org.omg.oti/src/org/omg/oti/uml/read/TagPropertyClassifierValue.scala)
+
 ## Example
 
 ### Defining Simple Data Structures for JSon serialization
