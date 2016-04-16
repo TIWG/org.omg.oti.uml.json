@@ -116,7 +116,7 @@ lazy val core = Project("org-omg-oti-uml-json", file("."))
   .enablePlugins(IMCEReleasePlugin)
   .settings(dynamicScriptsResourceSettings(Some("org.omg.oti.uml.json")))
   //.settings(IMCEPlugin.strictScalacFatalWarningsSettings)
-  .settings(docSettings(diagrams=false))
+  //.settings(docSettings(diagrams=false))
   .settings(IMCEReleasePlugin.packageReleaseProcessSettings)
   .settings(
     IMCEKeys.licenseYearOrRange := "2014-2016",

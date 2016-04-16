@@ -47,22 +47,17 @@ import scalaz.@@
 
 /**
   * @param documents: A set of OTIDocumentConfigurations for a set of
-  *                   packages and/or profiles characterized as OTI Documents.
+  *                   packages and/or profiles characterized as OTI Documents
   */
 case class OTIDocumentSetConfiguration
-( documents: SortedSet[OTIDocumentConfiguration],
-  overrideID: SortedSet[ToolSpecific2OTI_ID_Pair],
-  overrideUUID: SortedSet[ToolSpecific2OTI_ID_UUID_Pair] )
+( documents: SortedSet[OTIDocumentConfiguration])
 {}
 
 object OTIDocumentSetConfiguration {
 
   def empty
   : OTIDocumentSetConfiguration
-  = OTIDocumentSetConfiguration(
-    documents=SortedSet.empty[OTIDocumentConfiguration],
-    overrideID=SortedSet.empty[ToolSpecific2OTI_ID_Pair],
-    overrideUUID=SortedSet.empty[ToolSpecific2OTI_ID_UUID_Pair] )
+  = OTIDocumentSetConfiguration(documents=SortedSet.empty[OTIDocumentConfiguration])
 
   implicit def formats
   : Format[OTIDocumentSetConfiguration]

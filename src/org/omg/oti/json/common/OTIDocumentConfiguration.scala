@@ -45,31 +45,73 @@ import scala.collection.immutable._
 import scala.Predef.String
 import scalaz.{@@,Tag}
 
+/**
+  * Configuration for an OTI Document UML Package
+  *
+  * @param otiCharacteristics     the OTI characteristics for the OTI Document UML Package
+  * @param toolSpecificPackageID  the tool-specific ID of the OTI Document UML Package
+  * @param toolSpecificPackageURL optionally, a tool-specific URL for
+  *                               the external location of the OTI Document UML Package
+  * @param overrideID Each pair is used to override the generated OTI ID for a given UML Element
+  *                   within the OTI DOcument UML Package according to its tool-specific ID
+  * @param overrideUUID Each pair is used to override the generated OTI UUID for a given UML Element
+  *                     within the OTI DOcument UML Package according to its tool-specific ID
+  * @param excludeNestedElements  A set of tool-specific IDs for nested UML Elements to be excluded
+  *                               along with their contents from the OTI extent of the OTI Document UML Package
+  */
 case class OTIDocumentConfiguration
-( toolSpecificPackageID: String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID,
-  otiCharacteristics: OTISpecificationRootCharacteristics,
-  excludeSubPackages: SortedSet[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID])
-{
+( otiCharacteristics
+  : OTISpecificationRootCharacteristics,
 
-  def this
-  ( toolSpecificPackageID: String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID,
-    otiCharacteristics: OTISpecificationRootCharacteristics )
-  = this( toolSpecificPackageID, otiCharacteristics, SortedSet.empty[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID] )
-}
+  toolSpecificPackageID
+  : String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID,
+
+  toolSpecificPackageURL
+  : Option[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_URL] = None,
+
+  overrideID
+  : SortedSet[ToolSpecific2OTI_ID_Pair]
+  = SortedSet.empty[ToolSpecific2OTI_ID_Pair],
+
+  overrideUUID
+  : SortedSet[ToolSpecific2OTI_ID_UUID_Pair]
+  = SortedSet.empty[ToolSpecific2OTI_ID_UUID_Pair],
+
+  excludeNestedElements
+  : SortedSet[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID]
+  = SortedSet.empty[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID] )
 
 object OTIDocumentConfiguration {
 
-  implicit def ordering
+  implicit val ordering
   : Ordering[OTIDocumentConfiguration]
   = new Ordering[OTIDocumentConfiguration] {
 
-    def compare(x: OTIDocumentConfiguration, y: OTIDocumentConfiguration)
+    def compare1(x: OTIDocumentConfiguration, y: OTIDocumentConfiguration)
     : Int
     = Tag.unwrap(x.toolSpecificPackageID).compareTo(Tag.unwrap(x.toolSpecificPackageID)) match {
       case 0 =>
-        OTISpecificationRootCharacteristics.ordering.compare(x.otiCharacteristics,y.otiCharacteristics)
+        OTISpecificationRootCharacteristics.ordering.compare(x.otiCharacteristics, y.otiCharacteristics)
       case c =>
         c
+    }
+
+    def compare(x: OTIDocumentConfiguration, y: OTIDocumentConfiguration)
+    : Int
+    = (x.toolSpecificPackageURL, y.toolSpecificPackageURL) match {
+      case (None, None) =>
+        compare1(x, y)
+      case (Some(_), None) =>
+        -1
+      case (None, Some(_)) =>
+        1
+      case (Some(xURL), Some(yURL)) =>
+        Tag.unwrap(xURL).compareTo(Tag.unwrap(yURL)) match {
+          case 0 =>
+            compare1(x, y)
+          case c =>
+            c
+        }
     }
   }
 

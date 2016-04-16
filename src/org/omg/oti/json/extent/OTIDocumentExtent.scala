@@ -36,57 +36,72 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.omg.oti.json.common
+package org.omg.oti.json.extent
 
 import play.api.libs.json._
 
-import org.omg.oti.json.common.OTIPrimitiveTypes._
+import org.omg.oti.json.common._
+import org.omg.oti.json.uml._
 
-import scala.Predef.String
-import scalaz.{@@,Tag}
+import scala.collection.immutable._
 
-/**
-  * The OTI characteristics for a UML Package specifying the root of an OTI Document of some kind.
-  *
-  * @param packageURI the Package::URI characteristic
-  * @param documentURL the URL where the OTI document is externally accessible as a resource
-  * @param artifactKind the kind of the OTI document
-  * @param nsPrefix the XML namespace prefix for the contents of the OTI document
-  * @param uuidPrefix the XMI uuid prefix for all the contents of the OTI document
-  */
-case class OTISpecificationRootCharacteristics
-(packageURI: String @@ OTI_URI,
- documentURL: String @@ OTI_URL,
- artifactKind: OTIArtifactKind,
- nsPrefix: String @@ OTI_NS_PREFIX,
- uuidPrefix: String @@ OTI_UUID_PREFIX)
+import scalaz.@@
 
-object OTISpecificationRootCharacteristics {
+case class OTIDocumentExtent
+(otiCharacteristics
+ : OTISpecificationRootCharacteristics,
 
-  implicit val ordering
-  : Ordering[OTISpecificationRootCharacteristics]
-  = new Ordering[OTISpecificationRootCharacteristics] {
+ toolSpecificPackageID
+ : String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID,
 
-    def compare(x: OTISpecificationRootCharacteristics, y: OTISpecificationRootCharacteristics)
+ toolSpecificPackageURL
+ : Option[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_URL] = None,
+
+ elementExtent
+ : SortedSet[OTIMOFElement],
+
+ linkExtent
+ : SortedSet[OTIMOFLink])
+
+
+object OTIDocumentExtent {
+
+
+  implicit val orderingOTIMOFElement
+  : Ordering[OTIMOFElement]
+  = new Ordering[OTIMOFElement] {
+
+    def compare(x: OTIMOFElement, y: OTIMOFElement)
     : Int
-    = Tag.unwrap(x.packageURI).compareTo(Tag.unwrap(y.packageURI)) match {
+    = ToolSpecificElementDocumentURL.ordering.compare(x.toolSpecific_elementLocation, y.toolSpecific_elementLocation)
+
+  }
+
+  implicit val orderingOTIMOFLink
+  : Ordering[OTIMOFLink]
+  = new Ordering[OTIMOFLink] {
+
+    def compare(x: OTIMOFLink, y: OTIMOFLink)
+    : Int
+    = ToolSpecificElementDocumentURL.ordering.compare(x.end1, y.end1) match {
       case 0 =>
-        Tag.unwrap(x.documentURL).compareTo(Tag.unwrap(y.documentURL))
+        ToolSpecificElementDocumentURL.ordering.compare(x.end2, y.end2)
       case c =>
         c
     }
+
   }
 
   implicit def formats
-  : Format[OTISpecificationRootCharacteristics]
-  = Json.format[OTISpecificationRootCharacteristics]
+  : Format[OTIDocumentExtent]
+  = Json.format[OTIDocumentExtent]
 
   implicit def reads
-  : Writes[OTISpecificationRootCharacteristics]
-  = Json.writes[OTISpecificationRootCharacteristics]
+  : Writes[OTIDocumentExtent]
+  = Json.writes[OTIDocumentExtent]
 
   implicit def writes
-  : Reads[OTISpecificationRootCharacteristics]
-  = Json.reads[OTISpecificationRootCharacteristics]
+  : Reads[OTIDocumentExtent]
+  = Json.reads[OTIDocumentExtent]
 
 }

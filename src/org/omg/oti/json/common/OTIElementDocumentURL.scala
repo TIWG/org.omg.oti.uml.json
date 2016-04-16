@@ -42,7 +42,10 @@ import scala.Predef.String
 import scalaz.@@
 
 /**
-  * OTI Element/Document Location
+  * OTU Element/Document Location
+  *
+  * @param element_id    The OTI ID of the UML Element contained in an OTI Document UML Package
+  * @param document_url  The OTI URL of the external OTI Document UML Package resource containing the identified element
   */
 case class OTIElementDocumentURL
 ( element_id: String @@ OTIPrimitiveTypes.OTI_ID,

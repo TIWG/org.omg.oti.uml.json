@@ -38,13 +38,39 @@
  */
 package org.omg.oti.json.common
 
+import scala.Ordering
 import scala.Predef.String
 import scalaz.@@
 
 /**
   * Tool-specific Element/Document Location
+  *
+  * @param element_id    The tool-specific ID of the UML Element contained in an OTI Document UML Package
+  * @param document_url  The tool-specific URL of the external OTI Document UML Package resource
+  *                      containing the identified element
   */
 case class ToolSpecificElementDocumentURL
 ( element_id: String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID,
   document_url: String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_URL ) 
 {}
+
+object ToolSpecificElementDocumentURL {
+
+  implicit val ordering
+  : Ordering[ToolSpecificElementDocumentURL]
+  = new Ordering[ToolSpecificElementDocumentURL] {
+
+    def compare(x: ToolSpecificElementDocumentURL, y: ToolSpecificElementDocumentURL)
+    : Int
+    = {
+      taggedStringOrdering[OTIPrimitiveTypes.TOOL_SPECIFIC_URL].compare(x.document_url, y.document_url) match {
+        case 0 =>
+          taggedStringOrdering[OTIPrimitiveTypes.TOOL_SPECIFIC_ID].compare(x.element_id, y.element_id)
+        case c =>
+          c
+      }
+    }
+
+  }
+
+}

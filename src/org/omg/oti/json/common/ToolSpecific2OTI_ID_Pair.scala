@@ -43,6 +43,12 @@ import play.api.libs.json._
 import scala.Predef.String
 import scalaz.{@@,Tag}
 
+/**
+  * For a given UML Element, the pair of its tool-specific ID and its OTI ID.
+  *
+  * @param toolSpecificID tool-specific ID
+  * @param oti_id OTI ID
+  */
 case class ToolSpecific2OTI_ID_Pair
 ( toolSpecificID: String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID,
   oti_id: String @@ OTIPrimitiveTypes.OTI_ID )

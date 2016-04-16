@@ -55,59 +55,80 @@ object OTIPrimitiveTypes {
 
   /**
     * The type `String @@ OTI_URI` is the partition of strings representing `OTI_URI` values.
+    *
+    * OTI_URI is the type of strings representing UML::Package::uri.
     */
   sealed trait OTI_URI
   val OTI_URI = Tag.of[OTI_URI]
 
   /**
     * The type `String @@ OTI_URL` is the partition of strings representing `OTI_URL` values.
+    *
+    * OTI_URL is the type of strings representing the external location of a loadable/serializable MOF resource
+    * (a MOF resource is often called a "model"; however, this term can be confusing because it could be
+    *  referring to a particular kind of UML element, specifically, an instance of the UML::Model metaclass).
     */
   sealed trait OTI_URL
   val OTI_URL = Tag.of[OTI_URL]
 
   /**
     * The type `String @@ OTI_NS_PREFIX` is the partition of strings representing `OTI_NS_PREFIX` values.
+    *
+    * The OMG XMI specification uses an XML namespace prefix for abbreviating URLs with fragments.
+    * INstead of a URL of the form: `<document URL>#<element ID fragment>`,
+    * the abbreviated URL is of the form: `<ns prefix>#<element ID fragment>`
     */
   sealed trait OTI_NS_PREFIX
   val OTI_NS_PREFIX = Tag.of[OTI_NS_PREFIX]
 
   /**
     * The type `String @@ OTI_UUID_PREFIX` is the partition of strings representing `OTI_UUID_PREFIX` values.
+    *
+    * For a UML Element in the context of an OTI Document, the OTI Canonical XMI ID Generation algorithm computes
+    * the OTI UUID for that UML Element by prepending the OTI Document UUID Prefix
+    * to the OTI ID generated for that UML Element.
     */
   sealed trait OTI_UUID_PREFIX
   val OTI_UUID_PREFIX = Tag.of[OTI_UUID_PREFIX]
 
   /**
     * The type `String @@ OTI_ID` is the partition of strings representing `OTI_ID` values.
-    * An `OTI_ID` string value represents either an OTI tool-specific ID or an OTI `xmi:ID`
+    *
+    * This is the type of strings corresponding to OTI IDs generated for UML Elements in the context
+    * of a containing OTI Document UML Package.
     */
   sealed trait OTI_ID
   val OTI_ID = Tag.of[OTI_ID]
 
   /**
     * The type `String @@ OTI_UUID` is the partition of strings representing `OTI_UUID` values.
-    * An `OTI_UUID` string value represents an OTI `xmi:UUID`
+    *
+    * This is the type of strings corresponding to OTI UUIDs generated for UML Elements in the context
+    * of a containing OTI Document UML Package.
     */
   sealed trait OTI_UUID
   val OTI_UUID = Tag.of[OTI_UUID]
   
   /**
     * The type `String @@ TOOL_SPECIFIC_ID` is the partition of strings representing `TOOL_SPECIFIC_ID` values.
-    * An `TOOL_SPECIFIC_ID` string value represents a tool-specific ID
+    *
+    * A `TOOL_SPECIFIC_ID` string value represents a tool-specific ID
     */
   sealed trait TOOL_SPECIFIC_ID
   val TOOL_SPECIFIC_ID = Tag.of[TOOL_SPECIFIC_ID]
 
   /**
     * The type `String @@ TOOL_SPECIFIC_UUID` is the partition of strings representing `TOOL_SPECIFIC_UUID` values.
-    * An `TOOL_SPECIFIC_UUID` string value represents a tool-specific UUID
+    *
+    * A `TOOL_SPECIFIC_UUID` string value represents a tool-specific UUID
     */
   sealed trait TOOL_SPECIFIC_UUID
   val TOOL_SPECIFIC_UUID = Tag.of[TOOL_SPECIFIC_UUID]
 
   /**
     * The type `String @@ TOOL_SPECIFIC_URL` is the partition of strings representing `TOOL_SPECIFIC_URL` values.
-    * An `TOOL_SPECIFIC_URL` string value represents a tool-specific element URL
+    *
+    * A `TOOL_SPECIFIC_URL` string value represents a tool-specific element URL
     */
   sealed trait TOOL_SPECIFIC_URL
   val TOOL_SPECIFIC_URL = Tag.of[TOOL_SPECIFIC_URL]
