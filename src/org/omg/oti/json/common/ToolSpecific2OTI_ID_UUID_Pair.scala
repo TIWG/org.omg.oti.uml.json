@@ -40,6 +40,7 @@ package org.omg.oti.json.common
 
 import play.api.libs.json._
 
+import scala.{Int,Ordering}
 import scala.Predef.String
 import scalaz.{@@,Tag}
 

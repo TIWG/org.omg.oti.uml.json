@@ -42,6 +42,7 @@ import play.api.libs.json._
 
 import org.omg.oti.json.common.OTIPrimitiveTypes._
 
+import scala.{Int,Ordering}
 import scala.Predef.String
 import scalaz.{@@,Tag}
 

@@ -41,6 +41,8 @@ package org.omg.oti.json.common
 import play.json.extra._
 import play.api.libs.json._
 
+import scala.Predef.String
+
 /**
   * A UML Package can be the root of an OTI artifact of some kind.
   * OTI artifact kinds impose well-formedness constraints on

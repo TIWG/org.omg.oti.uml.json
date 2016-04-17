@@ -45,14 +45,22 @@ package org.omg.oti.json.uml
  * <!-- End of user code documentation -->
  */ 
 
+// <!-- Start of user code imports -->
 import org.omg.oti.json.common._
+import org.omg.oti.json.common.OTIPrimitiveTypes._
 import org.omg.oti.json.uml.enums._
+
+import play.json.extra._
+import play.api.libs.json._
+import play.api.libs.functional.syntax._
 
 import scala.collection.immutable._
 import scala.{Boolean,Double,Int,Option}
 import scala.Predef.String
+import scalaz.@@
+// <!-- End of user code imports -->
 
-/**
+/** <!-- Start of user code OTI MOF Element documentation -->
   * In OMG MOF 2.5, a MOF Element is an instance of exactly 1 MOF metaclass.
   * This means that for serializing a MOF Element, it is sufficient to have support for concrete MOF metaclasses.
   *
@@ -60,9 +68,10 @@ import scala.Predef.String
   * OTIMOFElement provides the common data attributes necessary for uniquely identifying a MOF Element that is an
   * instance of a single MOF metaclass in an OMG CMOF metamodel (e.g., OMG UML 2.5).
   * The information about the MOF metaclass is represented as a JSon `type` field 
+  * <!-- End of user code OTI MOF Element documentation -->
   */
 sealed trait OTIMOFElement {
-  val toolSpecific_elementLocation: ToolSpecificElementDocumentURL
+  val toolSpecific_id: String @@ TOOL_SPECIFIC_ID
 }
 
 object OTIMOFElement {
@@ -1805,20 +1814,23 @@ object OTIMOFElement {
 		extends UMLVariableAction
   {}
 
-
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLAbstraction 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLAbstraction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLAbstraction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLAcceptCallAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param isUnmarshall Defined in AcceptEventAction
@@ -1826,7 +1838,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLAcceptCallAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isUnmarshall: Boolean,
@@ -1836,7 +1848,9 @@ object OTIMOFElement {
   with UMLAcceptCallAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLAcceptEventAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param isUnmarshall Defined in AcceptEventAction
@@ -1844,7 +1858,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLAcceptEventAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isUnmarshall: Boolean,
@@ -1854,19 +1868,23 @@ object OTIMOFElement {
   with UMLAcceptEventAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLActionExecutionSpecification 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLActionExecutionSpecification
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLActionExecutionSpecification
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLActionInputPin 
+    *                        in the extent of an OTI Document UML Package 
     * @param isControl Defined in Pin
     * @param isControlType Defined in ObjectNode
     * @param isLeaf Defined in RedefinableElement
@@ -1877,7 +1895,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLActionInputPin
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isControl: Boolean,
     isControlType: Boolean,
     isLeaf: Boolean,
@@ -1890,7 +1908,9 @@ object OTIMOFElement {
   with UMLActionInputPin
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLActivity 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Class
     * @param isActive Defined in Class
     * @param isFinalSpecialization Defined in Classifier
@@ -1902,7 +1922,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLActivity
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isActive: Boolean,
     isFinalSpecialization: Boolean,
@@ -1916,13 +1936,15 @@ object OTIMOFElement {
   with UMLActivity
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLActivityFinalNode 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLActivityFinalNode
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -1930,7 +1952,9 @@ object OTIMOFElement {
   with UMLActivityFinalNode
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLActivityParameterNode 
+    *                        in the extent of an OTI Document UML Package 
     * @param isControlType Defined in ObjectNode
     * @param isLeaf Defined in RedefinableElement
     * @param name Defined in NamedElement
@@ -1938,7 +1962,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLActivityParameterNode
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isControlType: Boolean,
     isLeaf: Boolean,
     name: Option[String],
@@ -1948,14 +1972,16 @@ object OTIMOFElement {
   with UMLActivityParameterNode
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLActivityPartition 
+    *                        in the extent of an OTI Document UML Package 
     * @param isDimension Defined in ActivityPartition
     * @param isExternal Defined in ActivityPartition
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLActivityPartition
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isDimension: Boolean,
     isExternal: Boolean,
     name: Option[String],
@@ -1964,7 +1990,9 @@ object OTIMOFElement {
   with UMLActivityPartition
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLActor 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Classifier
     * @param isFinalSpecialization Defined in Classifier
     * @param isLeaf Defined in RedefinableElement
@@ -1972,7 +2000,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLActor
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isFinalSpecialization: Boolean,
     isLeaf: Boolean,
@@ -1982,7 +2010,9 @@ object OTIMOFElement {
   with UMLActor
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLAddStructuralFeatureValueAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param isReplaceAll Defined in AddStructuralFeatureValueAction
@@ -1990,7 +2020,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLAddStructuralFeatureValueAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isReplaceAll: Boolean,
@@ -2000,7 +2030,9 @@ object OTIMOFElement {
   with UMLAddStructuralFeatureValueAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLAddVariableValueAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param isReplaceAll Defined in AddVariableValueAction
@@ -2008,7 +2040,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLAddVariableValueAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isReplaceAll: Boolean,
@@ -2018,19 +2050,23 @@ object OTIMOFElement {
   with UMLAddVariableValueAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLAnyReceiveEvent 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLAnyReceiveEvent
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLAnyReceiveEvent
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLArtifact 
+    *                        in the extent of an OTI Document UML Package 
     * @param fileName Defined in Artifact
     * @param isAbstract Defined in Classifier
     * @param isFinalSpecialization Defined in Classifier
@@ -2039,7 +2075,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLArtifact
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     fileName: Option[String],
     isAbstract: Boolean,
     isFinalSpecialization: Boolean,
@@ -2050,7 +2086,9 @@ object OTIMOFElement {
   with UMLArtifact
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLAssociation 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Classifier
     * @param isDerived Defined in Association
     * @param isFinalSpecialization Defined in Classifier
@@ -2059,7 +2097,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLAssociation
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isDerived: Boolean,
     isFinalSpecialization: Boolean,
@@ -2070,7 +2108,9 @@ object OTIMOFElement {
   with UMLAssociation
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLAssociationClass 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Class
     * @param isActive Defined in Class
     * @param isDerived Defined in Association
@@ -2080,7 +2120,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLAssociationClass
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isActive: Boolean,
     isDerived: Boolean,
@@ -2092,26 +2132,30 @@ object OTIMOFElement {
   with UMLAssociationClass
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLBehaviorExecutionSpecification 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLBehaviorExecutionSpecification
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLBehaviorExecutionSpecification
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLBroadcastSignalAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLBroadcastSignalAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -2120,7 +2164,9 @@ object OTIMOFElement {
   with UMLBroadcastSignalAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLCallBehaviorAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param isSynchronous Defined in CallAction
@@ -2128,7 +2174,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLCallBehaviorAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isSynchronous: Boolean,
@@ -2138,19 +2184,23 @@ object OTIMOFElement {
   with UMLCallBehaviorAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLCallEvent 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLCallEvent
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLCallEvent
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLCallOperationAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param isSynchronous Defined in CallAction
@@ -2158,7 +2208,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLCallOperationAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isSynchronous: Boolean,
@@ -2168,7 +2218,9 @@ object OTIMOFElement {
   with UMLCallOperationAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLCentralBufferNode 
+    *                        in the extent of an OTI Document UML Package 
     * @param isControlType Defined in ObjectNode
     * @param isLeaf Defined in RedefinableElement
     * @param name Defined in NamedElement
@@ -2176,7 +2228,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLCentralBufferNode
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isControlType: Boolean,
     isLeaf: Boolean,
     name: Option[String],
@@ -2186,19 +2238,23 @@ object OTIMOFElement {
   with UMLCentralBufferNode
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLChangeEvent 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLChangeEvent
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLChangeEvent
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLClass 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Class
     * @param isActive Defined in Class
     * @param isFinalSpecialization Defined in Classifier
@@ -2207,7 +2263,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLClass
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isActive: Boolean,
     isFinalSpecialization: Boolean,
@@ -2218,32 +2274,38 @@ object OTIMOFElement {
   with UMLClass
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLClassifierTemplateParameter 
+    *                        in the extent of an OTI Document UML Package 
     * @param allowSubstitutable Defined in ClassifierTemplateParameter
     */
   case class OTIUMLClassifierTemplateParameter
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     allowSubstitutable: Boolean)
   extends OTIMOFElement
   with UMLClassifierTemplateParameter
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLClause 
+    *                        in the extent of an OTI Document UML Package 
     */
   case class OTIUMLClause
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID)
   extends OTIMOFElement
   with UMLClause
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLClearAssociationAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLClearAssociationAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -2252,14 +2314,16 @@ object OTIMOFElement {
   with UMLClearAssociationAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLClearStructuralFeatureAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLClearStructuralFeatureAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -2268,14 +2332,16 @@ object OTIMOFElement {
   with UMLClearStructuralFeatureAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLClearVariableAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLClearVariableAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -2284,7 +2350,9 @@ object OTIMOFElement {
   with UMLClearVariableAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLCollaboration 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Classifier
     * @param isFinalSpecialization Defined in Classifier
     * @param isLeaf Defined in RedefinableElement
@@ -2292,7 +2360,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLCollaboration
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isFinalSpecialization: Boolean,
     isLeaf: Boolean,
@@ -2302,25 +2370,29 @@ object OTIMOFElement {
   with UMLCollaboration
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLCollaborationUse 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLCollaborationUse
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLCollaborationUse
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLCombinedFragment 
+    *                        in the extent of an OTI Document UML Package 
     * @param interactionOperator Defined in CombinedFragment
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLCombinedFragment
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     interactionOperator: Option[UMLInteractionOperatorKind],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -2328,17 +2400,21 @@ object OTIMOFElement {
   with UMLCombinedFragment
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLComment 
+    *                        in the extent of an OTI Document UML Package 
     * @param body Defined in Comment
     */
   case class OTIUMLComment
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     body: Option[String])
   extends OTIMOFElement
   with UMLComment
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLCommunicationPath 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Classifier
     * @param isDerived Defined in Association
     * @param isFinalSpecialization Defined in Classifier
@@ -2347,7 +2423,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLCommunicationPath
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isDerived: Boolean,
     isFinalSpecialization: Boolean,
@@ -2358,7 +2434,9 @@ object OTIMOFElement {
   with UMLCommunicationPath
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLComponent 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Class
     * @param isActive Defined in Class
     * @param isFinalSpecialization Defined in Classifier
@@ -2368,7 +2446,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLComponent
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isActive: Boolean,
     isFinalSpecialization: Boolean,
@@ -2380,19 +2458,23 @@ object OTIMOFElement {
   with UMLComponent
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLComponentRealization 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLComponentRealization
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLComponentRealization
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLConditionalNode 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAssured Defined in ConditionalNode
     * @param isDeterminate Defined in ConditionalNode
     * @param isLeaf Defined in RedefinableElement
@@ -2402,7 +2484,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLConditionalNode
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAssured: Boolean,
     isDeterminate: Boolean,
     isLeaf: Boolean,
@@ -2414,34 +2496,40 @@ object OTIMOFElement {
   with UMLConditionalNode
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLConnectableElementTemplateParameter 
+    *                        in the extent of an OTI Document UML Package 
     */
   case class OTIUMLConnectableElementTemplateParameter
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID)
   extends OTIMOFElement
   with UMLConnectableElementTemplateParameter
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLConnectionPointReference 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLConnectionPointReference
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLConnectionPointReference
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLConnector 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isStatic Defined in Feature
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLConnector
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isStatic: Boolean,
     name: Option[String],
@@ -2450,25 +2538,29 @@ object OTIMOFElement {
   with UMLConnector
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLConnectorEnd 
+    *                        in the extent of an OTI Document UML Package 
     * @param isOrdered Defined in MultiplicityElement
     * @param isUnique Defined in MultiplicityElement
     */
   case class OTIUMLConnectorEnd
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isOrdered: Boolean,
     isUnique: Boolean)
   extends OTIMOFElement
   with UMLConnectorEnd
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLConsiderIgnoreFragment 
+    *                        in the extent of an OTI Document UML Package 
     * @param interactionOperator Defined in CombinedFragment
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLConsiderIgnoreFragment
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     interactionOperator: Option[UMLInteractionOperatorKind],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -2476,25 +2568,29 @@ object OTIMOFElement {
   with UMLConsiderIgnoreFragment
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLConstraint 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLConstraint
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLConstraint
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLContinuation 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param setting Defined in Continuation
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLContinuation
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     setting: Boolean,
     visibility: Option[UMLVisibilityKind])
@@ -2502,13 +2598,15 @@ object OTIMOFElement {
   with UMLContinuation
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLControlFlow 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLControlFlow
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -2516,14 +2614,16 @@ object OTIMOFElement {
   with UMLControlFlow
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLCreateLinkAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLCreateLinkAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -2532,14 +2632,16 @@ object OTIMOFElement {
   with UMLCreateLinkAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLCreateLinkObjectAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLCreateLinkObjectAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -2548,14 +2650,16 @@ object OTIMOFElement {
   with UMLCreateLinkObjectAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLCreateObjectAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLCreateObjectAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -2564,7 +2668,9 @@ object OTIMOFElement {
   with UMLCreateObjectAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLDataStoreNode 
+    *                        in the extent of an OTI Document UML Package 
     * @param isControlType Defined in ObjectNode
     * @param isLeaf Defined in RedefinableElement
     * @param name Defined in NamedElement
@@ -2572,7 +2678,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLDataStoreNode
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isControlType: Boolean,
     isLeaf: Boolean,
     name: Option[String],
@@ -2582,7 +2688,9 @@ object OTIMOFElement {
   with UMLDataStoreNode
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLDataType 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Classifier
     * @param isFinalSpecialization Defined in Classifier
     * @param isLeaf Defined in RedefinableElement
@@ -2590,7 +2698,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLDataType
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isFinalSpecialization: Boolean,
     isLeaf: Boolean,
@@ -2600,13 +2708,15 @@ object OTIMOFElement {
   with UMLDataType
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLDecisionNode 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLDecisionNode
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -2614,31 +2724,37 @@ object OTIMOFElement {
   with UMLDecisionNode
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLDependency 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLDependency
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLDependency
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLDeployment 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLDeployment
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLDeployment
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLDeploymentSpecification 
+    *                        in the extent of an OTI Document UML Package 
     * @param deploymentLocation Defined in DeploymentSpecification
     * @param executionLocation Defined in DeploymentSpecification
     * @param fileName Defined in Artifact
@@ -2649,7 +2765,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLDeploymentSpecification
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     deploymentLocation: Option[String],
     executionLocation: Option[String],
     fileName: Option[String],
@@ -2662,14 +2778,16 @@ object OTIMOFElement {
   with UMLDeploymentSpecification
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLDestroyLinkAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLDestroyLinkAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -2678,7 +2796,9 @@ object OTIMOFElement {
   with UMLDestroyLinkAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLDestroyObjectAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isDestroyLinks Defined in DestroyObjectAction
     * @param isDestroyOwnedObjects Defined in DestroyObjectAction
     * @param isLeaf Defined in RedefinableElement
@@ -2687,7 +2807,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLDestroyObjectAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isDestroyLinks: Boolean,
     isDestroyOwnedObjects: Boolean,
     isLeaf: Boolean,
@@ -2698,19 +2818,23 @@ object OTIMOFElement {
   with UMLDestroyObjectAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLDestructionOccurrenceSpecification 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLDestructionOccurrenceSpecification
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLDestructionOccurrenceSpecification
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLDevice 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Class
     * @param isActive Defined in Class
     * @param isFinalSpecialization Defined in Classifier
@@ -2719,7 +2843,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLDevice
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isActive: Boolean,
     isFinalSpecialization: Boolean,
@@ -2730,25 +2854,29 @@ object OTIMOFElement {
   with UMLDevice
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLDuration 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLDuration
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLDuration
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLDurationConstraint 
+    *                        in the extent of an OTI Document UML Package 
     * @param firstEvent Defined in DurationConstraint
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLDurationConstraint
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     firstEvent: Set[Boolean],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -2756,25 +2884,29 @@ object OTIMOFElement {
   with UMLDurationConstraint
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLDurationInterval 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLDurationInterval
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLDurationInterval
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLDurationObservation 
+    *                        in the extent of an OTI Document UML Package 
     * @param firstEvent Defined in DurationObservation
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLDurationObservation
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     firstEvent: Seq[Boolean],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -2782,19 +2914,23 @@ object OTIMOFElement {
   with UMLDurationObservation
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLElementImport 
+    *                        in the extent of an OTI Document UML Package 
     * @param alias Defined in ElementImport
     * @param visibility Defined in ElementImport
     */
   case class OTIUMLElementImport
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     alias: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLElementImport
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLEnumeration 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Classifier
     * @param isFinalSpecialization Defined in Classifier
     * @param isLeaf Defined in RedefinableElement
@@ -2802,7 +2938,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLEnumeration
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isFinalSpecialization: Boolean,
     isLeaf: Boolean,
@@ -2812,27 +2948,33 @@ object OTIMOFElement {
   with UMLEnumeration
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLEnumerationLiteral 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLEnumerationLiteral
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLEnumerationLiteral
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLExceptionHandler 
+    *                        in the extent of an OTI Document UML Package 
     */
   case class OTIUMLExceptionHandler
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID)
   extends OTIMOFElement
   with UMLExceptionHandler
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLExecutionEnvironment 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Class
     * @param isActive Defined in Class
     * @param isFinalSpecialization Defined in Classifier
@@ -2841,7 +2983,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLExecutionEnvironment
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isActive: Boolean,
     isFinalSpecialization: Boolean,
@@ -2852,19 +2994,23 @@ object OTIMOFElement {
   with UMLExecutionEnvironment
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLExecutionOccurrenceSpecification 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLExecutionOccurrenceSpecification
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLExecutionOccurrenceSpecification
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLExpansionNode 
+    *                        in the extent of an OTI Document UML Package 
     * @param isControlType Defined in ObjectNode
     * @param isLeaf Defined in RedefinableElement
     * @param name Defined in NamedElement
@@ -2872,7 +3018,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLExpansionNode
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isControlType: Boolean,
     isLeaf: Boolean,
     name: Option[String],
@@ -2882,7 +3028,9 @@ object OTIMOFElement {
   with UMLExpansionNode
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLExpansionRegion 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param mode Defined in ExpansionRegion
@@ -2891,7 +3039,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLExpansionRegion
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     mode: Option[UMLExpansionKind],
@@ -2902,13 +3050,15 @@ object OTIMOFElement {
   with UMLExpansionRegion
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLExpression 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param symbol Defined in Expression
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLExpression
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     symbol: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -2916,19 +3066,23 @@ object OTIMOFElement {
   with UMLExpression
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLExtend 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLExtend
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLExtend
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLExtension 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Classifier
     * @param isDerived Defined in Association
     * @param isFinalSpecialization Defined in Classifier
@@ -2937,7 +3091,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLExtension
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isDerived: Boolean,
     isFinalSpecialization: Boolean,
@@ -2948,7 +3102,9 @@ object OTIMOFElement {
   with UMLExtension
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLExtensionEnd 
+    *                        in the extent of an OTI Document UML Package 
     * @param aggregation Defined in Property
     * @param isDerived Defined in Property
     * @param isDerivedUnion Defined in Property
@@ -2962,7 +3118,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLExtensionEnd
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     aggregation: Option[UMLAggregationKind],
     isDerived: Boolean,
     isDerivedUnion: Boolean,
@@ -2978,13 +3134,15 @@ object OTIMOFElement {
   with UMLExtensionEnd
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLExtensionPoint 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLExtensionPoint
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -2992,13 +3150,15 @@ object OTIMOFElement {
   with UMLExtensionPoint
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLFinalState 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLFinalState
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -3006,13 +3166,15 @@ object OTIMOFElement {
   with UMLFinalState
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLFlowFinalNode 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLFlowFinalNode
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -3020,13 +3182,15 @@ object OTIMOFElement {
   with UMLFlowFinalNode
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLForkNode 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLForkNode
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -3034,7 +3198,9 @@ object OTIMOFElement {
   with UMLForkNode
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLFunctionBehavior 
+    *                        in the extent of an OTI Document UML Package 
     * @param body Defined in OpaqueBehavior
     * @param isAbstract Defined in Class
     * @param isActive Defined in Class
@@ -3046,7 +3212,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLFunctionBehavior
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     body: Seq[String],
     isAbstract: Boolean,
     isActive: Boolean,
@@ -3060,48 +3226,56 @@ object OTIMOFElement {
   with UMLFunctionBehavior
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLGate 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLGate
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLGate
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLGeneralOrdering 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLGeneralOrdering
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLGeneralOrdering
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLGeneralization 
+    *                        in the extent of an OTI Document UML Package 
     * @param isSubstitutable Defined in Generalization
     */
   case class OTIUMLGeneralization
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isSubstitutable: Option[Boolean])
   extends OTIMOFElement
   with UMLGeneralization
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLGeneralizationSet 
+    *                        in the extent of an OTI Document UML Package 
     * @param isCovering Defined in GeneralizationSet
     * @param isDisjoint Defined in GeneralizationSet
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLGeneralizationSet
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isCovering: Boolean,
     isDisjoint: Boolean,
     name: Option[String],
@@ -3110,13 +3284,15 @@ object OTIMOFElement {
   with UMLGeneralizationSet
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLImage 
+    *                        in the extent of an OTI Document UML Package 
     * @param content Defined in Image
     * @param format Defined in Image
     * @param location Defined in Image
     */
   case class OTIUMLImage
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     content: Option[String],
     format: Option[String],
     location: Option[String])
@@ -3124,31 +3300,37 @@ object OTIMOFElement {
   with UMLImage
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLInclude 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLInclude
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLInclude
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLInformationFlow 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLInformationFlow
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLInformationFlow
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLInformationItem 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Classifier
     * @param isFinalSpecialization Defined in Classifier
     * @param isLeaf Defined in RedefinableElement
@@ -3156,7 +3338,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLInformationItem
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isFinalSpecialization: Boolean,
     isLeaf: Boolean,
@@ -3166,13 +3348,15 @@ object OTIMOFElement {
   with UMLInformationItem
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLInitialNode 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLInitialNode
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -3180,7 +3364,9 @@ object OTIMOFElement {
   with UMLInitialNode
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLInputPin 
+    *                        in the extent of an OTI Document UML Package 
     * @param isControl Defined in Pin
     * @param isControlType Defined in ObjectNode
     * @param isLeaf Defined in RedefinableElement
@@ -3191,7 +3377,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLInputPin
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isControl: Boolean,
     isControlType: Boolean,
     isLeaf: Boolean,
@@ -3204,31 +3390,37 @@ object OTIMOFElement {
   with UMLInputPin
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLInstanceSpecification 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLInstanceSpecification
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLInstanceSpecification
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLInstanceValue 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLInstanceValue
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLInstanceValue
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLInteraction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Class
     * @param isActive Defined in Class
     * @param isFinalSpecialization Defined in Classifier
@@ -3238,7 +3430,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLInteraction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isActive: Boolean,
     isFinalSpecialization: Boolean,
@@ -3250,43 +3442,51 @@ object OTIMOFElement {
   with UMLInteraction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLInteractionConstraint 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLInteractionConstraint
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLInteractionConstraint
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLInteractionOperand 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLInteractionOperand
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLInteractionOperand
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLInteractionUse 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLInteractionUse
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLInteractionUse
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLInterface 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Classifier
     * @param isFinalSpecialization Defined in Classifier
     * @param isLeaf Defined in RedefinableElement
@@ -3294,7 +3494,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLInterface
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isFinalSpecialization: Boolean,
     isLeaf: Boolean,
@@ -3304,62 +3504,72 @@ object OTIMOFElement {
   with UMLInterface
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLInterfaceRealization 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLInterfaceRealization
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLInterfaceRealization
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLInterruptibleActivityRegion 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLInterruptibleActivityRegion
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLInterruptibleActivityRegion
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLInterval 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLInterval
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLInterval
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLIntervalConstraint 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLIntervalConstraint
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLIntervalConstraint
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLJoinNode 
+    *                        in the extent of an OTI Document UML Package 
     * @param isCombineDuplicate Defined in JoinNode
     * @param isLeaf Defined in RedefinableElement
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLJoinNode
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isCombineDuplicate: Boolean,
     isLeaf: Boolean,
     name: Option[String],
@@ -3368,53 +3578,63 @@ object OTIMOFElement {
   with UMLJoinNode
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLLifeline 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLLifeline
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLLifeline
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLLinkEndCreationData 
+    *                        in the extent of an OTI Document UML Package 
     * @param isReplaceAll Defined in LinkEndCreationData
     */
   case class OTIUMLLinkEndCreationData
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isReplaceAll: Boolean)
   extends OTIMOFElement
   with UMLLinkEndCreationData
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLLinkEndData 
+    *                        in the extent of an OTI Document UML Package 
     */
   case class OTIUMLLinkEndData
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID)
   extends OTIMOFElement
   with UMLLinkEndData
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLLinkEndDestructionData 
+    *                        in the extent of an OTI Document UML Package 
     * @param isDestroyDuplicates Defined in LinkEndDestructionData
     */
   case class OTIUMLLinkEndDestructionData
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isDestroyDuplicates: Boolean)
   extends OTIMOFElement
   with UMLLinkEndDestructionData
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLLiteralBoolean 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param value Defined in LiteralBoolean
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLLiteralBoolean
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     value: Boolean,
     visibility: Option[UMLVisibilityKind])
@@ -3422,13 +3642,15 @@ object OTIMOFElement {
   with UMLLiteralBoolean
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLLiteralInteger 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param value Defined in LiteralInteger
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLLiteralInteger
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     value: Int,
     visibility: Option[UMLVisibilityKind])
@@ -3436,25 +3658,29 @@ object OTIMOFElement {
   with UMLLiteralInteger
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLLiteralNull 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLLiteralNull
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLLiteralNull
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLLiteralReal 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param value Defined in LiteralReal
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLLiteralReal
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     value: Double,
     visibility: Option[UMLVisibilityKind])
@@ -3462,13 +3688,15 @@ object OTIMOFElement {
   with UMLLiteralReal
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLLiteralString 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param value Defined in LiteralString
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLLiteralString
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     value: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -3476,13 +3704,15 @@ object OTIMOFElement {
   with UMLLiteralString
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLLiteralUnlimitedNatural 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param value Defined in LiteralUnlimitedNatural
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLLiteralUnlimitedNatural
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     value: Int,
     visibility: Option[UMLVisibilityKind])
@@ -3490,7 +3720,9 @@ object OTIMOFElement {
   with UMLLiteralUnlimitedNatural
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLLoopNode 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param isTestedFirst Defined in LoopNode
@@ -3499,7 +3731,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLLoopNode
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isTestedFirst: Boolean,
@@ -3510,25 +3742,29 @@ object OTIMOFElement {
   with UMLLoopNode
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLManifestation 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLManifestation
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLManifestation
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLMergeNode 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLMergeNode
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -3536,13 +3772,15 @@ object OTIMOFElement {
   with UMLMergeNode
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLMessage 
+    *                        in the extent of an OTI Document UML Package 
     * @param messageSort Defined in Message
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLMessage
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     messageSort: Option[UMLMessageSort],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -3550,26 +3788,30 @@ object OTIMOFElement {
   with UMLMessage
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLMessageOccurrenceSpecification 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLMessageOccurrenceSpecification
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLMessageOccurrenceSpecification
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLModel 
+    *                        in the extent of an OTI Document UML Package 
     * @param URI Defined in Package
     * @param name Defined in NamedElement
     * @param viewpoint Defined in Model
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLModel
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     URI: Option[String],
     name: Option[String],
     viewpoint: Option[String],
@@ -3578,7 +3820,9 @@ object OTIMOFElement {
   with UMLModel
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLNode 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Class
     * @param isActive Defined in Class
     * @param isFinalSpecialization Defined in Classifier
@@ -3587,7 +3831,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLNode
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isActive: Boolean,
     isFinalSpecialization: Boolean,
@@ -3598,7 +3842,9 @@ object OTIMOFElement {
   with UMLNode
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLObjectFlow 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isMulticast Defined in ObjectFlow
     * @param isMultireceive Defined in ObjectFlow
@@ -3606,7 +3852,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLObjectFlow
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isMulticast: Boolean,
     isMultireceive: Boolean,
@@ -3616,19 +3862,23 @@ object OTIMOFElement {
   with UMLObjectFlow
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLOccurrenceSpecification 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLOccurrenceSpecification
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLOccurrenceSpecification
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLOpaqueAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param body Defined in OpaqueAction
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
@@ -3637,7 +3887,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLOpaqueAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     body: Seq[String],
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
@@ -3648,7 +3898,9 @@ object OTIMOFElement {
   with UMLOpaqueAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLOpaqueBehavior 
+    *                        in the extent of an OTI Document UML Package 
     * @param body Defined in OpaqueBehavior
     * @param isAbstract Defined in Class
     * @param isActive Defined in Class
@@ -3660,7 +3912,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLOpaqueBehavior
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     body: Seq[String],
     isAbstract: Boolean,
     isActive: Boolean,
@@ -3674,14 +3926,16 @@ object OTIMOFElement {
   with UMLOpaqueBehavior
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLOpaqueExpression 
+    *                        in the extent of an OTI Document UML Package 
     * @param body Defined in OpaqueExpression
     * @param language Defined in OpaqueExpression
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLOpaqueExpression
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     body: Seq[String],
     language: Seq[String],
     name: Option[String],
@@ -3690,7 +3944,9 @@ object OTIMOFElement {
   with UMLOpaqueExpression
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLOperation 
+    *                        in the extent of an OTI Document UML Package 
     * @param concurrency Defined in BehavioralFeature
     * @param isAbstract Defined in BehavioralFeature
     * @param isLeaf Defined in RedefinableElement
@@ -3700,7 +3956,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLOperation
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     concurrency: Option[UMLCallConcurrencyKind],
     isAbstract: Boolean,
     isLeaf: Boolean,
@@ -3712,15 +3968,19 @@ object OTIMOFElement {
   with UMLOperation
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLOperationTemplateParameter 
+    *                        in the extent of an OTI Document UML Package 
     */
   case class OTIUMLOperationTemplateParameter
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID)
   extends OTIMOFElement
   with UMLOperationTemplateParameter
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLOutputPin 
+    *                        in the extent of an OTI Document UML Package 
     * @param isControl Defined in Pin
     * @param isControlType Defined in ObjectNode
     * @param isLeaf Defined in RedefinableElement
@@ -3731,7 +3991,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLOutputPin
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isControl: Boolean,
     isControlType: Boolean,
     isLeaf: Boolean,
@@ -3744,13 +4004,15 @@ object OTIMOFElement {
   with UMLOutputPin
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLPackage 
+    *                        in the extent of an OTI Document UML Package 
     * @param URI Defined in Package
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLPackage
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     URI: Option[String],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -3758,25 +4020,31 @@ object OTIMOFElement {
   with UMLPackage
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLPackageImport 
+    *                        in the extent of an OTI Document UML Package 
     * @param visibility Defined in PackageImport
     */
   case class OTIUMLPackageImport
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLPackageImport
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLPackageMerge 
+    *                        in the extent of an OTI Document UML Package 
     */
   case class OTIUMLPackageMerge
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID)
   extends OTIMOFElement
   with UMLPackageMerge
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLParameter 
+    *                        in the extent of an OTI Document UML Package 
     * @param direction Defined in Parameter
     * @param effect Defined in Parameter
     * @param isException Defined in Parameter
@@ -3787,7 +4055,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLParameter
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     direction: Option[UMLParameterDirectionKind],
     effect: Option[UMLParameterEffectKind],
     isException: Boolean,
@@ -3800,31 +4068,37 @@ object OTIMOFElement {
   with UMLParameter
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLParameterSet 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLParameterSet
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLParameterSet
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLPartDecomposition 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLPartDecomposition
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLPartDecomposition
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLPort 
+    *                        in the extent of an OTI Document UML Package 
     * @param aggregation Defined in Property
     * @param isBehavior Defined in Port
     * @param isConjugated Defined in Port
@@ -3841,7 +4115,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLPort
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     aggregation: Option[UMLAggregationKind],
     isBehavior: Boolean,
     isConjugated: Boolean,
@@ -3860,7 +4134,9 @@ object OTIMOFElement {
   with UMLPort
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLPrimitiveType 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Classifier
     * @param isFinalSpecialization Defined in Classifier
     * @param isLeaf Defined in RedefinableElement
@@ -3868,7 +4144,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLPrimitiveType
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isFinalSpecialization: Boolean,
     isLeaf: Boolean,
@@ -3878,13 +4154,15 @@ object OTIMOFElement {
   with UMLPrimitiveType
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLProfile 
+    *                        in the extent of an OTI Document UML Package 
     * @param URI Defined in Package
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLProfile
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     URI: Option[String],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -3892,17 +4170,21 @@ object OTIMOFElement {
   with UMLProfile
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLProfileApplication 
+    *                        in the extent of an OTI Document UML Package 
     * @param isStrict Defined in ProfileApplication
     */
   case class OTIUMLProfileApplication
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isStrict: Boolean)
   extends OTIMOFElement
   with UMLProfileApplication
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLProperty 
+    *                        in the extent of an OTI Document UML Package 
     * @param aggregation Defined in Property
     * @param isDerived Defined in Property
     * @param isDerivedUnion Defined in Property
@@ -3916,7 +4198,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLProperty
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     aggregation: Option[UMLAggregationKind],
     isDerived: Boolean,
     isDerivedUnion: Boolean,
@@ -3932,15 +4214,19 @@ object OTIMOFElement {
   with UMLProperty
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLProtocolConformance 
+    *                        in the extent of an OTI Document UML Package 
     */
   case class OTIUMLProtocolConformance
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID)
   extends OTIMOFElement
   with UMLProtocolConformance
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLProtocolStateMachine 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Class
     * @param isActive Defined in Class
     * @param isFinalSpecialization Defined in Classifier
@@ -3950,7 +4236,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLProtocolStateMachine
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isActive: Boolean,
     isFinalSpecialization: Boolean,
@@ -3962,14 +4248,16 @@ object OTIMOFElement {
   with UMLProtocolStateMachine
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLProtocolTransition 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param kind Defined in Transition
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLProtocolTransition
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     kind: Option[UMLTransitionKind],
     name: Option[String],
@@ -3978,13 +4266,15 @@ object OTIMOFElement {
   with UMLProtocolTransition
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLPseudostate 
+    *                        in the extent of an OTI Document UML Package 
     * @param kind Defined in Pseudostate
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLPseudostate
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     kind: Option[UMLPseudostateKind],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -3992,22 +4282,26 @@ object OTIMOFElement {
   with UMLPseudostate
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLQualifierValue 
+    *                        in the extent of an OTI Document UML Package 
     */
   case class OTIUMLQualifierValue
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID)
   extends OTIMOFElement
   with UMLQualifierValue
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLRaiseExceptionAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLRaiseExceptionAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -4016,14 +4310,16 @@ object OTIMOFElement {
   with UMLRaiseExceptionAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLReadExtentAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLReadExtentAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -4032,7 +4328,9 @@ object OTIMOFElement {
   with UMLReadExtentAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLReadIsClassifiedObjectAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isDirect Defined in ReadIsClassifiedObjectAction
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
@@ -4040,7 +4338,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLReadIsClassifiedObjectAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isDirect: Boolean,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
@@ -4050,14 +4348,16 @@ object OTIMOFElement {
   with UMLReadIsClassifiedObjectAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLReadLinkAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLReadLinkAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -4066,14 +4366,16 @@ object OTIMOFElement {
   with UMLReadLinkAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLReadLinkObjectEndAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLReadLinkObjectEndAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -4082,14 +4384,16 @@ object OTIMOFElement {
   with UMLReadLinkObjectEndAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLReadLinkObjectEndQualifierAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLReadLinkObjectEndQualifierAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -4098,14 +4402,16 @@ object OTIMOFElement {
   with UMLReadLinkObjectEndQualifierAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLReadSelfAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLReadSelfAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -4114,14 +4420,16 @@ object OTIMOFElement {
   with UMLReadSelfAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLReadStructuralFeatureAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLReadStructuralFeatureAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -4130,14 +4438,16 @@ object OTIMOFElement {
   with UMLReadStructuralFeatureAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLReadVariableAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLReadVariableAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -4146,19 +4456,23 @@ object OTIMOFElement {
   with UMLReadVariableAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLRealization 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLRealization
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLRealization
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLReception 
+    *                        in the extent of an OTI Document UML Package 
     * @param concurrency Defined in BehavioralFeature
     * @param isAbstract Defined in BehavioralFeature
     * @param isLeaf Defined in RedefinableElement
@@ -4167,7 +4481,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLReception
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     concurrency: Option[UMLCallConcurrencyKind],
     isAbstract: Boolean,
     isLeaf: Boolean,
@@ -4178,7 +4492,9 @@ object OTIMOFElement {
   with UMLReception
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLReclassifyObjectAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param isReplaceAll Defined in ReclassifyObjectAction
@@ -4186,7 +4502,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLReclassifyObjectAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isReplaceAll: Boolean,
@@ -4196,13 +4512,15 @@ object OTIMOFElement {
   with UMLReclassifyObjectAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLRedefinableTemplateSignature 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLRedefinableTemplateSignature
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -4210,7 +4528,9 @@ object OTIMOFElement {
   with UMLRedefinableTemplateSignature
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLReduceAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param isOrdered Defined in ReduceAction
@@ -4218,7 +4538,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLReduceAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isOrdered: Boolean,
@@ -4228,13 +4548,15 @@ object OTIMOFElement {
   with UMLReduceAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLRegion 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLRegion
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -4242,7 +4564,9 @@ object OTIMOFElement {
   with UMLRegion
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLRemoveStructuralFeatureValueAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param isRemoveDuplicates Defined in RemoveStructuralFeatureValueAction
@@ -4250,7 +4574,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLRemoveStructuralFeatureValueAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isRemoveDuplicates: Boolean,
@@ -4260,7 +4584,9 @@ object OTIMOFElement {
   with UMLRemoveStructuralFeatureValueAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLRemoveVariableValueAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param isRemoveDuplicates Defined in RemoveVariableValueAction
@@ -4268,7 +4594,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLRemoveVariableValueAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isRemoveDuplicates: Boolean,
@@ -4278,14 +4604,16 @@ object OTIMOFElement {
   with UMLRemoveVariableValueAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLReplyAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLReplyAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -4294,14 +4622,16 @@ object OTIMOFElement {
   with UMLReplyAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLSendObjectAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLSendObjectAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -4310,14 +4640,16 @@ object OTIMOFElement {
   with UMLSendObjectAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLSendSignalAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLSendSignalAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -4326,7 +4658,9 @@ object OTIMOFElement {
   with UMLSendSignalAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLSequenceNode 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param mustIsolate Defined in StructuredActivityNode
@@ -4334,7 +4668,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLSequenceNode
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     mustIsolate: Boolean,
@@ -4344,7 +4678,9 @@ object OTIMOFElement {
   with UMLSequenceNode
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLSignal 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Classifier
     * @param isFinalSpecialization Defined in Classifier
     * @param isLeaf Defined in RedefinableElement
@@ -4352,7 +4688,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLSignal
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isFinalSpecialization: Boolean,
     isLeaf: Boolean,
@@ -4362,34 +4698,40 @@ object OTIMOFElement {
   with UMLSignal
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLSignalEvent 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLSignalEvent
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLSignalEvent
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLSlot 
+    *                        in the extent of an OTI Document UML Package 
     */
   case class OTIUMLSlot
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID)
   extends OTIMOFElement
   with UMLSlot
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLStartClassifierBehaviorAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLStartClassifierBehaviorAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -4398,7 +4740,9 @@ object OTIMOFElement {
   with UMLStartClassifierBehaviorAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLStartObjectBehaviorAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param isSynchronous Defined in CallAction
@@ -4406,7 +4750,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLStartObjectBehaviorAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     isSynchronous: Boolean,
@@ -4416,13 +4760,15 @@ object OTIMOFElement {
   with UMLStartObjectBehaviorAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLState 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLState
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -4430,19 +4776,23 @@ object OTIMOFElement {
   with UMLState
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLStateInvariant 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLStateInvariant
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLStateInvariant
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLStateMachine 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Class
     * @param isActive Defined in Class
     * @param isFinalSpecialization Defined in Classifier
@@ -4452,7 +4802,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLStateMachine
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isActive: Boolean,
     isFinalSpecialization: Boolean,
@@ -4464,7 +4814,9 @@ object OTIMOFElement {
   with UMLStateMachine
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLStereotype 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Class
     * @param isActive Defined in Class
     * @param isFinalSpecialization Defined in Classifier
@@ -4473,7 +4825,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLStereotype
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isActive: Boolean,
     isFinalSpecialization: Boolean,
@@ -4484,13 +4836,15 @@ object OTIMOFElement {
   with UMLStereotype
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLStringExpression 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param symbol Defined in Expression
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLStringExpression
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     symbol: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -4498,7 +4852,9 @@ object OTIMOFElement {
   with UMLStringExpression
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLStructuredActivityNode 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param mustIsolate Defined in StructuredActivityNode
@@ -4506,7 +4862,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLStructuredActivityNode
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     mustIsolate: Boolean,
@@ -4516,58 +4872,70 @@ object OTIMOFElement {
   with UMLStructuredActivityNode
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLSubstitution 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLSubstitution
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLSubstitution
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLTemplateBinding 
+    *                        in the extent of an OTI Document UML Package 
     */
   case class OTIUMLTemplateBinding
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID)
   extends OTIMOFElement
   with UMLTemplateBinding
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLTemplateParameter 
+    *                        in the extent of an OTI Document UML Package 
     */
   case class OTIUMLTemplateParameter
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID)
   extends OTIMOFElement
   with UMLTemplateParameter
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLTemplateParameterSubstitution 
+    *                        in the extent of an OTI Document UML Package 
     */
   case class OTIUMLTemplateParameterSubstitution
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID)
   extends OTIMOFElement
   with UMLTemplateParameterSubstitution
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLTemplateSignature 
+    *                        in the extent of an OTI Document UML Package 
     */
   case class OTIUMLTemplateSignature
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL)
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID)
   extends OTIMOFElement
   with UMLTemplateSignature
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLTestIdentityAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLTestIdentityAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -4576,13 +4944,15 @@ object OTIMOFElement {
   with UMLTestIdentityAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLTimeConstraint 
+    *                        in the extent of an OTI Document UML Package 
     * @param firstEvent Defined in TimeConstraint
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLTimeConstraint
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     firstEvent: Option[Boolean],
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -4590,13 +4960,15 @@ object OTIMOFElement {
   with UMLTimeConstraint
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLTimeEvent 
+    *                        in the extent of an OTI Document UML Package 
     * @param isRelative Defined in TimeEvent
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLTimeEvent
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isRelative: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -4604,37 +4976,43 @@ object OTIMOFElement {
   with UMLTimeEvent
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLTimeExpression 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLTimeExpression
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLTimeExpression
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLTimeInterval 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLTimeInterval
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLTimeInterval
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLTimeObservation 
+    *                        in the extent of an OTI Document UML Package 
     * @param firstEvent Defined in TimeObservation
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLTimeObservation
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     firstEvent: Boolean,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
@@ -4642,14 +5020,16 @@ object OTIMOFElement {
   with UMLTimeObservation
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLTransition 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param kind Defined in Transition
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLTransition
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     kind: Option[UMLTransitionKind],
     name: Option[String],
@@ -4658,26 +5038,30 @@ object OTIMOFElement {
   with UMLTransition
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLTrigger 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLTrigger
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLTrigger
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLUnmarshallAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLUnmarshallAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -4686,19 +5070,23 @@ object OTIMOFElement {
   with UMLUnmarshallAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLUsage 
+    *                        in the extent of an OTI Document UML Package 
     * @param name Defined in NamedElement
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLUsage
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     name: Option[String],
     visibility: Option[UMLVisibilityKind])
   extends OTIMOFElement
   with UMLUsage
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLUseCase 
+    *                        in the extent of an OTI Document UML Package 
     * @param isAbstract Defined in Classifier
     * @param isFinalSpecialization Defined in Classifier
     * @param isLeaf Defined in RedefinableElement
@@ -4706,7 +5094,7 @@ object OTIMOFElement {
     * @param visibility Defined in PackageableElement
     */
   case class OTIUMLUseCase
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isAbstract: Boolean,
     isFinalSpecialization: Boolean,
     isLeaf: Boolean,
@@ -4716,7 +5104,9 @@ object OTIMOFElement {
   with UMLUseCase
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLValuePin 
+    *                        in the extent of an OTI Document UML Package 
     * @param isControl Defined in Pin
     * @param isControlType Defined in ObjectNode
     * @param isLeaf Defined in RedefinableElement
@@ -4727,7 +5117,7 @@ object OTIMOFElement {
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLValuePin
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isControl: Boolean,
     isControlType: Boolean,
     isLeaf: Boolean,
@@ -4740,14 +5130,16 @@ object OTIMOFElement {
   with UMLValuePin
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLValueSpecificationAction 
+    *                        in the extent of an OTI Document UML Package 
     * @param isLeaf Defined in RedefinableElement
     * @param isLocallyReentrant Defined in Action
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLValueSpecificationAction
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isLeaf: Boolean,
     isLocallyReentrant: Boolean,
     name: Option[String],
@@ -4756,14 +5148,16 @@ object OTIMOFElement {
   with UMLValueSpecificationAction
   {}
 
-  /** 
+  /**
+    * @param toolSpecific_id The tool-specific identifier for an OTIUMLVariable 
+    *                        in the extent of an OTI Document UML Package 
     * @param isOrdered Defined in MultiplicityElement
     * @param isUnique Defined in MultiplicityElement
     * @param name Defined in NamedElement
     * @param visibility Defined in NamedElement
     */
   case class OTIUMLVariable
-  ( override val toolSpecific_elementLocation: ToolSpecificElementDocumentURL,
+  ( override val toolSpecific_id: String @@ TOOL_SPECIFIC_ID,
     isOrdered: Boolean,
     isUnique: Boolean,
     name: Option[String],
@@ -4771,4 +5165,21 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLVariable
   {}
+
+  // <!-- Start of user code OTI MOF Element companion -->
+  
+  implicit val formatsOTIMOFElement
+  : Format[OTIMOFElement]
+  = Variants.format[OTIMOFElement]
+
+  implicit val writesOTIMOFElement
+  : Writes[OTIMOFElement]
+  = Variants.writes[OTIMOFElement]
+
+  implicit val readsOTIMOFElement
+  : Reads[OTIMOFElement]
+  = Variants.reads[OTIMOFElement]
+  
+  // <!-- End of user code OTI MOF Element companion -->
+
 }
