@@ -37,7 +37,7 @@
  *  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
  *  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
  *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
- *  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
  */
 package org.omg.oti.json.uml
 /**
@@ -45,9 +45,16 @@ package org.omg.oti.json.uml
  * <!-- End of user code documentation -->
  */ 
 
+// <!-- Start of user code imports -->
 import org.omg.oti.json.common._
+import org.omg.oti.json.common.OTIPrimitiveTypes._
+
+import play.json.extra._
+import play.api.libs.json._
+import play.api.libs.functional.syntax._
 
 import scala.Int
+// <!-- End of user code imports -->
 
 /**
   * <!-- Start of user code OTIMOFLink -->
@@ -5069,4 +5076,50 @@ object OTIMOFLink {
   with OTIMOFReferenceLink
   {}
 
+
+  // <!-- Start of user code OTI MOF Link companion -->
+  
+  implicit val formatsOTIMOFLink
+  : Format[OTIMOFLink]
+  = Variants.format[OTIMOFLink]
+  
+  implicit val writesOTIMOFLink
+  : Writes[OTIMOFLink]
+  = Variants.writes[OTIMOFLink]
+  
+  implicit val readsOTIMOFLink
+  : Reads[OTIMOFLink]
+  = Variants.reads[OTIMOFLink]
+  
+  // <!-- End of user code OTI MOF Link companion -->
+
 }
+
+object OTIMOFCompositeLink {
+
+  // <!-- Start of user code OTI MOF Composite Link companion -->
+  // <!-- End of user code OTI MOF Composite Link companion -->
+
+}
+
+object OTIMOFReferenceLink {
+
+  // <!-- Start of user code OTI MOF Reference Link companion -->
+  // <!-- End of user code OTI MOF Reference Link companion -->
+
+}
+
+object OTIMOFFirstEndOrderedLink {
+
+  // <!-- Start of user code OTI MOF First End Ordered Link companion -->
+  // <!-- End of user code OTI MOF First End Ordered Link companion -->
+
+}
+
+object OTIMOFSecondEndOrderedLink {
+
+  // <!-- Start of user code OTI MOF Second End Ordered Link companion -->
+  // <!-- End of user code OTI MOF Second End Ordered Link companion -->
+
+}
+

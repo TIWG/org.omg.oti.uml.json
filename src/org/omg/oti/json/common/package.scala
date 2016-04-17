@@ -38,13 +38,9 @@
  */
 package org.omg.oti.json
 
-import common.OTIPrimitiveTypes._
 import play.api.libs.json._
-import play.api.libs.functional.syntax._
-import play.api.libs.json.Json.JsValueWrapper
 
-import scala.collection.immutable._
-import scala.{Ordering, StringContext}
+import scala.{Int,Ordering, StringContext}
 import scala.Predef.{ArrowAssoc,String}
 import scalaz._
 
