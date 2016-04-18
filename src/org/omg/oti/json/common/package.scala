@@ -90,5 +90,17 @@ package object common {
   implicit val readsToolSpecificElementDocumentURL
   : Reads[ToolSpecificElementDocumentURL]
   = Json.reads[ToolSpecificElementDocumentURL]
-  
+
+  implicit val formatsToolSpecificElementID_OTIDocumentURL
+  : Format[ToolSpecificElementID_OTIDocumentURL]
+  = Json.format[ToolSpecificElementID_OTIDocumentURL]
+
+  implicit val writesToolSpecificElementID_OTIDocumentURL
+  : Writes[ToolSpecificElementID_OTIDocumentURL]
+  = Json.writes[ToolSpecificElementID_OTIDocumentURL]
+
+  implicit val readsToolSpecificElementID_OTIDocumentURL
+  : Reads[ToolSpecificElementID_OTIDocumentURL]
+  = Json.reads[ToolSpecificElementID_OTIDocumentURL]
+
 }
