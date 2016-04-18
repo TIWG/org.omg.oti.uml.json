@@ -42,7 +42,7 @@ import play.api.libs.json._
 
 import scala.collection.immutable._
 
-import scala.{Int,Ordering}
+import scala.{Int,Option,Ordering,None,Some}
 import scala.Predef.String
 import scalaz.{@@,Tag}
 

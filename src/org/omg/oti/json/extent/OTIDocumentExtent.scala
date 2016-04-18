@@ -44,7 +44,8 @@ import org.omg.oti.json.common._
 import org.omg.oti.json.uml._
 
 import scala.collection.immutable._
-
+import scala.{Option,None}
+import scala.Predef.String
 import scalaz.@@
 
 case class OTIDocumentExtent
@@ -60,37 +61,26 @@ case class OTIDocumentExtent
  elementExtent
  : SortedSet[OTIMOFElement],
 
- linkExtent
- : SortedSet[OTIMOFLink])
+ compositeLinkExtent
+ : SortedSet[OTIMOFCompositeLink],
 
+ compositeFirstEndOrderedLinkExtent
+ : SortedSet[OTIMOFCompositeFirstEndOrderedLink],
+
+ compositeSecondEndOrderedLinkExtent
+ : SortedSet[OTIMOFCompositeSecondEndOrderedLink],
+
+ referenceLinkExtent
+ : SortedSet[OTIMOFReferenceLink],
+
+ referenceFirstEndOrderedLinkExtent
+ : SortedSet[OTIMOFReferenceFirstEndOrderedLink],
+
+ referenceSecondEndOrderedLinkExtent
+ : SortedSet[OTIMOFReferenceSecondEndOrderedLink])
+{}
 
 object OTIDocumentExtent {
-
-
-  implicit val orderingOTIMOFElement
-  : Ordering[OTIMOFElement]
-  = new Ordering[OTIMOFElement] {
-
-    def compare(x: OTIMOFElement, y: OTIMOFElement)
-    : Int
-    = ToolSpecificElementDocumentURL.ordering.compare(x.toolSpecific_elementLocation, y.toolSpecific_elementLocation)
-
-  }
-
-  implicit val orderingOTIMOFLink
-  : Ordering[OTIMOFLink]
-  = new Ordering[OTIMOFLink] {
-
-    def compare(x: OTIMOFLink, y: OTIMOFLink)
-    : Int
-    = ToolSpecificElementDocumentURL.ordering.compare(x.end1, y.end1) match {
-      case 0 =>
-        ToolSpecificElementDocumentURL.ordering.compare(x.end2, y.end2)
-      case c =>
-        c
-    }
-
-  }
 
   implicit def formats
   : Format[OTIDocumentExtent]

@@ -38,7 +38,7 @@
  */
 package org.omg.oti.json.common
 
-import scala.Ordering
+import scala.{Int,Ordering}
 import scala.Predef.String
 import scalaz.@@
 

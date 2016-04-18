@@ -55,7 +55,7 @@ import play.api.libs.json._
 import play.api.libs.functional.syntax._
 
 import scala.collection.immutable._
-import scala.{Boolean,Double,Int,Option}
+import scala.{Boolean,Double,Int,Option,Ordering}
 import scala.Predef.String
 import scalaz.@@
 // <!-- End of user code imports -->
@@ -5168,6 +5168,17 @@ object OTIMOFElement {
 
   // <!-- Start of user code OTI MOF Element companion -->
   
+  implicit val orderingOTIMOFElement
+  : Ordering[OTIMOFElement]
+  = new Ordering[OTIMOFElement] {
+
+    def compare(x: OTIMOFElement, y: OTIMOFElement)
+    : Int
+    = OTIPrimitiveTypes.TOOL_SPECIFIC_ID.unwrap(x.toolSpecific_id)
+      .compareTo(OTIPrimitiveTypes.TOOL_SPECIFIC_ID.unwrap(y.toolSpecific_id))
+
+  }
+
   implicit val formatsOTIMOFElement
   : Format[OTIMOFElement]
   = Variants.format[OTIMOFElement]
