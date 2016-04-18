@@ -4708,9 +4708,9 @@ object OTIMOFCompositeLink {
 
     def compare(x: OTIMOFCompositeLink, y: OTIMOFCompositeLink)
     : Int
-    = ToolSpecificElementDocumentURL.ordering.compare(x.end1, y.end1) match {
+    = ToolSpecificElementID_OTIDocumentURL.ordering.compare(x.end1, y.end1) match {
       case 0 =>
-        ToolSpecificElementDocumentURL.ordering.compare(x.end2, y.end2)
+        ToolSpecificElementID_OTIDocumentURL.ordering.compare(x.end2, y.end2)
       case c =>
         c
     }
@@ -4743,9 +4743,9 @@ object OTIMOFCompositeFirstEndOrderedLink {
 
     def compare(x: OTIMOFCompositeFirstEndOrderedLink, y: OTIMOFCompositeFirstEndOrderedLink)
     : Int
-    = ToolSpecificElementDocumentURL.ordering.compare(x.end1, y.end1) match {
+    = ToolSpecificElementID_OTIDocumentURL.ordering.compare(x.end1, y.end1) match {
       case 0 =>
-        ToolSpecificElementDocumentURL.ordering.compare(x.end2, y.end2) match {
+        ToolSpecificElementID_OTIDocumentURL.ordering.compare(x.end2, y.end2) match {
           case 0 =>
             Ordering[Int].compare(x.end1Index, y.end1Index)
           case c =>
@@ -4783,9 +4783,9 @@ object OTIMOFCompositeSecondEndOrderedLink {
 
     def compare(x: OTIMOFCompositeSecondEndOrderedLink, y: OTIMOFCompositeSecondEndOrderedLink)
     : Int
-    = ToolSpecificElementDocumentURL.ordering.compare(x.end1, y.end1) match {
+    = ToolSpecificElementID_OTIDocumentURL.ordering.compare(x.end1, y.end1) match {
       case 0 =>
-        ToolSpecificElementDocumentURL.ordering.compare(x.end2, y.end2) match {
+        ToolSpecificElementID_OTIDocumentURL.ordering.compare(x.end2, y.end2) match {
           case 0 =>
             Ordering[Int].compare(x.end2Index, y.end2Index)
           case c =>
@@ -4823,9 +4823,9 @@ object OTIMOFReferenceLink {
 
     def compare(x: OTIMOFReferenceLink, y: OTIMOFReferenceLink)
     : Int
-    = ToolSpecificElementDocumentURL.ordering.compare(x.end1, y.end1) match {
+    = ToolSpecificElementID_OTIDocumentURL.ordering.compare(x.end1, y.end1) match {
       case 0 =>
-        ToolSpecificElementDocumentURL.ordering.compare(x.end2, y.end2)
+        ToolSpecificElementID_OTIDocumentURL.ordering.compare(x.end2, y.end2)
       case c =>
         c
     }
@@ -4858,9 +4858,9 @@ object OTIMOFReferenceFirstEndOrderedLink {
 
     def compare(x: OTIMOFReferenceFirstEndOrderedLink, y: OTIMOFReferenceFirstEndOrderedLink)
     : Int
-    = ToolSpecificElementDocumentURL.ordering.compare(x.end1, y.end1) match {
+    = ToolSpecificElementID_OTIDocumentURL.ordering.compare(x.end1, y.end1) match {
       case 0 =>
-        ToolSpecificElementDocumentURL.ordering.compare(x.end2, y.end2) match {
+        ToolSpecificElementID_OTIDocumentURL.ordering.compare(x.end2, y.end2) match {
           case 0 =>
             Ordering[Int].compare(x.end1Index, y.end1Index)
           case c =>
@@ -4898,9 +4898,9 @@ object OTIMOFReferenceSecondEndOrderedLink {
 
     def compare(x: OTIMOFReferenceSecondEndOrderedLink, y: OTIMOFReferenceSecondEndOrderedLink)
     : Int
-    = ToolSpecificElementDocumentURL.ordering.compare(x.end1, y.end1) match {
+    = ToolSpecificElementID_OTIDocumentURL.ordering.compare(x.end1, y.end1) match {
       case 0 =>
-        ToolSpecificElementDocumentURL.ordering.compare(x.end2, y.end2) match {
+        ToolSpecificElementID_OTIDocumentURL.ordering.compare(x.end2, y.end2) match {
           case 0 =>
             Ordering[Int].compare(x.end2Index, y.end2Index)
           case c =>
