@@ -44,6 +44,8 @@ package org.omg.oti.json.uml.enums
 import play.json.extra._
 import play.api.libs.json._
 
+import scala.Predef.String
+
 /**
   * ParameterDirectionKind is an Enumeration that defines literals used to specify direction of parameters.
   *
@@ -86,15 +88,16 @@ object UMLParameterDirectionKind {
     */
   case object out extends UMLParameterDirectionKind {}
  
-  implicit val formatsUMLParameterDirectionKind
-  : Format[UMLParameterDirectionKind]
-  = Variants.format[UMLParameterDirectionKind]
-  
   implicit val writesUMLParameterDirectionKind
   : Writes[UMLParameterDirectionKind]
-  = Variants.writes[UMLParameterDirectionKind]
+  = Variants.writes[UMLParameterDirectionKind]((__ \ "type").format[String])
 
   implicit val readsUMLParameterDirectionKind
   : Reads[UMLParameterDirectionKind]
-  = Variants.reads[UMLParameterDirectionKind]
+  = Variants.reads[UMLParameterDirectionKind]((__ \ "type").format[String])
+
+  implicit val formatsUMLParameterDirectionKind
+  : Format[UMLParameterDirectionKind]
+  = Variants.format[UMLParameterDirectionKind]((__ \ "type").format[String])
+  
 }

@@ -44,6 +44,8 @@ package org.omg.oti.json.uml.enums
 import play.json.extra._
 import play.api.libs.json._
 
+import scala.Predef.String
+
 /**
   * ExpansionKind is an enumeration type used to specify how an ExpansionRegion executes its contents.
   *
@@ -78,15 +80,16 @@ object UMLExpansionKind {
     */
   case object stream extends UMLExpansionKind {}
  
-  implicit val formatsUMLExpansionKind
-  : Format[UMLExpansionKind]
-  = Variants.format[UMLExpansionKind]
-  
   implicit val writesUMLExpansionKind
   : Writes[UMLExpansionKind]
-  = Variants.writes[UMLExpansionKind]
+  = Variants.writes[UMLExpansionKind]((__ \ "type").format[String])
 
   implicit val readsUMLExpansionKind
   : Reads[UMLExpansionKind]
-  = Variants.reads[UMLExpansionKind]
+  = Variants.reads[UMLExpansionKind]((__ \ "type").format[String])
+
+  implicit val formatsUMLExpansionKind
+  : Format[UMLExpansionKind]
+  = Variants.format[UMLExpansionKind]((__ \ "type").format[String])
+  
 }

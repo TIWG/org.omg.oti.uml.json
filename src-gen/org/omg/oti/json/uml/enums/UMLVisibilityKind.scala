@@ -44,6 +44,8 @@ package org.omg.oti.json.uml.enums
 import play.json.extra._
 import play.api.libs.json._
 
+import scala.Predef.String
+
 /**
   * VisibilityKind is an enumeration type that defines literals to determine the visibility of Elements in a model.
   *
@@ -86,15 +88,16 @@ object UMLVisibilityKind {
     */
   case object public extends UMLVisibilityKind {}
  
-  implicit val formatsUMLVisibilityKind
-  : Format[UMLVisibilityKind]
-  = Variants.format[UMLVisibilityKind]
-  
   implicit val writesUMLVisibilityKind
   : Writes[UMLVisibilityKind]
-  = Variants.writes[UMLVisibilityKind]
+  = Variants.writes[UMLVisibilityKind]((__ \ "type").format[String])
 
   implicit val readsUMLVisibilityKind
   : Reads[UMLVisibilityKind]
-  = Variants.reads[UMLVisibilityKind]
+  = Variants.reads[UMLVisibilityKind]((__ \ "type").format[String])
+
+  implicit val formatsUMLVisibilityKind
+  : Format[UMLVisibilityKind]
+  = Variants.format[UMLVisibilityKind]((__ \ "type").format[String])
+  
 }

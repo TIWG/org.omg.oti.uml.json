@@ -44,6 +44,8 @@ package org.omg.oti.json.uml.enums
 import play.json.extra._
 import play.api.libs.json._
 
+import scala.Predef.String
+
 /**
   * This is an enumerated type that identifies the type of communication action that was used to generate the Message.
   *
@@ -102,15 +104,16 @@ object UMLMessageSort {
     */
   case object synchCall extends UMLMessageSort {}
  
-  implicit val formatsUMLMessageSort
-  : Format[UMLMessageSort]
-  = Variants.format[UMLMessageSort]
-  
   implicit val writesUMLMessageSort
   : Writes[UMLMessageSort]
-  = Variants.writes[UMLMessageSort]
+  = Variants.writes[UMLMessageSort]((__ \ "type").format[String])
 
   implicit val readsUMLMessageSort
   : Reads[UMLMessageSort]
-  = Variants.reads[UMLMessageSort]
+  = Variants.reads[UMLMessageSort]((__ \ "type").format[String])
+
+  implicit val formatsUMLMessageSort
+  : Format[UMLMessageSort]
+  = Variants.format[UMLMessageSort]((__ \ "type").format[String])
+  
 }

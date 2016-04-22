@@ -44,6 +44,8 @@ package org.omg.oti.json.uml.enums
 import play.json.extra._
 import play.api.libs.json._
 
+import scala.Predef.String
+
 /**
   * PseudostateKind is an Enumeration type that is used to differentiate various kinds of Pseudostates.
   *
@@ -134,15 +136,16 @@ object UMLPseudostateKind {
     */
   case object terminate extends UMLPseudostateKind {}
  
-  implicit val formatsUMLPseudostateKind
-  : Format[UMLPseudostateKind]
-  = Variants.format[UMLPseudostateKind]
-  
   implicit val writesUMLPseudostateKind
   : Writes[UMLPseudostateKind]
-  = Variants.writes[UMLPseudostateKind]
+  = Variants.writes[UMLPseudostateKind]((__ \ "type").format[String])
 
   implicit val readsUMLPseudostateKind
   : Reads[UMLPseudostateKind]
-  = Variants.reads[UMLPseudostateKind]
+  = Variants.reads[UMLPseudostateKind]((__ \ "type").format[String])
+
+  implicit val formatsUMLPseudostateKind
+  : Format[UMLPseudostateKind]
+  = Variants.format[UMLPseudostateKind]((__ \ "type").format[String])
+  
 }

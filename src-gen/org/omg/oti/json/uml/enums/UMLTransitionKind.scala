@@ -44,6 +44,8 @@ package org.omg.oti.json.uml.enums
 import play.json.extra._
 import play.api.libs.json._
 
+import scala.Predef.String
+
 /**
   * TransitionKind is an Enumeration type used to differentiate the various kinds of Transitions.
   *
@@ -78,15 +80,16 @@ object UMLTransitionKind {
     */
   case object local extends UMLTransitionKind {}
  
-  implicit val formatsUMLTransitionKind
-  : Format[UMLTransitionKind]
-  = Variants.format[UMLTransitionKind]
-  
   implicit val writesUMLTransitionKind
   : Writes[UMLTransitionKind]
-  = Variants.writes[UMLTransitionKind]
+  = Variants.writes[UMLTransitionKind]((__ \ "type").format[String])
 
   implicit val readsUMLTransitionKind
   : Reads[UMLTransitionKind]
-  = Variants.reads[UMLTransitionKind]
+  = Variants.reads[UMLTransitionKind]((__ \ "type").format[String])
+
+  implicit val formatsUMLTransitionKind
+  : Format[UMLTransitionKind]
+  = Variants.format[UMLTransitionKind]((__ \ "type").format[String])
+  
 }

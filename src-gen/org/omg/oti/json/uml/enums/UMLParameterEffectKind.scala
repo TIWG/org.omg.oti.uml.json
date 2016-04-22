@@ -44,6 +44,8 @@ package org.omg.oti.json.uml.enums
 import play.json.extra._
 import play.api.libs.json._
 
+import scala.Predef.String
+
 /**
   * ParameterEffectKind is an Enumeration that indicates the effect of a Behavior on values passed in or out of its parameters.
   *
@@ -86,15 +88,16 @@ object UMLParameterEffectKind {
     */
   case object update extends UMLParameterEffectKind {}
  
-  implicit val formatsUMLParameterEffectKind
-  : Format[UMLParameterEffectKind]
-  = Variants.format[UMLParameterEffectKind]
-  
   implicit val writesUMLParameterEffectKind
   : Writes[UMLParameterEffectKind]
-  = Variants.writes[UMLParameterEffectKind]
+  = Variants.writes[UMLParameterEffectKind]((__ \ "type").format[String])
 
   implicit val readsUMLParameterEffectKind
   : Reads[UMLParameterEffectKind]
-  = Variants.reads[UMLParameterEffectKind]
+  = Variants.reads[UMLParameterEffectKind]((__ \ "type").format[String])
+
+  implicit val formatsUMLParameterEffectKind
+  : Format[UMLParameterEffectKind]
+  = Variants.format[UMLParameterEffectKind]((__ \ "type").format[String])
+  
 }

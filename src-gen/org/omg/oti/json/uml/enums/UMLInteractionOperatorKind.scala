@@ -44,6 +44,8 @@ package org.omg.oti.json.uml.enums
 import play.json.extra._
 import play.api.libs.json._
 
+import scala.Predef.String
+
 /**
   * InteractionOperatorKind is an enumeration designating the different kinds of operators of CombinedFragments. The InteractionOperand defines the type of operator of a CombinedFragment.
   *
@@ -150,15 +152,16 @@ object UMLInteractionOperatorKind {
     */
   case object strict extends UMLInteractionOperatorKind {}
  
-  implicit val formatsUMLInteractionOperatorKind
-  : Format[UMLInteractionOperatorKind]
-  = Variants.format[UMLInteractionOperatorKind]
-  
   implicit val writesUMLInteractionOperatorKind
   : Writes[UMLInteractionOperatorKind]
-  = Variants.writes[UMLInteractionOperatorKind]
+  = Variants.writes[UMLInteractionOperatorKind]((__ \ "type").format[String])
 
   implicit val readsUMLInteractionOperatorKind
   : Reads[UMLInteractionOperatorKind]
-  = Variants.reads[UMLInteractionOperatorKind]
+  = Variants.reads[UMLInteractionOperatorKind]((__ \ "type").format[String])
+
+  implicit val formatsUMLInteractionOperatorKind
+  : Format[UMLInteractionOperatorKind]
+  = Variants.format[UMLInteractionOperatorKind]((__ \ "type").format[String])
+  
 }

@@ -44,6 +44,8 @@ package org.omg.oti.json.uml.enums
 import play.json.extra._
 import play.api.libs.json._
 
+import scala.Predef.String
+
 /**
   * ConnectorKind is an enumeration that defines whether a Connector is an assembly or a delegation.
   *
@@ -70,15 +72,16 @@ object UMLConnectorKind {
     */
   case object delegation extends UMLConnectorKind {}
  
-  implicit val formatsUMLConnectorKind
-  : Format[UMLConnectorKind]
-  = Variants.format[UMLConnectorKind]
-  
   implicit val writesUMLConnectorKind
   : Writes[UMLConnectorKind]
-  = Variants.writes[UMLConnectorKind]
+  = Variants.writes[UMLConnectorKind]((__ \ "type").format[String])
 
   implicit val readsUMLConnectorKind
   : Reads[UMLConnectorKind]
-  = Variants.reads[UMLConnectorKind]
+  = Variants.reads[UMLConnectorKind]((__ \ "type").format[String])
+
+  implicit val formatsUMLConnectorKind
+  : Format[UMLConnectorKind]
+  = Variants.format[UMLConnectorKind]((__ \ "type").format[String])
+  
 }

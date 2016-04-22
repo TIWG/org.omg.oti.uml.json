@@ -44,6 +44,8 @@ package org.omg.oti.json.uml.enums
 import play.json.extra._
 import play.api.libs.json._
 
+import scala.Predef.String
+
 /**
   * ObjectNodeOrderingKind is an enumeration indicating queuing order for offering the tokens held by an ObjectNode.
   *
@@ -86,15 +88,16 @@ object UMLObjectNodeOrderingKind {
     */
   case object unordered extends UMLObjectNodeOrderingKind {}
  
-  implicit val formatsUMLObjectNodeOrderingKind
-  : Format[UMLObjectNodeOrderingKind]
-  = Variants.format[UMLObjectNodeOrderingKind]
-  
   implicit val writesUMLObjectNodeOrderingKind
   : Writes[UMLObjectNodeOrderingKind]
-  = Variants.writes[UMLObjectNodeOrderingKind]
+  = Variants.writes[UMLObjectNodeOrderingKind]((__ \ "type").format[String])
 
   implicit val readsUMLObjectNodeOrderingKind
   : Reads[UMLObjectNodeOrderingKind]
-  = Variants.reads[UMLObjectNodeOrderingKind]
+  = Variants.reads[UMLObjectNodeOrderingKind]((__ \ "type").format[String])
+
+  implicit val formatsUMLObjectNodeOrderingKind
+  : Format[UMLObjectNodeOrderingKind]
+  = Variants.format[UMLObjectNodeOrderingKind]((__ \ "type").format[String])
+  
 }

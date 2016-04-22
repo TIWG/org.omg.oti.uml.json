@@ -44,6 +44,8 @@ package org.omg.oti.json.uml.enums
 import play.json.extra._
 import play.api.libs.json._
 
+import scala.Predef.String
+
 /**
   * AggregationKind is an Enumeration for specifying the kind of aggregation of a Property.
   *
@@ -78,15 +80,16 @@ object UMLAggregationKind {
     */
   case object shared extends UMLAggregationKind {}
  
-  implicit val formatsUMLAggregationKind
-  : Format[UMLAggregationKind]
-  = Variants.format[UMLAggregationKind]
-  
   implicit val writesUMLAggregationKind
   : Writes[UMLAggregationKind]
-  = Variants.writes[UMLAggregationKind]
+  = Variants.writes[UMLAggregationKind]((__ \ "type").format[String])
 
   implicit val readsUMLAggregationKind
   : Reads[UMLAggregationKind]
-  = Variants.reads[UMLAggregationKind]
+  = Variants.reads[UMLAggregationKind]((__ \ "type").format[String])
+
+  implicit val formatsUMLAggregationKind
+  : Format[UMLAggregationKind]
+  = Variants.format[UMLAggregationKind]((__ \ "type").format[String])
+  
 }

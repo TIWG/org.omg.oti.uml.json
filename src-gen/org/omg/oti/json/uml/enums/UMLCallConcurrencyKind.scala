@@ -44,6 +44,8 @@ package org.omg.oti.json.uml.enums
 import play.json.extra._
 import play.api.libs.json._
 
+import scala.Predef.String
+
 /**
   * CallConcurrencyKind is an Enumeration used to specify the semantics of concurrent calls to a BehavioralFeature.
   *
@@ -78,15 +80,16 @@ object UMLCallConcurrencyKind {
     */
   case object sequential extends UMLCallConcurrencyKind {}
  
-  implicit val formatsUMLCallConcurrencyKind
-  : Format[UMLCallConcurrencyKind]
-  = Variants.format[UMLCallConcurrencyKind]
-  
   implicit val writesUMLCallConcurrencyKind
   : Writes[UMLCallConcurrencyKind]
-  = Variants.writes[UMLCallConcurrencyKind]
+  = Variants.writes[UMLCallConcurrencyKind]((__ \ "type").format[String])
 
   implicit val readsUMLCallConcurrencyKind
   : Reads[UMLCallConcurrencyKind]
-  = Variants.reads[UMLCallConcurrencyKind]
+  = Variants.reads[UMLCallConcurrencyKind]((__ \ "type").format[String])
+
+  implicit val formatsUMLCallConcurrencyKind
+  : Format[UMLCallConcurrencyKind]
+  = Variants.format[UMLCallConcurrencyKind]((__ \ "type").format[String])
+  
 }

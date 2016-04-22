@@ -44,6 +44,8 @@ package org.omg.oti.json.uml.enums
 import play.json.extra._
 import play.api.libs.json._
 
+import scala.Predef.String
+
 /**
   * This is an enumerated type that identifies the type of Message.
   *
@@ -86,15 +88,16 @@ object UMLMessageKind {
     */
   case object unknown extends UMLMessageKind {}
  
-  implicit val formatsUMLMessageKind
-  : Format[UMLMessageKind]
-  = Variants.format[UMLMessageKind]
-  
   implicit val writesUMLMessageKind
   : Writes[UMLMessageKind]
-  = Variants.writes[UMLMessageKind]
+  = Variants.writes[UMLMessageKind]((__ \ "type").format[String])
 
   implicit val readsUMLMessageKind
   : Reads[UMLMessageKind]
-  = Variants.reads[UMLMessageKind]
+  = Variants.reads[UMLMessageKind]((__ \ "type").format[String])
+
+  implicit val formatsUMLMessageKind
+  : Format[UMLMessageKind]
+  = Variants.format[UMLMessageKind]((__ \ "type").format[String])
+  
 }
