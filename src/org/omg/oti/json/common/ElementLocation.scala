@@ -2,6 +2,7 @@ package org.omg.oti.json.common
 
 import play.api.libs.json._
 
+import scala.{Int,Ordering}
 import scala.Predef.String
 import scalaz.@@
 
@@ -18,6 +19,20 @@ import scalaz.@@
   *   -- explicitly, with a tool-specific URL location of the identified element in a tool-specific resource
   */
 sealed trait ElementLocation {}
+
+object ElementLocation {
+  
+  implicit val ordering
+  : Ordering[ElementLocation]
+  = new Ordering[ElementLocation] {
+    
+    def compare(x: ElementLocation, y: ElementLocation)
+    : Int
+    = scala.Predef.???
+    
+  }
+  
+}
 
 /**
   * Element Location based on OTI ID when the OTI Document context is known.

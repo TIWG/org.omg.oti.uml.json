@@ -81,8 +81,8 @@ import scala.{Int,Ordering}
   */
 sealed trait OTIMOFLink {
 
-  def end1: ElementLocation_OTI_ID_OTI_URL
-  def end2: ElementLocation_OTI_ID_OTI_URL
+  def end1: ElementLocation
+  def end2: ElementLocation
 
 }
 
@@ -176,8 +176,8 @@ object OTIMOFLink {
     * @param: end2 Interaction::action: Action [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_action_interaction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -188,8 +188,8 @@ object OTIMOFLink {
     * @param: end2 InteractionUse::actualGate: Gate [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_actualGate_interactionUse
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -200,9 +200,9 @@ object OTIMOFLink {
     * @param: end2 InteractionUse::argument: ValueSpecification [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_argument_interactionUse
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -213,9 +213,9 @@ object OTIMOFLink {
     * @param: end2 InvocationAction::argument: InputPin [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_argument_invocationAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -226,9 +226,9 @@ object OTIMOFLink {
     * @param: end2 Message::argument: ValueSpecification [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_argument_message
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -239,8 +239,8 @@ object OTIMOFLink {
     * @param: end2 Operation::bodyCondition: Constraint [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_bodyCondition_bodyContext
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -251,8 +251,8 @@ object OTIMOFLink {
     * @param: end2 CombinedFragment::cfragmentGate: Gate [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_cfragmentGate_combinedFragment
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -263,8 +263,8 @@ object OTIMOFLink {
     * @param: end2 ChangeEvent::changeExpression: ValueSpecification [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_changeExpression_changeEvent
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -275,8 +275,8 @@ object OTIMOFLink {
     * @param: end2 ConditionalNode::clause: Clause [1..*] { unordered, unique, composite }
     */
   case class OTIUMLA_clause_conditionalNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -287,8 +287,8 @@ object OTIMOFLink {
     * @param: end2 Classifier::collaborationUse: CollaborationUse [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_collaborationUse_classifier
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -299,8 +299,8 @@ object OTIMOFLink {
     * @param: end2 ReduceAction::collection: InputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_collection_reduceAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -311,8 +311,8 @@ object OTIMOFLink {
     * @param: end2 Extend::condition: Constraint [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_condition_extend
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -323,44 +323,44 @@ object OTIMOFLink {
     * @param: end2 ParameterSet::condition: Constraint [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_condition_parameterSet
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_configuration_deployment
     *
-    * @param: end1 DeploymentSpecification::deployment: Deployment [0..1] { unordered, unique, reference }
-    * @param: end2 Deployment::configuration: DeploymentSpecification [0..*] { unordered, unique, composite }
+    * @param: end1 Deployment::configuration: DeploymentSpecification [0..*] { unordered, unique, composite }
+    * @param: end2 DeploymentSpecification::deployment: Deployment [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_configuration_deployment
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_conformance_specificMachine
     *
-    * @param: end1 ProtocolConformance::specificMachine: ProtocolStateMachine [1..1] { unordered, unique, reference }
-    * @param: end2 ProtocolStateMachine::conformance: ProtocolConformance [0..*] { unordered, unique, composite }
+    * @param: end1 ProtocolStateMachine::conformance: ProtocolConformance [0..*] { unordered, unique, composite }
+    * @param: end2 ProtocolConformance::specificMachine: ProtocolStateMachine [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_conformance_specificMachine
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_connectionPoint_state
     *
-    * @param: end1 Pseudostate::state: State [0..1] { unordered, unique, reference }
-    * @param: end2 State::connectionPoint: Pseudostate [0..*] { unordered, unique, composite }
+    * @param: end1 State::connectionPoint: Pseudostate [0..*] { unordered, unique, composite }
+    * @param: end2 Pseudostate::state: State [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_connectionPoint_state
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -371,20 +371,20 @@ object OTIMOFLink {
     * @param: end2 StateMachine::connectionPoint: Pseudostate [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_connectionPoint_stateMachine
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_connection_state
     *
-    * @param: end1 ConnectionPointReference::state: State [0..1] { unordered, unique, reference }
-    * @param: end2 State::connection: ConnectionPointReference [0..*] { unordered, unique, composite }
+    * @param: end1 State::connection: ConnectionPointReference [0..*] { unordered, unique, composite }
+    * @param: end2 ConnectionPointReference::state: State [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_connection_state
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -395,8 +395,8 @@ object OTIMOFLink {
     * @param: end2 Parameter::defaultValue: ValueSpecification [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_defaultValue_owningParameter
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -407,8 +407,8 @@ object OTIMOFLink {
     * @param: end2 Property::defaultValue: ValueSpecification [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_defaultValue_owningProperty
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -419,8 +419,8 @@ object OTIMOFLink {
     * @param: end2 State::deferrableTrigger: Trigger [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_deferrableTrigger_state
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -431,8 +431,8 @@ object OTIMOFLink {
     * @param: end2 Deployment::location: DeploymentTarget [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_deployment_location
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -443,8 +443,8 @@ object OTIMOFLink {
     * @param: end2 State::doActivity: Behavior [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_doActivity_state
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -455,8 +455,8 @@ object OTIMOFLink {
     * @param: end2 ActivityEdge::activity: Activity [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_edge_activity
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -467,8 +467,8 @@ object OTIMOFLink {
     * @param: end2 StructuredActivityNode::edge: ActivityEdge [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_edge_inStructuredNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -479,20 +479,20 @@ object OTIMOFLink {
     * @param: end2 Transition::effect: Behavior [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_effect_transition
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_elementImport_importingNamespace
     *
-    * @param: end1 Namespace::elementImport: ElementImport [0..*] { unordered, unique, composite }
-    * @param: end2 ElementImport::importingNamespace: Namespace [1..1] { unordered, unique, reference }
+    * @param: end1 ElementImport::importingNamespace: Namespace [1..1] { unordered, unique, reference }
+    * @param: end2 Namespace::elementImport: ElementImport [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_elementImport_importingNamespace
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -503,8 +503,8 @@ object OTIMOFLink {
     * @param: end2 CreateLinkAction::endData: LinkEndCreationData [2..*] { unordered, unique, composite }
     */
   case class OTIUMLA_endData_createLinkAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -515,8 +515,8 @@ object OTIMOFLink {
     * @param: end2 DestroyLinkAction::endData: LinkEndDestructionData [2..*] { unordered, unique, composite }
     */
   case class OTIUMLA_endData_destroyLinkAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -527,8 +527,8 @@ object OTIMOFLink {
     * @param: end2 LinkAction::endData: LinkEndData [2..*] { unordered, unique, composite }
     */
   case class OTIUMLA_endData_linkAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -539,9 +539,9 @@ object OTIMOFLink {
     * @param: end2 Connector::end: ConnectorEnd [2..*] { ordered, unique, composite }
     */
   case class OTIUMLA_end_connector
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -552,8 +552,8 @@ object OTIMOFLink {
     * @param: end2 State::entry: Behavior [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_entry_state
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -564,8 +564,8 @@ object OTIMOFLink {
     * @param: end2 RaiseExceptionAction::exception: InputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_exception_raiseExceptionAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -576,9 +576,9 @@ object OTIMOFLink {
     * @param: end2 SequenceNode::executableNode: ExecutableNode [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_executableNode_sequenceNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -589,8 +589,8 @@ object OTIMOFLink {
     * @param: end2 State::exit: Behavior [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_exit_state
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -601,8 +601,8 @@ object OTIMOFLink {
     * @param: end2 Duration::expr: ValueSpecification [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_expr_duration
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -613,32 +613,32 @@ object OTIMOFLink {
     * @param: end2 TimeExpression::expr: ValueSpecification [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_expr_timeExpression
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_extend_extension
     *
-    * @param: end1 Extend::extension: UseCase [1..1] { unordered, unique, reference }
-    * @param: end2 UseCase::extend: Extend [0..*] { unordered, unique, composite }
+    * @param: end1 UseCase::extend: Extend [0..*] { unordered, unique, composite }
+    * @param: end2 Extend::extension: UseCase [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_extend_extension
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_extensionPoint_useCase
     *
-    * @param: end1 ExtensionPoint::useCase: UseCase [1..1] { unordered, unique, reference }
-    * @param: end2 UseCase::extensionPoint: ExtensionPoint [0..*] { unordered, unique, composite }
+    * @param: end1 UseCase::extensionPoint: ExtensionPoint [0..*] { unordered, unique, composite }
+    * @param: end2 ExtensionPoint::useCase: UseCase [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_extensionPoint_useCase
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -649,8 +649,8 @@ object OTIMOFLink {
     * @param: end2 TestIdentityAction::first: InputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_first_testIdentityAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -661,8 +661,8 @@ object OTIMOFLink {
     * @param: end2 Interaction::formalGate: Gate [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_formalGate_interaction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -673,23 +673,23 @@ object OTIMOFLink {
     * @param: end2 Interaction::fragment: InteractionFragment [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_fragment_enclosingInteraction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
   /**
     * A_fragment_enclosingOperand
     *
-    * @param: end1 InteractionFragment::enclosingOperand: InteractionOperand [0..1] { unordered, unique, reference }
-    * @param: end2 InteractionOperand::fragment: InteractionFragment [0..*] { ordered, unique, composite }
+    * @param: end1 InteractionOperand::fragment: InteractionFragment [0..*] { ordered, unique, composite }
+    * @param: end2 InteractionFragment::enclosingOperand: InteractionOperand [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_fragment_enclosingOperand
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
-  extends  OTIMOFCompositeSecondEndOrderedLink
+  ( override val end1: ElementLocation,
+    override val end1Index: Int,
+    override val end2: ElementLocation )
+  extends  OTIMOFCompositeFirstEndOrderedLink
   {}
 
   /**
@@ -699,8 +699,8 @@ object OTIMOFLink {
     * @param: end2 ActionInputPin::fromAction: Action [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_fromAction_actionInputPin
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -711,32 +711,32 @@ object OTIMOFLink {
     * @param: end2 InteractionFragment::generalOrdering: GeneralOrdering [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_generalOrdering_interactionFragment
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_generalization_specific
     *
-    * @param: end1 Generalization::specific: Classifier [1..1] { unordered, unique, reference }
-    * @param: end2 Classifier::generalization: Generalization [0..*] { unordered, unique, composite }
+    * @param: end1 Classifier::generalization: Generalization [0..*] { unordered, unique, composite }
+    * @param: end2 Generalization::specific: Classifier [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_generalization_specific
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_group_inActivity
     *
-    * @param: end1 Activity::group: ActivityGroup [0..*] { unordered, unique, composite }
-    * @param: end2 ActivityGroup::inActivity: Activity [0..1] { unordered, unique, reference }
+    * @param: end1 ActivityGroup::inActivity: Activity [0..1] { unordered, unique, reference }
+    * @param: end2 Activity::group: ActivityGroup [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_group_inActivity
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -747,8 +747,8 @@ object OTIMOFLink {
     * @param: end2 ActivityEdge::guard: ValueSpecification [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_guard_activityEdge
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -759,8 +759,8 @@ object OTIMOFLink {
     * @param: end2 InteractionOperand::guard: InteractionConstraint [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_guard_interactionOperand
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -771,8 +771,8 @@ object OTIMOFLink {
     * @param: end2 Transition::guard: Constraint [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_guard_transition
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -783,8 +783,8 @@ object OTIMOFLink {
     * @param: end2 ExecutableNode::handler: ExceptionHandler [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_handler_protectedNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -795,20 +795,20 @@ object OTIMOFLink {
     * @param: end2 Stereotype::icon: Image [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_icon_stereotype
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_include_includingCase
     *
-    * @param: end1 Include::includingCase: UseCase [1..1] { unordered, unique, reference }
-    * @param: end2 UseCase::include: Include [0..*] { unordered, unique, composite }
+    * @param: end1 UseCase::include: Include [0..*] { unordered, unique, composite }
+    * @param: end2 Include::includingCase: UseCase [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_include_includingCase
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -819,8 +819,8 @@ object OTIMOFLink {
     * @param: end2 LinkAction::inputValue: InputPin [1..*] { unordered, unique, composite }
     */
   case class OTIUMLA_inputValue_linkAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -831,8 +831,8 @@ object OTIMOFLink {
     * @param: end2 OpaqueAction::inputValue: InputPin [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_inputValue_opaqueAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -843,8 +843,8 @@ object OTIMOFLink {
     * @param: end2 AddStructuralFeatureValueAction::insertAt: InputPin [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_insertAt_addStructuralFeatureValueAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -855,20 +855,20 @@ object OTIMOFLink {
     * @param: end2 AddVariableValueAction::insertAt: InputPin [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_insertAt_addVariableValueAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_interfaceRealization_implementingClassifier
     *
-    * @param: end1 InterfaceRealization::implementingClassifier: BehavioredClassifier [1..1] { unordered, unique, reference }
-    * @param: end2 BehavioredClassifier::interfaceRealization: InterfaceRealization [0..*] { unordered, unique, composite }
+    * @param: end1 BehavioredClassifier::interfaceRealization: InterfaceRealization [0..*] { unordered, unique, composite }
+    * @param: end2 InterfaceRealization::implementingClassifier: BehavioredClassifier [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_interfaceRealization_implementingClassifier
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -879,8 +879,8 @@ object OTIMOFLink {
     * @param: end2 StateInvariant::invariant: Constraint [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_invariant_stateInvariant
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -891,20 +891,20 @@ object OTIMOFLink {
     * @param: end2 JoinNode::joinSpec: ValueSpecification [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_joinSpec_joinNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_lifeline_interaction
     *
-    * @param: end1 Lifeline::interaction: Interaction [1..1] { unordered, unique, reference }
-    * @param: end2 Interaction::lifeline: Lifeline [0..*] { unordered, unique, composite }
+    * @param: end1 Interaction::lifeline: Lifeline [0..*] { unordered, unique, composite }
+    * @param: end2 Lifeline::interaction: Interaction [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_lifeline_interaction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -915,8 +915,8 @@ object OTIMOFLink {
     * @param: end2 Action::localPostcondition: Constraint [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_localPostcondition_action
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -927,8 +927,8 @@ object OTIMOFLink {
     * @param: end2 Action::localPrecondition: Constraint [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_localPrecondition_action
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -939,9 +939,9 @@ object OTIMOFLink {
     * @param: end2 LoopNode::loopVariableInput: InputPin [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_loopVariableInput_loopNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -952,9 +952,9 @@ object OTIMOFLink {
     * @param: end2 LoopNode::loopVariable: OutputPin [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_loopVariable_loopNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -965,8 +965,8 @@ object OTIMOFLink {
     * @param: end2 MultiplicityElement::lowerValue: ValueSpecification [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_lowerValue_owningLower
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -977,8 +977,8 @@ object OTIMOFLink {
     * @param: end2 Artifact::manifestation: Manifestation [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_manifestation_artifact
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -989,8 +989,8 @@ object OTIMOFLink {
     * @param: end2 Abstraction::mapping: OpaqueExpression [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_mapping_abstraction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1001,20 +1001,20 @@ object OTIMOFLink {
     * @param: end2 InteractionConstraint::maxint: ValueSpecification [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_maxint_interactionConstraint
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_message_interaction
     *
-    * @param: end1 Interaction::message: Message [0..*] { unordered, unique, composite }
-    * @param: end2 Message::interaction: Interaction [1..1] { unordered, unique, reference }
+    * @param: end1 Message::interaction: Interaction [1..1] { unordered, unique, reference }
+    * @param: end2 Interaction::message: Message [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_message_interaction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1025,8 +1025,8 @@ object OTIMOFLink {
     * @param: end2 Profile::metaclassReference: ElementImport [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_metaclassReference_profile
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1037,8 +1037,8 @@ object OTIMOFLink {
     * @param: end2 Profile::metamodelReference: PackageImport [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_metamodelReference_profile
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1049,8 +1049,8 @@ object OTIMOFLink {
     * @param: end2 InteractionConstraint::minint: ValueSpecification [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_minint_interactionConstraint
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1061,8 +1061,8 @@ object OTIMOFLink {
     * @param: end2 NamedElement::nameExpression: StringExpression [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_nameExpression_namedElement
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1073,8 +1073,8 @@ object OTIMOFLink {
     * @param: end2 Artifact::nestedArtifact: Artifact [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_nestedArtifact_artifact
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1085,9 +1085,9 @@ object OTIMOFLink {
     * @param: end2 Interface::nestedClassifier: Classifier [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_nestedClassifier_interface
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -1098,9 +1098,9 @@ object OTIMOFLink {
     * @param: end2 Class::nestedClassifier: Classifier [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_nestedClassifier_nestingClass
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -1111,8 +1111,8 @@ object OTIMOFLink {
     * @param: end2 Node::nestedNode: Node [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_nestedNode_node
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1123,8 +1123,8 @@ object OTIMOFLink {
     * @param: end2 ActivityNode::activity: Activity [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_node_activity
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1135,8 +1135,8 @@ object OTIMOFLink {
     * @param: end2 StructuredActivityNode::node: ActivityNode [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_node_inStructuredNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1147,8 +1147,8 @@ object OTIMOFLink {
     * @param: end2 ClearAssociationAction::object: InputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_object_clearAssociationAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1159,8 +1159,8 @@ object OTIMOFLink {
     * @param: end2 ReadIsClassifiedObjectAction::object: InputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_object_readIsClassifiedObjectAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1171,8 +1171,8 @@ object OTIMOFLink {
     * @param: end2 ReadLinkObjectEndAction::object: InputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_object_readLinkObjectEndAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1183,8 +1183,8 @@ object OTIMOFLink {
     * @param: end2 ReadLinkObjectEndQualifierAction::object: InputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_object_readLinkObjectEndQualifierAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1195,8 +1195,8 @@ object OTIMOFLink {
     * @param: end2 ReclassifyObjectAction::object: InputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_object_reclassifyObjectAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1207,8 +1207,8 @@ object OTIMOFLink {
     * @param: end2 StartClassifierBehaviorAction::object: InputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_object_startClassifierBehaviorAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1219,8 +1219,8 @@ object OTIMOFLink {
     * @param: end2 StartObjectBehaviorAction::object: InputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_object_startObjectBehaviorAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1231,8 +1231,8 @@ object OTIMOFLink {
     * @param: end2 StructuralFeatureAction::object: InputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_object_structuralFeatureAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1243,8 +1243,8 @@ object OTIMOFLink {
     * @param: end2 UnmarshallAction::object: InputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_object_unmarshallAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1255,9 +1255,9 @@ object OTIMOFLink {
     * @param: end2 CombinedFragment::operand: InteractionOperand [1..*] { ordered, unique, composite }
     */
   case class OTIUMLA_operand_combinedFragment
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -1268,9 +1268,9 @@ object OTIMOFLink {
     * @param: end2 Expression::operand: ValueSpecification [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_operand_expression
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -1281,8 +1281,8 @@ object OTIMOFLink {
     * @param: end2 OpaqueAction::outputValue: OutputPin [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_outputValue_opaqueAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1293,8 +1293,8 @@ object OTIMOFLink {
     * @param: end2 TemplateParameterSubstitution::ownedActual: ParameterableElement [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_ownedActual_owningTemplateParameterSubstitution
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1305,36 +1305,36 @@ object OTIMOFLink {
     * @param: end2 Artifact::ownedAttribute: Property [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_ownedAttribute_artifact
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
   /**
     * A_ownedAttribute_class
     *
-    * @param: end1 Property::class: Class [0..1] { unordered, unique, reference }
-    * @param: end2 Class::ownedAttribute: Property [0..*] { ordered, unique, composite }
+    * @param: end1 Class::ownedAttribute: Property [0..*] { ordered, unique, composite }
+    * @param: end2 Property::class: Class [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_ownedAttribute_class
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
-  extends  OTIMOFCompositeSecondEndOrderedLink
+  ( override val end1: ElementLocation,
+    override val end1Index: Int,
+    override val end2: ElementLocation )
+  extends  OTIMOFCompositeFirstEndOrderedLink
   {}
 
   /**
     * A_ownedAttribute_datatype
     *
-    * @param: end1 Property::datatype: DataType [0..1] { unordered, unique, reference }
-    * @param: end2 DataType::ownedAttribute: Property [0..*] { ordered, unique, composite }
+    * @param: end1 DataType::ownedAttribute: Property [0..*] { ordered, unique, composite }
+    * @param: end2 Property::datatype: DataType [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_ownedAttribute_datatype
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
-  extends  OTIMOFCompositeSecondEndOrderedLink
+  ( override val end1: ElementLocation,
+    override val end1Index: Int,
+    override val end2: ElementLocation )
+  extends  OTIMOFCompositeFirstEndOrderedLink
   {}
 
   /**
@@ -1344,9 +1344,9 @@ object OTIMOFLink {
     * @param: end2 Interface::ownedAttribute: Property [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_ownedAttribute_interface
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -1357,9 +1357,9 @@ object OTIMOFLink {
     * @param: end2 Signal::ownedAttribute: Property [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_ownedAttribute_owningSignal
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -1370,9 +1370,9 @@ object OTIMOFLink {
     * @param: end2 StructuredClassifier::ownedAttribute: Property [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_ownedAttribute_structuredClassifier
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -1383,8 +1383,8 @@ object OTIMOFLink {
     * @param: end2 BehavioredClassifier::ownedBehavior: Behavior [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_ownedBehavior_behavioredClassifier
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1395,8 +1395,8 @@ object OTIMOFLink {
     * @param: end2 Element::ownedComment: Comment [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_ownedComment_owningElement
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1407,8 +1407,8 @@ object OTIMOFLink {
     * @param: end2 StructuredClassifier::ownedConnector: Connector [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_ownedConnector_structuredClassifier
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1419,8 +1419,8 @@ object OTIMOFLink {
     * @param: end2 TemplateParameter::ownedDefault: ParameterableElement [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_ownedDefault_templateParameter
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1431,35 +1431,35 @@ object OTIMOFLink {
     * @param: end2 Extension::ownedEnd: ExtensionEnd [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_ownedEnd_extension
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_ownedEnd_owningAssociation
     *
-    * @param: end1 Property::owningAssociation: Association [0..1] { unordered, unique, reference }
-    * @param: end2 Association::ownedEnd: Property [0..*] { ordered, unique, composite }
+    * @param: end1 Association::ownedEnd: Property [0..*] { ordered, unique, composite }
+    * @param: end2 Property::owningAssociation: Association [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_ownedEnd_owningAssociation
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
-  extends  OTIMOFCompositeSecondEndOrderedLink
+  ( override val end1: ElementLocation,
+    override val end1Index: Int,
+    override val end2: ElementLocation )
+  extends  OTIMOFCompositeFirstEndOrderedLink
   {}
 
   /**
     * A_ownedLiteral_enumeration
     *
-    * @param: end1 EnumerationLiteral::enumeration: Enumeration [1..1] { unordered, unique, reference }
-    * @param: end2 Enumeration::ownedLiteral: EnumerationLiteral [0..*] { ordered, unique, composite }
+    * @param: end1 Enumeration::ownedLiteral: EnumerationLiteral [0..*] { ordered, unique, composite }
+    * @param: end2 EnumerationLiteral::enumeration: Enumeration [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_ownedLiteral_enumeration
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
-  extends  OTIMOFCompositeSecondEndOrderedLink
+  ( override val end1: ElementLocation,
+    override val end1Index: Int,
+    override val end2: ElementLocation )
+  extends  OTIMOFCompositeFirstEndOrderedLink
   {}
 
   /**
@@ -1469,9 +1469,9 @@ object OTIMOFLink {
     * @param: end2 Artifact::ownedOperation: Operation [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_ownedOperation_artifact
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -1482,36 +1482,36 @@ object OTIMOFLink {
     * @param: end2 Class::ownedOperation: Operation [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_ownedOperation_class
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
   /**
     * A_ownedOperation_datatype
     *
-    * @param: end1 Operation::datatype: DataType [0..1] { unordered, unique, reference }
-    * @param: end2 DataType::ownedOperation: Operation [0..*] { ordered, unique, composite }
+    * @param: end1 DataType::ownedOperation: Operation [0..*] { ordered, unique, composite }
+    * @param: end2 Operation::datatype: DataType [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_ownedOperation_datatype
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
-  extends  OTIMOFCompositeSecondEndOrderedLink
+  ( override val end1: ElementLocation,
+    override val end1Index: Int,
+    override val end2: ElementLocation )
+  extends  OTIMOFCompositeFirstEndOrderedLink
   {}
 
   /**
     * A_ownedOperation_interface
     *
-    * @param: end1 Interface::ownedOperation: Operation [0..*] { ordered, unique, composite }
-    * @param: end2 Operation::interface: Interface [0..1] { unordered, unique, reference }
+    * @param: end1 Operation::interface: Interface [0..1] { unordered, unique, reference }
+    * @param: end2 Interface::ownedOperation: Operation [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_ownedOperation_interface
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end1Index: Int,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
-  extends  OTIMOFCompositeFirstEndOrderedLink
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
+  extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
   /**
@@ -1521,8 +1521,8 @@ object OTIMOFLink {
     * @param: end2 Behavior::ownedParameterSet: ParameterSet [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_ownedParameterSet_behavior
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1533,8 +1533,8 @@ object OTIMOFLink {
     * @param: end2 BehavioralFeature::ownedParameterSet: ParameterSet [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_ownedParameterSet_behavioralFeature
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1545,9 +1545,9 @@ object OTIMOFLink {
     * @param: end2 Behavior::ownedParameter: Parameter [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_ownedParameter_behavior
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -1558,9 +1558,9 @@ object OTIMOFLink {
     * @param: end2 Parameter::operation: Operation [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_ownedParameter_operation
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end1Index: Int,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end1Index: Int,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeFirstEndOrderedLink
   {}
 
@@ -1571,34 +1571,34 @@ object OTIMOFLink {
     * @param: end2 BehavioralFeature::ownedParameter: Parameter [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_ownedParameter_ownerFormalParam
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
   /**
     * A_ownedParameter_signature
     *
-    * @param: end1 TemplateParameter::signature: TemplateSignature [1..1] { unordered, unique, reference }
-    * @param: end2 TemplateSignature::ownedParameter: TemplateParameter [0..*] { ordered, unique, composite }
+    * @param: end1 TemplateSignature::ownedParameter: TemplateParameter [0..*] { ordered, unique, composite }
+    * @param: end2 TemplateParameter::signature: TemplateSignature [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_ownedParameter_signature
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
-  extends  OTIMOFCompositeSecondEndOrderedLink
+  ( override val end1: ElementLocation,
+    override val end1Index: Int,
+    override val end2: ElementLocation )
+  extends  OTIMOFCompositeFirstEndOrderedLink
   {}
 
   /**
     * A_ownedParameteredElement_owningTemplateParameter
     *
-    * @param: end1 TemplateParameter::ownedParameteredElement: ParameterableElement [0..1] { unordered, unique, composite }
-    * @param: end2 ParameterableElement::owningTemplateParameter: TemplateParameter [0..1] { unordered, unique, reference }
+    * @param: end1 ParameterableElement::owningTemplateParameter: TemplateParameter [0..1] { unordered, unique, reference }
+    * @param: end2 TemplateParameter::ownedParameteredElement: ParameterableElement [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_ownedParameteredElement_owningTemplateParameter
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1609,8 +1609,8 @@ object OTIMOFLink {
     * @param: end2 Class::ownedReception: Reception [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_ownedReception_class
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1621,20 +1621,20 @@ object OTIMOFLink {
     * @param: end2 Interface::ownedReception: Reception [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_ownedReception_interface
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_ownedRule_context
     *
-    * @param: end1 Namespace::ownedRule: Constraint [0..*] { unordered, unique, composite }
-    * @param: end2 Constraint::context: Namespace [0..1] { unordered, unique, reference }
+    * @param: end1 Constraint::context: Namespace [0..1] { unordered, unique, reference }
+    * @param: end2 Namespace::ownedRule: Constraint [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_ownedRule_context
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1645,20 +1645,20 @@ object OTIMOFLink {
     * @param: end2 RedefinableTemplateSignature::classifier: Classifier [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_ownedTemplateSignature_classifier
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_ownedTemplateSignature_template
     *
-    * @param: end1 TemplateableElement::ownedTemplateSignature: TemplateSignature [0..1] { unordered, unique, composite }
-    * @param: end2 TemplateSignature::template: TemplateableElement [1..1] { unordered, unique, reference }
+    * @param: end1 TemplateSignature::template: TemplateableElement [1..1] { unordered, unique, reference }
+    * @param: end2 TemplateableElement::ownedTemplateSignature: TemplateSignature [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_ownedTemplateSignature_template
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1669,8 +1669,8 @@ object OTIMOFLink {
     * @param: end2 Classifier::ownedUseCase: UseCase [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_ownedUseCase_classifier
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1681,8 +1681,8 @@ object OTIMOFLink {
     * @param: end2 PackageImport::importingNamespace: Namespace [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_packageImport_importingNamespace
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1693,8 +1693,8 @@ object OTIMOFLink {
     * @param: end2 Package::packageMerge: PackageMerge [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_packageMerge_receivingPackage
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1705,8 +1705,8 @@ object OTIMOFLink {
     * @param: end2 Component::packagedElement: PackageableElement [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_packagedElement_component
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1717,20 +1717,20 @@ object OTIMOFLink {
     * @param: end2 Package::packagedElement: PackageableElement [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_packagedElement_owningPackage
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_parameterSubstitution_templateBinding
     *
-    * @param: end1 TemplateBinding::parameterSubstitution: TemplateParameterSubstitution [0..*] { unordered, unique, composite }
-    * @param: end2 TemplateParameterSubstitution::templateBinding: TemplateBinding [1..1] { unordered, unique, reference }
+    * @param: end1 TemplateParameterSubstitution::templateBinding: TemplateBinding [1..1] { unordered, unique, reference }
+    * @param: end2 TemplateBinding::parameterSubstitution: TemplateParameterSubstitution [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_parameterSubstitution_templateBinding
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1741,8 +1741,8 @@ object OTIMOFLink {
     * @param: end2 ProtocolTransition::postCondition: Constraint [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_postCondition_owningTransition
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1753,8 +1753,8 @@ object OTIMOFLink {
     * @param: end2 Behavior::postcondition: Constraint [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_postcondition_behavior
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1765,8 +1765,8 @@ object OTIMOFLink {
     * @param: end2 Operation::postcondition: Constraint [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_postcondition_postContext
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1777,8 +1777,8 @@ object OTIMOFLink {
     * @param: end2 ProtocolTransition::preCondition: Constraint [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_preCondition_protocolTransition
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1789,8 +1789,8 @@ object OTIMOFLink {
     * @param: end2 Behavior::precondition: Constraint [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_precondition_behavior
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1801,20 +1801,20 @@ object OTIMOFLink {
     * @param: end2 Operation::precondition: Constraint [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_precondition_preContext
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_profileApplication_applyingPackage
     *
-    * @param: end1 Package::profileApplication: ProfileApplication [0..*] { unordered, unique, composite }
-    * @param: end2 ProfileApplication::applyingPackage: Package [1..1] { unordered, unique, reference }
+    * @param: end1 ProfileApplication::applyingPackage: Package [1..1] { unordered, unique, reference }
+    * @param: end2 Package::profileApplication: ProfileApplication [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_profileApplication_applyingPackage
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1825,8 +1825,8 @@ object OTIMOFLink {
     * @param: end2 Interface::protocol: ProtocolStateMachine [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_protocol_interface
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1837,9 +1837,9 @@ object OTIMOFLink {
     * @param: end2 Property::qualifier: Property [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_qualifier_associationEnd
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -1850,20 +1850,20 @@ object OTIMOFLink {
     * @param: end2 LinkEndData::qualifier: QualifierValue [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_qualifier_linkEndData
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_realization_abstraction_component
     *
-    * @param: end1 Component::realization: ComponentRealization [0..*] { unordered, unique, composite }
-    * @param: end2 ComponentRealization::abstraction: Component [0..1] { unordered, unique, reference }
+    * @param: end1 ComponentRealization::abstraction: Component [0..1] { unordered, unique, reference }
+    * @param: end2 Component::realization: ComponentRealization [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_realization_abstraction_component
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1874,8 +1874,8 @@ object OTIMOFLink {
     * @param: end2 Region::state: State [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_region_state
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1886,8 +1886,8 @@ object OTIMOFLink {
     * @param: end2 StateMachine::region: Region [1..*] { unordered, unique, composite }
     */
   case class OTIUMLA_region_stateMachine
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1898,8 +1898,8 @@ object OTIMOFLink {
     * @param: end2 RemoveStructuralFeatureValueAction::removeAt: InputPin [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_removeAt_removeStructuralFeatureValueAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1910,8 +1910,8 @@ object OTIMOFLink {
     * @param: end2 RemoveVariableValueAction::removeAt: InputPin [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_removeAt_removeVariableValueAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1922,9 +1922,9 @@ object OTIMOFLink {
     * @param: end2 ReplyAction::replyValue: InputPin [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_replyValue_replyAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -1935,8 +1935,8 @@ object OTIMOFLink {
     * @param: end2 SendObjectAction::request: InputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_request_sendObjectAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1947,9 +1947,9 @@ object OTIMOFLink {
     * @param: end2 AcceptEventAction::result: OutputPin [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_result_acceptEventAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -1960,9 +1960,9 @@ object OTIMOFLink {
     * @param: end2 CallAction::result: OutputPin [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_result_callAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -1973,8 +1973,8 @@ object OTIMOFLink {
     * @param: end2 ClearStructuralFeatureAction::result: OutputPin [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_result_clearStructuralFeatureAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -1985,9 +1985,9 @@ object OTIMOFLink {
     * @param: end2 ConditionalNode::result: OutputPin [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_result_conditionalNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -1998,8 +1998,8 @@ object OTIMOFLink {
     * @param: end2 CreateLinkObjectAction::result: OutputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_result_createLinkObjectAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2010,8 +2010,8 @@ object OTIMOFLink {
     * @param: end2 CreateObjectAction::result: OutputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_result_createObjectAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2022,9 +2022,9 @@ object OTIMOFLink {
     * @param: end2 LoopNode::result: OutputPin [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_result_loopNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -2035,8 +2035,8 @@ object OTIMOFLink {
     * @param: end2 ReadExtentAction::result: OutputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_result_readExtentAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2047,8 +2047,8 @@ object OTIMOFLink {
     * @param: end2 ReadIsClassifiedObjectAction::result: OutputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_result_readIsClassifiedObjectAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2059,8 +2059,8 @@ object OTIMOFLink {
     * @param: end2 ReadLinkAction::result: OutputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_result_readLinkAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2071,8 +2071,8 @@ object OTIMOFLink {
     * @param: end2 ReadLinkObjectEndAction::result: OutputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_result_readLinkObjectEndAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2083,8 +2083,8 @@ object OTIMOFLink {
     * @param: end2 ReadLinkObjectEndQualifierAction::result: OutputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_result_readLinkObjectEndQualifierAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2095,8 +2095,8 @@ object OTIMOFLink {
     * @param: end2 ReadSelfAction::result: OutputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_result_readSelfAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2107,8 +2107,8 @@ object OTIMOFLink {
     * @param: end2 ReadStructuralFeatureAction::result: OutputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_result_readStructuralFeatureAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2119,8 +2119,8 @@ object OTIMOFLink {
     * @param: end2 ReadVariableAction::result: OutputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_result_readVariableAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2131,8 +2131,8 @@ object OTIMOFLink {
     * @param: end2 ReduceAction::result: OutputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_result_reduceAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2143,8 +2143,8 @@ object OTIMOFLink {
     * @param: end2 TestIdentityAction::result: OutputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_result_testIdentityAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2155,9 +2155,9 @@ object OTIMOFLink {
     * @param: end2 UnmarshallAction::result: OutputPin [1..*] { ordered, unique, composite }
     */
   case class OTIUMLA_result_unmarshallAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -2168,8 +2168,8 @@ object OTIMOFLink {
     * @param: end2 ValueSpecificationAction::result: OutputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_result_valueSpecificationAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2180,8 +2180,8 @@ object OTIMOFLink {
     * @param: end2 WriteStructuralFeatureAction::result: OutputPin [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_result_writeStructuralFeatureAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2192,8 +2192,8 @@ object OTIMOFLink {
     * @param: end2 AcceptCallAction::returnInformation: OutputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_returnInformation_acceptCallAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2204,8 +2204,8 @@ object OTIMOFLink {
     * @param: end2 ReplyAction::returnInformation: InputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_returnInformation_replyAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2216,8 +2216,8 @@ object OTIMOFLink {
     * @param: end2 InteractionUse::returnValue: ValueSpecification [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_returnValue_interactionUse
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2228,8 +2228,8 @@ object OTIMOFLink {
     * @param: end2 CollaborationUse::roleBinding: Dependency [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_roleBinding_collaborationUse
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2240,8 +2240,8 @@ object OTIMOFLink {
     * @param: end2 TestIdentityAction::second: InputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_second_testIdentityAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2252,20 +2252,20 @@ object OTIMOFLink {
     * @param: end2 Lifeline::selector: ValueSpecification [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_selector_lifeline
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_slot_owningInstance
     *
-    * @param: end1 Slot::owningInstance: InstanceSpecification [1..1] { unordered, unique, reference }
-    * @param: end2 InstanceSpecification::slot: Slot [0..*] { unordered, unique, composite }
+    * @param: end1 InstanceSpecification::slot: Slot [0..*] { unordered, unique, composite }
+    * @param: end2 Slot::owningInstance: InstanceSpecification [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_slot_owningInstance
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2276,8 +2276,8 @@ object OTIMOFLink {
     * @param: end2 DurationConstraint::specification: DurationInterval [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_specification_durationConstraint
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2288,8 +2288,8 @@ object OTIMOFLink {
     * @param: end2 IntervalConstraint::specification: Interval [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_specification_intervalConstraint
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2300,8 +2300,8 @@ object OTIMOFLink {
     * @param: end2 Constraint::specification: ValueSpecification [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_specification_owningConstraint
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2312,8 +2312,8 @@ object OTIMOFLink {
     * @param: end2 InstanceSpecification::specification: ValueSpecification [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_specification_owningInstanceSpec
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2324,8 +2324,8 @@ object OTIMOFLink {
     * @param: end2 TimeConstraint::specification: TimeInterval [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_specification_timeConstraint
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2336,8 +2336,8 @@ object OTIMOFLink {
     * @param: end2 State::stateInvariant: Constraint [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_stateInvariant_owningState
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2348,8 +2348,8 @@ object OTIMOFLink {
     * @param: end2 StructuredActivityNode::structuredNodeInput: InputPin [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_structuredNodeInput_structuredActivityNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2360,8 +2360,8 @@ object OTIMOFLink {
     * @param: end2 StructuredActivityNode::structuredNodeOutput: OutputPin [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_structuredNodeOutput_structuredActivityNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2372,8 +2372,8 @@ object OTIMOFLink {
     * @param: end2 StructuredActivityNode::activity: Activity [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_structuredNode_activity
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2384,9 +2384,9 @@ object OTIMOFLink {
     * @param: end2 StringExpression::subExpression: StringExpression [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_subExpression_owningExpression
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -2397,20 +2397,20 @@ object OTIMOFLink {
     * @param: end2 ActivityPartition::superPartition: ActivityPartition [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_subpartition_superPartition
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_substitution_substitutingClassifier
     *
-    * @param: end1 Substitution::substitutingClassifier: Classifier [1..1] { unordered, unique, reference }
-    * @param: end2 Classifier::substitution: Substitution [0..*] { unordered, unique, composite }
+    * @param: end1 Classifier::substitution: Substitution [0..*] { unordered, unique, composite }
+    * @param: end2 Substitution::substitutingClassifier: Classifier [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_substitution_substitutingClassifier
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2421,8 +2421,8 @@ object OTIMOFLink {
     * @param: end2 Vertex::container: Region [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_subvertex_container
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2433,8 +2433,8 @@ object OTIMOFLink {
     * @param: end2 CallOperationAction::target: InputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_target_callOperationAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2445,8 +2445,8 @@ object OTIMOFLink {
     * @param: end2 DestroyObjectAction::target: InputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_target_destroyObjectAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2457,8 +2457,8 @@ object OTIMOFLink {
     * @param: end2 SendObjectAction::target: InputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_target_sendObjectAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2469,20 +2469,20 @@ object OTIMOFLink {
     * @param: end2 SendSignalAction::target: InputPin [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_target_sendSignalAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
   /**
     * A_templateBinding_boundElement
     *
-    * @param: end1 TemplateBinding::boundElement: TemplateableElement [1..1] { unordered, unique, reference }
-    * @param: end2 TemplateableElement::templateBinding: TemplateBinding [0..*] { unordered, unique, composite }
+    * @param: end1 TemplateableElement::templateBinding: TemplateBinding [0..*] { unordered, unique, composite }
+    * @param: end2 TemplateBinding::boundElement: TemplateableElement [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_templateBinding_boundElement
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2493,8 +2493,8 @@ object OTIMOFLink {
     * @param: end2 Transition::container: Region [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_transition_container
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2505,8 +2505,8 @@ object OTIMOFLink {
     * @param: end2 AcceptEventAction::trigger: Trigger [1..*] { unordered, unique, composite }
     */
   case class OTIUMLA_trigger_acceptEventAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2517,8 +2517,8 @@ object OTIMOFLink {
     * @param: end2 Transition::trigger: Trigger [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_trigger_transition
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2529,8 +2529,8 @@ object OTIMOFLink {
     * @param: end2 ObjectNode::upperBound: ValueSpecification [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_upperBound_objectNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2541,8 +2541,8 @@ object OTIMOFLink {
     * @param: end2 MultiplicityElement::upperValue: ValueSpecification [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_upperValue_owningUpper
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2553,9 +2553,9 @@ object OTIMOFLink {
     * @param: end2 Slot::value: ValueSpecification [0..*] { ordered, unique, composite }
     */
   case class OTIUMLA_value_owningSlot
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFCompositeSecondEndOrderedLink
   {}
 
@@ -2566,8 +2566,8 @@ object OTIMOFLink {
     * @param: end2 ValuePin::value: ValueSpecification [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_value_valuePin
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2578,8 +2578,8 @@ object OTIMOFLink {
     * @param: end2 ValueSpecificationAction::value: ValueSpecification [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_value_valueSpecificationAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2590,8 +2590,8 @@ object OTIMOFLink {
     * @param: end2 WriteStructuralFeatureAction::value: InputPin [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_value_writeStructuralFeatureAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2602,8 +2602,8 @@ object OTIMOFLink {
     * @param: end2 WriteVariableAction::value: InputPin [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_value_writeVariableAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2614,8 +2614,8 @@ object OTIMOFLink {
     * @param: end2 Activity::variable: Variable [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_variable_activityScope
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2626,8 +2626,8 @@ object OTIMOFLink {
     * @param: end2 StructuredActivityNode::variable: Variable [0..*] { unordered, unique, composite }
     */
   case class OTIUMLA_variable_scope
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2638,8 +2638,8 @@ object OTIMOFLink {
     * @param: end2 ActivityEdge::weight: ValueSpecification [0..1] { unordered, unique, composite }
     */
   case class OTIUMLA_weight_activityEdge
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2650,8 +2650,8 @@ object OTIMOFLink {
     * @param: end2 TimeEvent::when: TimeExpression [1..1] { unordered, unique, composite }
     */
   case class OTIUMLA_when_timeEvent
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
 
@@ -2663,8 +2663,8 @@ object OTIMOFLink {
     * @param: end2 ActionExecutionSpecification::action: Action [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_action_actionExecutionSpecification
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2675,8 +2675,8 @@ object OTIMOFLink {
     * @param: end2 TemplateParameterSubstitution::actual: ParameterableElement [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_actual_templateParameterSubstitution
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2687,8 +2687,8 @@ object OTIMOFLink {
     * @param: end2 Include::addition: UseCase [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_addition_include
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2699,8 +2699,8 @@ object OTIMOFLink {
     * @param: end2 Comment::annotatedElement: Element [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_annotatedElement_comment
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2711,8 +2711,8 @@ object OTIMOFLink {
     * @param: end2 ProfileApplication::appliedProfile: Profile [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_appliedProfile_profileApplication
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2723,20 +2723,20 @@ object OTIMOFLink {
     * @param: end2 ClearAssociationAction::association: Association [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_association_clearAssociationAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
   /**
     * A_before_toAfter
     *
-    * @param: end1 GeneralOrdering::before: OccurrenceSpecification [1..1] { unordered, unique, reference }
-    * @param: end2 OccurrenceSpecification::toAfter: GeneralOrdering [0..*] { unordered, unique, reference }
+    * @param: end1 OccurrenceSpecification::toAfter: GeneralOrdering [0..*] { unordered, unique, reference }
+    * @param: end2 GeneralOrdering::before: OccurrenceSpecification [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_before_toAfter
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2747,8 +2747,8 @@ object OTIMOFLink {
     * @param: end2 BehaviorExecutionSpecification::behavior: Behavior [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_behavior_behaviorExecutionSpecification
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2759,8 +2759,8 @@ object OTIMOFLink {
     * @param: end2 CallBehaviorAction::behavior: Behavior [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_behavior_callBehaviorAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2771,8 +2771,8 @@ object OTIMOFLink {
     * @param: end2 OpaqueExpression::behavior: Behavior [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_behavior_opaqueExpression
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2783,9 +2783,9 @@ object OTIMOFLink {
     * @param: end2 Clause::bodyOutput: OutputPin [0..*] { ordered, unique, reference }
     */
   case class OTIUMLA_bodyOutput_clause
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFReferenceSecondEndOrderedLink
   {}
 
@@ -2796,9 +2796,9 @@ object OTIMOFLink {
     * @param: end2 LoopNode::bodyOutput: OutputPin [0..*] { ordered, unique, reference }
     */
   case class OTIUMLA_bodyOutput_loopNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFReferenceSecondEndOrderedLink
   {}
 
@@ -2809,8 +2809,8 @@ object OTIMOFLink {
     * @param: end2 LoopNode::bodyPart: ExecutableNode [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_bodyPart_loopNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2821,8 +2821,8 @@ object OTIMOFLink {
     * @param: end2 Clause::body: ExecutableNode [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_body_clause
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2833,8 +2833,8 @@ object OTIMOFLink {
     * @param: end2 BehavioredClassifier::classifierBehavior: Behavior [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_classifierBehavior_behavioredClassifier
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2845,8 +2845,8 @@ object OTIMOFLink {
     * @param: end2 CreateObjectAction::classifier: Classifier [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_classifier_createObjectAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2857,8 +2857,8 @@ object OTIMOFLink {
     * @param: end2 InstanceSpecification::classifier: Classifier [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_classifier_instanceSpecification
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2869,8 +2869,8 @@ object OTIMOFLink {
     * @param: end2 ReadExtentAction::classifier: Classifier [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_classifier_readExtentAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2881,32 +2881,32 @@ object OTIMOFLink {
     * @param: end2 ReadIsClassifiedObjectAction::classifier: Classifier [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_classifier_readIsClassifiedObjectAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
   /**
     * A_classifier_templateParameter_parameteredElement
     *
-    * @param: end1 ClassifierTemplateParameter::parameteredElement: Classifier [1..1] { unordered, unique, reference }
-    * @param: end2 Classifier::templateParameter: ClassifierTemplateParameter [0..1] { unordered, unique, reference }
+    * @param: end1 Classifier::templateParameter: ClassifierTemplateParameter [0..1] { unordered, unique, reference }
+    * @param: end2 ClassifierTemplateParameter::parameteredElement: Classifier [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_classifier_templateParameter_parameteredElement
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
   /**
     * A_clientDependency_client
     *
-    * @param: end1 NamedElement::clientDependency: Dependency [0..*] { unordered, unique, reference }
-    * @param: end2 Dependency::client: NamedElement [1..*] { unordered, unique, reference }
+    * @param: end1 Dependency::client: NamedElement [1..*] { unordered, unique, reference }
+    * @param: end2 NamedElement::clientDependency: Dependency [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_clientDependency_client
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2917,8 +2917,8 @@ object OTIMOFLink {
     * @param: end2 Collaboration::collaborationRole: ConnectableElement [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_collaborationRole_collaboration
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2929,8 +2929,8 @@ object OTIMOFLink {
     * @param: end2 ConnectableElementTemplateParameter::parameteredElement: ConnectableElement [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_connectableElement_templateParameter_parameteredElement
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2941,8 +2941,8 @@ object OTIMOFLink {
     * @param: end2 Message::connector: Connector [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_connector_message
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2953,9 +2953,9 @@ object OTIMOFLink {
     * @param: end2 Constraint::constrainedElement: Element [0..*] { ordered, unique, reference }
     */
   case class OTIUMLA_constrainedElement_constraint
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFReferenceSecondEndOrderedLink
   {}
 
@@ -2966,8 +2966,8 @@ object OTIMOFLink {
     * @param: end2 ClassifierTemplateParameter::constrainingClassifier: Classifier [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_constrainingClassifier_classifierTemplateParameter
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2978,8 +2978,8 @@ object OTIMOFLink {
     * @param: end2 Connector::contract: Behavior [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_contract_connector
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -2990,8 +2990,8 @@ object OTIMOFLink {
     * @param: end2 InterfaceRealization::contract: Interface [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_contract_interfaceRealization
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3002,8 +3002,8 @@ object OTIMOFLink {
     * @param: end2 Substitution::contract: Classifier [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_contract_substitution
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3014,8 +3014,8 @@ object OTIMOFLink {
     * @param: end2 InformationFlow::conveyed: Classifier [1..*] { unordered, unique, reference }
     */
   case class OTIUMLA_conveyed_conveyingFlow
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3026,8 +3026,8 @@ object OTIMOFLink {
     * @param: end2 Lifeline::coveredBy: InteractionFragment [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_covered_coveredBy
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3038,9 +3038,9 @@ object OTIMOFLink {
     * @param: end2 OccurrenceSpecification::covered: Lifeline [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_covered_events
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end1Index: Int,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end1Index: Int,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceFirstEndOrderedLink
   {}
 
@@ -3051,8 +3051,8 @@ object OTIMOFLink {
     * @param: end2 StateInvariant::covered: Lifeline [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_covered_stateInvariant
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3063,8 +3063,8 @@ object OTIMOFLink {
     * @param: end2 Clause::decider: OutputPin [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_decider_clause
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3075,8 +3075,8 @@ object OTIMOFLink {
     * @param: end2 LoopNode::decider: OutputPin [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_decider_loopNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3087,8 +3087,8 @@ object OTIMOFLink {
     * @param: end2 DecisionNode::decisionInputFlow: ObjectFlow [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_decisionInputFlow_decisionNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3099,8 +3099,8 @@ object OTIMOFLink {
     * @param: end2 DecisionNode::decisionInput: Behavior [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_decisionInput_decisionNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3111,8 +3111,8 @@ object OTIMOFLink {
     * @param: end2 Lifeline::decomposedAs: PartDecomposition [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_decomposedAs_lifeline
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3123,8 +3123,8 @@ object OTIMOFLink {
     * @param: end2 TemplateParameter::default: ParameterableElement [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_default_templateParameter
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3135,8 +3135,8 @@ object OTIMOFLink {
     * @param: end2 Slot::definingFeature: StructuralFeature [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_definingFeature_slot
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3147,8 +3147,8 @@ object OTIMOFLink {
     * @param: end2 Deployment::deployedArtifact: DeployedArtifact [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_deployedArtifact_deploymentForArtifact
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3159,8 +3159,8 @@ object OTIMOFLink {
     * @param: end2 LinkEndDestructionData::destroyAt: InputPin [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_destroyAt_linkEndDestructionData
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3171,8 +3171,8 @@ object OTIMOFLink {
     * @param: end2 ActivityEdge::inPartition: ActivityPartition [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_edge_inPartition
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3183,8 +3183,8 @@ object OTIMOFLink {
     * @param: end2 LinkEndData::end: Property [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_end_linkEndData
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3195,8 +3195,8 @@ object OTIMOFLink {
     * @param: end2 ReadLinkObjectEndAction::end: Property [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_end_readLinkObjectEndAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3207,8 +3207,8 @@ object OTIMOFLink {
     * @param: end2 ConnectorEnd::role: ConnectableElement [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_end_role
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3219,8 +3219,8 @@ object OTIMOFLink {
     * @param: end2 ConnectionPointReference::entry: Pseudostate [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_entry_connectionPointReference
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3231,9 +3231,9 @@ object OTIMOFLink {
     * @param: end2 DurationObservation::event: NamedElement [1..2] { ordered, unique, reference }
     */
   case class OTIUMLA_event_durationObservation
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFReferenceSecondEndOrderedLink
   {}
 
@@ -3244,8 +3244,8 @@ object OTIMOFLink {
     * @param: end2 TimeObservation::event: NamedElement [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_event_timeObservation
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3256,8 +3256,8 @@ object OTIMOFLink {
     * @param: end2 Trigger::event: Event [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_event_trigger
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3268,8 +3268,8 @@ object OTIMOFLink {
     * @param: end2 ExceptionHandler::exceptionInput: ObjectNode [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_exceptionInput_exceptionHandler
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3280,8 +3280,8 @@ object OTIMOFLink {
     * @param: end2 ExceptionHandler::exceptionType: Classifier [1..*] { unordered, unique, reference }
     */
   case class OTIUMLA_exceptionType_exceptionHandler
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3292,8 +3292,8 @@ object OTIMOFLink {
     * @param: end2 ExecutionOccurrenceSpecification::execution: ExecutionSpecification [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_execution_executionOccurrenceSpecification
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3304,8 +3304,8 @@ object OTIMOFLink {
     * @param: end2 ConnectionPointReference::exit: Pseudostate [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_exit_connectionPointReference
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3316,8 +3316,8 @@ object OTIMOFLink {
     * @param: end2 Extend::extendedCase: UseCase [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_extendedCase_extend
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3328,8 +3328,8 @@ object OTIMOFLink {
     * @param: end2 Region::extendedRegion: Region [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_extendedRegion_region
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3340,8 +3340,8 @@ object OTIMOFLink {
     * @param: end2 RedefinableTemplateSignature::extendedSignature: RedefinableTemplateSignature [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_extendedSignature_redefinableTemplateSignature
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3352,8 +3352,8 @@ object OTIMOFLink {
     * @param: end2 StateMachine::extendedStateMachine: StateMachine [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_extendedStateMachine_stateMachine
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3364,9 +3364,9 @@ object OTIMOFLink {
     * @param: end2 Extend::extensionLocation: ExtensionPoint [1..*] { ordered, unique, reference }
     */
   case class OTIUMLA_extensionLocation_extension
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFReferenceSecondEndOrderedLink
   {}
 
@@ -3377,8 +3377,8 @@ object OTIMOFLink {
     * @param: end2 ExecutionSpecification::finish: OccurrenceSpecification [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_finish_executionSpecification
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3389,8 +3389,8 @@ object OTIMOFLink {
     * @param: end2 TemplateParameterSubstitution::formal: TemplateParameter [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_formal_templateParameterSubstitution
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3401,8 +3401,8 @@ object OTIMOFLink {
     * @param: end2 ProtocolConformance::generalMachine: ProtocolStateMachine [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_generalMachine_protocolConformance
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3413,20 +3413,20 @@ object OTIMOFLink {
     * @param: end2 Generalization::general: Classifier [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_general_generalization
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
   /**
     * A_generalizationSet_generalization
     *
-    * @param: end1 Generalization::generalizationSet: GeneralizationSet [0..*] { unordered, unique, reference }
-    * @param: end2 GeneralizationSet::generalization: Generalization [0..*] { unordered, unique, reference }
+    * @param: end1 GeneralizationSet::generalization: Generalization [0..*] { unordered, unique, reference }
+    * @param: end2 Generalization::generalizationSet: GeneralizationSet [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_generalizationSet_generalization
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3437,8 +3437,8 @@ object OTIMOFLink {
     * @param: end2 ExceptionHandler::handlerBody: ExecutableNode [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_handlerBody_exceptionHandler
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3449,8 +3449,8 @@ object OTIMOFLink {
     * @param: end2 ElementImport::importedElement: PackageableElement [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_importedElement_import
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3461,20 +3461,20 @@ object OTIMOFLink {
     * @param: end2 PackageImport::importedPackage: Package [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_importedPackage_packageImport
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
   /**
     * A_inInterruptibleRegion_node
     *
-    * @param: end1 ActivityNode::inInterruptibleRegion: InterruptibleActivityRegion [0..*] { unordered, unique, reference }
-    * @param: end2 InterruptibleActivityRegion::node: ActivityNode [0..*] { unordered, unique, reference }
+    * @param: end1 InterruptibleActivityRegion::node: ActivityNode [0..*] { unordered, unique, reference }
+    * @param: end2 ActivityNode::inInterruptibleRegion: InterruptibleActivityRegion [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_inInterruptibleRegion_node
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3485,8 +3485,8 @@ object OTIMOFLink {
     * @param: end2 ActivityNode::inPartition: ActivityPartition [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_inPartition_node
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3497,20 +3497,20 @@ object OTIMOFLink {
     * @param: end2 ObjectNode::inState: State [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_inState_objectNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
   /**
     * A_incoming_target_node
     *
-    * @param: end1 ActivityEdge::target: ActivityNode [1..1] { unordered, unique, reference }
-    * @param: end2 ActivityNode::incoming: ActivityEdge [0..*] { unordered, unique, reference }
+    * @param: end1 ActivityNode::incoming: ActivityEdge [0..*] { unordered, unique, reference }
+    * @param: end2 ActivityEdge::target: ActivityNode [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_incoming_target_node
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3521,8 +3521,8 @@ object OTIMOFLink {
     * @param: end2 Transition::target: Vertex [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_incoming_target_vertex
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3533,8 +3533,8 @@ object OTIMOFLink {
     * @param: end2 InformationFlow::informationSource: NamedElement [1..*] { unordered, unique, reference }
     */
   case class OTIUMLA_informationSource_informationFlow
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3545,8 +3545,8 @@ object OTIMOFLink {
     * @param: end2 InformationFlow::informationTarget: NamedElement [1..*] { unordered, unique, reference }
     */
   case class OTIUMLA_informationTarget_informationFlow
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3557,8 +3557,8 @@ object OTIMOFLink {
     * @param: end2 ExpansionRegion::inputElement: ExpansionNode [1..*] { unordered, unique, reference }
     */
   case class OTIUMLA_inputElement_regionAsInput
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3569,8 +3569,8 @@ object OTIMOFLink {
     * @param: end2 LinkEndCreationData::insertAt: InputPin [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_insertAt_linkEndCreationData
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3581,20 +3581,20 @@ object OTIMOFLink {
     * @param: end2 InstanceValue::instance: InstanceSpecification [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_instance_instanceValue
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
   /**
     * A_interruptingEdge_interrupts
     *
-    * @param: end1 ActivityEdge::interrupts: InterruptibleActivityRegion [0..1] { unordered, unique, reference }
-    * @param: end2 InterruptibleActivityRegion::interruptingEdge: ActivityEdge [0..*] { unordered, unique, reference }
+    * @param: end1 InterruptibleActivityRegion::interruptingEdge: ActivityEdge [0..*] { unordered, unique, reference }
+    * @param: end2 ActivityEdge::interrupts: InterruptibleActivityRegion [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_interruptingEdge_interrupts
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3605,8 +3605,8 @@ object OTIMOFLink {
     * @param: end2 DurationInterval::max: Duration [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_max_durationInterval
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3617,8 +3617,8 @@ object OTIMOFLink {
     * @param: end2 Interval::max: ValueSpecification [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_max_interval
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3629,22 +3629,22 @@ object OTIMOFLink {
     * @param: end2 TimeInterval::max: TimeExpression [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_max_timeInterval
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
   /**
     * A_memberEnd_association
     *
-    * @param: end1 Property::association: Association [0..1] { unordered, unique, reference }
-    * @param: end2 Association::memberEnd: Property [2..*] { ordered, unique, reference }
+    * @param: end1 Association::memberEnd: Property [2..*] { ordered, unique, reference }
+    * @param: end2 Property::association: Association [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_memberEnd_association
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
-  extends  OTIMOFReferenceSecondEndOrderedLink
+  ( override val end1: ElementLocation,
+    override val end1Index: Int,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceFirstEndOrderedLink
   {}
 
   /**
@@ -3654,8 +3654,8 @@ object OTIMOFLink {
     * @param: end2 PackageMerge::mergedPackage: Package [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_mergedPackage_packageMerge
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3666,8 +3666,8 @@ object OTIMOFLink {
     * @param: end2 ConsiderIgnoreFragment::message: NamedElement [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_message_considerIgnoreFragment
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3678,8 +3678,8 @@ object OTIMOFLink {
     * @param: end2 MessageEnd::message: Message [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_message_messageEnd
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3690,8 +3690,8 @@ object OTIMOFLink {
     * @param: end2 Behavior::specification: BehavioralFeature [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_method_specification
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3702,8 +3702,8 @@ object OTIMOFLink {
     * @param: end2 DurationInterval::min: Duration [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_min_durationInterval
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3714,8 +3714,8 @@ object OTIMOFLink {
     * @param: end2 Interval::min: ValueSpecification [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_min_interval
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3726,8 +3726,8 @@ object OTIMOFLink {
     * @param: end2 TimeInterval::min: TimeExpression [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_min_timeInterval
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3738,8 +3738,8 @@ object OTIMOFLink {
     * @param: end2 Association::navigableOwnedEnd: Property [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_navigableOwnedEnd_association
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3750,8 +3750,8 @@ object OTIMOFLink {
     * @param: end2 ReclassifyObjectAction::newClassifier: Classifier [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_newClassifier_reclassifyObjectAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3762,8 +3762,8 @@ object OTIMOFLink {
     * @param: end2 Duration::observation: Observation [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_observation_duration
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3774,8 +3774,8 @@ object OTIMOFLink {
     * @param: end2 TimeExpression::observation: Observation [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_observation_timeExpression
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3786,8 +3786,8 @@ object OTIMOFLink {
     * @param: end2 ReclassifyObjectAction::oldClassifier: Classifier [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_oldClassifier_reclassifyObjectAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3798,8 +3798,8 @@ object OTIMOFLink {
     * @param: end2 InvocationAction::onPort: Port [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_onPort_invocationAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3810,8 +3810,8 @@ object OTIMOFLink {
     * @param: end2 CallEvent::operation: Operation [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_operation_callEvent
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3822,8 +3822,8 @@ object OTIMOFLink {
     * @param: end2 CallOperationAction::operation: Operation [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_operation_callOperationAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3834,20 +3834,20 @@ object OTIMOFLink {
     * @param: end2 OperationTemplateParameter::parameteredElement: Operation [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_operation_templateParameter_parameteredElement
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
   /**
     * A_outgoing_source_node
     *
-    * @param: end1 ActivityEdge::source: ActivityNode [1..1] { unordered, unique, reference }
-    * @param: end2 ActivityNode::outgoing: ActivityEdge [0..*] { unordered, unique, reference }
+    * @param: end1 ActivityNode::outgoing: ActivityEdge [0..*] { unordered, unique, reference }
+    * @param: end2 ActivityEdge::source: ActivityNode [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_outgoing_source_node
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3858,8 +3858,8 @@ object OTIMOFLink {
     * @param: end2 Transition::source: Vertex [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_outgoing_source_vertex
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3870,8 +3870,8 @@ object OTIMOFLink {
     * @param: end2 ExpansionRegion::outputElement: ExpansionNode [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_outputElement_regionAsOutput
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3882,8 +3882,8 @@ object OTIMOFLink {
     * @param: end2 ParameterSet::parameter: Parameter [1..*] { unordered, unique, reference }
     */
   case class OTIUMLA_parameterSet_parameter
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3894,8 +3894,8 @@ object OTIMOFLink {
     * @param: end2 ActivityParameterNode::parameter: Parameter [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_parameter_activityParameterNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3906,21 +3906,21 @@ object OTIMOFLink {
     * @param: end2 TemplateSignature::parameter: TemplateParameter [1..*] { ordered, unique, reference }
     */
   case class OTIUMLA_parameter_templateSignature
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL,
-   override val end2Index: Int )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation,
+    override val end2Index: Int )
   extends  OTIMOFReferenceSecondEndOrderedLink
   {}
 
   /**
     * A_parameteredElement_templateParameter
     *
-    * @param: end1 TemplateParameter::parameteredElement: ParameterableElement [1..1] { unordered, unique, reference }
-    * @param: end2 ParameterableElement::templateParameter: TemplateParameter [0..1] { unordered, unique, reference }
+    * @param: end1 ParameterableElement::templateParameter: TemplateParameter [0..1] { unordered, unique, reference }
+    * @param: end2 TemplateParameter::parameteredElement: ParameterableElement [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_parameteredElement_templateParameter
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3931,8 +3931,8 @@ object OTIMOFLink {
     * @param: end2 ConnectorEnd::partWithPort: Property [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_partWithPort_connectorEnd
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3943,8 +3943,8 @@ object OTIMOFLink {
     * @param: end2 Activity::partition: ActivityPartition [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_partition_activity
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3955,20 +3955,20 @@ object OTIMOFLink {
     * @param: end2 Trigger::port: Port [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_port_trigger
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
   /**
     * A_powertypeExtent_powertype
     *
-    * @param: end1 GeneralizationSet::powertype: Classifier [0..1] { unordered, unique, reference }
-    * @param: end2 Classifier::powertypeExtent: GeneralizationSet [0..*] { unordered, unique, reference }
+    * @param: end1 Classifier::powertypeExtent: GeneralizationSet [0..*] { unordered, unique, reference }
+    * @param: end2 GeneralizationSet::powertype: Classifier [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_powertypeExtent_powertype
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3979,8 +3979,8 @@ object OTIMOFLink {
     * @param: end2 Clause::successorClause: Clause [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_predecessorClause_successorClause
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -3991,8 +3991,8 @@ object OTIMOFLink {
     * @param: end2 Port::protocol: ProtocolStateMachine [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_protocol_port
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4003,8 +4003,8 @@ object OTIMOFLink {
     * @param: end2 QualifierValue::qualifier: Property [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_qualifier_qualifierValue
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4015,8 +4015,8 @@ object OTIMOFLink {
     * @param: end2 ReadLinkObjectEndQualifierAction::qualifier: Property [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_qualifier_readLinkObjectEndQualifierAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4027,8 +4027,8 @@ object OTIMOFLink {
     * @param: end2 BehavioralFeature::raisedException: Type [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_raisedException_behavioralFeature
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4039,8 +4039,8 @@ object OTIMOFLink {
     * @param: end2 Operation::raisedException: Type [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_raisedException_operation
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4051,8 +4051,8 @@ object OTIMOFLink {
     * @param: end2 InformationFlow::realization: Relationship [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_realization_abstraction_flow
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4063,8 +4063,8 @@ object OTIMOFLink {
     * @param: end2 InformationFlow::realizingActivityEdge: ActivityEdge [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_realizingActivityEdge_informationFlow
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4075,8 +4075,8 @@ object OTIMOFLink {
     * @param: end2 ComponentRealization::realizingClassifier: Classifier [1..*] { unordered, unique, reference }
     */
   case class OTIUMLA_realizingClassifier_componentRealization
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4087,8 +4087,8 @@ object OTIMOFLink {
     * @param: end2 InformationFlow::realizingConnector: Connector [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_realizingConnector_informationFlow
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4099,8 +4099,8 @@ object OTIMOFLink {
     * @param: end2 InformationFlow::realizingMessage: Message [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_realizingMessage_informationFlow
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4111,8 +4111,8 @@ object OTIMOFLink {
     * @param: end2 Message::receiveEvent: MessageEnd [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_receiveEvent_endMessage
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4123,8 +4123,8 @@ object OTIMOFLink {
     * @param: end2 Behavior::redefinedBehavior: Behavior [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_redefinedBehavior_behavior
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4135,8 +4135,8 @@ object OTIMOFLink {
     * @param: end2 Classifier::redefinedClassifier: Classifier [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_redefinedClassifier_classifier
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4147,8 +4147,8 @@ object OTIMOFLink {
     * @param: end2 Connector::redefinedConnector: Connector [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_redefinedConnector_connector
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4159,8 +4159,8 @@ object OTIMOFLink {
     * @param: end2 ActivityEdge::redefinedEdge: ActivityEdge [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_redefinedEdge_activityEdge
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4171,8 +4171,8 @@ object OTIMOFLink {
     * @param: end2 Interface::redefinedInterface: Interface [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_redefinedInterface_interface
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4183,8 +4183,8 @@ object OTIMOFLink {
     * @param: end2 ActivityNode::redefinedNode: ActivityNode [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_redefinedNode_activityNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4195,8 +4195,8 @@ object OTIMOFLink {
     * @param: end2 Operation::redefinedOperation: Operation [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_redefinedOperation_operation
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4207,8 +4207,8 @@ object OTIMOFLink {
     * @param: end2 Port::redefinedPort: Port [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_redefinedPort_port
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4219,8 +4219,8 @@ object OTIMOFLink {
     * @param: end2 Property::redefinedProperty: Property [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_redefinedProperty_property
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4231,8 +4231,8 @@ object OTIMOFLink {
     * @param: end2 State::redefinedState: State [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_redefinedState_state
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4243,8 +4243,8 @@ object OTIMOFLink {
     * @param: end2 Transition::redefinedTransition: Transition [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_redefinedTransition_transition
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4255,8 +4255,8 @@ object OTIMOFLink {
     * @param: end2 ReduceAction::reducer: Behavior [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_reducer_reduceAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4267,8 +4267,8 @@ object OTIMOFLink {
     * @param: end2 InteractionUse::refersTo: Interaction [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_refersTo_interactionUse
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4279,8 +4279,8 @@ object OTIMOFLink {
     * @param: end2 ReplyAction::replyToCall: Trigger [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_replyToCall_replyAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4291,8 +4291,8 @@ object OTIMOFLink {
     * @param: end2 Classifier::representation: CollaborationUse [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_representation_classifier
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4303,8 +4303,8 @@ object OTIMOFLink {
     * @param: end2 InformationItem::represented: Classifier [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_represented_representation
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4315,8 +4315,8 @@ object OTIMOFLink {
     * @param: end2 ActivityPartition::represents: Element [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_represents_activityPartition
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4327,8 +4327,8 @@ object OTIMOFLink {
     * @param: end2 Lifeline::represents: ConnectableElement [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_represents_lifeline
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4339,8 +4339,8 @@ object OTIMOFLink {
     * @param: end2 InteractionUse::returnValueRecipient: Property [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_returnValueRecipient_interactionUse
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4351,8 +4351,8 @@ object OTIMOFLink {
     * @param: end2 ObjectFlow::selection: Behavior [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_selection_objectFlow
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4363,8 +4363,8 @@ object OTIMOFLink {
     * @param: end2 ObjectNode::selection: Behavior [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_selection_objectNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4375,8 +4375,8 @@ object OTIMOFLink {
     * @param: end2 Message::sendEvent: MessageEnd [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_sendEvent_endMessage
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4387,8 +4387,8 @@ object OTIMOFLink {
     * @param: end2 LoopNode::setupPart: ExecutableNode [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_setupPart_loopNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4399,8 +4399,8 @@ object OTIMOFLink {
     * @param: end2 BroadcastSignalAction::signal: Signal [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_signal_broadcastSignalAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4411,8 +4411,8 @@ object OTIMOFLink {
     * @param: end2 Reception::signal: Signal [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_signal_reception
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4423,8 +4423,8 @@ object OTIMOFLink {
     * @param: end2 SendSignalAction::signal: Signal [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_signal_sendSignalAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4435,8 +4435,8 @@ object OTIMOFLink {
     * @param: end2 SignalEvent::signal: Signal [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_signal_signalEvent
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4447,8 +4447,8 @@ object OTIMOFLink {
     * @param: end2 Message::signature: NamedElement [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_signature_message
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4459,8 +4459,8 @@ object OTIMOFLink {
     * @param: end2 TemplateBinding::signature: TemplateSignature [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_signature_templateBinding
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4471,8 +4471,8 @@ object OTIMOFLink {
     * @param: end2 ExecutionSpecification::start: OccurrenceSpecification [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_start_executionSpecification
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4483,20 +4483,20 @@ object OTIMOFLink {
     * @param: end2 StructuralFeatureAction::structuralFeature: StructuralFeature [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_structuralFeature_structuralFeatureAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
   /**
     * A_subject_useCase
     *
-    * @param: end1 Classifier::useCase: UseCase [0..*] { unordered, unique, reference }
-    * @param: end2 UseCase::subject: Classifier [0..*] { unordered, unique, reference }
+    * @param: end1 UseCase::subject: Classifier [0..*] { unordered, unique, reference }
+    * @param: end2 Classifier::useCase: UseCase [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_subject_useCase
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4507,8 +4507,8 @@ object OTIMOFLink {
     * @param: end2 StateMachine::submachineState: State [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_submachineState_submachine
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4519,8 +4519,8 @@ object OTIMOFLink {
     * @param: end2 Property::subsettedProperty: Property [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_subsettedProperty_property
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4531,8 +4531,8 @@ object OTIMOFLink {
     * @param: end2 Dependency::supplier: NamedElement [1..*] { unordered, unique, reference }
     */
   case class OTIUMLA_supplier_supplierDependency
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4543,8 +4543,8 @@ object OTIMOFLink {
     * @param: end2 Clause::test: ExecutableNode [1..*] { unordered, unique, reference }
     */
   case class OTIUMLA_test_clause
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4555,20 +4555,20 @@ object OTIMOFLink {
     * @param: end2 LoopNode::test: ExecutableNode [1..*] { unordered, unique, reference }
     */
   case class OTIUMLA_test_loopNode
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
   /**
     * A_toBefore_after
     *
-    * @param: end1 GeneralOrdering::after: OccurrenceSpecification [1..1] { unordered, unique, reference }
-    * @param: end2 OccurrenceSpecification::toBefore: GeneralOrdering [0..*] { unordered, unique, reference }
+    * @param: end1 OccurrenceSpecification::toBefore: GeneralOrdering [0..*] { unordered, unique, reference }
+    * @param: end2 GeneralOrdering::after: OccurrenceSpecification [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_toBefore_after
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4579,8 +4579,8 @@ object OTIMOFLink {
     * @param: end2 ObjectFlow::transformation: Behavior [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_transformation_objectFlow
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4591,8 +4591,8 @@ object OTIMOFLink {
     * @param: end2 CollaborationUse::type: Collaboration [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_type_collaborationUse
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4603,8 +4603,8 @@ object OTIMOFLink {
     * @param: end2 Connector::type: Association [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_type_connector
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4615,8 +4615,8 @@ object OTIMOFLink {
     * @param: end2 ExtensionEnd::type: Stereotype [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_type_extensionEnd
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4627,8 +4627,8 @@ object OTIMOFLink {
     * @param: end2 TypedElement::type: Type [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_type_typedElement
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4639,8 +4639,8 @@ object OTIMOFLink {
     * @param: end2 UnmarshallAction::unmarshallType: Classifier [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_unmarshallType_unmarshallAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4651,8 +4651,8 @@ object OTIMOFLink {
     * @param: end2 Manifestation::utilizedElement: PackageableElement [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_utilizedElement_manifestation
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4663,8 +4663,8 @@ object OTIMOFLink {
     * @param: end2 LinkEndData::value: InputPin [0..1] { unordered, unique, reference }
     */
   case class OTIUMLA_value_linkEndData
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4675,8 +4675,8 @@ object OTIMOFLink {
     * @param: end2 QualifierValue::value: InputPin [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_value_qualifierValue
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4687,8 +4687,20 @@ object OTIMOFLink {
     * @param: end2 VariableAction::variable: Variable [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_variable_variableAction
-  (override val end1: ElementLocation_OTI_ID_OTI_URL,
-   override val end2: ElementLocation_OTI_ID_OTI_URL )
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  /**
+    * MD_elementValue_element
+    *
+    * @param: end1 MD_elementValue_element::elementValue: ElementValue [0..*] { unordered, unique, reference }
+    * @param: end2 ElementValue::element: Element [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLMD_elementValue_element
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
 
@@ -4823,9 +4835,9 @@ object OTIMOFReferenceLink {
 
     def compare(x: OTIMOFReferenceLink, y: OTIMOFReferenceLink)
     : Int
-    = ElementLocation_OTI_ID_OTI_URL.ordering.compare(x.end1, y.end1) match {
+    = ElementLocation.ordering.compare(x.end1, y.end1) match {
       case 0 =>
-        ElementLocation_OTI_ID_OTI_URL.ordering.compare(x.end2, y.end2)
+        ElementLocation.ordering.compare(x.end2, y.end2)
       case c =>
         c
     }
@@ -4858,9 +4870,9 @@ object OTIMOFReferenceFirstEndOrderedLink {
 
     def compare(x: OTIMOFReferenceFirstEndOrderedLink, y: OTIMOFReferenceFirstEndOrderedLink)
     : Int
-    = ElementLocation_OTI_ID_OTI_URL.ordering.compare(x.end1, y.end1) match {
+    = ElementLocation.ordering.compare(x.end1, y.end1) match {
       case 0 =>
-        ElementLocation_OTI_ID_OTI_URL.ordering.compare(x.end2, y.end2) match {
+        ElementLocation.ordering.compare(x.end2, y.end2) match {
           case 0 =>
             Ordering[Int].compare(x.end1Index, y.end1Index)
           case c =>
@@ -4898,9 +4910,9 @@ object OTIMOFReferenceSecondEndOrderedLink {
 
     def compare(x: OTIMOFReferenceSecondEndOrderedLink, y: OTIMOFReferenceSecondEndOrderedLink)
     : Int
-    = ElementLocation_OTI_ID_OTI_URL.ordering.compare(x.end1, y.end1) match {
+    = ElementLocation.ordering.compare(x.end1, y.end1) match {
       case 0 =>
-        ElementLocation_OTI_ID_OTI_URL.ordering.compare(x.end2, y.end2) match {
+        ElementLocation.ordering.compare(x.end2, y.end2) match {
           case 0 =>
             Ordering[Int].compare(x.end2Index, y.end2Index)
           case c =>
