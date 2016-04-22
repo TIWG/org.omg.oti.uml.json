@@ -4720,9 +4720,9 @@ object OTIMOFCompositeLink {
 
     def compare(x: OTIMOFCompositeLink, y: OTIMOFCompositeLink)
     : Int
-    = ElementLocation_OTI_ID_OTI_URL.ordering.compare(x.end1, y.end1) match {
+    = ElementLocation.ordering.compare(x.end1, y.end1) match {
       case 0 =>
-        ElementLocation_OTI_ID_OTI_URL.ordering.compare(x.end2, y.end2)
+        ElementLocation.ordering.compare(x.end2, y.end2)
       case c =>
         c
     }
@@ -4755,9 +4755,9 @@ object OTIMOFCompositeFirstEndOrderedLink {
 
     def compare(x: OTIMOFCompositeFirstEndOrderedLink, y: OTIMOFCompositeFirstEndOrderedLink)
     : Int
-    = ElementLocation_OTI_ID_OTI_URL.ordering.compare(x.end1, y.end1) match {
+    = ElementLocation.ordering.compare(x.end1, y.end1) match {
       case 0 =>
-        ElementLocation_OTI_ID_OTI_URL.ordering.compare(x.end2, y.end2) match {
+        ElementLocation.ordering.compare(x.end2, y.end2) match {
           case 0 =>
             Ordering[Int].compare(x.end1Index, y.end1Index)
           case c =>
@@ -4795,9 +4795,9 @@ object OTIMOFCompositeSecondEndOrderedLink {
 
     def compare(x: OTIMOFCompositeSecondEndOrderedLink, y: OTIMOFCompositeSecondEndOrderedLink)
     : Int
-    = ElementLocation_OTI_ID_OTI_URL.ordering.compare(x.end1, y.end1) match {
+    = ElementLocation.ordering.compare(x.end1, y.end1) match {
       case 0 =>
-        ElementLocation_OTI_ID_OTI_URL.ordering.compare(x.end2, y.end2) match {
+        ElementLocation.ordering.compare(x.end2, y.end2) match {
           case 0 =>
             Ordering[Int].compare(x.end2Index, y.end2Index)
           case c =>

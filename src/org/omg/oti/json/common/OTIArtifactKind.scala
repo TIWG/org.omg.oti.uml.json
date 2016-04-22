@@ -145,10 +145,6 @@ case object OTIBuiltInModelLibraryArtifactKind
 
 object OTIArtifactKind {
 
-  implicit val formats
-  : Format[OTIArtifactKind]
-  = Variants.format[OTIArtifactKind]((__ \ "type").format[String])
-
   implicit val writes
   : Writes[OTIArtifactKind]
   = Variants.writes[OTIArtifactKind]((__ \ "type").write[String])
@@ -156,5 +152,9 @@ object OTIArtifactKind {
   implicit val reads
   : Reads[OTIArtifactKind]
   = Variants.reads[OTIArtifactKind]((__ \ "type").read[String])
+
+  implicit val formats
+  : Format[OTIArtifactKind]
+  = Variants.format[OTIArtifactKind]((__ \ "type").format[String])
 
 }

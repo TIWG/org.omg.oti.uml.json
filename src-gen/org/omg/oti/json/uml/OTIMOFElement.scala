@@ -5001,7 +5001,7 @@ object OTIMOFElement {
 
     def compare(x: OTIMOFElement, y: OTIMOFElement)
     : Int
-    = OTIMOFElement.ordering.compare(x.otiMOFElementLocation, y.otiMOFElementLocation)
+    = ElementLocation.ordering.compare(x.otiMOFElementLocation, y.otiMOFElementLocation)
 
   }
 
