@@ -47,14 +47,14 @@ import scala.collection.immutable._
   *                   packages and/or profiles characterized as OTI Documents
   */
 case class OTIDocumentSetConfiguration
-( documents: SortedSet[OTIDocumentConfiguration])
+( documents: Vector[OTIDocumentConfiguration] )
 {}
 
 object OTIDocumentSetConfiguration {
 
   def empty
   : OTIDocumentSetConfiguration
-  = OTIDocumentSetConfiguration(documents=SortedSet.empty[OTIDocumentConfiguration])
+  = OTIDocumentSetConfiguration(documents=Vector.empty[OTIDocumentConfiguration])
 
   implicit def formats
   : Format[OTIDocumentSetConfiguration]

@@ -5181,15 +5181,15 @@ object OTIMOFElement {
 
   implicit val formatsOTIMOFElement
   : Format[OTIMOFElement]
-  = Variants.format[OTIMOFElement]
+  = Variants.format[OTIMOFElement]((__ \ "type").format[String])
 
   implicit val writesOTIMOFElement
   : Writes[OTIMOFElement]
-  = Variants.writes[OTIMOFElement]
+  = Variants.writes[OTIMOFElement]((__ \ "type").format[String])
 
   implicit val readsOTIMOFElement
   : Reads[OTIMOFElement]
-  = Variants.reads[OTIMOFElement]
+  = Variants.reads[OTIMOFElement]((__ \ "type").format[String])
   
   // <!-- End of user code OTI MOF Element companion -->
 

@@ -67,40 +67,6 @@ package object common {
     def writes(v: String @@ T): JsValue = JsString(Tag.unwrap(v))
   }
 
-  implicit val formatsOTIElementDocumentURL
-  : Format[OTIElementDocumentURL]
-  = Json.format[OTIElementDocumentURL]
 
-  implicit val writesOTIElementDocumentURL
-  : Writes[OTIElementDocumentURL]
-  = Json.writes[OTIElementDocumentURL]
-
-  implicit val readsOTIElementDocumentURL
-  : Reads[OTIElementDocumentURL]
-  = Json.reads[OTIElementDocumentURL]
-  
-  implicit val formatsToolSpecificElementDocumentURL
-  : Format[ToolSpecificElementDocumentURL]
-  = Json.format[ToolSpecificElementDocumentURL]
-
-  implicit val writesToolSpecificElementDocumentURL
-  : Writes[ToolSpecificElementDocumentURL]
-  = Json.writes[ToolSpecificElementDocumentURL]
-
-  implicit val readsToolSpecificElementDocumentURL
-  : Reads[ToolSpecificElementDocumentURL]
-  = Json.reads[ToolSpecificElementDocumentURL]
-
-  implicit val formatsToolSpecificElementID_OTIDocumentURL
-  : Format[ToolSpecificElementID_OTIDocumentURL]
-  = Json.format[ToolSpecificElementID_OTIDocumentURL]
-
-  implicit val writesToolSpecificElementID_OTIDocumentURL
-  : Writes[ToolSpecificElementID_OTIDocumentURL]
-  = Json.writes[ToolSpecificElementID_OTIDocumentURL]
-
-  implicit val readsToolSpecificElementID_OTIDocumentURL
-  : Reads[ToolSpecificElementID_OTIDocumentURL]
-  = Json.reads[ToolSpecificElementID_OTIDocumentURL]
 
 }

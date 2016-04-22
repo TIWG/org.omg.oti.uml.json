@@ -44,7 +44,6 @@ import org.omg.oti.json.common._
 import org.omg.oti.json.uml._
 
 import scala.collection.immutable._
-import scala.{Option,None}
 import scala.Predef.String
 import scalaz.@@
 
@@ -56,42 +55,61 @@ case class OTIDocumentExtent
  : String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID,
 
  toolSpecificPackageURL
- : Option[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_URL] = None,
+ : Option[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_URL]
+ = None,
 
  elementExtent
- : SortedSet[OTIMOFElement],
+ : Vector[OTIMOFElement]
+ = Vector.empty[OTIMOFElement],
 
  compositeLinkExtent
- : SortedSet[OTIMOFCompositeLink],
+ : Vector[OTIMOFCompositeLink]
+ = Vector.empty[OTIMOFCompositeLink],
 
  compositeFirstEndOrderedLinkExtent
- : SortedSet[OTIMOFCompositeFirstEndOrderedLink],
+ : Vector[OTIMOFCompositeFirstEndOrderedLink]
+ = Vector.empty[OTIMOFCompositeFirstEndOrderedLink],
 
  compositeSecondEndOrderedLinkExtent
- : SortedSet[OTIMOFCompositeSecondEndOrderedLink],
+ : Vector[OTIMOFCompositeSecondEndOrderedLink]
+ = Vector.empty[OTIMOFCompositeSecondEndOrderedLink],
 
  referenceLinkExtent
- : SortedSet[OTIMOFReferenceLink],
+ : Vector[OTIMOFReferenceLink]
+ = Vector.empty[OTIMOFReferenceLink],
 
  referenceFirstEndOrderedLinkExtent
- : SortedSet[OTIMOFReferenceFirstEndOrderedLink],
+ : Vector[OTIMOFReferenceFirstEndOrderedLink]
+ = Vector.empty[OTIMOFReferenceFirstEndOrderedLink],
 
  referenceSecondEndOrderedLinkExtent
- : SortedSet[OTIMOFReferenceSecondEndOrderedLink])
+ : Vector[OTIMOFReferenceSecondEndOrderedLink]
+ = Vector.empty[OTIMOFReferenceSecondEndOrderedLink])
 {}
 
 object OTIDocumentExtent {
 
-  implicit def formats
-  : Format[OTIDocumentExtent]
-  = Json.format[OTIDocumentExtent]
+  def merge(d1: OTIDocumentExtent, d2: OTIDocumentExtent)
+  : OTIDocumentExtent
+  = d1.copy(
+    elementExtent = d1.elementExtent ++ d2.elementExtent,
+    compositeLinkExtent = d1.compositeLinkExtent ++ d2.compositeLinkExtent,
+    compositeFirstEndOrderedLinkExtent = d1.compositeFirstEndOrderedLinkExtent ++ d2.compositeFirstEndOrderedLinkExtent,
+    compositeSecondEndOrderedLinkExtent = d1.compositeSecondEndOrderedLinkExtent ++ d2.compositeSecondEndOrderedLinkExtent,
+    referenceLinkExtent = d1.referenceLinkExtent ++ d2.referenceLinkExtent,
+    referenceFirstEndOrderedLinkExtent = d1.referenceFirstEndOrderedLinkExtent ++ d2.referenceFirstEndOrderedLinkExtent,
+    referenceSecondEndOrderedLinkExtent = d1.referenceSecondEndOrderedLinkExtent ++ d2.referenceSecondEndOrderedLinkExtent)
 
   implicit def reads
+  : Reads[OTIDocumentExtent]
+  = Json.reads[OTIDocumentExtent]
+
+  implicit def writes
   : Writes[OTIDocumentExtent]
   = Json.writes[OTIDocumentExtent]
 
-  implicit def writes
-  : Reads[OTIDocumentExtent]
-  = Json.reads[OTIDocumentExtent]
+  implicit def formats
+  : Format[OTIDocumentExtent]
+  = Json.format[OTIDocumentExtent]
 
 }

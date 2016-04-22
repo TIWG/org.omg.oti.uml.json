@@ -71,16 +71,16 @@ case class OTIDocumentConfiguration
   : Option[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_URL] = None,
 
   overrideID
-  : SortedSet[ToolSpecific2OTI_ID_Pair]
-  = SortedSet.empty[ToolSpecific2OTI_ID_Pair],
+  : Vector[ToolSpecific2OTI_ID_Pair]
+  = Vector.empty[ToolSpecific2OTI_ID_Pair],
 
   overrideUUID
-  : SortedSet[ToolSpecific2OTI_ID_UUID_Pair]
-  = SortedSet.empty[ToolSpecific2OTI_ID_UUID_Pair],
+  : Vector[ToolSpecific2OTI_ID_UUID_Pair]
+  = Vector.empty[ToolSpecific2OTI_ID_UUID_Pair],
 
   excludeNestedElements
-  : SortedSet[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID]
-  = SortedSet.empty[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID] )
+  : Vector[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID]
+  = Vector.empty[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID] )
 
 object OTIDocumentConfiguration {
 
