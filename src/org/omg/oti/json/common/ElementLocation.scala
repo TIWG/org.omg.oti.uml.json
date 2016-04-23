@@ -79,14 +79,6 @@ case class ElementLocation_ToolSpecific_ID_URL
 {}
 
 object ElementLocation {
-
-  def toElementLocation[Uml <: UML]
-  ( context: Document[Uml],
-    element: UMLElement[Uml],
-    elementDocument: Document[Uml],
-    elementIndex: Option[Int] = None )
-  : ElementLocation
-  = scala.Predef.???
   
   implicit val ordering
   : Ordering[ElementLocation]
@@ -103,11 +95,23 @@ object ElementLocation {
             -1
         }
 
+      case xel: ElementLocation_ToolSpecific_ID =>
+        y match {
+          case yel: ElementLocation_ToolSpecific_ID =>
+            ElementLocation_ToolSpecific_ID.ordering.compare(xel, yel)
+          case _: ElementLocation_OTI_ID =>
+            1
+          case _ =>
+            -1
+        }
+
       case xel: ElementLocation_OTI_ID_OTI_URL =>
         y match {
           case yel: ElementLocation_OTI_ID_OTI_URL =>
             ElementLocation_OTI_ID_OTI_URL.ordering.compare(xel, yel)
-          case _: ElementLocation_OTI_ID =>
+          case _ @
+            ( _: ElementLocation_OTI_ID |
+              _: ElementLocation_ToolSpecific_ID ) =>
             1
           case _ =>
             -1
@@ -117,7 +121,10 @@ object ElementLocation {
         y match {
           case yel: ElementLocation_ToolSpecific_ID_OTI_URL =>
             ElementLocation_ToolSpecific_ID_OTI_URL.ordering.compare(xel, yel)
-          case _ @ (_: ElementLocation_OTI_ID | _: ElementLocation_OTI_ID_OTI_URL) =>
+          case _ @
+            ( _: ElementLocation_OTI_ID |
+              _: ElementLocation_ToolSpecific_ID |
+              _: ElementLocation_OTI_ID_OTI_URL ) =>
             1
           case _ =>
             -1
@@ -127,7 +134,11 @@ object ElementLocation {
         y match {
           case yel: ElementLocation_ToolSpecific_ID_URL =>
             ElementLocation_ToolSpecific_ID_URL.ordering.compare(xel, yel)
-          case _ @ (_: ElementLocation_OTI_ID | _: ElementLocation_OTI_ID_OTI_URL | _: ElementLocation_ToolSpecific_ID_OTI_URL) =>
+          case _ @
+            ( _: ElementLocation_OTI_ID |
+              _: ElementLocation_ToolSpecific_ID |
+              _: ElementLocation_OTI_ID_OTI_URL |
+              _: ElementLocation_ToolSpecific_ID_OTI_URL ) =>
             1
         }
     }
