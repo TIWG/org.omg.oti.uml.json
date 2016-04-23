@@ -67,25 +67,17 @@ case class OTIDocumentExtent
  : Vector[OTIMOFCompositeLink]
  = Vector.empty[OTIMOFCompositeLink],
 
- compositeFirstEndOrderedLinkExtent
- : Vector[OTIMOFCompositeFirstEndOrderedLink]
- = Vector.empty[OTIMOFCompositeFirstEndOrderedLink],
-
- compositeSecondEndOrderedLinkExtent
- : Vector[OTIMOFCompositeSecondEndOrderedLink]
- = Vector.empty[OTIMOFCompositeSecondEndOrderedLink],
+ compositeOrderedLinkExtent
+ : Vector[OTIMOFCompositeOrderedLink]
+ = Vector.empty[OTIMOFCompositeOrderedLink],
 
  referenceLinkExtent
  : Vector[OTIMOFReferenceLink]
  = Vector.empty[OTIMOFReferenceLink],
 
- referenceFirstEndOrderedLinkExtent
- : Vector[OTIMOFReferenceFirstEndOrderedLink]
- = Vector.empty[OTIMOFReferenceFirstEndOrderedLink],
-
- referenceSecondEndOrderedLinkExtent
- : Vector[OTIMOFReferenceSecondEndOrderedLink]
- = Vector.empty[OTIMOFReferenceSecondEndOrderedLink])
+ referenceOrderedLinkExtent
+ : Vector[OTIMOFReferenceOrderedLink]
+ = Vector.empty[OTIMOFReferenceOrderedLink])
 {}
 
 object OTIDocumentExtent {
@@ -95,11 +87,9 @@ object OTIDocumentExtent {
   = d1.copy(
     elementExtent = d1.elementExtent ++ d2.elementExtent,
     compositeLinkExtent = d1.compositeLinkExtent ++ d2.compositeLinkExtent,
-    compositeFirstEndOrderedLinkExtent = d1.compositeFirstEndOrderedLinkExtent ++ d2.compositeFirstEndOrderedLinkExtent,
-    compositeSecondEndOrderedLinkExtent = d1.compositeSecondEndOrderedLinkExtent ++ d2.compositeSecondEndOrderedLinkExtent,
+    compositeOrderedLinkExtent = d1.compositeOrderedLinkExtent ++ d2.compositeOrderedLinkExtent,
     referenceLinkExtent = d1.referenceLinkExtent ++ d2.referenceLinkExtent,
-    referenceFirstEndOrderedLinkExtent = d1.referenceFirstEndOrderedLinkExtent ++ d2.referenceFirstEndOrderedLinkExtent,
-    referenceSecondEndOrderedLinkExtent = d1.referenceSecondEndOrderedLinkExtent ++ d2.referenceSecondEndOrderedLinkExtent)
+    referenceOrderedLinkExtent = d1.referenceOrderedLinkExtent ++ d2.referenceOrderedLinkExtent)
 
   implicit def reads
   : Reads[OTIDocumentExtent]

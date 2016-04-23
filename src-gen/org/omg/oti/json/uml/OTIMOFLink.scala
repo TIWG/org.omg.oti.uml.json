@@ -3803,11 +3803,7 @@ object OTIMOFCompositeLink {
     }
 
   }
-  
-  implicit val formats
-  : Format[OTIMOFCompositeLink]
-  = Variants.format[OTIMOFCompositeLink]((__ \ "type").format[String])
-  
+
   implicit val writes
   : Writes[OTIMOFCompositeLink]
   = Variants.writes[OTIMOFCompositeLink]((__ \ "type").format[String])
@@ -3815,7 +3811,11 @@ object OTIMOFCompositeLink {
   implicit val reads
   : Reads[OTIMOFCompositeLink]
   = Variants.reads[OTIMOFCompositeLink]((__ \ "type").format[String])
-  
+
+  implicit val formats
+  : Format[OTIMOFCompositeLink]
+  = Variants.format[OTIMOFCompositeLink]((__ \ "type").format[String])
+
   // <!-- End of user code OTI MOF Composite Link companion -->
 
 }
@@ -3823,6 +3823,39 @@ object OTIMOFCompositeLink {
 object OTIMOFCompositeOrderedLink {
 
   // <!-- Start of user code OTI MOF Composite Ordered Link companion -->
+
+  implicit val ordering
+  : Ordering[OTIMOFCompositeOrderedLink]
+  = new Ordering[OTIMOFCompositeOrderedLink] {
+
+    def compare(x: OTIMOFCompositeOrderedLink, y: OTIMOFCompositeOrderedLink)
+    : Int
+    = ElementLocation.ordering.compare(x.end1, y.end1) match {
+      case 0 =>
+        ElementLocation.ordering.compare(x.end2, y.end2) match {
+          case 0 =>
+            Ordering[Int].compare(x.end2Index, y.end2Index)
+          case c =>
+            c
+        }
+      case c =>
+        c
+    }
+
+  }
+
+  implicit val writes
+  : Writes[OTIMOFCompositeOrderedLink]
+  = Variants.writes[OTIMOFCompositeOrderedLink]((__ \ "type").format[String])
+
+  implicit val reads
+  : Reads[OTIMOFCompositeOrderedLink]
+  = Variants.reads[OTIMOFCompositeOrderedLink]((__ \ "type").format[String])
+
+  implicit val formats
+  : Format[OTIMOFCompositeOrderedLink]
+  = Variants.format[OTIMOFCompositeOrderedLink]((__ \ "type").format[String])
+
   // <!-- End of user code OTI MOF Composite Ordered Link companion -->
 
 }
@@ -3845,11 +3878,7 @@ object OTIMOFReferenceLink {
     }
 
   }
-  
-  implicit val formats
-  : Format[OTIMOFReferenceLink]
-  = Variants.format[OTIMOFReferenceLink]((__ \ "type").format[String])
-  
+
   implicit val writes
   : Writes[OTIMOFReferenceLink]
   = Variants.writes[OTIMOFReferenceLink]((__ \ "type").format[String])
@@ -3857,7 +3886,11 @@ object OTIMOFReferenceLink {
   implicit val reads
   : Reads[OTIMOFReferenceLink]
   = Variants.reads[OTIMOFReferenceLink]((__ \ "type").format[String])
-  
+
+  implicit val formats
+  : Format[OTIMOFReferenceLink]
+  = Variants.format[OTIMOFReferenceLink]((__ \ "type").format[String])
+
   // <!-- End of user code OTI MOF Reference Link companion -->
 
 }
@@ -3865,6 +3898,39 @@ object OTIMOFReferenceLink {
 object OTIMOFReferenceOrderedLink {
 
   // <!-- Start of user code OTI MOF Reference Ordered Link companion -->
+
+  implicit val ordering
+  : Ordering[OTIMOFReferenceOrderedLink]
+  = new Ordering[OTIMOFReferenceOrderedLink] {
+
+    def compare(x: OTIMOFReferenceOrderedLink, y: OTIMOFReferenceOrderedLink)
+    : Int
+    = ElementLocation.ordering.compare(x.end1, y.end1) match {
+      case 0 =>
+        ElementLocation.ordering.compare(x.end2, y.end2) match {
+          case 0 =>
+            Ordering[Int].compare(x.end2Index, y.end2Index)
+          case c =>
+            c
+        }
+      case c =>
+        c
+    }
+
+  }
+
+  implicit val writes
+  : Writes[OTIMOFReferenceOrderedLink]
+  = Variants.writes[OTIMOFReferenceOrderedLink]((__ \ "type").format[String])
+
+  implicit val reads
+  : Reads[OTIMOFReferenceOrderedLink]
+  = Variants.reads[OTIMOFReferenceOrderedLink]((__ \ "type").format[String])
+
+  implicit val formats
+  : Format[OTIMOFReferenceOrderedLink]
+  = Variants.format[OTIMOFReferenceOrderedLink]((__ \ "type").format[String])
+
   // <!-- End of user code OTI MOF Reference Ordered Link companion -->
 
 }
