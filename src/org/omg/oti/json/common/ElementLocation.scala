@@ -3,7 +3,7 @@ package org.omg.oti.json.common
 import play.json.extra._
 import play.api.libs.json._
 
-import scala.{Int,Ordering}
+import scala.{Int,Option,Ordering}
 import scala.Predef.String
 import scalaz.@@
 
@@ -28,6 +28,16 @@ sealed trait ElementLocation {}
   */
 case class ElementLocation_OTI_ID
 ( element_id: String @@ OTIPrimitiveTypes.OTI_ID )
+  extends ElementLocation
+{}
+
+/**
+  * Element Location based on tool-specific ID when the Document context is known (OTI or tool-specific)
+  *
+  * @param element_id    The tool-specific ID of the UML Element contained in an OTI or tool-specific Document UML Package/Profile context
+  */
+case class ElementLocation_ToolSpecific_ID
+( element_id: String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID )
   extends ElementLocation
 {}
 
@@ -70,6 +80,14 @@ case class ElementLocation_ToolSpecific_ID_URL
 
 object ElementLocation {
 
+  def toElementLocation[Uml <: UML]
+  ( context: Document[Uml],
+    element: UMLElement[Uml],
+    elementDocument: Document[Uml],
+    elementIndex: Option[Int] = None )
+  : ElementLocation
+  = scala.Predef.???
+  
   implicit val ordering
   : Ordering[ElementLocation]
   = new Ordering[ElementLocation] {
@@ -153,6 +171,32 @@ object ElementLocation_OTI_ID {
   implicit val formats
   : Format[ElementLocation_OTI_ID]
   = Json.format[ElementLocation_OTI_ID]
+
+}
+
+object ElementLocation_ToolSpecific_ID {
+
+  implicit val ordering
+  : Ordering[ElementLocation_ToolSpecific_ID]
+  = new Ordering[ElementLocation_ToolSpecific_ID] {
+
+    def compare(x: ElementLocation_ToolSpecific_ID, y: ElementLocation_ToolSpecific_ID)
+    : Int
+    = taggedStringOrdering[OTIPrimitiveTypes.TOOL_SPECIFIC_ID].compare(x.element_id, y.element_id)
+
+  }
+
+  implicit val writes
+  : Writes[ElementLocation_ToolSpecific_ID]
+  = Json.writes[ElementLocation_ToolSpecific_ID]
+
+  implicit val reads
+  : Reads[ElementLocation_ToolSpecific_ID]
+  = Json.reads[ElementLocation_ToolSpecific_ID]
+
+  implicit val formats
+  : Format[ElementLocation_ToolSpecific_ID]
+  = Json.format[ElementLocation_ToolSpecific_ID]
 
 }
 

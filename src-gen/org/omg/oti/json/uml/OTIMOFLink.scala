@@ -54,6 +54,7 @@ import play.api.libs.json._
 import play.api.libs.functional.syntax._
 
 import scala.{Int,Ordering}
+import scala.Predef.String
 // <!-- End of user code imports -->
 
 /**

@@ -45,6 +45,7 @@ import org.omg.oti.json.uml._
 
 import scala.collection.immutable._
 import scala.Predef.String
+import scala.{Option,None}
 import scalaz.@@
 
 case class OTIDocumentExtent
