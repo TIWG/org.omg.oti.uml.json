@@ -78,10 +78,6 @@ object OTISpecificationRootCharacteristics {
     }
   }
 
-  implicit def formats
-  : Format[OTISpecificationRootCharacteristics]
-  = Json.format[OTISpecificationRootCharacteristics]
-
   implicit def reads
   : Writes[OTISpecificationRootCharacteristics]
   = Json.writes[OTISpecificationRootCharacteristics]
@@ -89,5 +85,9 @@ object OTISpecificationRootCharacteristics {
   implicit def writes
   : Reads[OTISpecificationRootCharacteristics]
   = Json.reads[OTISpecificationRootCharacteristics]
+
+  implicit def formats
+  : Format[OTISpecificationRootCharacteristics]
+  = Json.format[OTISpecificationRootCharacteristics]
 
 }

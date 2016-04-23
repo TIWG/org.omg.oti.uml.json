@@ -71,10 +71,6 @@ object ToolSpecific2OTI_ID_UUID_Pair {
     }
   }
 
-  implicit val formats
-  : Format[ToolSpecific2OTI_ID_UUID_Pair]
-  = Json.format[ToolSpecific2OTI_ID_UUID_Pair]
-
   implicit val writes
   : Writes[ToolSpecific2OTI_ID_UUID_Pair]
   = Json.writes[ToolSpecific2OTI_ID_UUID_Pair]
@@ -82,4 +78,9 @@ object ToolSpecific2OTI_ID_UUID_Pair {
   implicit val reads
   : Reads[ToolSpecific2OTI_ID_UUID_Pair]
   = Json.reads[ToolSpecific2OTI_ID_UUID_Pair]
+
+  implicit val formats
+  : Format[ToolSpecific2OTI_ID_UUID_Pair]
+  = Json.format[ToolSpecific2OTI_ID_UUID_Pair]
+
 }

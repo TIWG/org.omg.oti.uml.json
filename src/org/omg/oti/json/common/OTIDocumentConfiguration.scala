@@ -51,8 +51,7 @@ import scalaz.{@@,Tag}
   *
   * @param otiCharacteristics     the OTI characteristics for the OTI Document UML Package
   * @param toolSpecificPackageID  the tool-specific ID of the OTI Document UML Package
-  * @param toolSpecificPackageURL optionally, a tool-specific URL for
-  *                               the external location of the OTI Document UML Package
+  * @param toolSpecificPackageURL a tool-specific URL for the external location of the OTI Document UML Package
   * @param overrideID Each pair is used to override the generated OTI ID for a given UML Element
   *                   within the OTI DOcument UML Package according to its tool-specific ID
   * @param overrideUUID Each pair is used to override the generated OTI UUID for a given UML Element
@@ -68,7 +67,7 @@ case class OTIDocumentConfiguration
   : String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID,
 
   toolSpecificPackageURL
-  : Option[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_URL] = None,
+  : String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_URL,
 
   overrideID
   : Vector[ToolSpecific2OTI_ID_Pair]
@@ -88,37 +87,20 @@ object OTIDocumentConfiguration {
   : Ordering[OTIDocumentConfiguration]
   = new Ordering[OTIDocumentConfiguration] {
 
-    def compare1(x: OTIDocumentConfiguration, y: OTIDocumentConfiguration)
-    : Int
-    = Tag.unwrap(x.toolSpecificPackageID).compareTo(Tag.unwrap(x.toolSpecificPackageID)) match {
-      case 0 =>
-        OTISpecificationRootCharacteristics.ordering.compare(x.otiCharacteristics, y.otiCharacteristics)
-      case c =>
-        c
-    }
-
     def compare(x: OTIDocumentConfiguration, y: OTIDocumentConfiguration)
     : Int
-    = (x.toolSpecificPackageURL, y.toolSpecificPackageURL) match {
-      case (None, None) =>
-        compare1(x, y)
-      case (Some(_), None) =>
-        -1
-      case (None, Some(_)) =>
-        1
-      case (Some(xURL), Some(yURL)) =>
-        Tag.unwrap(xURL).compareTo(Tag.unwrap(yURL)) match {
+    = Tag.unwrap(x.toolSpecificPackageURL).compareTo(Tag.unwrap(y.toolSpecificPackageURL)) match {
+      case 0 =>
+        Tag.unwrap(x.toolSpecificPackageID).compareTo(Tag.unwrap(x.toolSpecificPackageID)) match {
           case 0 =>
-            compare1(x, y)
+            OTISpecificationRootCharacteristics.ordering.compare(x.otiCharacteristics, y.otiCharacteristics)
           case c =>
             c
         }
+      case c =>
+        c
     }
   }
-
-  implicit def formats
-  : Format[OTIDocumentConfiguration]
-  = Json.format[OTIDocumentConfiguration]
 
   implicit def reads
   : Writes[OTIDocumentConfiguration]
@@ -127,5 +109,9 @@ object OTIDocumentConfiguration {
   implicit def writes
   : Reads[OTIDocumentConfiguration]
   = Json.reads[OTIDocumentConfiguration]
+
+  implicit def formats
+  : Format[OTIDocumentConfiguration]
+  = Json.format[OTIDocumentConfiguration]
 
 }

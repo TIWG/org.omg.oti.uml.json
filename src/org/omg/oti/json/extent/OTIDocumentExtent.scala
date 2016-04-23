@@ -56,8 +56,7 @@ case class OTIDocumentExtent
  : String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID,
 
  toolSpecificPackageURL
- : Option[String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_URL]
- = None,
+ : String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_URL,
 
  elementExtent
  : Vector[OTIMOFElement]
