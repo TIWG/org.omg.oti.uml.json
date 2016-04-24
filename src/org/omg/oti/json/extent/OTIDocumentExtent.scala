@@ -49,14 +49,8 @@ import scala.{Option,None}
 import scalaz.@@
 
 case class OTIDocumentExtent
-(otiCharacteristics
- : OTISpecificationRootCharacteristics,
-
- toolSpecificPackageID
- : String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_ID,
-
- toolSpecificPackageURL
- : String @@ OTIPrimitiveTypes.TOOL_SPECIFIC_URL,
+(documentLocation
+ : DocumentLocation,
 
  elementExtent
  : Vector[OTIMOFElement]
