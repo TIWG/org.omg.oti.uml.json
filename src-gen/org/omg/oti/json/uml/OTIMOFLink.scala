@@ -145,6 +145,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_action_interaction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_action_interaction]
+    = Json.reads[OTIUMLA_action_interaction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_action_interaction]
+    = Json.writes[OTIUMLA_action_interaction]
+  
+    implicit def formats
+    : Format[OTIUMLA_action_interaction]
+    = Json.format[OTIUMLA_action_interaction]
+
+  }
+
   /**
     * A_actualGate_interactionUse
     *
@@ -156,6 +172,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_actualGate_interactionUse {
+     
+    implicit def reads
+    : Reads[OTIUMLA_actualGate_interactionUse]
+    = Json.reads[OTIUMLA_actualGate_interactionUse]
+  
+    implicit def writes
+    : Writes[OTIUMLA_actualGate_interactionUse]
+    = Json.writes[OTIUMLA_actualGate_interactionUse]
+  
+    implicit def formats
+    : Format[OTIUMLA_actualGate_interactionUse]
+    = Json.format[OTIUMLA_actualGate_interactionUse]
+
+  }
 
   /**
     * A_argument_interactionUse
@@ -170,6 +202,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_argument_interactionUse {
+     
+    implicit def reads
+    : Reads[OTIUMLA_argument_interactionUse]
+    = Json.reads[OTIUMLA_argument_interactionUse]
+  
+    implicit def writes
+    : Writes[OTIUMLA_argument_interactionUse]
+    = Json.writes[OTIUMLA_argument_interactionUse]
+  
+    implicit def formats
+    : Format[OTIUMLA_argument_interactionUse]
+    = Json.format[OTIUMLA_argument_interactionUse]
+
+  }
+
   /**
     * A_argument_invocationAction
     *
@@ -182,6 +230,22 @@ object OTIMOFLink {
     override val end2Index: Int )
   extends  OTIMOFCompositeOrderedLink
   {}
+
+  object OTIUMLA_argument_invocationAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_argument_invocationAction]
+    = Json.reads[OTIUMLA_argument_invocationAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_argument_invocationAction]
+    = Json.writes[OTIUMLA_argument_invocationAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_argument_invocationAction]
+    = Json.format[OTIUMLA_argument_invocationAction]
+
+  }
 
   /**
     * A_argument_message
@@ -196,6 +260,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_argument_message {
+     
+    implicit def reads
+    : Reads[OTIUMLA_argument_message]
+    = Json.reads[OTIUMLA_argument_message]
+  
+    implicit def writes
+    : Writes[OTIUMLA_argument_message]
+    = Json.writes[OTIUMLA_argument_message]
+  
+    implicit def formats
+    : Format[OTIUMLA_argument_message]
+    = Json.format[OTIUMLA_argument_message]
+
+  }
+
   /**
     * A_bodyCondition_bodyContext
     *
@@ -207,6 +287,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_bodyCondition_bodyContext {
+     
+    implicit def reads
+    : Reads[OTIUMLA_bodyCondition_bodyContext]
+    = Json.reads[OTIUMLA_bodyCondition_bodyContext]
+  
+    implicit def writes
+    : Writes[OTIUMLA_bodyCondition_bodyContext]
+    = Json.writes[OTIUMLA_bodyCondition_bodyContext]
+  
+    implicit def formats
+    : Format[OTIUMLA_bodyCondition_bodyContext]
+    = Json.format[OTIUMLA_bodyCondition_bodyContext]
+
+  }
 
   /**
     * A_cfragmentGate_combinedFragment
@@ -220,6 +316,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_cfragmentGate_combinedFragment {
+     
+    implicit def reads
+    : Reads[OTIUMLA_cfragmentGate_combinedFragment]
+    = Json.reads[OTIUMLA_cfragmentGate_combinedFragment]
+  
+    implicit def writes
+    : Writes[OTIUMLA_cfragmentGate_combinedFragment]
+    = Json.writes[OTIUMLA_cfragmentGate_combinedFragment]
+  
+    implicit def formats
+    : Format[OTIUMLA_cfragmentGate_combinedFragment]
+    = Json.format[OTIUMLA_cfragmentGate_combinedFragment]
+
+  }
+
   /**
     * A_changeExpression_changeEvent
     *
@@ -231,6 +343,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_changeExpression_changeEvent {
+     
+    implicit def reads
+    : Reads[OTIUMLA_changeExpression_changeEvent]
+    = Json.reads[OTIUMLA_changeExpression_changeEvent]
+  
+    implicit def writes
+    : Writes[OTIUMLA_changeExpression_changeEvent]
+    = Json.writes[OTIUMLA_changeExpression_changeEvent]
+  
+    implicit def formats
+    : Format[OTIUMLA_changeExpression_changeEvent]
+    = Json.format[OTIUMLA_changeExpression_changeEvent]
+
+  }
 
   /**
     * A_clause_conditionalNode
@@ -244,6 +372,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_clause_conditionalNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_clause_conditionalNode]
+    = Json.reads[OTIUMLA_clause_conditionalNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_clause_conditionalNode]
+    = Json.writes[OTIUMLA_clause_conditionalNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_clause_conditionalNode]
+    = Json.format[OTIUMLA_clause_conditionalNode]
+
+  }
+
   /**
     * A_collaborationUse_classifier
     *
@@ -255,6 +399,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_collaborationUse_classifier {
+     
+    implicit def reads
+    : Reads[OTIUMLA_collaborationUse_classifier]
+    = Json.reads[OTIUMLA_collaborationUse_classifier]
+  
+    implicit def writes
+    : Writes[OTIUMLA_collaborationUse_classifier]
+    = Json.writes[OTIUMLA_collaborationUse_classifier]
+  
+    implicit def formats
+    : Format[OTIUMLA_collaborationUse_classifier]
+    = Json.format[OTIUMLA_collaborationUse_classifier]
+
+  }
 
   /**
     * A_collection_reduceAction
@@ -268,6 +428,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_collection_reduceAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_collection_reduceAction]
+    = Json.reads[OTIUMLA_collection_reduceAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_collection_reduceAction]
+    = Json.writes[OTIUMLA_collection_reduceAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_collection_reduceAction]
+    = Json.format[OTIUMLA_collection_reduceAction]
+
+  }
+
   /**
     * A_condition_extend
     *
@@ -279,6 +455,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_condition_extend {
+     
+    implicit def reads
+    : Reads[OTIUMLA_condition_extend]
+    = Json.reads[OTIUMLA_condition_extend]
+  
+    implicit def writes
+    : Writes[OTIUMLA_condition_extend]
+    = Json.writes[OTIUMLA_condition_extend]
+  
+    implicit def formats
+    : Format[OTIUMLA_condition_extend]
+    = Json.format[OTIUMLA_condition_extend]
+
+  }
 
   /**
     * A_condition_parameterSet
@@ -292,6 +484,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_condition_parameterSet {
+     
+    implicit def reads
+    : Reads[OTIUMLA_condition_parameterSet]
+    = Json.reads[OTIUMLA_condition_parameterSet]
+  
+    implicit def writes
+    : Writes[OTIUMLA_condition_parameterSet]
+    = Json.writes[OTIUMLA_condition_parameterSet]
+  
+    implicit def formats
+    : Format[OTIUMLA_condition_parameterSet]
+    = Json.format[OTIUMLA_condition_parameterSet]
+
+  }
+
   /**
     * A_configuration_deployment
     *
@@ -303,6 +511,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_configuration_deployment {
+     
+    implicit def reads
+    : Reads[OTIUMLA_configuration_deployment]
+    = Json.reads[OTIUMLA_configuration_deployment]
+  
+    implicit def writes
+    : Writes[OTIUMLA_configuration_deployment]
+    = Json.writes[OTIUMLA_configuration_deployment]
+  
+    implicit def formats
+    : Format[OTIUMLA_configuration_deployment]
+    = Json.format[OTIUMLA_configuration_deployment]
+
+  }
 
   /**
     * A_conformance_specificMachine
@@ -316,6 +540,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_conformance_specificMachine {
+     
+    implicit def reads
+    : Reads[OTIUMLA_conformance_specificMachine]
+    = Json.reads[OTIUMLA_conformance_specificMachine]
+  
+    implicit def writes
+    : Writes[OTIUMLA_conformance_specificMachine]
+    = Json.writes[OTIUMLA_conformance_specificMachine]
+  
+    implicit def formats
+    : Format[OTIUMLA_conformance_specificMachine]
+    = Json.format[OTIUMLA_conformance_specificMachine]
+
+  }
+
   /**
     * A_connectionPoint_state
     *
@@ -327,6 +567,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_connectionPoint_state {
+     
+    implicit def reads
+    : Reads[OTIUMLA_connectionPoint_state]
+    = Json.reads[OTIUMLA_connectionPoint_state]
+  
+    implicit def writes
+    : Writes[OTIUMLA_connectionPoint_state]
+    = Json.writes[OTIUMLA_connectionPoint_state]
+  
+    implicit def formats
+    : Format[OTIUMLA_connectionPoint_state]
+    = Json.format[OTIUMLA_connectionPoint_state]
+
+  }
 
   /**
     * A_connectionPoint_stateMachine
@@ -340,6 +596,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_connectionPoint_stateMachine {
+     
+    implicit def reads
+    : Reads[OTIUMLA_connectionPoint_stateMachine]
+    = Json.reads[OTIUMLA_connectionPoint_stateMachine]
+  
+    implicit def writes
+    : Writes[OTIUMLA_connectionPoint_stateMachine]
+    = Json.writes[OTIUMLA_connectionPoint_stateMachine]
+  
+    implicit def formats
+    : Format[OTIUMLA_connectionPoint_stateMachine]
+    = Json.format[OTIUMLA_connectionPoint_stateMachine]
+
+  }
+
   /**
     * A_connection_state
     *
@@ -351,6 +623,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_connection_state {
+     
+    implicit def reads
+    : Reads[OTIUMLA_connection_state]
+    = Json.reads[OTIUMLA_connection_state]
+  
+    implicit def writes
+    : Writes[OTIUMLA_connection_state]
+    = Json.writes[OTIUMLA_connection_state]
+  
+    implicit def formats
+    : Format[OTIUMLA_connection_state]
+    = Json.format[OTIUMLA_connection_state]
+
+  }
 
   /**
     * A_defaultValue_owningParameter
@@ -364,6 +652,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_defaultValue_owningParameter {
+     
+    implicit def reads
+    : Reads[OTIUMLA_defaultValue_owningParameter]
+    = Json.reads[OTIUMLA_defaultValue_owningParameter]
+  
+    implicit def writes
+    : Writes[OTIUMLA_defaultValue_owningParameter]
+    = Json.writes[OTIUMLA_defaultValue_owningParameter]
+  
+    implicit def formats
+    : Format[OTIUMLA_defaultValue_owningParameter]
+    = Json.format[OTIUMLA_defaultValue_owningParameter]
+
+  }
+
   /**
     * A_defaultValue_owningProperty
     *
@@ -375,6 +679,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_defaultValue_owningProperty {
+     
+    implicit def reads
+    : Reads[OTIUMLA_defaultValue_owningProperty]
+    = Json.reads[OTIUMLA_defaultValue_owningProperty]
+  
+    implicit def writes
+    : Writes[OTIUMLA_defaultValue_owningProperty]
+    = Json.writes[OTIUMLA_defaultValue_owningProperty]
+  
+    implicit def formats
+    : Format[OTIUMLA_defaultValue_owningProperty]
+    = Json.format[OTIUMLA_defaultValue_owningProperty]
+
+  }
 
   /**
     * A_deferrableTrigger_state
@@ -388,6 +708,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_deferrableTrigger_state {
+     
+    implicit def reads
+    : Reads[OTIUMLA_deferrableTrigger_state]
+    = Json.reads[OTIUMLA_deferrableTrigger_state]
+  
+    implicit def writes
+    : Writes[OTIUMLA_deferrableTrigger_state]
+    = Json.writes[OTIUMLA_deferrableTrigger_state]
+  
+    implicit def formats
+    : Format[OTIUMLA_deferrableTrigger_state]
+    = Json.format[OTIUMLA_deferrableTrigger_state]
+
+  }
+
   /**
     * A_deployment_location
     *
@@ -399,6 +735,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_deployment_location {
+     
+    implicit def reads
+    : Reads[OTIUMLA_deployment_location]
+    = Json.reads[OTIUMLA_deployment_location]
+  
+    implicit def writes
+    : Writes[OTIUMLA_deployment_location]
+    = Json.writes[OTIUMLA_deployment_location]
+  
+    implicit def formats
+    : Format[OTIUMLA_deployment_location]
+    = Json.format[OTIUMLA_deployment_location]
+
+  }
 
   /**
     * A_doActivity_state
@@ -412,6 +764,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_doActivity_state {
+     
+    implicit def reads
+    : Reads[OTIUMLA_doActivity_state]
+    = Json.reads[OTIUMLA_doActivity_state]
+  
+    implicit def writes
+    : Writes[OTIUMLA_doActivity_state]
+    = Json.writes[OTIUMLA_doActivity_state]
+  
+    implicit def formats
+    : Format[OTIUMLA_doActivity_state]
+    = Json.format[OTIUMLA_doActivity_state]
+
+  }
+
   /**
     * A_edge_activity
     *
@@ -423,6 +791,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_edge_activity {
+     
+    implicit def reads
+    : Reads[OTIUMLA_edge_activity]
+    = Json.reads[OTIUMLA_edge_activity]
+  
+    implicit def writes
+    : Writes[OTIUMLA_edge_activity]
+    = Json.writes[OTIUMLA_edge_activity]
+  
+    implicit def formats
+    : Format[OTIUMLA_edge_activity]
+    = Json.format[OTIUMLA_edge_activity]
+
+  }
 
   /**
     * A_edge_inStructuredNode
@@ -436,6 +820,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_edge_inStructuredNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_edge_inStructuredNode]
+    = Json.reads[OTIUMLA_edge_inStructuredNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_edge_inStructuredNode]
+    = Json.writes[OTIUMLA_edge_inStructuredNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_edge_inStructuredNode]
+    = Json.format[OTIUMLA_edge_inStructuredNode]
+
+  }
+
   /**
     * A_effect_transition
     *
@@ -447,6 +847,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_effect_transition {
+     
+    implicit def reads
+    : Reads[OTIUMLA_effect_transition]
+    = Json.reads[OTIUMLA_effect_transition]
+  
+    implicit def writes
+    : Writes[OTIUMLA_effect_transition]
+    = Json.writes[OTIUMLA_effect_transition]
+  
+    implicit def formats
+    : Format[OTIUMLA_effect_transition]
+    = Json.format[OTIUMLA_effect_transition]
+
+  }
 
   /**
     * A_elementImport_importingNamespace
@@ -460,6 +876,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_elementImport_importingNamespace {
+     
+    implicit def reads
+    : Reads[OTIUMLA_elementImport_importingNamespace]
+    = Json.reads[OTIUMLA_elementImport_importingNamespace]
+  
+    implicit def writes
+    : Writes[OTIUMLA_elementImport_importingNamespace]
+    = Json.writes[OTIUMLA_elementImport_importingNamespace]
+  
+    implicit def formats
+    : Format[OTIUMLA_elementImport_importingNamespace]
+    = Json.format[OTIUMLA_elementImport_importingNamespace]
+
+  }
+
   /**
     * A_endData_createLinkAction
     *
@@ -471,6 +903,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_endData_createLinkAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_endData_createLinkAction]
+    = Json.reads[OTIUMLA_endData_createLinkAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_endData_createLinkAction]
+    = Json.writes[OTIUMLA_endData_createLinkAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_endData_createLinkAction]
+    = Json.format[OTIUMLA_endData_createLinkAction]
+
+  }
 
   /**
     * A_endData_destroyLinkAction
@@ -484,6 +932,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_endData_destroyLinkAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_endData_destroyLinkAction]
+    = Json.reads[OTIUMLA_endData_destroyLinkAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_endData_destroyLinkAction]
+    = Json.writes[OTIUMLA_endData_destroyLinkAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_endData_destroyLinkAction]
+    = Json.format[OTIUMLA_endData_destroyLinkAction]
+
+  }
+
   /**
     * A_endData_linkAction
     *
@@ -495,6 +959,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_endData_linkAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_endData_linkAction]
+    = Json.reads[OTIUMLA_endData_linkAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_endData_linkAction]
+    = Json.writes[OTIUMLA_endData_linkAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_endData_linkAction]
+    = Json.format[OTIUMLA_endData_linkAction]
+
+  }
 
   /**
     * A_end_connector
@@ -509,6 +989,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_end_connector {
+     
+    implicit def reads
+    : Reads[OTIUMLA_end_connector]
+    = Json.reads[OTIUMLA_end_connector]
+  
+    implicit def writes
+    : Writes[OTIUMLA_end_connector]
+    = Json.writes[OTIUMLA_end_connector]
+  
+    implicit def formats
+    : Format[OTIUMLA_end_connector]
+    = Json.format[OTIUMLA_end_connector]
+
+  }
+
   /**
     * A_entry_state
     *
@@ -521,6 +1017,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_entry_state {
+     
+    implicit def reads
+    : Reads[OTIUMLA_entry_state]
+    = Json.reads[OTIUMLA_entry_state]
+  
+    implicit def writes
+    : Writes[OTIUMLA_entry_state]
+    = Json.writes[OTIUMLA_entry_state]
+  
+    implicit def formats
+    : Format[OTIUMLA_entry_state]
+    = Json.format[OTIUMLA_entry_state]
+
+  }
+
   /**
     * A_exception_raiseExceptionAction
     *
@@ -532,6 +1044,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_exception_raiseExceptionAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_exception_raiseExceptionAction]
+    = Json.reads[OTIUMLA_exception_raiseExceptionAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_exception_raiseExceptionAction]
+    = Json.writes[OTIUMLA_exception_raiseExceptionAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_exception_raiseExceptionAction]
+    = Json.format[OTIUMLA_exception_raiseExceptionAction]
+
+  }
 
   /**
     * A_executableNode_sequenceNode
@@ -546,6 +1074,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_executableNode_sequenceNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_executableNode_sequenceNode]
+    = Json.reads[OTIUMLA_executableNode_sequenceNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_executableNode_sequenceNode]
+    = Json.writes[OTIUMLA_executableNode_sequenceNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_executableNode_sequenceNode]
+    = Json.format[OTIUMLA_executableNode_sequenceNode]
+
+  }
+
   /**
     * A_exit_state
     *
@@ -557,6 +1101,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_exit_state {
+     
+    implicit def reads
+    : Reads[OTIUMLA_exit_state]
+    = Json.reads[OTIUMLA_exit_state]
+  
+    implicit def writes
+    : Writes[OTIUMLA_exit_state]
+    = Json.writes[OTIUMLA_exit_state]
+  
+    implicit def formats
+    : Format[OTIUMLA_exit_state]
+    = Json.format[OTIUMLA_exit_state]
+
+  }
 
   /**
     * A_expr_duration
@@ -570,6 +1130,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_expr_duration {
+     
+    implicit def reads
+    : Reads[OTIUMLA_expr_duration]
+    = Json.reads[OTIUMLA_expr_duration]
+  
+    implicit def writes
+    : Writes[OTIUMLA_expr_duration]
+    = Json.writes[OTIUMLA_expr_duration]
+  
+    implicit def formats
+    : Format[OTIUMLA_expr_duration]
+    = Json.format[OTIUMLA_expr_duration]
+
+  }
+
   /**
     * A_expr_timeExpression
     *
@@ -581,6 +1157,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_expr_timeExpression {
+     
+    implicit def reads
+    : Reads[OTIUMLA_expr_timeExpression]
+    = Json.reads[OTIUMLA_expr_timeExpression]
+  
+    implicit def writes
+    : Writes[OTIUMLA_expr_timeExpression]
+    = Json.writes[OTIUMLA_expr_timeExpression]
+  
+    implicit def formats
+    : Format[OTIUMLA_expr_timeExpression]
+    = Json.format[OTIUMLA_expr_timeExpression]
+
+  }
 
   /**
     * A_extend_extension
@@ -594,6 +1186,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_extend_extension {
+     
+    implicit def reads
+    : Reads[OTIUMLA_extend_extension]
+    = Json.reads[OTIUMLA_extend_extension]
+  
+    implicit def writes
+    : Writes[OTIUMLA_extend_extension]
+    = Json.writes[OTIUMLA_extend_extension]
+  
+    implicit def formats
+    : Format[OTIUMLA_extend_extension]
+    = Json.format[OTIUMLA_extend_extension]
+
+  }
+
   /**
     * A_extensionPoint_useCase
     *
@@ -605,6 +1213,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_extensionPoint_useCase {
+     
+    implicit def reads
+    : Reads[OTIUMLA_extensionPoint_useCase]
+    = Json.reads[OTIUMLA_extensionPoint_useCase]
+  
+    implicit def writes
+    : Writes[OTIUMLA_extensionPoint_useCase]
+    = Json.writes[OTIUMLA_extensionPoint_useCase]
+  
+    implicit def formats
+    : Format[OTIUMLA_extensionPoint_useCase]
+    = Json.format[OTIUMLA_extensionPoint_useCase]
+
+  }
 
   /**
     * A_first_testIdentityAction
@@ -618,6 +1242,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_first_testIdentityAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_first_testIdentityAction]
+    = Json.reads[OTIUMLA_first_testIdentityAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_first_testIdentityAction]
+    = Json.writes[OTIUMLA_first_testIdentityAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_first_testIdentityAction]
+    = Json.format[OTIUMLA_first_testIdentityAction]
+
+  }
+
   /**
     * A_formalGate_interaction
     *
@@ -629,6 +1269,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_formalGate_interaction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_formalGate_interaction]
+    = Json.reads[OTIUMLA_formalGate_interaction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_formalGate_interaction]
+    = Json.writes[OTIUMLA_formalGate_interaction]
+  
+    implicit def formats
+    : Format[OTIUMLA_formalGate_interaction]
+    = Json.format[OTIUMLA_formalGate_interaction]
+
+  }
 
   /**
     * A_fragment_enclosingInteraction
@@ -643,6 +1299,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_fragment_enclosingInteraction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_fragment_enclosingInteraction]
+    = Json.reads[OTIUMLA_fragment_enclosingInteraction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_fragment_enclosingInteraction]
+    = Json.writes[OTIUMLA_fragment_enclosingInteraction]
+  
+    implicit def formats
+    : Format[OTIUMLA_fragment_enclosingInteraction]
+    = Json.format[OTIUMLA_fragment_enclosingInteraction]
+
+  }
+
   /**
     * A_fragment_enclosingOperand
     *
@@ -656,6 +1328,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_fragment_enclosingOperand {
+     
+    implicit def reads
+    : Reads[OTIUMLA_fragment_enclosingOperand]
+    = Json.reads[OTIUMLA_fragment_enclosingOperand]
+  
+    implicit def writes
+    : Writes[OTIUMLA_fragment_enclosingOperand]
+    = Json.writes[OTIUMLA_fragment_enclosingOperand]
+  
+    implicit def formats
+    : Format[OTIUMLA_fragment_enclosingOperand]
+    = Json.format[OTIUMLA_fragment_enclosingOperand]
+
+  }
+
   /**
     * A_fromAction_actionInputPin
     *
@@ -667,6 +1355,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_fromAction_actionInputPin {
+     
+    implicit def reads
+    : Reads[OTIUMLA_fromAction_actionInputPin]
+    = Json.reads[OTIUMLA_fromAction_actionInputPin]
+  
+    implicit def writes
+    : Writes[OTIUMLA_fromAction_actionInputPin]
+    = Json.writes[OTIUMLA_fromAction_actionInputPin]
+  
+    implicit def formats
+    : Format[OTIUMLA_fromAction_actionInputPin]
+    = Json.format[OTIUMLA_fromAction_actionInputPin]
+
+  }
 
   /**
     * A_generalOrdering_interactionFragment
@@ -680,6 +1384,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_generalOrdering_interactionFragment {
+     
+    implicit def reads
+    : Reads[OTIUMLA_generalOrdering_interactionFragment]
+    = Json.reads[OTIUMLA_generalOrdering_interactionFragment]
+  
+    implicit def writes
+    : Writes[OTIUMLA_generalOrdering_interactionFragment]
+    = Json.writes[OTIUMLA_generalOrdering_interactionFragment]
+  
+    implicit def formats
+    : Format[OTIUMLA_generalOrdering_interactionFragment]
+    = Json.format[OTIUMLA_generalOrdering_interactionFragment]
+
+  }
+
   /**
     * A_generalization_specific
     *
@@ -691,6 +1411,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_generalization_specific {
+     
+    implicit def reads
+    : Reads[OTIUMLA_generalization_specific]
+    = Json.reads[OTIUMLA_generalization_specific]
+  
+    implicit def writes
+    : Writes[OTIUMLA_generalization_specific]
+    = Json.writes[OTIUMLA_generalization_specific]
+  
+    implicit def formats
+    : Format[OTIUMLA_generalization_specific]
+    = Json.format[OTIUMLA_generalization_specific]
+
+  }
 
   /**
     * A_group_inActivity
@@ -704,6 +1440,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_group_inActivity {
+     
+    implicit def reads
+    : Reads[OTIUMLA_group_inActivity]
+    = Json.reads[OTIUMLA_group_inActivity]
+  
+    implicit def writes
+    : Writes[OTIUMLA_group_inActivity]
+    = Json.writes[OTIUMLA_group_inActivity]
+  
+    implicit def formats
+    : Format[OTIUMLA_group_inActivity]
+    = Json.format[OTIUMLA_group_inActivity]
+
+  }
+
   /**
     * A_guard_activityEdge
     *
@@ -715,6 +1467,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_guard_activityEdge {
+     
+    implicit def reads
+    : Reads[OTIUMLA_guard_activityEdge]
+    = Json.reads[OTIUMLA_guard_activityEdge]
+  
+    implicit def writes
+    : Writes[OTIUMLA_guard_activityEdge]
+    = Json.writes[OTIUMLA_guard_activityEdge]
+  
+    implicit def formats
+    : Format[OTIUMLA_guard_activityEdge]
+    = Json.format[OTIUMLA_guard_activityEdge]
+
+  }
 
   /**
     * A_guard_interactionOperand
@@ -728,6 +1496,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_guard_interactionOperand {
+     
+    implicit def reads
+    : Reads[OTIUMLA_guard_interactionOperand]
+    = Json.reads[OTIUMLA_guard_interactionOperand]
+  
+    implicit def writes
+    : Writes[OTIUMLA_guard_interactionOperand]
+    = Json.writes[OTIUMLA_guard_interactionOperand]
+  
+    implicit def formats
+    : Format[OTIUMLA_guard_interactionOperand]
+    = Json.format[OTIUMLA_guard_interactionOperand]
+
+  }
+
   /**
     * A_guard_transition
     *
@@ -739,6 +1523,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_guard_transition {
+     
+    implicit def reads
+    : Reads[OTIUMLA_guard_transition]
+    = Json.reads[OTIUMLA_guard_transition]
+  
+    implicit def writes
+    : Writes[OTIUMLA_guard_transition]
+    = Json.writes[OTIUMLA_guard_transition]
+  
+    implicit def formats
+    : Format[OTIUMLA_guard_transition]
+    = Json.format[OTIUMLA_guard_transition]
+
+  }
 
   /**
     * A_handler_protectedNode
@@ -752,6 +1552,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_handler_protectedNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_handler_protectedNode]
+    = Json.reads[OTIUMLA_handler_protectedNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_handler_protectedNode]
+    = Json.writes[OTIUMLA_handler_protectedNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_handler_protectedNode]
+    = Json.format[OTIUMLA_handler_protectedNode]
+
+  }
+
   /**
     * A_icon_stereotype
     *
@@ -763,6 +1579,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_icon_stereotype {
+     
+    implicit def reads
+    : Reads[OTIUMLA_icon_stereotype]
+    = Json.reads[OTIUMLA_icon_stereotype]
+  
+    implicit def writes
+    : Writes[OTIUMLA_icon_stereotype]
+    = Json.writes[OTIUMLA_icon_stereotype]
+  
+    implicit def formats
+    : Format[OTIUMLA_icon_stereotype]
+    = Json.format[OTIUMLA_icon_stereotype]
+
+  }
 
   /**
     * A_include_includingCase
@@ -776,6 +1608,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_include_includingCase {
+     
+    implicit def reads
+    : Reads[OTIUMLA_include_includingCase]
+    = Json.reads[OTIUMLA_include_includingCase]
+  
+    implicit def writes
+    : Writes[OTIUMLA_include_includingCase]
+    = Json.writes[OTIUMLA_include_includingCase]
+  
+    implicit def formats
+    : Format[OTIUMLA_include_includingCase]
+    = Json.format[OTIUMLA_include_includingCase]
+
+  }
+
   /**
     * A_inputValue_linkAction
     *
@@ -787,6 +1635,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_inputValue_linkAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_inputValue_linkAction]
+    = Json.reads[OTIUMLA_inputValue_linkAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_inputValue_linkAction]
+    = Json.writes[OTIUMLA_inputValue_linkAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_inputValue_linkAction]
+    = Json.format[OTIUMLA_inputValue_linkAction]
+
+  }
 
   /**
     * A_inputValue_opaqueAction
@@ -800,6 +1664,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_inputValue_opaqueAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_inputValue_opaqueAction]
+    = Json.reads[OTIUMLA_inputValue_opaqueAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_inputValue_opaqueAction]
+    = Json.writes[OTIUMLA_inputValue_opaqueAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_inputValue_opaqueAction]
+    = Json.format[OTIUMLA_inputValue_opaqueAction]
+
+  }
+
   /**
     * A_insertAt_addStructuralFeatureValueAction
     *
@@ -811,6 +1691,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_insertAt_addStructuralFeatureValueAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_insertAt_addStructuralFeatureValueAction]
+    = Json.reads[OTIUMLA_insertAt_addStructuralFeatureValueAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_insertAt_addStructuralFeatureValueAction]
+    = Json.writes[OTIUMLA_insertAt_addStructuralFeatureValueAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_insertAt_addStructuralFeatureValueAction]
+    = Json.format[OTIUMLA_insertAt_addStructuralFeatureValueAction]
+
+  }
 
   /**
     * A_insertAt_addVariableValueAction
@@ -824,6 +1720,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_insertAt_addVariableValueAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_insertAt_addVariableValueAction]
+    = Json.reads[OTIUMLA_insertAt_addVariableValueAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_insertAt_addVariableValueAction]
+    = Json.writes[OTIUMLA_insertAt_addVariableValueAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_insertAt_addVariableValueAction]
+    = Json.format[OTIUMLA_insertAt_addVariableValueAction]
+
+  }
+
   /**
     * A_interfaceRealization_implementingClassifier
     *
@@ -835,6 +1747,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_interfaceRealization_implementingClassifier {
+     
+    implicit def reads
+    : Reads[OTIUMLA_interfaceRealization_implementingClassifier]
+    = Json.reads[OTIUMLA_interfaceRealization_implementingClassifier]
+  
+    implicit def writes
+    : Writes[OTIUMLA_interfaceRealization_implementingClassifier]
+    = Json.writes[OTIUMLA_interfaceRealization_implementingClassifier]
+  
+    implicit def formats
+    : Format[OTIUMLA_interfaceRealization_implementingClassifier]
+    = Json.format[OTIUMLA_interfaceRealization_implementingClassifier]
+
+  }
 
   /**
     * A_invariant_stateInvariant
@@ -848,6 +1776,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_invariant_stateInvariant {
+     
+    implicit def reads
+    : Reads[OTIUMLA_invariant_stateInvariant]
+    = Json.reads[OTIUMLA_invariant_stateInvariant]
+  
+    implicit def writes
+    : Writes[OTIUMLA_invariant_stateInvariant]
+    = Json.writes[OTIUMLA_invariant_stateInvariant]
+  
+    implicit def formats
+    : Format[OTIUMLA_invariant_stateInvariant]
+    = Json.format[OTIUMLA_invariant_stateInvariant]
+
+  }
+
   /**
     * A_joinSpec_joinNode
     *
@@ -859,6 +1803,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_joinSpec_joinNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_joinSpec_joinNode]
+    = Json.reads[OTIUMLA_joinSpec_joinNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_joinSpec_joinNode]
+    = Json.writes[OTIUMLA_joinSpec_joinNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_joinSpec_joinNode]
+    = Json.format[OTIUMLA_joinSpec_joinNode]
+
+  }
 
   /**
     * A_lifeline_interaction
@@ -872,6 +1832,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_lifeline_interaction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_lifeline_interaction]
+    = Json.reads[OTIUMLA_lifeline_interaction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_lifeline_interaction]
+    = Json.writes[OTIUMLA_lifeline_interaction]
+  
+    implicit def formats
+    : Format[OTIUMLA_lifeline_interaction]
+    = Json.format[OTIUMLA_lifeline_interaction]
+
+  }
+
   /**
     * A_localPostcondition_action
     *
@@ -884,6 +1860,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_localPostcondition_action {
+     
+    implicit def reads
+    : Reads[OTIUMLA_localPostcondition_action]
+    = Json.reads[OTIUMLA_localPostcondition_action]
+  
+    implicit def writes
+    : Writes[OTIUMLA_localPostcondition_action]
+    = Json.writes[OTIUMLA_localPostcondition_action]
+  
+    implicit def formats
+    : Format[OTIUMLA_localPostcondition_action]
+    = Json.format[OTIUMLA_localPostcondition_action]
+
+  }
+
   /**
     * A_localPrecondition_action
     *
@@ -895,6 +1887,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_localPrecondition_action {
+     
+    implicit def reads
+    : Reads[OTIUMLA_localPrecondition_action]
+    = Json.reads[OTIUMLA_localPrecondition_action]
+  
+    implicit def writes
+    : Writes[OTIUMLA_localPrecondition_action]
+    = Json.writes[OTIUMLA_localPrecondition_action]
+  
+    implicit def formats
+    : Format[OTIUMLA_localPrecondition_action]
+    = Json.format[OTIUMLA_localPrecondition_action]
+
+  }
 
   /**
     * A_loopVariableInput_loopNode
@@ -909,6 +1917,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_loopVariableInput_loopNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_loopVariableInput_loopNode]
+    = Json.reads[OTIUMLA_loopVariableInput_loopNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_loopVariableInput_loopNode]
+    = Json.writes[OTIUMLA_loopVariableInput_loopNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_loopVariableInput_loopNode]
+    = Json.format[OTIUMLA_loopVariableInput_loopNode]
+
+  }
+
   /**
     * A_loopVariable_loopNode
     *
@@ -922,6 +1946,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_loopVariable_loopNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_loopVariable_loopNode]
+    = Json.reads[OTIUMLA_loopVariable_loopNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_loopVariable_loopNode]
+    = Json.writes[OTIUMLA_loopVariable_loopNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_loopVariable_loopNode]
+    = Json.format[OTIUMLA_loopVariable_loopNode]
+
+  }
+
   /**
     * A_lowerValue_owningLower
     *
@@ -933,6 +1973,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_lowerValue_owningLower {
+     
+    implicit def reads
+    : Reads[OTIUMLA_lowerValue_owningLower]
+    = Json.reads[OTIUMLA_lowerValue_owningLower]
+  
+    implicit def writes
+    : Writes[OTIUMLA_lowerValue_owningLower]
+    = Json.writes[OTIUMLA_lowerValue_owningLower]
+  
+    implicit def formats
+    : Format[OTIUMLA_lowerValue_owningLower]
+    = Json.format[OTIUMLA_lowerValue_owningLower]
+
+  }
 
   /**
     * A_manifestation_artifact
@@ -946,6 +2002,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_manifestation_artifact {
+     
+    implicit def reads
+    : Reads[OTIUMLA_manifestation_artifact]
+    = Json.reads[OTIUMLA_manifestation_artifact]
+  
+    implicit def writes
+    : Writes[OTIUMLA_manifestation_artifact]
+    = Json.writes[OTIUMLA_manifestation_artifact]
+  
+    implicit def formats
+    : Format[OTIUMLA_manifestation_artifact]
+    = Json.format[OTIUMLA_manifestation_artifact]
+
+  }
+
   /**
     * A_mapping_abstraction
     *
@@ -957,6 +2029,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_mapping_abstraction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_mapping_abstraction]
+    = Json.reads[OTIUMLA_mapping_abstraction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_mapping_abstraction]
+    = Json.writes[OTIUMLA_mapping_abstraction]
+  
+    implicit def formats
+    : Format[OTIUMLA_mapping_abstraction]
+    = Json.format[OTIUMLA_mapping_abstraction]
+
+  }
 
   /**
     * A_maxint_interactionConstraint
@@ -970,6 +2058,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_maxint_interactionConstraint {
+     
+    implicit def reads
+    : Reads[OTIUMLA_maxint_interactionConstraint]
+    = Json.reads[OTIUMLA_maxint_interactionConstraint]
+  
+    implicit def writes
+    : Writes[OTIUMLA_maxint_interactionConstraint]
+    = Json.writes[OTIUMLA_maxint_interactionConstraint]
+  
+    implicit def formats
+    : Format[OTIUMLA_maxint_interactionConstraint]
+    = Json.format[OTIUMLA_maxint_interactionConstraint]
+
+  }
+
   /**
     * A_message_interaction
     *
@@ -981,6 +2085,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_message_interaction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_message_interaction]
+    = Json.reads[OTIUMLA_message_interaction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_message_interaction]
+    = Json.writes[OTIUMLA_message_interaction]
+  
+    implicit def formats
+    : Format[OTIUMLA_message_interaction]
+    = Json.format[OTIUMLA_message_interaction]
+
+  }
 
   /**
     * A_metaclassReference_profile
@@ -994,6 +2114,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_metaclassReference_profile {
+     
+    implicit def reads
+    : Reads[OTIUMLA_metaclassReference_profile]
+    = Json.reads[OTIUMLA_metaclassReference_profile]
+  
+    implicit def writes
+    : Writes[OTIUMLA_metaclassReference_profile]
+    = Json.writes[OTIUMLA_metaclassReference_profile]
+  
+    implicit def formats
+    : Format[OTIUMLA_metaclassReference_profile]
+    = Json.format[OTIUMLA_metaclassReference_profile]
+
+  }
+
   /**
     * A_metamodelReference_profile
     *
@@ -1005,6 +2141,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_metamodelReference_profile {
+     
+    implicit def reads
+    : Reads[OTIUMLA_metamodelReference_profile]
+    = Json.reads[OTIUMLA_metamodelReference_profile]
+  
+    implicit def writes
+    : Writes[OTIUMLA_metamodelReference_profile]
+    = Json.writes[OTIUMLA_metamodelReference_profile]
+  
+    implicit def formats
+    : Format[OTIUMLA_metamodelReference_profile]
+    = Json.format[OTIUMLA_metamodelReference_profile]
+
+  }
 
   /**
     * A_minint_interactionConstraint
@@ -1018,6 +2170,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_minint_interactionConstraint {
+     
+    implicit def reads
+    : Reads[OTIUMLA_minint_interactionConstraint]
+    = Json.reads[OTIUMLA_minint_interactionConstraint]
+  
+    implicit def writes
+    : Writes[OTIUMLA_minint_interactionConstraint]
+    = Json.writes[OTIUMLA_minint_interactionConstraint]
+  
+    implicit def formats
+    : Format[OTIUMLA_minint_interactionConstraint]
+    = Json.format[OTIUMLA_minint_interactionConstraint]
+
+  }
+
   /**
     * A_nameExpression_namedElement
     *
@@ -1030,6 +2198,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_nameExpression_namedElement {
+     
+    implicit def reads
+    : Reads[OTIUMLA_nameExpression_namedElement]
+    = Json.reads[OTIUMLA_nameExpression_namedElement]
+  
+    implicit def writes
+    : Writes[OTIUMLA_nameExpression_namedElement]
+    = Json.writes[OTIUMLA_nameExpression_namedElement]
+  
+    implicit def formats
+    : Format[OTIUMLA_nameExpression_namedElement]
+    = Json.format[OTIUMLA_nameExpression_namedElement]
+
+  }
+
   /**
     * A_nestedArtifact_artifact
     *
@@ -1041,6 +2225,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_nestedArtifact_artifact {
+     
+    implicit def reads
+    : Reads[OTIUMLA_nestedArtifact_artifact]
+    = Json.reads[OTIUMLA_nestedArtifact_artifact]
+  
+    implicit def writes
+    : Writes[OTIUMLA_nestedArtifact_artifact]
+    = Json.writes[OTIUMLA_nestedArtifact_artifact]
+  
+    implicit def formats
+    : Format[OTIUMLA_nestedArtifact_artifact]
+    = Json.format[OTIUMLA_nestedArtifact_artifact]
+
+  }
 
   /**
     * A_nestedClassifier_interface
@@ -1055,6 +2255,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_nestedClassifier_interface {
+     
+    implicit def reads
+    : Reads[OTIUMLA_nestedClassifier_interface]
+    = Json.reads[OTIUMLA_nestedClassifier_interface]
+  
+    implicit def writes
+    : Writes[OTIUMLA_nestedClassifier_interface]
+    = Json.writes[OTIUMLA_nestedClassifier_interface]
+  
+    implicit def formats
+    : Format[OTIUMLA_nestedClassifier_interface]
+    = Json.format[OTIUMLA_nestedClassifier_interface]
+
+  }
+
   /**
     * A_nestedClassifier_nestingClass
     *
@@ -1068,6 +2284,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_nestedClassifier_nestingClass {
+     
+    implicit def reads
+    : Reads[OTIUMLA_nestedClassifier_nestingClass]
+    = Json.reads[OTIUMLA_nestedClassifier_nestingClass]
+  
+    implicit def writes
+    : Writes[OTIUMLA_nestedClassifier_nestingClass]
+    = Json.writes[OTIUMLA_nestedClassifier_nestingClass]
+  
+    implicit def formats
+    : Format[OTIUMLA_nestedClassifier_nestingClass]
+    = Json.format[OTIUMLA_nestedClassifier_nestingClass]
+
+  }
+
   /**
     * A_nestedNode_node
     *
@@ -1079,6 +2311,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_nestedNode_node {
+     
+    implicit def reads
+    : Reads[OTIUMLA_nestedNode_node]
+    = Json.reads[OTIUMLA_nestedNode_node]
+  
+    implicit def writes
+    : Writes[OTIUMLA_nestedNode_node]
+    = Json.writes[OTIUMLA_nestedNode_node]
+  
+    implicit def formats
+    : Format[OTIUMLA_nestedNode_node]
+    = Json.format[OTIUMLA_nestedNode_node]
+
+  }
 
   /**
     * A_node_activity
@@ -1092,6 +2340,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_node_activity {
+     
+    implicit def reads
+    : Reads[OTIUMLA_node_activity]
+    = Json.reads[OTIUMLA_node_activity]
+  
+    implicit def writes
+    : Writes[OTIUMLA_node_activity]
+    = Json.writes[OTIUMLA_node_activity]
+  
+    implicit def formats
+    : Format[OTIUMLA_node_activity]
+    = Json.format[OTIUMLA_node_activity]
+
+  }
+
   /**
     * A_node_inStructuredNode
     *
@@ -1103,6 +2367,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_node_inStructuredNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_node_inStructuredNode]
+    = Json.reads[OTIUMLA_node_inStructuredNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_node_inStructuredNode]
+    = Json.writes[OTIUMLA_node_inStructuredNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_node_inStructuredNode]
+    = Json.format[OTIUMLA_node_inStructuredNode]
+
+  }
 
   /**
     * A_object_clearAssociationAction
@@ -1116,6 +2396,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_object_clearAssociationAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_object_clearAssociationAction]
+    = Json.reads[OTIUMLA_object_clearAssociationAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_object_clearAssociationAction]
+    = Json.writes[OTIUMLA_object_clearAssociationAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_object_clearAssociationAction]
+    = Json.format[OTIUMLA_object_clearAssociationAction]
+
+  }
+
   /**
     * A_object_readIsClassifiedObjectAction
     *
@@ -1127,6 +2423,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_object_readIsClassifiedObjectAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_object_readIsClassifiedObjectAction]
+    = Json.reads[OTIUMLA_object_readIsClassifiedObjectAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_object_readIsClassifiedObjectAction]
+    = Json.writes[OTIUMLA_object_readIsClassifiedObjectAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_object_readIsClassifiedObjectAction]
+    = Json.format[OTIUMLA_object_readIsClassifiedObjectAction]
+
+  }
 
   /**
     * A_object_readLinkObjectEndAction
@@ -1140,6 +2452,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_object_readLinkObjectEndAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_object_readLinkObjectEndAction]
+    = Json.reads[OTIUMLA_object_readLinkObjectEndAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_object_readLinkObjectEndAction]
+    = Json.writes[OTIUMLA_object_readLinkObjectEndAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_object_readLinkObjectEndAction]
+    = Json.format[OTIUMLA_object_readLinkObjectEndAction]
+
+  }
+
   /**
     * A_object_readLinkObjectEndQualifierAction
     *
@@ -1151,6 +2479,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_object_readLinkObjectEndQualifierAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_object_readLinkObjectEndQualifierAction]
+    = Json.reads[OTIUMLA_object_readLinkObjectEndQualifierAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_object_readLinkObjectEndQualifierAction]
+    = Json.writes[OTIUMLA_object_readLinkObjectEndQualifierAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_object_readLinkObjectEndQualifierAction]
+    = Json.format[OTIUMLA_object_readLinkObjectEndQualifierAction]
+
+  }
 
   /**
     * A_object_reclassifyObjectAction
@@ -1164,6 +2508,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_object_reclassifyObjectAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_object_reclassifyObjectAction]
+    = Json.reads[OTIUMLA_object_reclassifyObjectAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_object_reclassifyObjectAction]
+    = Json.writes[OTIUMLA_object_reclassifyObjectAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_object_reclassifyObjectAction]
+    = Json.format[OTIUMLA_object_reclassifyObjectAction]
+
+  }
+
   /**
     * A_object_startClassifierBehaviorAction
     *
@@ -1175,6 +2535,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_object_startClassifierBehaviorAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_object_startClassifierBehaviorAction]
+    = Json.reads[OTIUMLA_object_startClassifierBehaviorAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_object_startClassifierBehaviorAction]
+    = Json.writes[OTIUMLA_object_startClassifierBehaviorAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_object_startClassifierBehaviorAction]
+    = Json.format[OTIUMLA_object_startClassifierBehaviorAction]
+
+  }
 
   /**
     * A_object_startObjectBehaviorAction
@@ -1188,6 +2564,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_object_startObjectBehaviorAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_object_startObjectBehaviorAction]
+    = Json.reads[OTIUMLA_object_startObjectBehaviorAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_object_startObjectBehaviorAction]
+    = Json.writes[OTIUMLA_object_startObjectBehaviorAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_object_startObjectBehaviorAction]
+    = Json.format[OTIUMLA_object_startObjectBehaviorAction]
+
+  }
+
   /**
     * A_object_structuralFeatureAction
     *
@@ -1200,6 +2592,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_object_structuralFeatureAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_object_structuralFeatureAction]
+    = Json.reads[OTIUMLA_object_structuralFeatureAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_object_structuralFeatureAction]
+    = Json.writes[OTIUMLA_object_structuralFeatureAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_object_structuralFeatureAction]
+    = Json.format[OTIUMLA_object_structuralFeatureAction]
+
+  }
+
   /**
     * A_object_unmarshallAction
     *
@@ -1211,6 +2619,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_object_unmarshallAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_object_unmarshallAction]
+    = Json.reads[OTIUMLA_object_unmarshallAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_object_unmarshallAction]
+    = Json.writes[OTIUMLA_object_unmarshallAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_object_unmarshallAction]
+    = Json.format[OTIUMLA_object_unmarshallAction]
+
+  }
 
   /**
     * A_operand_combinedFragment
@@ -1225,6 +2649,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_operand_combinedFragment {
+     
+    implicit def reads
+    : Reads[OTIUMLA_operand_combinedFragment]
+    = Json.reads[OTIUMLA_operand_combinedFragment]
+  
+    implicit def writes
+    : Writes[OTIUMLA_operand_combinedFragment]
+    = Json.writes[OTIUMLA_operand_combinedFragment]
+  
+    implicit def formats
+    : Format[OTIUMLA_operand_combinedFragment]
+    = Json.format[OTIUMLA_operand_combinedFragment]
+
+  }
+
   /**
     * A_operand_expression
     *
@@ -1238,6 +2678,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_operand_expression {
+     
+    implicit def reads
+    : Reads[OTIUMLA_operand_expression]
+    = Json.reads[OTIUMLA_operand_expression]
+  
+    implicit def writes
+    : Writes[OTIUMLA_operand_expression]
+    = Json.writes[OTIUMLA_operand_expression]
+  
+    implicit def formats
+    : Format[OTIUMLA_operand_expression]
+    = Json.format[OTIUMLA_operand_expression]
+
+  }
+
   /**
     * A_outputValue_opaqueAction
     *
@@ -1250,6 +2706,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_outputValue_opaqueAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_outputValue_opaqueAction]
+    = Json.reads[OTIUMLA_outputValue_opaqueAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_outputValue_opaqueAction]
+    = Json.writes[OTIUMLA_outputValue_opaqueAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_outputValue_opaqueAction]
+    = Json.format[OTIUMLA_outputValue_opaqueAction]
+
+  }
+
   /**
     * A_ownedActual_owningTemplateParameterSubstitution
     *
@@ -1261,6 +2733,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_ownedActual_owningTemplateParameterSubstitution {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedActual_owningTemplateParameterSubstitution]
+    = Json.reads[OTIUMLA_ownedActual_owningTemplateParameterSubstitution]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedActual_owningTemplateParameterSubstitution]
+    = Json.writes[OTIUMLA_ownedActual_owningTemplateParameterSubstitution]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedActual_owningTemplateParameterSubstitution]
+    = Json.format[OTIUMLA_ownedActual_owningTemplateParameterSubstitution]
+
+  }
 
   /**
     * A_ownedAttribute_artifact
@@ -1275,6 +2763,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_ownedAttribute_artifact {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedAttribute_artifact]
+    = Json.reads[OTIUMLA_ownedAttribute_artifact]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedAttribute_artifact]
+    = Json.writes[OTIUMLA_ownedAttribute_artifact]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedAttribute_artifact]
+    = Json.format[OTIUMLA_ownedAttribute_artifact]
+
+  }
+
   /**
     * A_ownedAttribute_class
     *
@@ -1287,6 +2791,22 @@ object OTIMOFLink {
     override val end2Index: Int )
   extends  OTIMOFCompositeOrderedLink
   {}
+
+  object OTIUMLA_ownedAttribute_class {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedAttribute_class]
+    = Json.reads[OTIUMLA_ownedAttribute_class]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedAttribute_class]
+    = Json.writes[OTIUMLA_ownedAttribute_class]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedAttribute_class]
+    = Json.format[OTIUMLA_ownedAttribute_class]
+
+  }
 
   /**
     * A_ownedAttribute_datatype
@@ -1301,6 +2821,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_ownedAttribute_datatype {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedAttribute_datatype]
+    = Json.reads[OTIUMLA_ownedAttribute_datatype]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedAttribute_datatype]
+    = Json.writes[OTIUMLA_ownedAttribute_datatype]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedAttribute_datatype]
+    = Json.format[OTIUMLA_ownedAttribute_datatype]
+
+  }
+
   /**
     * A_ownedAttribute_interface
     *
@@ -1313,6 +2849,22 @@ object OTIMOFLink {
     override val end2Index: Int )
   extends  OTIMOFCompositeOrderedLink
   {}
+
+  object OTIUMLA_ownedAttribute_interface {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedAttribute_interface]
+    = Json.reads[OTIUMLA_ownedAttribute_interface]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedAttribute_interface]
+    = Json.writes[OTIUMLA_ownedAttribute_interface]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedAttribute_interface]
+    = Json.format[OTIUMLA_ownedAttribute_interface]
+
+  }
 
   /**
     * A_ownedAttribute_owningSignal
@@ -1327,6 +2879,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_ownedAttribute_owningSignal {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedAttribute_owningSignal]
+    = Json.reads[OTIUMLA_ownedAttribute_owningSignal]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedAttribute_owningSignal]
+    = Json.writes[OTIUMLA_ownedAttribute_owningSignal]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedAttribute_owningSignal]
+    = Json.format[OTIUMLA_ownedAttribute_owningSignal]
+
+  }
+
   /**
     * A_ownedAttribute_structuredClassifier
     *
@@ -1340,6 +2908,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_ownedAttribute_structuredClassifier {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedAttribute_structuredClassifier]
+    = Json.reads[OTIUMLA_ownedAttribute_structuredClassifier]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedAttribute_structuredClassifier]
+    = Json.writes[OTIUMLA_ownedAttribute_structuredClassifier]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedAttribute_structuredClassifier]
+    = Json.format[OTIUMLA_ownedAttribute_structuredClassifier]
+
+  }
+
   /**
     * A_ownedBehavior_behavioredClassifier
     *
@@ -1351,6 +2935,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_ownedBehavior_behavioredClassifier {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedBehavior_behavioredClassifier]
+    = Json.reads[OTIUMLA_ownedBehavior_behavioredClassifier]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedBehavior_behavioredClassifier]
+    = Json.writes[OTIUMLA_ownedBehavior_behavioredClassifier]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedBehavior_behavioredClassifier]
+    = Json.format[OTIUMLA_ownedBehavior_behavioredClassifier]
+
+  }
 
   /**
     * A_ownedComment_owningElement
@@ -1364,6 +2964,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_ownedComment_owningElement {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedComment_owningElement]
+    = Json.reads[OTIUMLA_ownedComment_owningElement]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedComment_owningElement]
+    = Json.writes[OTIUMLA_ownedComment_owningElement]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedComment_owningElement]
+    = Json.format[OTIUMLA_ownedComment_owningElement]
+
+  }
+
   /**
     * A_ownedConnector_structuredClassifier
     *
@@ -1375,6 +2991,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_ownedConnector_structuredClassifier {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedConnector_structuredClassifier]
+    = Json.reads[OTIUMLA_ownedConnector_structuredClassifier]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedConnector_structuredClassifier]
+    = Json.writes[OTIUMLA_ownedConnector_structuredClassifier]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedConnector_structuredClassifier]
+    = Json.format[OTIUMLA_ownedConnector_structuredClassifier]
+
+  }
 
   /**
     * A_ownedDefault_templateParameter
@@ -1388,6 +3020,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_ownedDefault_templateParameter {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedDefault_templateParameter]
+    = Json.reads[OTIUMLA_ownedDefault_templateParameter]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedDefault_templateParameter]
+    = Json.writes[OTIUMLA_ownedDefault_templateParameter]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedDefault_templateParameter]
+    = Json.format[OTIUMLA_ownedDefault_templateParameter]
+
+  }
+
   /**
     * A_ownedEnd_extension
     *
@@ -1399,6 +3047,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_ownedEnd_extension {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedEnd_extension]
+    = Json.reads[OTIUMLA_ownedEnd_extension]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedEnd_extension]
+    = Json.writes[OTIUMLA_ownedEnd_extension]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedEnd_extension]
+    = Json.format[OTIUMLA_ownedEnd_extension]
+
+  }
 
   /**
     * A_ownedEnd_owningAssociation
@@ -1413,6 +3077,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_ownedEnd_owningAssociation {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedEnd_owningAssociation]
+    = Json.reads[OTIUMLA_ownedEnd_owningAssociation]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedEnd_owningAssociation]
+    = Json.writes[OTIUMLA_ownedEnd_owningAssociation]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedEnd_owningAssociation]
+    = Json.format[OTIUMLA_ownedEnd_owningAssociation]
+
+  }
+
   /**
     * A_ownedLiteral_enumeration
     *
@@ -1425,6 +3105,22 @@ object OTIMOFLink {
     override val end2Index: Int )
   extends  OTIMOFCompositeOrderedLink
   {}
+
+  object OTIUMLA_ownedLiteral_enumeration {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedLiteral_enumeration]
+    = Json.reads[OTIUMLA_ownedLiteral_enumeration]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedLiteral_enumeration]
+    = Json.writes[OTIUMLA_ownedLiteral_enumeration]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedLiteral_enumeration]
+    = Json.format[OTIUMLA_ownedLiteral_enumeration]
+
+  }
 
   /**
     * A_ownedOperation_artifact
@@ -1439,6 +3135,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_ownedOperation_artifact {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedOperation_artifact]
+    = Json.reads[OTIUMLA_ownedOperation_artifact]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedOperation_artifact]
+    = Json.writes[OTIUMLA_ownedOperation_artifact]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedOperation_artifact]
+    = Json.format[OTIUMLA_ownedOperation_artifact]
+
+  }
+
   /**
     * A_ownedOperation_class
     *
@@ -1451,6 +3163,22 @@ object OTIMOFLink {
     override val end2Index: Int )
   extends  OTIMOFCompositeOrderedLink
   {}
+
+  object OTIUMLA_ownedOperation_class {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedOperation_class]
+    = Json.reads[OTIUMLA_ownedOperation_class]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedOperation_class]
+    = Json.writes[OTIUMLA_ownedOperation_class]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedOperation_class]
+    = Json.format[OTIUMLA_ownedOperation_class]
+
+  }
 
   /**
     * A_ownedOperation_datatype
@@ -1465,6 +3193,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_ownedOperation_datatype {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedOperation_datatype]
+    = Json.reads[OTIUMLA_ownedOperation_datatype]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedOperation_datatype]
+    = Json.writes[OTIUMLA_ownedOperation_datatype]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedOperation_datatype]
+    = Json.format[OTIUMLA_ownedOperation_datatype]
+
+  }
+
   /**
     * A_ownedOperation_interface
     *
@@ -1478,6 +3222,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_ownedOperation_interface {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedOperation_interface]
+    = Json.reads[OTIUMLA_ownedOperation_interface]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedOperation_interface]
+    = Json.writes[OTIUMLA_ownedOperation_interface]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedOperation_interface]
+    = Json.format[OTIUMLA_ownedOperation_interface]
+
+  }
+
   /**
     * A_ownedParameterSet_behavior
     *
@@ -1490,6 +3250,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_ownedParameterSet_behavior {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedParameterSet_behavior]
+    = Json.reads[OTIUMLA_ownedParameterSet_behavior]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedParameterSet_behavior]
+    = Json.writes[OTIUMLA_ownedParameterSet_behavior]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedParameterSet_behavior]
+    = Json.format[OTIUMLA_ownedParameterSet_behavior]
+
+  }
+
   /**
     * A_ownedParameterSet_behavioralFeature
     *
@@ -1501,6 +3277,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_ownedParameterSet_behavioralFeature {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedParameterSet_behavioralFeature]
+    = Json.reads[OTIUMLA_ownedParameterSet_behavioralFeature]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedParameterSet_behavioralFeature]
+    = Json.writes[OTIUMLA_ownedParameterSet_behavioralFeature]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedParameterSet_behavioralFeature]
+    = Json.format[OTIUMLA_ownedParameterSet_behavioralFeature]
+
+  }
 
   /**
     * A_ownedParameter_behavior
@@ -1515,6 +3307,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_ownedParameter_behavior {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedParameter_behavior]
+    = Json.reads[OTIUMLA_ownedParameter_behavior]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedParameter_behavior]
+    = Json.writes[OTIUMLA_ownedParameter_behavior]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedParameter_behavior]
+    = Json.format[OTIUMLA_ownedParameter_behavior]
+
+  }
+
   /**
     * A_ownedParameter_operation
     *
@@ -1527,6 +3335,22 @@ object OTIMOFLink {
     override val end2Index: Int )
   extends  OTIMOFCompositeOrderedLink
   {}
+
+  object OTIUMLA_ownedParameter_operation {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedParameter_operation]
+    = Json.reads[OTIUMLA_ownedParameter_operation]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedParameter_operation]
+    = Json.writes[OTIUMLA_ownedParameter_operation]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedParameter_operation]
+    = Json.format[OTIUMLA_ownedParameter_operation]
+
+  }
 
   /**
     * A_ownedParameter_ownerFormalParam
@@ -1541,6 +3365,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_ownedParameter_ownerFormalParam {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedParameter_ownerFormalParam]
+    = Json.reads[OTIUMLA_ownedParameter_ownerFormalParam]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedParameter_ownerFormalParam]
+    = Json.writes[OTIUMLA_ownedParameter_ownerFormalParam]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedParameter_ownerFormalParam]
+    = Json.format[OTIUMLA_ownedParameter_ownerFormalParam]
+
+  }
+
   /**
     * A_ownedParameter_signature
     *
@@ -1554,6 +3394,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_ownedParameter_signature {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedParameter_signature]
+    = Json.reads[OTIUMLA_ownedParameter_signature]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedParameter_signature]
+    = Json.writes[OTIUMLA_ownedParameter_signature]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedParameter_signature]
+    = Json.format[OTIUMLA_ownedParameter_signature]
+
+  }
+
   /**
     * A_ownedParameteredElement_owningTemplateParameter
     *
@@ -1565,6 +3421,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_ownedParameteredElement_owningTemplateParameter {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedParameteredElement_owningTemplateParameter]
+    = Json.reads[OTIUMLA_ownedParameteredElement_owningTemplateParameter]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedParameteredElement_owningTemplateParameter]
+    = Json.writes[OTIUMLA_ownedParameteredElement_owningTemplateParameter]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedParameteredElement_owningTemplateParameter]
+    = Json.format[OTIUMLA_ownedParameteredElement_owningTemplateParameter]
+
+  }
 
   /**
     * A_ownedReception_class
@@ -1578,6 +3450,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_ownedReception_class {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedReception_class]
+    = Json.reads[OTIUMLA_ownedReception_class]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedReception_class]
+    = Json.writes[OTIUMLA_ownedReception_class]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedReception_class]
+    = Json.format[OTIUMLA_ownedReception_class]
+
+  }
+
   /**
     * A_ownedReception_interface
     *
@@ -1589,6 +3477,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_ownedReception_interface {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedReception_interface]
+    = Json.reads[OTIUMLA_ownedReception_interface]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedReception_interface]
+    = Json.writes[OTIUMLA_ownedReception_interface]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedReception_interface]
+    = Json.format[OTIUMLA_ownedReception_interface]
+
+  }
 
   /**
     * A_ownedRule_context
@@ -1602,6 +3506,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_ownedRule_context {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedRule_context]
+    = Json.reads[OTIUMLA_ownedRule_context]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedRule_context]
+    = Json.writes[OTIUMLA_ownedRule_context]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedRule_context]
+    = Json.format[OTIUMLA_ownedRule_context]
+
+  }
+
   /**
     * A_ownedTemplateSignature_classifier
     *
@@ -1613,6 +3533,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_ownedTemplateSignature_classifier {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedTemplateSignature_classifier]
+    = Json.reads[OTIUMLA_ownedTemplateSignature_classifier]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedTemplateSignature_classifier]
+    = Json.writes[OTIUMLA_ownedTemplateSignature_classifier]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedTemplateSignature_classifier]
+    = Json.format[OTIUMLA_ownedTemplateSignature_classifier]
+
+  }
 
   /**
     * A_ownedTemplateSignature_template
@@ -1626,6 +3562,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_ownedTemplateSignature_template {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedTemplateSignature_template]
+    = Json.reads[OTIUMLA_ownedTemplateSignature_template]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedTemplateSignature_template]
+    = Json.writes[OTIUMLA_ownedTemplateSignature_template]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedTemplateSignature_template]
+    = Json.format[OTIUMLA_ownedTemplateSignature_template]
+
+  }
+
   /**
     * A_ownedUseCase_classifier
     *
@@ -1637,6 +3589,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_ownedUseCase_classifier {
+     
+    implicit def reads
+    : Reads[OTIUMLA_ownedUseCase_classifier]
+    = Json.reads[OTIUMLA_ownedUseCase_classifier]
+  
+    implicit def writes
+    : Writes[OTIUMLA_ownedUseCase_classifier]
+    = Json.writes[OTIUMLA_ownedUseCase_classifier]
+  
+    implicit def formats
+    : Format[OTIUMLA_ownedUseCase_classifier]
+    = Json.format[OTIUMLA_ownedUseCase_classifier]
+
+  }
 
   /**
     * A_packageImport_importingNamespace
@@ -1650,6 +3618,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_packageImport_importingNamespace {
+     
+    implicit def reads
+    : Reads[OTIUMLA_packageImport_importingNamespace]
+    = Json.reads[OTIUMLA_packageImport_importingNamespace]
+  
+    implicit def writes
+    : Writes[OTIUMLA_packageImport_importingNamespace]
+    = Json.writes[OTIUMLA_packageImport_importingNamespace]
+  
+    implicit def formats
+    : Format[OTIUMLA_packageImport_importingNamespace]
+    = Json.format[OTIUMLA_packageImport_importingNamespace]
+
+  }
+
   /**
     * A_packageMerge_receivingPackage
     *
@@ -1661,6 +3645,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_packageMerge_receivingPackage {
+     
+    implicit def reads
+    : Reads[OTIUMLA_packageMerge_receivingPackage]
+    = Json.reads[OTIUMLA_packageMerge_receivingPackage]
+  
+    implicit def writes
+    : Writes[OTIUMLA_packageMerge_receivingPackage]
+    = Json.writes[OTIUMLA_packageMerge_receivingPackage]
+  
+    implicit def formats
+    : Format[OTIUMLA_packageMerge_receivingPackage]
+    = Json.format[OTIUMLA_packageMerge_receivingPackage]
+
+  }
 
   /**
     * A_packagedElement_component
@@ -1674,6 +3674,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_packagedElement_component {
+     
+    implicit def reads
+    : Reads[OTIUMLA_packagedElement_component]
+    = Json.reads[OTIUMLA_packagedElement_component]
+  
+    implicit def writes
+    : Writes[OTIUMLA_packagedElement_component]
+    = Json.writes[OTIUMLA_packagedElement_component]
+  
+    implicit def formats
+    : Format[OTIUMLA_packagedElement_component]
+    = Json.format[OTIUMLA_packagedElement_component]
+
+  }
+
   /**
     * A_packagedElement_owningPackage
     *
@@ -1685,6 +3701,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_packagedElement_owningPackage {
+     
+    implicit def reads
+    : Reads[OTIUMLA_packagedElement_owningPackage]
+    = Json.reads[OTIUMLA_packagedElement_owningPackage]
+  
+    implicit def writes
+    : Writes[OTIUMLA_packagedElement_owningPackage]
+    = Json.writes[OTIUMLA_packagedElement_owningPackage]
+  
+    implicit def formats
+    : Format[OTIUMLA_packagedElement_owningPackage]
+    = Json.format[OTIUMLA_packagedElement_owningPackage]
+
+  }
 
   /**
     * A_parameterSubstitution_templateBinding
@@ -1698,6 +3730,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_parameterSubstitution_templateBinding {
+     
+    implicit def reads
+    : Reads[OTIUMLA_parameterSubstitution_templateBinding]
+    = Json.reads[OTIUMLA_parameterSubstitution_templateBinding]
+  
+    implicit def writes
+    : Writes[OTIUMLA_parameterSubstitution_templateBinding]
+    = Json.writes[OTIUMLA_parameterSubstitution_templateBinding]
+  
+    implicit def formats
+    : Format[OTIUMLA_parameterSubstitution_templateBinding]
+    = Json.format[OTIUMLA_parameterSubstitution_templateBinding]
+
+  }
+
   /**
     * A_postCondition_owningTransition
     *
@@ -1709,6 +3757,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_postCondition_owningTransition {
+     
+    implicit def reads
+    : Reads[OTIUMLA_postCondition_owningTransition]
+    = Json.reads[OTIUMLA_postCondition_owningTransition]
+  
+    implicit def writes
+    : Writes[OTIUMLA_postCondition_owningTransition]
+    = Json.writes[OTIUMLA_postCondition_owningTransition]
+  
+    implicit def formats
+    : Format[OTIUMLA_postCondition_owningTransition]
+    = Json.format[OTIUMLA_postCondition_owningTransition]
+
+  }
 
   /**
     * A_postcondition_behavior
@@ -1722,6 +3786,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_postcondition_behavior {
+     
+    implicit def reads
+    : Reads[OTIUMLA_postcondition_behavior]
+    = Json.reads[OTIUMLA_postcondition_behavior]
+  
+    implicit def writes
+    : Writes[OTIUMLA_postcondition_behavior]
+    = Json.writes[OTIUMLA_postcondition_behavior]
+  
+    implicit def formats
+    : Format[OTIUMLA_postcondition_behavior]
+    = Json.format[OTIUMLA_postcondition_behavior]
+
+  }
+
   /**
     * A_postcondition_postContext
     *
@@ -1733,6 +3813,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_postcondition_postContext {
+     
+    implicit def reads
+    : Reads[OTIUMLA_postcondition_postContext]
+    = Json.reads[OTIUMLA_postcondition_postContext]
+  
+    implicit def writes
+    : Writes[OTIUMLA_postcondition_postContext]
+    = Json.writes[OTIUMLA_postcondition_postContext]
+  
+    implicit def formats
+    : Format[OTIUMLA_postcondition_postContext]
+    = Json.format[OTIUMLA_postcondition_postContext]
+
+  }
 
   /**
     * A_preCondition_protocolTransition
@@ -1746,6 +3842,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_preCondition_protocolTransition {
+     
+    implicit def reads
+    : Reads[OTIUMLA_preCondition_protocolTransition]
+    = Json.reads[OTIUMLA_preCondition_protocolTransition]
+  
+    implicit def writes
+    : Writes[OTIUMLA_preCondition_protocolTransition]
+    = Json.writes[OTIUMLA_preCondition_protocolTransition]
+  
+    implicit def formats
+    : Format[OTIUMLA_preCondition_protocolTransition]
+    = Json.format[OTIUMLA_preCondition_protocolTransition]
+
+  }
+
   /**
     * A_precondition_behavior
     *
@@ -1757,6 +3869,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_precondition_behavior {
+     
+    implicit def reads
+    : Reads[OTIUMLA_precondition_behavior]
+    = Json.reads[OTIUMLA_precondition_behavior]
+  
+    implicit def writes
+    : Writes[OTIUMLA_precondition_behavior]
+    = Json.writes[OTIUMLA_precondition_behavior]
+  
+    implicit def formats
+    : Format[OTIUMLA_precondition_behavior]
+    = Json.format[OTIUMLA_precondition_behavior]
+
+  }
 
   /**
     * A_precondition_preContext
@@ -1770,6 +3898,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_precondition_preContext {
+     
+    implicit def reads
+    : Reads[OTIUMLA_precondition_preContext]
+    = Json.reads[OTIUMLA_precondition_preContext]
+  
+    implicit def writes
+    : Writes[OTIUMLA_precondition_preContext]
+    = Json.writes[OTIUMLA_precondition_preContext]
+  
+    implicit def formats
+    : Format[OTIUMLA_precondition_preContext]
+    = Json.format[OTIUMLA_precondition_preContext]
+
+  }
+
   /**
     * A_profileApplication_applyingPackage
     *
@@ -1782,6 +3926,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_profileApplication_applyingPackage {
+     
+    implicit def reads
+    : Reads[OTIUMLA_profileApplication_applyingPackage]
+    = Json.reads[OTIUMLA_profileApplication_applyingPackage]
+  
+    implicit def writes
+    : Writes[OTIUMLA_profileApplication_applyingPackage]
+    = Json.writes[OTIUMLA_profileApplication_applyingPackage]
+  
+    implicit def formats
+    : Format[OTIUMLA_profileApplication_applyingPackage]
+    = Json.format[OTIUMLA_profileApplication_applyingPackage]
+
+  }
+
   /**
     * A_protocol_interface
     *
@@ -1793,6 +3953,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_protocol_interface {
+     
+    implicit def reads
+    : Reads[OTIUMLA_protocol_interface]
+    = Json.reads[OTIUMLA_protocol_interface]
+  
+    implicit def writes
+    : Writes[OTIUMLA_protocol_interface]
+    = Json.writes[OTIUMLA_protocol_interface]
+  
+    implicit def formats
+    : Format[OTIUMLA_protocol_interface]
+    = Json.format[OTIUMLA_protocol_interface]
+
+  }
 
   /**
     * A_qualifier_associationEnd
@@ -1807,6 +3983,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_qualifier_associationEnd {
+     
+    implicit def reads
+    : Reads[OTIUMLA_qualifier_associationEnd]
+    = Json.reads[OTIUMLA_qualifier_associationEnd]
+  
+    implicit def writes
+    : Writes[OTIUMLA_qualifier_associationEnd]
+    = Json.writes[OTIUMLA_qualifier_associationEnd]
+  
+    implicit def formats
+    : Format[OTIUMLA_qualifier_associationEnd]
+    = Json.format[OTIUMLA_qualifier_associationEnd]
+
+  }
+
   /**
     * A_qualifier_linkEndData
     *
@@ -1818,6 +4010,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_qualifier_linkEndData {
+     
+    implicit def reads
+    : Reads[OTIUMLA_qualifier_linkEndData]
+    = Json.reads[OTIUMLA_qualifier_linkEndData]
+  
+    implicit def writes
+    : Writes[OTIUMLA_qualifier_linkEndData]
+    = Json.writes[OTIUMLA_qualifier_linkEndData]
+  
+    implicit def formats
+    : Format[OTIUMLA_qualifier_linkEndData]
+    = Json.format[OTIUMLA_qualifier_linkEndData]
+
+  }
 
   /**
     * A_realization_abstraction_component
@@ -1831,6 +4039,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_realization_abstraction_component {
+     
+    implicit def reads
+    : Reads[OTIUMLA_realization_abstraction_component]
+    = Json.reads[OTIUMLA_realization_abstraction_component]
+  
+    implicit def writes
+    : Writes[OTIUMLA_realization_abstraction_component]
+    = Json.writes[OTIUMLA_realization_abstraction_component]
+  
+    implicit def formats
+    : Format[OTIUMLA_realization_abstraction_component]
+    = Json.format[OTIUMLA_realization_abstraction_component]
+
+  }
+
   /**
     * A_region_state
     *
@@ -1842,6 +4066,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_region_state {
+     
+    implicit def reads
+    : Reads[OTIUMLA_region_state]
+    = Json.reads[OTIUMLA_region_state]
+  
+    implicit def writes
+    : Writes[OTIUMLA_region_state]
+    = Json.writes[OTIUMLA_region_state]
+  
+    implicit def formats
+    : Format[OTIUMLA_region_state]
+    = Json.format[OTIUMLA_region_state]
+
+  }
 
   /**
     * A_region_stateMachine
@@ -1855,6 +4095,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_region_stateMachine {
+     
+    implicit def reads
+    : Reads[OTIUMLA_region_stateMachine]
+    = Json.reads[OTIUMLA_region_stateMachine]
+  
+    implicit def writes
+    : Writes[OTIUMLA_region_stateMachine]
+    = Json.writes[OTIUMLA_region_stateMachine]
+  
+    implicit def formats
+    : Format[OTIUMLA_region_stateMachine]
+    = Json.format[OTIUMLA_region_stateMachine]
+
+  }
+
   /**
     * A_removeAt_removeStructuralFeatureValueAction
     *
@@ -1867,6 +4123,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_removeAt_removeStructuralFeatureValueAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_removeAt_removeStructuralFeatureValueAction]
+    = Json.reads[OTIUMLA_removeAt_removeStructuralFeatureValueAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_removeAt_removeStructuralFeatureValueAction]
+    = Json.writes[OTIUMLA_removeAt_removeStructuralFeatureValueAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_removeAt_removeStructuralFeatureValueAction]
+    = Json.format[OTIUMLA_removeAt_removeStructuralFeatureValueAction]
+
+  }
+
   /**
     * A_removeAt_removeVariableValueAction
     *
@@ -1878,6 +4150,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_removeAt_removeVariableValueAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_removeAt_removeVariableValueAction]
+    = Json.reads[OTIUMLA_removeAt_removeVariableValueAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_removeAt_removeVariableValueAction]
+    = Json.writes[OTIUMLA_removeAt_removeVariableValueAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_removeAt_removeVariableValueAction]
+    = Json.format[OTIUMLA_removeAt_removeVariableValueAction]
+
+  }
 
   /**
     * A_replyValue_replyAction
@@ -1892,6 +4180,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_replyValue_replyAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_replyValue_replyAction]
+    = Json.reads[OTIUMLA_replyValue_replyAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_replyValue_replyAction]
+    = Json.writes[OTIUMLA_replyValue_replyAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_replyValue_replyAction]
+    = Json.format[OTIUMLA_replyValue_replyAction]
+
+  }
+
   /**
     * A_request_sendObjectAction
     *
@@ -1903,6 +4207,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_request_sendObjectAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_request_sendObjectAction]
+    = Json.reads[OTIUMLA_request_sendObjectAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_request_sendObjectAction]
+    = Json.writes[OTIUMLA_request_sendObjectAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_request_sendObjectAction]
+    = Json.format[OTIUMLA_request_sendObjectAction]
+
+  }
 
   /**
     * A_result_acceptEventAction
@@ -1917,6 +4237,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_result_acceptEventAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_result_acceptEventAction]
+    = Json.reads[OTIUMLA_result_acceptEventAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_result_acceptEventAction]
+    = Json.writes[OTIUMLA_result_acceptEventAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_result_acceptEventAction]
+    = Json.format[OTIUMLA_result_acceptEventAction]
+
+  }
+
   /**
     * A_result_callAction
     *
@@ -1930,6 +4266,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_result_callAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_result_callAction]
+    = Json.reads[OTIUMLA_result_callAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_result_callAction]
+    = Json.writes[OTIUMLA_result_callAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_result_callAction]
+    = Json.format[OTIUMLA_result_callAction]
+
+  }
+
   /**
     * A_result_clearStructuralFeatureAction
     *
@@ -1941,6 +4293,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_result_clearStructuralFeatureAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_result_clearStructuralFeatureAction]
+    = Json.reads[OTIUMLA_result_clearStructuralFeatureAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_result_clearStructuralFeatureAction]
+    = Json.writes[OTIUMLA_result_clearStructuralFeatureAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_result_clearStructuralFeatureAction]
+    = Json.format[OTIUMLA_result_clearStructuralFeatureAction]
+
+  }
 
   /**
     * A_result_conditionalNode
@@ -1955,6 +4323,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_result_conditionalNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_result_conditionalNode]
+    = Json.reads[OTIUMLA_result_conditionalNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_result_conditionalNode]
+    = Json.writes[OTIUMLA_result_conditionalNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_result_conditionalNode]
+    = Json.format[OTIUMLA_result_conditionalNode]
+
+  }
+
   /**
     * A_result_createLinkObjectAction
     *
@@ -1967,6 +4351,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_result_createLinkObjectAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_result_createLinkObjectAction]
+    = Json.reads[OTIUMLA_result_createLinkObjectAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_result_createLinkObjectAction]
+    = Json.writes[OTIUMLA_result_createLinkObjectAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_result_createLinkObjectAction]
+    = Json.format[OTIUMLA_result_createLinkObjectAction]
+
+  }
+
   /**
     * A_result_createObjectAction
     *
@@ -1978,6 +4378,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_result_createObjectAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_result_createObjectAction]
+    = Json.reads[OTIUMLA_result_createObjectAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_result_createObjectAction]
+    = Json.writes[OTIUMLA_result_createObjectAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_result_createObjectAction]
+    = Json.format[OTIUMLA_result_createObjectAction]
+
+  }
 
   /**
     * A_result_loopNode
@@ -1992,6 +4408,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_result_loopNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_result_loopNode]
+    = Json.reads[OTIUMLA_result_loopNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_result_loopNode]
+    = Json.writes[OTIUMLA_result_loopNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_result_loopNode]
+    = Json.format[OTIUMLA_result_loopNode]
+
+  }
+
   /**
     * A_result_readExtentAction
     *
@@ -2003,6 +4435,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_result_readExtentAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_result_readExtentAction]
+    = Json.reads[OTIUMLA_result_readExtentAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_result_readExtentAction]
+    = Json.writes[OTIUMLA_result_readExtentAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_result_readExtentAction]
+    = Json.format[OTIUMLA_result_readExtentAction]
+
+  }
 
   /**
     * A_result_readIsClassifiedObjectAction
@@ -2016,6 +4464,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_result_readIsClassifiedObjectAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_result_readIsClassifiedObjectAction]
+    = Json.reads[OTIUMLA_result_readIsClassifiedObjectAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_result_readIsClassifiedObjectAction]
+    = Json.writes[OTIUMLA_result_readIsClassifiedObjectAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_result_readIsClassifiedObjectAction]
+    = Json.format[OTIUMLA_result_readIsClassifiedObjectAction]
+
+  }
+
   /**
     * A_result_readLinkAction
     *
@@ -2027,6 +4491,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_result_readLinkAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_result_readLinkAction]
+    = Json.reads[OTIUMLA_result_readLinkAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_result_readLinkAction]
+    = Json.writes[OTIUMLA_result_readLinkAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_result_readLinkAction]
+    = Json.format[OTIUMLA_result_readLinkAction]
+
+  }
 
   /**
     * A_result_readLinkObjectEndAction
@@ -2040,6 +4520,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_result_readLinkObjectEndAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_result_readLinkObjectEndAction]
+    = Json.reads[OTIUMLA_result_readLinkObjectEndAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_result_readLinkObjectEndAction]
+    = Json.writes[OTIUMLA_result_readLinkObjectEndAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_result_readLinkObjectEndAction]
+    = Json.format[OTIUMLA_result_readLinkObjectEndAction]
+
+  }
+
   /**
     * A_result_readLinkObjectEndQualifierAction
     *
@@ -2051,6 +4547,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_result_readLinkObjectEndQualifierAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_result_readLinkObjectEndQualifierAction]
+    = Json.reads[OTIUMLA_result_readLinkObjectEndQualifierAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_result_readLinkObjectEndQualifierAction]
+    = Json.writes[OTIUMLA_result_readLinkObjectEndQualifierAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_result_readLinkObjectEndQualifierAction]
+    = Json.format[OTIUMLA_result_readLinkObjectEndQualifierAction]
+
+  }
 
   /**
     * A_result_readSelfAction
@@ -2064,6 +4576,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_result_readSelfAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_result_readSelfAction]
+    = Json.reads[OTIUMLA_result_readSelfAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_result_readSelfAction]
+    = Json.writes[OTIUMLA_result_readSelfAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_result_readSelfAction]
+    = Json.format[OTIUMLA_result_readSelfAction]
+
+  }
+
   /**
     * A_result_readStructuralFeatureAction
     *
@@ -2075,6 +4603,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_result_readStructuralFeatureAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_result_readStructuralFeatureAction]
+    = Json.reads[OTIUMLA_result_readStructuralFeatureAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_result_readStructuralFeatureAction]
+    = Json.writes[OTIUMLA_result_readStructuralFeatureAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_result_readStructuralFeatureAction]
+    = Json.format[OTIUMLA_result_readStructuralFeatureAction]
+
+  }
 
   /**
     * A_result_readVariableAction
@@ -2088,6 +4632,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_result_readVariableAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_result_readVariableAction]
+    = Json.reads[OTIUMLA_result_readVariableAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_result_readVariableAction]
+    = Json.writes[OTIUMLA_result_readVariableAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_result_readVariableAction]
+    = Json.format[OTIUMLA_result_readVariableAction]
+
+  }
+
   /**
     * A_result_reduceAction
     *
@@ -2100,6 +4660,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_result_reduceAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_result_reduceAction]
+    = Json.reads[OTIUMLA_result_reduceAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_result_reduceAction]
+    = Json.writes[OTIUMLA_result_reduceAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_result_reduceAction]
+    = Json.format[OTIUMLA_result_reduceAction]
+
+  }
+
   /**
     * A_result_testIdentityAction
     *
@@ -2111,6 +4687,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_result_testIdentityAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_result_testIdentityAction]
+    = Json.reads[OTIUMLA_result_testIdentityAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_result_testIdentityAction]
+    = Json.writes[OTIUMLA_result_testIdentityAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_result_testIdentityAction]
+    = Json.format[OTIUMLA_result_testIdentityAction]
+
+  }
 
   /**
     * A_result_unmarshallAction
@@ -2125,6 +4717,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_result_unmarshallAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_result_unmarshallAction]
+    = Json.reads[OTIUMLA_result_unmarshallAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_result_unmarshallAction]
+    = Json.writes[OTIUMLA_result_unmarshallAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_result_unmarshallAction]
+    = Json.format[OTIUMLA_result_unmarshallAction]
+
+  }
+
   /**
     * A_result_valueSpecificationAction
     *
@@ -2136,6 +4744,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_result_valueSpecificationAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_result_valueSpecificationAction]
+    = Json.reads[OTIUMLA_result_valueSpecificationAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_result_valueSpecificationAction]
+    = Json.writes[OTIUMLA_result_valueSpecificationAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_result_valueSpecificationAction]
+    = Json.format[OTIUMLA_result_valueSpecificationAction]
+
+  }
 
   /**
     * A_result_writeStructuralFeatureAction
@@ -2149,6 +4773,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_result_writeStructuralFeatureAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_result_writeStructuralFeatureAction]
+    = Json.reads[OTIUMLA_result_writeStructuralFeatureAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_result_writeStructuralFeatureAction]
+    = Json.writes[OTIUMLA_result_writeStructuralFeatureAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_result_writeStructuralFeatureAction]
+    = Json.format[OTIUMLA_result_writeStructuralFeatureAction]
+
+  }
+
   /**
     * A_returnInformation_acceptCallAction
     *
@@ -2160,6 +4800,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_returnInformation_acceptCallAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_returnInformation_acceptCallAction]
+    = Json.reads[OTIUMLA_returnInformation_acceptCallAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_returnInformation_acceptCallAction]
+    = Json.writes[OTIUMLA_returnInformation_acceptCallAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_returnInformation_acceptCallAction]
+    = Json.format[OTIUMLA_returnInformation_acceptCallAction]
+
+  }
 
   /**
     * A_returnInformation_replyAction
@@ -2173,6 +4829,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_returnInformation_replyAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_returnInformation_replyAction]
+    = Json.reads[OTIUMLA_returnInformation_replyAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_returnInformation_replyAction]
+    = Json.writes[OTIUMLA_returnInformation_replyAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_returnInformation_replyAction]
+    = Json.format[OTIUMLA_returnInformation_replyAction]
+
+  }
+
   /**
     * A_returnValue_interactionUse
     *
@@ -2184,6 +4856,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_returnValue_interactionUse {
+     
+    implicit def reads
+    : Reads[OTIUMLA_returnValue_interactionUse]
+    = Json.reads[OTIUMLA_returnValue_interactionUse]
+  
+    implicit def writes
+    : Writes[OTIUMLA_returnValue_interactionUse]
+    = Json.writes[OTIUMLA_returnValue_interactionUse]
+  
+    implicit def formats
+    : Format[OTIUMLA_returnValue_interactionUse]
+    = Json.format[OTIUMLA_returnValue_interactionUse]
+
+  }
 
   /**
     * A_roleBinding_collaborationUse
@@ -2197,6 +4885,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_roleBinding_collaborationUse {
+     
+    implicit def reads
+    : Reads[OTIUMLA_roleBinding_collaborationUse]
+    = Json.reads[OTIUMLA_roleBinding_collaborationUse]
+  
+    implicit def writes
+    : Writes[OTIUMLA_roleBinding_collaborationUse]
+    = Json.writes[OTIUMLA_roleBinding_collaborationUse]
+  
+    implicit def formats
+    : Format[OTIUMLA_roleBinding_collaborationUse]
+    = Json.format[OTIUMLA_roleBinding_collaborationUse]
+
+  }
+
   /**
     * A_second_testIdentityAction
     *
@@ -2208,6 +4912,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_second_testIdentityAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_second_testIdentityAction]
+    = Json.reads[OTIUMLA_second_testIdentityAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_second_testIdentityAction]
+    = Json.writes[OTIUMLA_second_testIdentityAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_second_testIdentityAction]
+    = Json.format[OTIUMLA_second_testIdentityAction]
+
+  }
 
   /**
     * A_selector_lifeline
@@ -2221,6 +4941,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_selector_lifeline {
+     
+    implicit def reads
+    : Reads[OTIUMLA_selector_lifeline]
+    = Json.reads[OTIUMLA_selector_lifeline]
+  
+    implicit def writes
+    : Writes[OTIUMLA_selector_lifeline]
+    = Json.writes[OTIUMLA_selector_lifeline]
+  
+    implicit def formats
+    : Format[OTIUMLA_selector_lifeline]
+    = Json.format[OTIUMLA_selector_lifeline]
+
+  }
+
   /**
     * A_slot_owningInstance
     *
@@ -2232,6 +4968,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_slot_owningInstance {
+     
+    implicit def reads
+    : Reads[OTIUMLA_slot_owningInstance]
+    = Json.reads[OTIUMLA_slot_owningInstance]
+  
+    implicit def writes
+    : Writes[OTIUMLA_slot_owningInstance]
+    = Json.writes[OTIUMLA_slot_owningInstance]
+  
+    implicit def formats
+    : Format[OTIUMLA_slot_owningInstance]
+    = Json.format[OTIUMLA_slot_owningInstance]
+
+  }
 
   /**
     * A_specification_durationConstraint
@@ -2245,6 +4997,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_specification_durationConstraint {
+     
+    implicit def reads
+    : Reads[OTIUMLA_specification_durationConstraint]
+    = Json.reads[OTIUMLA_specification_durationConstraint]
+  
+    implicit def writes
+    : Writes[OTIUMLA_specification_durationConstraint]
+    = Json.writes[OTIUMLA_specification_durationConstraint]
+  
+    implicit def formats
+    : Format[OTIUMLA_specification_durationConstraint]
+    = Json.format[OTIUMLA_specification_durationConstraint]
+
+  }
+
   /**
     * A_specification_intervalConstraint
     *
@@ -2256,6 +5024,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_specification_intervalConstraint {
+     
+    implicit def reads
+    : Reads[OTIUMLA_specification_intervalConstraint]
+    = Json.reads[OTIUMLA_specification_intervalConstraint]
+  
+    implicit def writes
+    : Writes[OTIUMLA_specification_intervalConstraint]
+    = Json.writes[OTIUMLA_specification_intervalConstraint]
+  
+    implicit def formats
+    : Format[OTIUMLA_specification_intervalConstraint]
+    = Json.format[OTIUMLA_specification_intervalConstraint]
+
+  }
 
   /**
     * A_specification_owningConstraint
@@ -2269,6 +5053,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_specification_owningConstraint {
+     
+    implicit def reads
+    : Reads[OTIUMLA_specification_owningConstraint]
+    = Json.reads[OTIUMLA_specification_owningConstraint]
+  
+    implicit def writes
+    : Writes[OTIUMLA_specification_owningConstraint]
+    = Json.writes[OTIUMLA_specification_owningConstraint]
+  
+    implicit def formats
+    : Format[OTIUMLA_specification_owningConstraint]
+    = Json.format[OTIUMLA_specification_owningConstraint]
+
+  }
+
   /**
     * A_specification_owningInstanceSpec
     *
@@ -2280,6 +5080,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_specification_owningInstanceSpec {
+     
+    implicit def reads
+    : Reads[OTIUMLA_specification_owningInstanceSpec]
+    = Json.reads[OTIUMLA_specification_owningInstanceSpec]
+  
+    implicit def writes
+    : Writes[OTIUMLA_specification_owningInstanceSpec]
+    = Json.writes[OTIUMLA_specification_owningInstanceSpec]
+  
+    implicit def formats
+    : Format[OTIUMLA_specification_owningInstanceSpec]
+    = Json.format[OTIUMLA_specification_owningInstanceSpec]
+
+  }
 
   /**
     * A_specification_timeConstraint
@@ -2293,6 +5109,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_specification_timeConstraint {
+     
+    implicit def reads
+    : Reads[OTIUMLA_specification_timeConstraint]
+    = Json.reads[OTIUMLA_specification_timeConstraint]
+  
+    implicit def writes
+    : Writes[OTIUMLA_specification_timeConstraint]
+    = Json.writes[OTIUMLA_specification_timeConstraint]
+  
+    implicit def formats
+    : Format[OTIUMLA_specification_timeConstraint]
+    = Json.format[OTIUMLA_specification_timeConstraint]
+
+  }
+
   /**
     * A_stateInvariant_owningState
     *
@@ -2304,6 +5136,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_stateInvariant_owningState {
+     
+    implicit def reads
+    : Reads[OTIUMLA_stateInvariant_owningState]
+    = Json.reads[OTIUMLA_stateInvariant_owningState]
+  
+    implicit def writes
+    : Writes[OTIUMLA_stateInvariant_owningState]
+    = Json.writes[OTIUMLA_stateInvariant_owningState]
+  
+    implicit def formats
+    : Format[OTIUMLA_stateInvariant_owningState]
+    = Json.format[OTIUMLA_stateInvariant_owningState]
+
+  }
 
   /**
     * A_structuredNodeInput_structuredActivityNode
@@ -2317,6 +5165,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_structuredNodeInput_structuredActivityNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_structuredNodeInput_structuredActivityNode]
+    = Json.reads[OTIUMLA_structuredNodeInput_structuredActivityNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_structuredNodeInput_structuredActivityNode]
+    = Json.writes[OTIUMLA_structuredNodeInput_structuredActivityNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_structuredNodeInput_structuredActivityNode]
+    = Json.format[OTIUMLA_structuredNodeInput_structuredActivityNode]
+
+  }
+
   /**
     * A_structuredNodeOutput_structuredActivityNode
     *
@@ -2329,6 +5193,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_structuredNodeOutput_structuredActivityNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_structuredNodeOutput_structuredActivityNode]
+    = Json.reads[OTIUMLA_structuredNodeOutput_structuredActivityNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_structuredNodeOutput_structuredActivityNode]
+    = Json.writes[OTIUMLA_structuredNodeOutput_structuredActivityNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_structuredNodeOutput_structuredActivityNode]
+    = Json.format[OTIUMLA_structuredNodeOutput_structuredActivityNode]
+
+  }
+
   /**
     * A_structuredNode_activity
     *
@@ -2340,6 +5220,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_structuredNode_activity {
+     
+    implicit def reads
+    : Reads[OTIUMLA_structuredNode_activity]
+    = Json.reads[OTIUMLA_structuredNode_activity]
+  
+    implicit def writes
+    : Writes[OTIUMLA_structuredNode_activity]
+    = Json.writes[OTIUMLA_structuredNode_activity]
+  
+    implicit def formats
+    : Format[OTIUMLA_structuredNode_activity]
+    = Json.format[OTIUMLA_structuredNode_activity]
+
+  }
 
   /**
     * A_subExpression_owningExpression
@@ -2354,6 +5250,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_subExpression_owningExpression {
+     
+    implicit def reads
+    : Reads[OTIUMLA_subExpression_owningExpression]
+    = Json.reads[OTIUMLA_subExpression_owningExpression]
+  
+    implicit def writes
+    : Writes[OTIUMLA_subExpression_owningExpression]
+    = Json.writes[OTIUMLA_subExpression_owningExpression]
+  
+    implicit def formats
+    : Format[OTIUMLA_subExpression_owningExpression]
+    = Json.format[OTIUMLA_subExpression_owningExpression]
+
+  }
+
   /**
     * A_subpartition_superPartition
     *
@@ -2365,6 +5277,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_subpartition_superPartition {
+     
+    implicit def reads
+    : Reads[OTIUMLA_subpartition_superPartition]
+    = Json.reads[OTIUMLA_subpartition_superPartition]
+  
+    implicit def writes
+    : Writes[OTIUMLA_subpartition_superPartition]
+    = Json.writes[OTIUMLA_subpartition_superPartition]
+  
+    implicit def formats
+    : Format[OTIUMLA_subpartition_superPartition]
+    = Json.format[OTIUMLA_subpartition_superPartition]
+
+  }
 
   /**
     * A_substitution_substitutingClassifier
@@ -2378,6 +5306,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_substitution_substitutingClassifier {
+     
+    implicit def reads
+    : Reads[OTIUMLA_substitution_substitutingClassifier]
+    = Json.reads[OTIUMLA_substitution_substitutingClassifier]
+  
+    implicit def writes
+    : Writes[OTIUMLA_substitution_substitutingClassifier]
+    = Json.writes[OTIUMLA_substitution_substitutingClassifier]
+  
+    implicit def formats
+    : Format[OTIUMLA_substitution_substitutingClassifier]
+    = Json.format[OTIUMLA_substitution_substitutingClassifier]
+
+  }
+
   /**
     * A_subvertex_container
     *
@@ -2389,6 +5333,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_subvertex_container {
+     
+    implicit def reads
+    : Reads[OTIUMLA_subvertex_container]
+    = Json.reads[OTIUMLA_subvertex_container]
+  
+    implicit def writes
+    : Writes[OTIUMLA_subvertex_container]
+    = Json.writes[OTIUMLA_subvertex_container]
+  
+    implicit def formats
+    : Format[OTIUMLA_subvertex_container]
+    = Json.format[OTIUMLA_subvertex_container]
+
+  }
 
   /**
     * A_target_callOperationAction
@@ -2402,6 +5362,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_target_callOperationAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_target_callOperationAction]
+    = Json.reads[OTIUMLA_target_callOperationAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_target_callOperationAction]
+    = Json.writes[OTIUMLA_target_callOperationAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_target_callOperationAction]
+    = Json.format[OTIUMLA_target_callOperationAction]
+
+  }
+
   /**
     * A_target_destroyObjectAction
     *
@@ -2413,6 +5389,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_target_destroyObjectAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_target_destroyObjectAction]
+    = Json.reads[OTIUMLA_target_destroyObjectAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_target_destroyObjectAction]
+    = Json.writes[OTIUMLA_target_destroyObjectAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_target_destroyObjectAction]
+    = Json.format[OTIUMLA_target_destroyObjectAction]
+
+  }
 
   /**
     * A_target_sendObjectAction
@@ -2426,6 +5418,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_target_sendObjectAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_target_sendObjectAction]
+    = Json.reads[OTIUMLA_target_sendObjectAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_target_sendObjectAction]
+    = Json.writes[OTIUMLA_target_sendObjectAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_target_sendObjectAction]
+    = Json.format[OTIUMLA_target_sendObjectAction]
+
+  }
+
   /**
     * A_target_sendSignalAction
     *
@@ -2437,6 +5445,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_target_sendSignalAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_target_sendSignalAction]
+    = Json.reads[OTIUMLA_target_sendSignalAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_target_sendSignalAction]
+    = Json.writes[OTIUMLA_target_sendSignalAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_target_sendSignalAction]
+    = Json.format[OTIUMLA_target_sendSignalAction]
+
+  }
 
   /**
     * A_templateBinding_boundElement
@@ -2450,6 +5474,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_templateBinding_boundElement {
+     
+    implicit def reads
+    : Reads[OTIUMLA_templateBinding_boundElement]
+    = Json.reads[OTIUMLA_templateBinding_boundElement]
+  
+    implicit def writes
+    : Writes[OTIUMLA_templateBinding_boundElement]
+    = Json.writes[OTIUMLA_templateBinding_boundElement]
+  
+    implicit def formats
+    : Format[OTIUMLA_templateBinding_boundElement]
+    = Json.format[OTIUMLA_templateBinding_boundElement]
+
+  }
+
   /**
     * A_transition_container
     *
@@ -2461,6 +5501,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_transition_container {
+     
+    implicit def reads
+    : Reads[OTIUMLA_transition_container]
+    = Json.reads[OTIUMLA_transition_container]
+  
+    implicit def writes
+    : Writes[OTIUMLA_transition_container]
+    = Json.writes[OTIUMLA_transition_container]
+  
+    implicit def formats
+    : Format[OTIUMLA_transition_container]
+    = Json.format[OTIUMLA_transition_container]
+
+  }
 
   /**
     * A_trigger_acceptEventAction
@@ -2474,6 +5530,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_trigger_acceptEventAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_trigger_acceptEventAction]
+    = Json.reads[OTIUMLA_trigger_acceptEventAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_trigger_acceptEventAction]
+    = Json.writes[OTIUMLA_trigger_acceptEventAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_trigger_acceptEventAction]
+    = Json.format[OTIUMLA_trigger_acceptEventAction]
+
+  }
+
   /**
     * A_trigger_transition
     *
@@ -2485,6 +5557,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_trigger_transition {
+     
+    implicit def reads
+    : Reads[OTIUMLA_trigger_transition]
+    = Json.reads[OTIUMLA_trigger_transition]
+  
+    implicit def writes
+    : Writes[OTIUMLA_trigger_transition]
+    = Json.writes[OTIUMLA_trigger_transition]
+  
+    implicit def formats
+    : Format[OTIUMLA_trigger_transition]
+    = Json.format[OTIUMLA_trigger_transition]
+
+  }
 
   /**
     * A_upperBound_objectNode
@@ -2498,6 +5586,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_upperBound_objectNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_upperBound_objectNode]
+    = Json.reads[OTIUMLA_upperBound_objectNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_upperBound_objectNode]
+    = Json.writes[OTIUMLA_upperBound_objectNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_upperBound_objectNode]
+    = Json.format[OTIUMLA_upperBound_objectNode]
+
+  }
+
   /**
     * A_upperValue_owningUpper
     *
@@ -2509,6 +5613,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_upperValue_owningUpper {
+     
+    implicit def reads
+    : Reads[OTIUMLA_upperValue_owningUpper]
+    = Json.reads[OTIUMLA_upperValue_owningUpper]
+  
+    implicit def writes
+    : Writes[OTIUMLA_upperValue_owningUpper]
+    = Json.writes[OTIUMLA_upperValue_owningUpper]
+  
+    implicit def formats
+    : Format[OTIUMLA_upperValue_owningUpper]
+    = Json.format[OTIUMLA_upperValue_owningUpper]
+
+  }
 
   /**
     * A_value_owningSlot
@@ -2523,6 +5643,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeOrderedLink
   {}
 
+  object OTIUMLA_value_owningSlot {
+     
+    implicit def reads
+    : Reads[OTIUMLA_value_owningSlot]
+    = Json.reads[OTIUMLA_value_owningSlot]
+  
+    implicit def writes
+    : Writes[OTIUMLA_value_owningSlot]
+    = Json.writes[OTIUMLA_value_owningSlot]
+  
+    implicit def formats
+    : Format[OTIUMLA_value_owningSlot]
+    = Json.format[OTIUMLA_value_owningSlot]
+
+  }
+
   /**
     * A_value_valuePin
     *
@@ -2534,6 +5670,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_value_valuePin {
+     
+    implicit def reads
+    : Reads[OTIUMLA_value_valuePin]
+    = Json.reads[OTIUMLA_value_valuePin]
+  
+    implicit def writes
+    : Writes[OTIUMLA_value_valuePin]
+    = Json.writes[OTIUMLA_value_valuePin]
+  
+    implicit def formats
+    : Format[OTIUMLA_value_valuePin]
+    = Json.format[OTIUMLA_value_valuePin]
+
+  }
 
   /**
     * A_value_valueSpecificationAction
@@ -2547,6 +5699,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_value_valueSpecificationAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_value_valueSpecificationAction]
+    = Json.reads[OTIUMLA_value_valueSpecificationAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_value_valueSpecificationAction]
+    = Json.writes[OTIUMLA_value_valueSpecificationAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_value_valueSpecificationAction]
+    = Json.format[OTIUMLA_value_valueSpecificationAction]
+
+  }
+
   /**
     * A_value_writeStructuralFeatureAction
     *
@@ -2558,6 +5726,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_value_writeStructuralFeatureAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_value_writeStructuralFeatureAction]
+    = Json.reads[OTIUMLA_value_writeStructuralFeatureAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_value_writeStructuralFeatureAction]
+    = Json.writes[OTIUMLA_value_writeStructuralFeatureAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_value_writeStructuralFeatureAction]
+    = Json.format[OTIUMLA_value_writeStructuralFeatureAction]
+
+  }
 
   /**
     * A_value_writeVariableAction
@@ -2571,6 +5755,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_value_writeVariableAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_value_writeVariableAction]
+    = Json.reads[OTIUMLA_value_writeVariableAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_value_writeVariableAction]
+    = Json.writes[OTIUMLA_value_writeVariableAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_value_writeVariableAction]
+    = Json.format[OTIUMLA_value_writeVariableAction]
+
+  }
+
   /**
     * A_variable_activityScope
     *
@@ -2582,6 +5782,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_variable_activityScope {
+     
+    implicit def reads
+    : Reads[OTIUMLA_variable_activityScope]
+    = Json.reads[OTIUMLA_variable_activityScope]
+  
+    implicit def writes
+    : Writes[OTIUMLA_variable_activityScope]
+    = Json.writes[OTIUMLA_variable_activityScope]
+  
+    implicit def formats
+    : Format[OTIUMLA_variable_activityScope]
+    = Json.format[OTIUMLA_variable_activityScope]
+
+  }
 
   /**
     * A_variable_scope
@@ -2595,6 +5811,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_variable_scope {
+     
+    implicit def reads
+    : Reads[OTIUMLA_variable_scope]
+    = Json.reads[OTIUMLA_variable_scope]
+  
+    implicit def writes
+    : Writes[OTIUMLA_variable_scope]
+    = Json.writes[OTIUMLA_variable_scope]
+  
+    implicit def formats
+    : Format[OTIUMLA_variable_scope]
+    = Json.format[OTIUMLA_variable_scope]
+
+  }
+
   /**
     * A_weight_activityEdge
     *
@@ -2607,6 +5839,22 @@ object OTIMOFLink {
   extends  OTIMOFCompositeLink
   {}
 
+  object OTIUMLA_weight_activityEdge {
+     
+    implicit def reads
+    : Reads[OTIUMLA_weight_activityEdge]
+    = Json.reads[OTIUMLA_weight_activityEdge]
+  
+    implicit def writes
+    : Writes[OTIUMLA_weight_activityEdge]
+    = Json.writes[OTIUMLA_weight_activityEdge]
+  
+    implicit def formats
+    : Format[OTIUMLA_weight_activityEdge]
+    = Json.format[OTIUMLA_weight_activityEdge]
+
+  }
+
   /**
     * A_when_timeEvent
     *
@@ -2618,6 +5866,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFCompositeLink
   {}
+
+  object OTIUMLA_when_timeEvent {
+     
+    implicit def reads
+    : Reads[OTIUMLA_when_timeEvent]
+    = Json.reads[OTIUMLA_when_timeEvent]
+  
+    implicit def writes
+    : Writes[OTIUMLA_when_timeEvent]
+    = Json.writes[OTIUMLA_when_timeEvent]
+  
+    implicit def formats
+    : Format[OTIUMLA_when_timeEvent]
+    = Json.format[OTIUMLA_when_timeEvent]
+
+  }
 
 
   /**
@@ -2632,6 +5896,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_annotatedElement_comment {
+     
+    implicit def reads
+    : Reads[OTIUMLA_annotatedElement_comment]
+    = Json.reads[OTIUMLA_annotatedElement_comment]
+  
+    implicit def writes
+    : Writes[OTIUMLA_annotatedElement_comment]
+    = Json.writes[OTIUMLA_annotatedElement_comment]
+  
+    implicit def formats
+    : Format[OTIUMLA_annotatedElement_comment]
+    = Json.format[OTIUMLA_annotatedElement_comment]
+
+  }
+
   /**
     * A_association_clearAssociationAction
     *
@@ -2644,6 +5924,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_association_clearAssociationAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_association_clearAssociationAction]
+    = Json.reads[OTIUMLA_association_clearAssociationAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_association_clearAssociationAction]
+    = Json.writes[OTIUMLA_association_clearAssociationAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_association_clearAssociationAction]
+    = Json.format[OTIUMLA_association_clearAssociationAction]
+
+  }
+
   /**
     * A_before_toAfter
     *
@@ -2655,6 +5951,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_before_toAfter {
+     
+    implicit def reads
+    : Reads[OTIUMLA_before_toAfter]
+    = Json.reads[OTIUMLA_before_toAfter]
+  
+    implicit def writes
+    : Writes[OTIUMLA_before_toAfter]
+    = Json.writes[OTIUMLA_before_toAfter]
+  
+    implicit def formats
+    : Format[OTIUMLA_before_toAfter]
+    = Json.format[OTIUMLA_before_toAfter]
+
+  }
 
   /**
     * A_bodyOutput_clause
@@ -2669,6 +5981,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceOrderedLink
   {}
 
+  object OTIUMLA_bodyOutput_clause {
+     
+    implicit def reads
+    : Reads[OTIUMLA_bodyOutput_clause]
+    = Json.reads[OTIUMLA_bodyOutput_clause]
+  
+    implicit def writes
+    : Writes[OTIUMLA_bodyOutput_clause]
+    = Json.writes[OTIUMLA_bodyOutput_clause]
+  
+    implicit def formats
+    : Format[OTIUMLA_bodyOutput_clause]
+    = Json.format[OTIUMLA_bodyOutput_clause]
+
+  }
+
   /**
     * A_bodyOutput_loopNode
     *
@@ -2682,6 +6010,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceOrderedLink
   {}
 
+  object OTIUMLA_bodyOutput_loopNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_bodyOutput_loopNode]
+    = Json.reads[OTIUMLA_bodyOutput_loopNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_bodyOutput_loopNode]
+    = Json.writes[OTIUMLA_bodyOutput_loopNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_bodyOutput_loopNode]
+    = Json.format[OTIUMLA_bodyOutput_loopNode]
+
+  }
+
   /**
     * A_bodyPart_loopNode
     *
@@ -2693,6 +6037,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_bodyPart_loopNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_bodyPart_loopNode]
+    = Json.reads[OTIUMLA_bodyPart_loopNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_bodyPart_loopNode]
+    = Json.writes[OTIUMLA_bodyPart_loopNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_bodyPart_loopNode]
+    = Json.format[OTIUMLA_bodyPart_loopNode]
+
+  }
 
   /**
     * A_body_clause
@@ -2706,6 +6066,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_body_clause {
+     
+    implicit def reads
+    : Reads[OTIUMLA_body_clause]
+    = Json.reads[OTIUMLA_body_clause]
+  
+    implicit def writes
+    : Writes[OTIUMLA_body_clause]
+    = Json.writes[OTIUMLA_body_clause]
+  
+    implicit def formats
+    : Format[OTIUMLA_body_clause]
+    = Json.format[OTIUMLA_body_clause]
+
+  }
+
   /**
     * A_classifierBehavior_behavioredClassifier
     *
@@ -2717,6 +6093,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_classifierBehavior_behavioredClassifier {
+     
+    implicit def reads
+    : Reads[OTIUMLA_classifierBehavior_behavioredClassifier]
+    = Json.reads[OTIUMLA_classifierBehavior_behavioredClassifier]
+  
+    implicit def writes
+    : Writes[OTIUMLA_classifierBehavior_behavioredClassifier]
+    = Json.writes[OTIUMLA_classifierBehavior_behavioredClassifier]
+  
+    implicit def formats
+    : Format[OTIUMLA_classifierBehavior_behavioredClassifier]
+    = Json.format[OTIUMLA_classifierBehavior_behavioredClassifier]
+
+  }
 
   /**
     * A_classifier_instanceSpecification
@@ -2730,6 +6122,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_classifier_instanceSpecification {
+     
+    implicit def reads
+    : Reads[OTIUMLA_classifier_instanceSpecification]
+    = Json.reads[OTIUMLA_classifier_instanceSpecification]
+  
+    implicit def writes
+    : Writes[OTIUMLA_classifier_instanceSpecification]
+    = Json.writes[OTIUMLA_classifier_instanceSpecification]
+  
+    implicit def formats
+    : Format[OTIUMLA_classifier_instanceSpecification]
+    = Json.format[OTIUMLA_classifier_instanceSpecification]
+
+  }
+
   /**
     * A_classifier_readExtentAction
     *
@@ -2741,6 +6149,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_classifier_readExtentAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_classifier_readExtentAction]
+    = Json.reads[OTIUMLA_classifier_readExtentAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_classifier_readExtentAction]
+    = Json.writes[OTIUMLA_classifier_readExtentAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_classifier_readExtentAction]
+    = Json.format[OTIUMLA_classifier_readExtentAction]
+
+  }
 
   /**
     * A_classifier_templateParameter_parameteredElement
@@ -2754,6 +6178,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_classifier_templateParameter_parameteredElement {
+     
+    implicit def reads
+    : Reads[OTIUMLA_classifier_templateParameter_parameteredElement]
+    = Json.reads[OTIUMLA_classifier_templateParameter_parameteredElement]
+  
+    implicit def writes
+    : Writes[OTIUMLA_classifier_templateParameter_parameteredElement]
+    = Json.writes[OTIUMLA_classifier_templateParameter_parameteredElement]
+  
+    implicit def formats
+    : Format[OTIUMLA_classifier_templateParameter_parameteredElement]
+    = Json.format[OTIUMLA_classifier_templateParameter_parameteredElement]
+
+  }
+
   /**
     * A_clientDependency_client
     *
@@ -2765,6 +6205,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_clientDependency_client {
+     
+    implicit def reads
+    : Reads[OTIUMLA_clientDependency_client]
+    = Json.reads[OTIUMLA_clientDependency_client]
+  
+    implicit def writes
+    : Writes[OTIUMLA_clientDependency_client]
+    = Json.writes[OTIUMLA_clientDependency_client]
+  
+    implicit def formats
+    : Format[OTIUMLA_clientDependency_client]
+    = Json.format[OTIUMLA_clientDependency_client]
+
+  }
 
   /**
     * A_collaborationRole_collaboration
@@ -2778,6 +6234,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_collaborationRole_collaboration {
+     
+    implicit def reads
+    : Reads[OTIUMLA_collaborationRole_collaboration]
+    = Json.reads[OTIUMLA_collaborationRole_collaboration]
+  
+    implicit def writes
+    : Writes[OTIUMLA_collaborationRole_collaboration]
+    = Json.writes[OTIUMLA_collaborationRole_collaboration]
+  
+    implicit def formats
+    : Format[OTIUMLA_collaborationRole_collaboration]
+    = Json.format[OTIUMLA_collaborationRole_collaboration]
+
+  }
+
   /**
     * A_connectableElement_templateParameter_parameteredElement
     *
@@ -2789,6 +6261,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_connectableElement_templateParameter_parameteredElement {
+     
+    implicit def reads
+    : Reads[OTIUMLA_connectableElement_templateParameter_parameteredElement]
+    = Json.reads[OTIUMLA_connectableElement_templateParameter_parameteredElement]
+  
+    implicit def writes
+    : Writes[OTIUMLA_connectableElement_templateParameter_parameteredElement]
+    = Json.writes[OTIUMLA_connectableElement_templateParameter_parameteredElement]
+  
+    implicit def formats
+    : Format[OTIUMLA_connectableElement_templateParameter_parameteredElement]
+    = Json.format[OTIUMLA_connectableElement_templateParameter_parameteredElement]
+
+  }
 
   /**
     * A_constrainedElement_constraint
@@ -2803,6 +6291,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceOrderedLink
   {}
 
+  object OTIUMLA_constrainedElement_constraint {
+     
+    implicit def reads
+    : Reads[OTIUMLA_constrainedElement_constraint]
+    = Json.reads[OTIUMLA_constrainedElement_constraint]
+  
+    implicit def writes
+    : Writes[OTIUMLA_constrainedElement_constraint]
+    = Json.writes[OTIUMLA_constrainedElement_constraint]
+  
+    implicit def formats
+    : Format[OTIUMLA_constrainedElement_constraint]
+    = Json.format[OTIUMLA_constrainedElement_constraint]
+
+  }
+
   /**
     * A_constrainingClassifier_classifierTemplateParameter
     *
@@ -2814,6 +6318,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_constrainingClassifier_classifierTemplateParameter {
+     
+    implicit def reads
+    : Reads[OTIUMLA_constrainingClassifier_classifierTemplateParameter]
+    = Json.reads[OTIUMLA_constrainingClassifier_classifierTemplateParameter]
+  
+    implicit def writes
+    : Writes[OTIUMLA_constrainingClassifier_classifierTemplateParameter]
+    = Json.writes[OTIUMLA_constrainingClassifier_classifierTemplateParameter]
+  
+    implicit def formats
+    : Format[OTIUMLA_constrainingClassifier_classifierTemplateParameter]
+    = Json.format[OTIUMLA_constrainingClassifier_classifierTemplateParameter]
+
+  }
 
   /**
     * A_contract_connector
@@ -2827,6 +6347,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_contract_connector {
+     
+    implicit def reads
+    : Reads[OTIUMLA_contract_connector]
+    = Json.reads[OTIUMLA_contract_connector]
+  
+    implicit def writes
+    : Writes[OTIUMLA_contract_connector]
+    = Json.writes[OTIUMLA_contract_connector]
+  
+    implicit def formats
+    : Format[OTIUMLA_contract_connector]
+    = Json.format[OTIUMLA_contract_connector]
+
+  }
+
   /**
     * A_conveyed_conveyingFlow
     *
@@ -2838,6 +6374,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_conveyed_conveyingFlow {
+     
+    implicit def reads
+    : Reads[OTIUMLA_conveyed_conveyingFlow]
+    = Json.reads[OTIUMLA_conveyed_conveyingFlow]
+  
+    implicit def writes
+    : Writes[OTIUMLA_conveyed_conveyingFlow]
+    = Json.writes[OTIUMLA_conveyed_conveyingFlow]
+  
+    implicit def formats
+    : Format[OTIUMLA_conveyed_conveyingFlow]
+    = Json.format[OTIUMLA_conveyed_conveyingFlow]
+
+  }
 
   /**
     * A_covered_coveredBy
@@ -2851,6 +6403,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_covered_coveredBy {
+     
+    implicit def reads
+    : Reads[OTIUMLA_covered_coveredBy]
+    = Json.reads[OTIUMLA_covered_coveredBy]
+  
+    implicit def writes
+    : Writes[OTIUMLA_covered_coveredBy]
+    = Json.writes[OTIUMLA_covered_coveredBy]
+  
+    implicit def formats
+    : Format[OTIUMLA_covered_coveredBy]
+    = Json.format[OTIUMLA_covered_coveredBy]
+
+  }
+
   /**
     * A_decider_clause
     *
@@ -2862,6 +6430,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_decider_clause {
+     
+    implicit def reads
+    : Reads[OTIUMLA_decider_clause]
+    = Json.reads[OTIUMLA_decider_clause]
+  
+    implicit def writes
+    : Writes[OTIUMLA_decider_clause]
+    = Json.writes[OTIUMLA_decider_clause]
+  
+    implicit def formats
+    : Format[OTIUMLA_decider_clause]
+    = Json.format[OTIUMLA_decider_clause]
+
+  }
 
   /**
     * A_decider_loopNode
@@ -2875,6 +6459,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_decider_loopNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_decider_loopNode]
+    = Json.reads[OTIUMLA_decider_loopNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_decider_loopNode]
+    = Json.writes[OTIUMLA_decider_loopNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_decider_loopNode]
+    = Json.format[OTIUMLA_decider_loopNode]
+
+  }
+
   /**
     * A_decisionInputFlow_decisionNode
     *
@@ -2886,6 +6486,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_decisionInputFlow_decisionNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_decisionInputFlow_decisionNode]
+    = Json.reads[OTIUMLA_decisionInputFlow_decisionNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_decisionInputFlow_decisionNode]
+    = Json.writes[OTIUMLA_decisionInputFlow_decisionNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_decisionInputFlow_decisionNode]
+    = Json.format[OTIUMLA_decisionInputFlow_decisionNode]
+
+  }
 
   /**
     * A_decomposedAs_lifeline
@@ -2899,6 +6515,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_decomposedAs_lifeline {
+     
+    implicit def reads
+    : Reads[OTIUMLA_decomposedAs_lifeline]
+    = Json.reads[OTIUMLA_decomposedAs_lifeline]
+  
+    implicit def writes
+    : Writes[OTIUMLA_decomposedAs_lifeline]
+    = Json.writes[OTIUMLA_decomposedAs_lifeline]
+  
+    implicit def formats
+    : Format[OTIUMLA_decomposedAs_lifeline]
+    = Json.format[OTIUMLA_decomposedAs_lifeline]
+
+  }
+
   /**
     * A_deployedArtifact_deploymentForArtifact
     *
@@ -2910,6 +6542,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_deployedArtifact_deploymentForArtifact {
+     
+    implicit def reads
+    : Reads[OTIUMLA_deployedArtifact_deploymentForArtifact]
+    = Json.reads[OTIUMLA_deployedArtifact_deploymentForArtifact]
+  
+    implicit def writes
+    : Writes[OTIUMLA_deployedArtifact_deploymentForArtifact]
+    = Json.writes[OTIUMLA_deployedArtifact_deploymentForArtifact]
+  
+    implicit def formats
+    : Format[OTIUMLA_deployedArtifact_deploymentForArtifact]
+    = Json.format[OTIUMLA_deployedArtifact_deploymentForArtifact]
+
+  }
 
   /**
     * A_destroyAt_linkEndDestructionData
@@ -2923,6 +6571,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_destroyAt_linkEndDestructionData {
+     
+    implicit def reads
+    : Reads[OTIUMLA_destroyAt_linkEndDestructionData]
+    = Json.reads[OTIUMLA_destroyAt_linkEndDestructionData]
+  
+    implicit def writes
+    : Writes[OTIUMLA_destroyAt_linkEndDestructionData]
+    = Json.writes[OTIUMLA_destroyAt_linkEndDestructionData]
+  
+    implicit def formats
+    : Format[OTIUMLA_destroyAt_linkEndDestructionData]
+    = Json.format[OTIUMLA_destroyAt_linkEndDestructionData]
+
+  }
+
   /**
     * A_edge_inPartition
     *
@@ -2934,6 +6598,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_edge_inPartition {
+     
+    implicit def reads
+    : Reads[OTIUMLA_edge_inPartition]
+    = Json.reads[OTIUMLA_edge_inPartition]
+  
+    implicit def writes
+    : Writes[OTIUMLA_edge_inPartition]
+    = Json.writes[OTIUMLA_edge_inPartition]
+  
+    implicit def formats
+    : Format[OTIUMLA_edge_inPartition]
+    = Json.format[OTIUMLA_edge_inPartition]
+
+  }
 
   /**
     * A_end_readLinkObjectEndAction
@@ -2947,6 +6627,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_end_readLinkObjectEndAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_end_readLinkObjectEndAction]
+    = Json.reads[OTIUMLA_end_readLinkObjectEndAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_end_readLinkObjectEndAction]
+    = Json.writes[OTIUMLA_end_readLinkObjectEndAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_end_readLinkObjectEndAction]
+    = Json.format[OTIUMLA_end_readLinkObjectEndAction]
+
+  }
+
   /**
     * A_entry_connectionPointReference
     *
@@ -2958,6 +6654,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_entry_connectionPointReference {
+     
+    implicit def reads
+    : Reads[OTIUMLA_entry_connectionPointReference]
+    = Json.reads[OTIUMLA_entry_connectionPointReference]
+  
+    implicit def writes
+    : Writes[OTIUMLA_entry_connectionPointReference]
+    = Json.writes[OTIUMLA_entry_connectionPointReference]
+  
+    implicit def formats
+    : Format[OTIUMLA_entry_connectionPointReference]
+    = Json.format[OTIUMLA_entry_connectionPointReference]
+
+  }
 
   /**
     * A_event_durationObservation
@@ -2972,6 +6684,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceOrderedLink
   {}
 
+  object OTIUMLA_event_durationObservation {
+     
+    implicit def reads
+    : Reads[OTIUMLA_event_durationObservation]
+    = Json.reads[OTIUMLA_event_durationObservation]
+  
+    implicit def writes
+    : Writes[OTIUMLA_event_durationObservation]
+    = Json.writes[OTIUMLA_event_durationObservation]
+  
+    implicit def formats
+    : Format[OTIUMLA_event_durationObservation]
+    = Json.format[OTIUMLA_event_durationObservation]
+
+  }
+
   /**
     * A_exceptionType_exceptionHandler
     *
@@ -2983,6 +6711,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_exceptionType_exceptionHandler {
+     
+    implicit def reads
+    : Reads[OTIUMLA_exceptionType_exceptionHandler]
+    = Json.reads[OTIUMLA_exceptionType_exceptionHandler]
+  
+    implicit def writes
+    : Writes[OTIUMLA_exceptionType_exceptionHandler]
+    = Json.writes[OTIUMLA_exceptionType_exceptionHandler]
+  
+    implicit def formats
+    : Format[OTIUMLA_exceptionType_exceptionHandler]
+    = Json.format[OTIUMLA_exceptionType_exceptionHandler]
+
+  }
 
   /**
     * A_execution_executionOccurrenceSpecification
@@ -2996,6 +6740,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_execution_executionOccurrenceSpecification {
+     
+    implicit def reads
+    : Reads[OTIUMLA_execution_executionOccurrenceSpecification]
+    = Json.reads[OTIUMLA_execution_executionOccurrenceSpecification]
+  
+    implicit def writes
+    : Writes[OTIUMLA_execution_executionOccurrenceSpecification]
+    = Json.writes[OTIUMLA_execution_executionOccurrenceSpecification]
+  
+    implicit def formats
+    : Format[OTIUMLA_execution_executionOccurrenceSpecification]
+    = Json.format[OTIUMLA_execution_executionOccurrenceSpecification]
+
+  }
+
   /**
     * A_exit_connectionPointReference
     *
@@ -3007,6 +6767,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_exit_connectionPointReference {
+     
+    implicit def reads
+    : Reads[OTIUMLA_exit_connectionPointReference]
+    = Json.reads[OTIUMLA_exit_connectionPointReference]
+  
+    implicit def writes
+    : Writes[OTIUMLA_exit_connectionPointReference]
+    = Json.writes[OTIUMLA_exit_connectionPointReference]
+  
+    implicit def formats
+    : Format[OTIUMLA_exit_connectionPointReference]
+    = Json.format[OTIUMLA_exit_connectionPointReference]
+
+  }
 
   /**
     * A_extendedSignature_redefinableTemplateSignature
@@ -3020,6 +6796,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_extendedSignature_redefinableTemplateSignature {
+     
+    implicit def reads
+    : Reads[OTIUMLA_extendedSignature_redefinableTemplateSignature]
+    = Json.reads[OTIUMLA_extendedSignature_redefinableTemplateSignature]
+  
+    implicit def writes
+    : Writes[OTIUMLA_extendedSignature_redefinableTemplateSignature]
+    = Json.writes[OTIUMLA_extendedSignature_redefinableTemplateSignature]
+  
+    implicit def formats
+    : Format[OTIUMLA_extendedSignature_redefinableTemplateSignature]
+    = Json.format[OTIUMLA_extendedSignature_redefinableTemplateSignature]
+
+  }
+
   /**
     * A_extendedStateMachine_stateMachine
     *
@@ -3031,6 +6823,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_extendedStateMachine_stateMachine {
+     
+    implicit def reads
+    : Reads[OTIUMLA_extendedStateMachine_stateMachine]
+    = Json.reads[OTIUMLA_extendedStateMachine_stateMachine]
+  
+    implicit def writes
+    : Writes[OTIUMLA_extendedStateMachine_stateMachine]
+    = Json.writes[OTIUMLA_extendedStateMachine_stateMachine]
+  
+    implicit def formats
+    : Format[OTIUMLA_extendedStateMachine_stateMachine]
+    = Json.format[OTIUMLA_extendedStateMachine_stateMachine]
+
+  }
 
   /**
     * A_extensionLocation_extension
@@ -3045,6 +6853,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceOrderedLink
   {}
 
+  object OTIUMLA_extensionLocation_extension {
+     
+    implicit def reads
+    : Reads[OTIUMLA_extensionLocation_extension]
+    = Json.reads[OTIUMLA_extensionLocation_extension]
+  
+    implicit def writes
+    : Writes[OTIUMLA_extensionLocation_extension]
+    = Json.writes[OTIUMLA_extensionLocation_extension]
+  
+    implicit def formats
+    : Format[OTIUMLA_extensionLocation_extension]
+    = Json.format[OTIUMLA_extensionLocation_extension]
+
+  }
+
   /**
     * A_generalizationSet_generalization
     *
@@ -3056,6 +6880,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_generalizationSet_generalization {
+     
+    implicit def reads
+    : Reads[OTIUMLA_generalizationSet_generalization]
+    = Json.reads[OTIUMLA_generalizationSet_generalization]
+  
+    implicit def writes
+    : Writes[OTIUMLA_generalizationSet_generalization]
+    = Json.writes[OTIUMLA_generalizationSet_generalization]
+  
+    implicit def formats
+    : Format[OTIUMLA_generalizationSet_generalization]
+    = Json.format[OTIUMLA_generalizationSet_generalization]
+
+  }
 
   /**
     * A_inInterruptibleRegion_node
@@ -3069,6 +6909,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_inInterruptibleRegion_node {
+     
+    implicit def reads
+    : Reads[OTIUMLA_inInterruptibleRegion_node]
+    = Json.reads[OTIUMLA_inInterruptibleRegion_node]
+  
+    implicit def writes
+    : Writes[OTIUMLA_inInterruptibleRegion_node]
+    = Json.writes[OTIUMLA_inInterruptibleRegion_node]
+  
+    implicit def formats
+    : Format[OTIUMLA_inInterruptibleRegion_node]
+    = Json.format[OTIUMLA_inInterruptibleRegion_node]
+
+  }
+
   /**
     * A_inPartition_node
     *
@@ -3080,6 +6936,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_inPartition_node {
+     
+    implicit def reads
+    : Reads[OTIUMLA_inPartition_node]
+    = Json.reads[OTIUMLA_inPartition_node]
+  
+    implicit def writes
+    : Writes[OTIUMLA_inPartition_node]
+    = Json.writes[OTIUMLA_inPartition_node]
+  
+    implicit def formats
+    : Format[OTIUMLA_inPartition_node]
+    = Json.format[OTIUMLA_inPartition_node]
+
+  }
 
   /**
     * A_inState_objectNode
@@ -3093,6 +6965,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_inState_objectNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_inState_objectNode]
+    = Json.reads[OTIUMLA_inState_objectNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_inState_objectNode]
+    = Json.writes[OTIUMLA_inState_objectNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_inState_objectNode]
+    = Json.format[OTIUMLA_inState_objectNode]
+
+  }
+
   /**
     * A_incoming_target_node
     *
@@ -3104,6 +6992,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_incoming_target_node {
+     
+    implicit def reads
+    : Reads[OTIUMLA_incoming_target_node]
+    = Json.reads[OTIUMLA_incoming_target_node]
+  
+    implicit def writes
+    : Writes[OTIUMLA_incoming_target_node]
+    = Json.writes[OTIUMLA_incoming_target_node]
+  
+    implicit def formats
+    : Format[OTIUMLA_incoming_target_node]
+    = Json.format[OTIUMLA_incoming_target_node]
+
+  }
 
   /**
     * A_informationSource_informationFlow
@@ -3117,6 +7021,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_informationSource_informationFlow {
+     
+    implicit def reads
+    : Reads[OTIUMLA_informationSource_informationFlow]
+    = Json.reads[OTIUMLA_informationSource_informationFlow]
+  
+    implicit def writes
+    : Writes[OTIUMLA_informationSource_informationFlow]
+    = Json.writes[OTIUMLA_informationSource_informationFlow]
+  
+    implicit def formats
+    : Format[OTIUMLA_informationSource_informationFlow]
+    = Json.format[OTIUMLA_informationSource_informationFlow]
+
+  }
+
   /**
     * A_informationTarget_informationFlow
     *
@@ -3128,6 +7048,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_informationTarget_informationFlow {
+     
+    implicit def reads
+    : Reads[OTIUMLA_informationTarget_informationFlow]
+    = Json.reads[OTIUMLA_informationTarget_informationFlow]
+  
+    implicit def writes
+    : Writes[OTIUMLA_informationTarget_informationFlow]
+    = Json.writes[OTIUMLA_informationTarget_informationFlow]
+  
+    implicit def formats
+    : Format[OTIUMLA_informationTarget_informationFlow]
+    = Json.format[OTIUMLA_informationTarget_informationFlow]
+
+  }
 
   /**
     * A_inputElement_regionAsInput
@@ -3141,6 +7077,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_inputElement_regionAsInput {
+     
+    implicit def reads
+    : Reads[OTIUMLA_inputElement_regionAsInput]
+    = Json.reads[OTIUMLA_inputElement_regionAsInput]
+  
+    implicit def writes
+    : Writes[OTIUMLA_inputElement_regionAsInput]
+    = Json.writes[OTIUMLA_inputElement_regionAsInput]
+  
+    implicit def formats
+    : Format[OTIUMLA_inputElement_regionAsInput]
+    = Json.format[OTIUMLA_inputElement_regionAsInput]
+
+  }
+
   /**
     * A_insertAt_linkEndCreationData
     *
@@ -3153,6 +7105,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_insertAt_linkEndCreationData {
+     
+    implicit def reads
+    : Reads[OTIUMLA_insertAt_linkEndCreationData]
+    = Json.reads[OTIUMLA_insertAt_linkEndCreationData]
+  
+    implicit def writes
+    : Writes[OTIUMLA_insertAt_linkEndCreationData]
+    = Json.writes[OTIUMLA_insertAt_linkEndCreationData]
+  
+    implicit def formats
+    : Format[OTIUMLA_insertAt_linkEndCreationData]
+    = Json.format[OTIUMLA_insertAt_linkEndCreationData]
+
+  }
+
   /**
     * A_interruptingEdge_interrupts
     *
@@ -3164,6 +7132,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_interruptingEdge_interrupts {
+     
+    implicit def reads
+    : Reads[OTIUMLA_interruptingEdge_interrupts]
+    = Json.reads[OTIUMLA_interruptingEdge_interrupts]
+  
+    implicit def writes
+    : Writes[OTIUMLA_interruptingEdge_interrupts]
+    = Json.writes[OTIUMLA_interruptingEdge_interrupts]
+  
+    implicit def formats
+    : Format[OTIUMLA_interruptingEdge_interrupts]
+    = Json.format[OTIUMLA_interruptingEdge_interrupts]
+
+  }
 
   /**
     * A_memberEnd_association
@@ -3178,6 +7162,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceOrderedLink
   {}
 
+  object OTIUMLA_memberEnd_association {
+     
+    implicit def reads
+    : Reads[OTIUMLA_memberEnd_association]
+    = Json.reads[OTIUMLA_memberEnd_association]
+  
+    implicit def writes
+    : Writes[OTIUMLA_memberEnd_association]
+    = Json.writes[OTIUMLA_memberEnd_association]
+  
+    implicit def formats
+    : Format[OTIUMLA_memberEnd_association]
+    = Json.format[OTIUMLA_memberEnd_association]
+
+  }
+
   /**
     * A_message_considerIgnoreFragment
     *
@@ -3189,6 +7189,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_message_considerIgnoreFragment {
+     
+    implicit def reads
+    : Reads[OTIUMLA_message_considerIgnoreFragment]
+    = Json.reads[OTIUMLA_message_considerIgnoreFragment]
+  
+    implicit def writes
+    : Writes[OTIUMLA_message_considerIgnoreFragment]
+    = Json.writes[OTIUMLA_message_considerIgnoreFragment]
+  
+    implicit def formats
+    : Format[OTIUMLA_message_considerIgnoreFragment]
+    = Json.format[OTIUMLA_message_considerIgnoreFragment]
+
+  }
 
   /**
     * A_message_messageEnd
@@ -3202,6 +7218,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_message_messageEnd {
+     
+    implicit def reads
+    : Reads[OTIUMLA_message_messageEnd]
+    = Json.reads[OTIUMLA_message_messageEnd]
+  
+    implicit def writes
+    : Writes[OTIUMLA_message_messageEnd]
+    = Json.writes[OTIUMLA_message_messageEnd]
+  
+    implicit def formats
+    : Format[OTIUMLA_message_messageEnd]
+    = Json.format[OTIUMLA_message_messageEnd]
+
+  }
+
   /**
     * A_method_specification
     *
@@ -3213,6 +7245,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_method_specification {
+     
+    implicit def reads
+    : Reads[OTIUMLA_method_specification]
+    = Json.reads[OTIUMLA_method_specification]
+  
+    implicit def writes
+    : Writes[OTIUMLA_method_specification]
+    = Json.writes[OTIUMLA_method_specification]
+  
+    implicit def formats
+    : Format[OTIUMLA_method_specification]
+    = Json.format[OTIUMLA_method_specification]
+
+  }
 
   /**
     * A_navigableOwnedEnd_association
@@ -3226,6 +7274,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_navigableOwnedEnd_association {
+     
+    implicit def reads
+    : Reads[OTIUMLA_navigableOwnedEnd_association]
+    = Json.reads[OTIUMLA_navigableOwnedEnd_association]
+  
+    implicit def writes
+    : Writes[OTIUMLA_navigableOwnedEnd_association]
+    = Json.writes[OTIUMLA_navigableOwnedEnd_association]
+  
+    implicit def formats
+    : Format[OTIUMLA_navigableOwnedEnd_association]
+    = Json.format[OTIUMLA_navigableOwnedEnd_association]
+
+  }
+
   /**
     * A_newClassifier_reclassifyObjectAction
     *
@@ -3237,6 +7301,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_newClassifier_reclassifyObjectAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_newClassifier_reclassifyObjectAction]
+    = Json.reads[OTIUMLA_newClassifier_reclassifyObjectAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_newClassifier_reclassifyObjectAction]
+    = Json.writes[OTIUMLA_newClassifier_reclassifyObjectAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_newClassifier_reclassifyObjectAction]
+    = Json.format[OTIUMLA_newClassifier_reclassifyObjectAction]
+
+  }
 
   /**
     * A_observation_duration
@@ -3250,6 +7330,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_observation_duration {
+     
+    implicit def reads
+    : Reads[OTIUMLA_observation_duration]
+    = Json.reads[OTIUMLA_observation_duration]
+  
+    implicit def writes
+    : Writes[OTIUMLA_observation_duration]
+    = Json.writes[OTIUMLA_observation_duration]
+  
+    implicit def formats
+    : Format[OTIUMLA_observation_duration]
+    = Json.format[OTIUMLA_observation_duration]
+
+  }
+
   /**
     * A_observation_timeExpression
     *
@@ -3261,6 +7357,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_observation_timeExpression {
+     
+    implicit def reads
+    : Reads[OTIUMLA_observation_timeExpression]
+    = Json.reads[OTIUMLA_observation_timeExpression]
+  
+    implicit def writes
+    : Writes[OTIUMLA_observation_timeExpression]
+    = Json.writes[OTIUMLA_observation_timeExpression]
+  
+    implicit def formats
+    : Format[OTIUMLA_observation_timeExpression]
+    = Json.format[OTIUMLA_observation_timeExpression]
+
+  }
 
   /**
     * A_oldClassifier_reclassifyObjectAction
@@ -3274,6 +7386,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_oldClassifier_reclassifyObjectAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_oldClassifier_reclassifyObjectAction]
+    = Json.reads[OTIUMLA_oldClassifier_reclassifyObjectAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_oldClassifier_reclassifyObjectAction]
+    = Json.writes[OTIUMLA_oldClassifier_reclassifyObjectAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_oldClassifier_reclassifyObjectAction]
+    = Json.format[OTIUMLA_oldClassifier_reclassifyObjectAction]
+
+  }
+
   /**
     * A_operation_templateParameter_parameteredElement
     *
@@ -3285,6 +7413,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_operation_templateParameter_parameteredElement {
+     
+    implicit def reads
+    : Reads[OTIUMLA_operation_templateParameter_parameteredElement]
+    = Json.reads[OTIUMLA_operation_templateParameter_parameteredElement]
+  
+    implicit def writes
+    : Writes[OTIUMLA_operation_templateParameter_parameteredElement]
+    = Json.writes[OTIUMLA_operation_templateParameter_parameteredElement]
+  
+    implicit def formats
+    : Format[OTIUMLA_operation_templateParameter_parameteredElement]
+    = Json.format[OTIUMLA_operation_templateParameter_parameteredElement]
+
+  }
 
   /**
     * A_outgoing_source_node
@@ -3298,6 +7442,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_outgoing_source_node {
+     
+    implicit def reads
+    : Reads[OTIUMLA_outgoing_source_node]
+    = Json.reads[OTIUMLA_outgoing_source_node]
+  
+    implicit def writes
+    : Writes[OTIUMLA_outgoing_source_node]
+    = Json.writes[OTIUMLA_outgoing_source_node]
+  
+    implicit def formats
+    : Format[OTIUMLA_outgoing_source_node]
+    = Json.format[OTIUMLA_outgoing_source_node]
+
+  }
+
   /**
     * A_outputElement_regionAsOutput
     *
@@ -3310,6 +7470,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_outputElement_regionAsOutput {
+     
+    implicit def reads
+    : Reads[OTIUMLA_outputElement_regionAsOutput]
+    = Json.reads[OTIUMLA_outputElement_regionAsOutput]
+  
+    implicit def writes
+    : Writes[OTIUMLA_outputElement_regionAsOutput]
+    = Json.writes[OTIUMLA_outputElement_regionAsOutput]
+  
+    implicit def formats
+    : Format[OTIUMLA_outputElement_regionAsOutput]
+    = Json.format[OTIUMLA_outputElement_regionAsOutput]
+
+  }
+
   /**
     * A_parameterSet_parameter
     *
@@ -3321,6 +7497,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_parameterSet_parameter {
+     
+    implicit def reads
+    : Reads[OTIUMLA_parameterSet_parameter]
+    = Json.reads[OTIUMLA_parameterSet_parameter]
+  
+    implicit def writes
+    : Writes[OTIUMLA_parameterSet_parameter]
+    = Json.writes[OTIUMLA_parameterSet_parameter]
+  
+    implicit def formats
+    : Format[OTIUMLA_parameterSet_parameter]
+    = Json.format[OTIUMLA_parameterSet_parameter]
+
+  }
 
   /**
     * A_parameter_templateSignature
@@ -3335,6 +7527,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceOrderedLink
   {}
 
+  object OTIUMLA_parameter_templateSignature {
+     
+    implicit def reads
+    : Reads[OTIUMLA_parameter_templateSignature]
+    = Json.reads[OTIUMLA_parameter_templateSignature]
+  
+    implicit def writes
+    : Writes[OTIUMLA_parameter_templateSignature]
+    = Json.writes[OTIUMLA_parameter_templateSignature]
+  
+    implicit def formats
+    : Format[OTIUMLA_parameter_templateSignature]
+    = Json.format[OTIUMLA_parameter_templateSignature]
+
+  }
+
   /**
     * A_parameteredElement_templateParameter
     *
@@ -3346,6 +7554,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_parameteredElement_templateParameter {
+     
+    implicit def reads
+    : Reads[OTIUMLA_parameteredElement_templateParameter]
+    = Json.reads[OTIUMLA_parameteredElement_templateParameter]
+  
+    implicit def writes
+    : Writes[OTIUMLA_parameteredElement_templateParameter]
+    = Json.writes[OTIUMLA_parameteredElement_templateParameter]
+  
+    implicit def formats
+    : Format[OTIUMLA_parameteredElement_templateParameter]
+    = Json.format[OTIUMLA_parameteredElement_templateParameter]
+
+  }
 
   /**
     * A_partition_activity
@@ -3359,6 +7583,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_partition_activity {
+     
+    implicit def reads
+    : Reads[OTIUMLA_partition_activity]
+    = Json.reads[OTIUMLA_partition_activity]
+  
+    implicit def writes
+    : Writes[OTIUMLA_partition_activity]
+    = Json.writes[OTIUMLA_partition_activity]
+  
+    implicit def formats
+    : Format[OTIUMLA_partition_activity]
+    = Json.format[OTIUMLA_partition_activity]
+
+  }
+
   /**
     * A_port_trigger
     *
@@ -3370,6 +7610,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_port_trigger {
+     
+    implicit def reads
+    : Reads[OTIUMLA_port_trigger]
+    = Json.reads[OTIUMLA_port_trigger]
+  
+    implicit def writes
+    : Writes[OTIUMLA_port_trigger]
+    = Json.writes[OTIUMLA_port_trigger]
+  
+    implicit def formats
+    : Format[OTIUMLA_port_trigger]
+    = Json.format[OTIUMLA_port_trigger]
+
+  }
 
   /**
     * A_powertypeExtent_powertype
@@ -3383,6 +7639,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_powertypeExtent_powertype {
+     
+    implicit def reads
+    : Reads[OTIUMLA_powertypeExtent_powertype]
+    = Json.reads[OTIUMLA_powertypeExtent_powertype]
+  
+    implicit def writes
+    : Writes[OTIUMLA_powertypeExtent_powertype]
+    = Json.writes[OTIUMLA_powertypeExtent_powertype]
+  
+    implicit def formats
+    : Format[OTIUMLA_powertypeExtent_powertype]
+    = Json.format[OTIUMLA_powertypeExtent_powertype]
+
+  }
+
   /**
     * A_predecessorClause_successorClause
     *
@@ -3394,6 +7666,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_predecessorClause_successorClause {
+     
+    implicit def reads
+    : Reads[OTIUMLA_predecessorClause_successorClause]
+    = Json.reads[OTIUMLA_predecessorClause_successorClause]
+  
+    implicit def writes
+    : Writes[OTIUMLA_predecessorClause_successorClause]
+    = Json.writes[OTIUMLA_predecessorClause_successorClause]
+  
+    implicit def formats
+    : Format[OTIUMLA_predecessorClause_successorClause]
+    = Json.format[OTIUMLA_predecessorClause_successorClause]
+
+  }
 
   /**
     * A_qualifier_readLinkObjectEndQualifierAction
@@ -3407,6 +7695,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_qualifier_readLinkObjectEndQualifierAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_qualifier_readLinkObjectEndQualifierAction]
+    = Json.reads[OTIUMLA_qualifier_readLinkObjectEndQualifierAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_qualifier_readLinkObjectEndQualifierAction]
+    = Json.writes[OTIUMLA_qualifier_readLinkObjectEndQualifierAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_qualifier_readLinkObjectEndQualifierAction]
+    = Json.format[OTIUMLA_qualifier_readLinkObjectEndQualifierAction]
+
+  }
+
   /**
     * A_raisedException_behavioralFeature
     *
@@ -3418,6 +7722,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_raisedException_behavioralFeature {
+     
+    implicit def reads
+    : Reads[OTIUMLA_raisedException_behavioralFeature]
+    = Json.reads[OTIUMLA_raisedException_behavioralFeature]
+  
+    implicit def writes
+    : Writes[OTIUMLA_raisedException_behavioralFeature]
+    = Json.writes[OTIUMLA_raisedException_behavioralFeature]
+  
+    implicit def formats
+    : Format[OTIUMLA_raisedException_behavioralFeature]
+    = Json.format[OTIUMLA_raisedException_behavioralFeature]
+
+  }
 
   /**
     * A_raisedException_operation
@@ -3431,6 +7751,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_raisedException_operation {
+     
+    implicit def reads
+    : Reads[OTIUMLA_raisedException_operation]
+    = Json.reads[OTIUMLA_raisedException_operation]
+  
+    implicit def writes
+    : Writes[OTIUMLA_raisedException_operation]
+    = Json.writes[OTIUMLA_raisedException_operation]
+  
+    implicit def formats
+    : Format[OTIUMLA_raisedException_operation]
+    = Json.format[OTIUMLA_raisedException_operation]
+
+  }
+
   /**
     * A_realization_abstraction_flow
     *
@@ -3442,6 +7778,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_realization_abstraction_flow {
+     
+    implicit def reads
+    : Reads[OTIUMLA_realization_abstraction_flow]
+    = Json.reads[OTIUMLA_realization_abstraction_flow]
+  
+    implicit def writes
+    : Writes[OTIUMLA_realization_abstraction_flow]
+    = Json.writes[OTIUMLA_realization_abstraction_flow]
+  
+    implicit def formats
+    : Format[OTIUMLA_realization_abstraction_flow]
+    = Json.format[OTIUMLA_realization_abstraction_flow]
+
+  }
 
   /**
     * A_realizingActivityEdge_informationFlow
@@ -3455,6 +7807,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_realizingActivityEdge_informationFlow {
+     
+    implicit def reads
+    : Reads[OTIUMLA_realizingActivityEdge_informationFlow]
+    = Json.reads[OTIUMLA_realizingActivityEdge_informationFlow]
+  
+    implicit def writes
+    : Writes[OTIUMLA_realizingActivityEdge_informationFlow]
+    = Json.writes[OTIUMLA_realizingActivityEdge_informationFlow]
+  
+    implicit def formats
+    : Format[OTIUMLA_realizingActivityEdge_informationFlow]
+    = Json.format[OTIUMLA_realizingActivityEdge_informationFlow]
+
+  }
+
   /**
     * A_realizingClassifier_componentRealization
     *
@@ -3466,6 +7834,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_realizingClassifier_componentRealization {
+     
+    implicit def reads
+    : Reads[OTIUMLA_realizingClassifier_componentRealization]
+    = Json.reads[OTIUMLA_realizingClassifier_componentRealization]
+  
+    implicit def writes
+    : Writes[OTIUMLA_realizingClassifier_componentRealization]
+    = Json.writes[OTIUMLA_realizingClassifier_componentRealization]
+  
+    implicit def formats
+    : Format[OTIUMLA_realizingClassifier_componentRealization]
+    = Json.format[OTIUMLA_realizingClassifier_componentRealization]
+
+  }
 
   /**
     * A_realizingConnector_informationFlow
@@ -3479,6 +7863,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_realizingConnector_informationFlow {
+     
+    implicit def reads
+    : Reads[OTIUMLA_realizingConnector_informationFlow]
+    = Json.reads[OTIUMLA_realizingConnector_informationFlow]
+  
+    implicit def writes
+    : Writes[OTIUMLA_realizingConnector_informationFlow]
+    = Json.writes[OTIUMLA_realizingConnector_informationFlow]
+  
+    implicit def formats
+    : Format[OTIUMLA_realizingConnector_informationFlow]
+    = Json.format[OTIUMLA_realizingConnector_informationFlow]
+
+  }
+
   /**
     * A_realizingMessage_informationFlow
     *
@@ -3490,6 +7890,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_realizingMessage_informationFlow {
+     
+    implicit def reads
+    : Reads[OTIUMLA_realizingMessage_informationFlow]
+    = Json.reads[OTIUMLA_realizingMessage_informationFlow]
+  
+    implicit def writes
+    : Writes[OTIUMLA_realizingMessage_informationFlow]
+    = Json.writes[OTIUMLA_realizingMessage_informationFlow]
+  
+    implicit def formats
+    : Format[OTIUMLA_realizingMessage_informationFlow]
+    = Json.format[OTIUMLA_realizingMessage_informationFlow]
+
+  }
 
   /**
     * A_receiveEvent_endMessage
@@ -3503,6 +7919,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_receiveEvent_endMessage {
+     
+    implicit def reads
+    : Reads[OTIUMLA_receiveEvent_endMessage]
+    = Json.reads[OTIUMLA_receiveEvent_endMessage]
+  
+    implicit def writes
+    : Writes[OTIUMLA_receiveEvent_endMessage]
+    = Json.writes[OTIUMLA_receiveEvent_endMessage]
+  
+    implicit def formats
+    : Format[OTIUMLA_receiveEvent_endMessage]
+    = Json.format[OTIUMLA_receiveEvent_endMessage]
+
+  }
+
   /**
     * A_redefinedBehavior_behavior
     *
@@ -3514,6 +7946,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_redefinedBehavior_behavior {
+     
+    implicit def reads
+    : Reads[OTIUMLA_redefinedBehavior_behavior]
+    = Json.reads[OTIUMLA_redefinedBehavior_behavior]
+  
+    implicit def writes
+    : Writes[OTIUMLA_redefinedBehavior_behavior]
+    = Json.writes[OTIUMLA_redefinedBehavior_behavior]
+  
+    implicit def formats
+    : Format[OTIUMLA_redefinedBehavior_behavior]
+    = Json.format[OTIUMLA_redefinedBehavior_behavior]
+
+  }
 
   /**
     * A_redefinedClassifier_classifier
@@ -3527,6 +7975,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_redefinedClassifier_classifier {
+     
+    implicit def reads
+    : Reads[OTIUMLA_redefinedClassifier_classifier]
+    = Json.reads[OTIUMLA_redefinedClassifier_classifier]
+  
+    implicit def writes
+    : Writes[OTIUMLA_redefinedClassifier_classifier]
+    = Json.writes[OTIUMLA_redefinedClassifier_classifier]
+  
+    implicit def formats
+    : Format[OTIUMLA_redefinedClassifier_classifier]
+    = Json.format[OTIUMLA_redefinedClassifier_classifier]
+
+  }
+
   /**
     * A_redefinedConnector_connector
     *
@@ -3538,6 +8002,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_redefinedConnector_connector {
+     
+    implicit def reads
+    : Reads[OTIUMLA_redefinedConnector_connector]
+    = Json.reads[OTIUMLA_redefinedConnector_connector]
+  
+    implicit def writes
+    : Writes[OTIUMLA_redefinedConnector_connector]
+    = Json.writes[OTIUMLA_redefinedConnector_connector]
+  
+    implicit def formats
+    : Format[OTIUMLA_redefinedConnector_connector]
+    = Json.format[OTIUMLA_redefinedConnector_connector]
+
+  }
 
   /**
     * A_redefinedEdge_activityEdge
@@ -3551,6 +8031,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_redefinedEdge_activityEdge {
+     
+    implicit def reads
+    : Reads[OTIUMLA_redefinedEdge_activityEdge]
+    = Json.reads[OTIUMLA_redefinedEdge_activityEdge]
+  
+    implicit def writes
+    : Writes[OTIUMLA_redefinedEdge_activityEdge]
+    = Json.writes[OTIUMLA_redefinedEdge_activityEdge]
+  
+    implicit def formats
+    : Format[OTIUMLA_redefinedEdge_activityEdge]
+    = Json.format[OTIUMLA_redefinedEdge_activityEdge]
+
+  }
+
   /**
     * A_redefinedInterface_interface
     *
@@ -3562,6 +8058,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_redefinedInterface_interface {
+     
+    implicit def reads
+    : Reads[OTIUMLA_redefinedInterface_interface]
+    = Json.reads[OTIUMLA_redefinedInterface_interface]
+  
+    implicit def writes
+    : Writes[OTIUMLA_redefinedInterface_interface]
+    = Json.writes[OTIUMLA_redefinedInterface_interface]
+  
+    implicit def formats
+    : Format[OTIUMLA_redefinedInterface_interface]
+    = Json.format[OTIUMLA_redefinedInterface_interface]
+
+  }
 
   /**
     * A_redefinedNode_activityNode
@@ -3575,6 +8087,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_redefinedNode_activityNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_redefinedNode_activityNode]
+    = Json.reads[OTIUMLA_redefinedNode_activityNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_redefinedNode_activityNode]
+    = Json.writes[OTIUMLA_redefinedNode_activityNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_redefinedNode_activityNode]
+    = Json.format[OTIUMLA_redefinedNode_activityNode]
+
+  }
+
   /**
     * A_redefinedOperation_operation
     *
@@ -3586,6 +8114,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_redefinedOperation_operation {
+     
+    implicit def reads
+    : Reads[OTIUMLA_redefinedOperation_operation]
+    = Json.reads[OTIUMLA_redefinedOperation_operation]
+  
+    implicit def writes
+    : Writes[OTIUMLA_redefinedOperation_operation]
+    = Json.writes[OTIUMLA_redefinedOperation_operation]
+  
+    implicit def formats
+    : Format[OTIUMLA_redefinedOperation_operation]
+    = Json.format[OTIUMLA_redefinedOperation_operation]
+
+  }
 
   /**
     * A_redefinedPort_port
@@ -3599,6 +8143,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_redefinedPort_port {
+     
+    implicit def reads
+    : Reads[OTIUMLA_redefinedPort_port]
+    = Json.reads[OTIUMLA_redefinedPort_port]
+  
+    implicit def writes
+    : Writes[OTIUMLA_redefinedPort_port]
+    = Json.writes[OTIUMLA_redefinedPort_port]
+  
+    implicit def formats
+    : Format[OTIUMLA_redefinedPort_port]
+    = Json.format[OTIUMLA_redefinedPort_port]
+
+  }
+
   /**
     * A_redefinedProperty_property
     *
@@ -3610,6 +8170,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_redefinedProperty_property {
+     
+    implicit def reads
+    : Reads[OTIUMLA_redefinedProperty_property]
+    = Json.reads[OTIUMLA_redefinedProperty_property]
+  
+    implicit def writes
+    : Writes[OTIUMLA_redefinedProperty_property]
+    = Json.writes[OTIUMLA_redefinedProperty_property]
+  
+    implicit def formats
+    : Format[OTIUMLA_redefinedProperty_property]
+    = Json.format[OTIUMLA_redefinedProperty_property]
+
+  }
 
   /**
     * A_replyToCall_replyAction
@@ -3623,6 +8199,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_replyToCall_replyAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_replyToCall_replyAction]
+    = Json.reads[OTIUMLA_replyToCall_replyAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_replyToCall_replyAction]
+    = Json.writes[OTIUMLA_replyToCall_replyAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_replyToCall_replyAction]
+    = Json.format[OTIUMLA_replyToCall_replyAction]
+
+  }
+
   /**
     * A_representation_classifier
     *
@@ -3634,6 +8226,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_representation_classifier {
+     
+    implicit def reads
+    : Reads[OTIUMLA_representation_classifier]
+    = Json.reads[OTIUMLA_representation_classifier]
+  
+    implicit def writes
+    : Writes[OTIUMLA_representation_classifier]
+    = Json.writes[OTIUMLA_representation_classifier]
+  
+    implicit def formats
+    : Format[OTIUMLA_representation_classifier]
+    = Json.format[OTIUMLA_representation_classifier]
+
+  }
 
   /**
     * A_represented_representation
@@ -3647,6 +8255,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_represented_representation {
+     
+    implicit def reads
+    : Reads[OTIUMLA_represented_representation]
+    = Json.reads[OTIUMLA_represented_representation]
+  
+    implicit def writes
+    : Writes[OTIUMLA_represented_representation]
+    = Json.writes[OTIUMLA_represented_representation]
+  
+    implicit def formats
+    : Format[OTIUMLA_represented_representation]
+    = Json.format[OTIUMLA_represented_representation]
+
+  }
+
   /**
     * A_sendEvent_endMessage
     *
@@ -3658,6 +8282,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_sendEvent_endMessage {
+     
+    implicit def reads
+    : Reads[OTIUMLA_sendEvent_endMessage]
+    = Json.reads[OTIUMLA_sendEvent_endMessage]
+  
+    implicit def writes
+    : Writes[OTIUMLA_sendEvent_endMessage]
+    = Json.writes[OTIUMLA_sendEvent_endMessage]
+  
+    implicit def formats
+    : Format[OTIUMLA_sendEvent_endMessage]
+    = Json.format[OTIUMLA_sendEvent_endMessage]
+
+  }
 
   /**
     * A_setupPart_loopNode
@@ -3671,6 +8311,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_setupPart_loopNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_setupPart_loopNode]
+    = Json.reads[OTIUMLA_setupPart_loopNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_setupPart_loopNode]
+    = Json.writes[OTIUMLA_setupPart_loopNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_setupPart_loopNode]
+    = Json.format[OTIUMLA_setupPart_loopNode]
+
+  }
+
   /**
     * A_subject_useCase
     *
@@ -3682,6 +8338,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_subject_useCase {
+     
+    implicit def reads
+    : Reads[OTIUMLA_subject_useCase]
+    = Json.reads[OTIUMLA_subject_useCase]
+  
+    implicit def writes
+    : Writes[OTIUMLA_subject_useCase]
+    = Json.writes[OTIUMLA_subject_useCase]
+  
+    implicit def formats
+    : Format[OTIUMLA_subject_useCase]
+    = Json.format[OTIUMLA_subject_useCase]
+
+  }
 
   /**
     * A_submachineState_submachine
@@ -3695,6 +8367,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_submachineState_submachine {
+     
+    implicit def reads
+    : Reads[OTIUMLA_submachineState_submachine]
+    = Json.reads[OTIUMLA_submachineState_submachine]
+  
+    implicit def writes
+    : Writes[OTIUMLA_submachineState_submachine]
+    = Json.writes[OTIUMLA_submachineState_submachine]
+  
+    implicit def formats
+    : Format[OTIUMLA_submachineState_submachine]
+    = Json.format[OTIUMLA_submachineState_submachine]
+
+  }
+
   /**
     * A_subsettedProperty_property
     *
@@ -3706,6 +8394,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_subsettedProperty_property {
+     
+    implicit def reads
+    : Reads[OTIUMLA_subsettedProperty_property]
+    = Json.reads[OTIUMLA_subsettedProperty_property]
+  
+    implicit def writes
+    : Writes[OTIUMLA_subsettedProperty_property]
+    = Json.writes[OTIUMLA_subsettedProperty_property]
+  
+    implicit def formats
+    : Format[OTIUMLA_subsettedProperty_property]
+    = Json.format[OTIUMLA_subsettedProperty_property]
+
+  }
 
   /**
     * A_supplier_supplierDependency
@@ -3719,6 +8423,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_supplier_supplierDependency {
+     
+    implicit def reads
+    : Reads[OTIUMLA_supplier_supplierDependency]
+    = Json.reads[OTIUMLA_supplier_supplierDependency]
+  
+    implicit def writes
+    : Writes[OTIUMLA_supplier_supplierDependency]
+    = Json.writes[OTIUMLA_supplier_supplierDependency]
+  
+    implicit def formats
+    : Format[OTIUMLA_supplier_supplierDependency]
+    = Json.format[OTIUMLA_supplier_supplierDependency]
+
+  }
+
   /**
     * A_test_clause
     *
@@ -3730,6 +8450,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_test_clause {
+     
+    implicit def reads
+    : Reads[OTIUMLA_test_clause]
+    = Json.reads[OTIUMLA_test_clause]
+  
+    implicit def writes
+    : Writes[OTIUMLA_test_clause]
+    = Json.writes[OTIUMLA_test_clause]
+  
+    implicit def formats
+    : Format[OTIUMLA_test_clause]
+    = Json.format[OTIUMLA_test_clause]
+
+  }
 
   /**
     * A_test_loopNode
@@ -3743,6 +8479,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_test_loopNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_test_loopNode]
+    = Json.reads[OTIUMLA_test_loopNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_test_loopNode]
+    = Json.writes[OTIUMLA_test_loopNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_test_loopNode]
+    = Json.format[OTIUMLA_test_loopNode]
+
+  }
+
   /**
     * A_toBefore_after
     *
@@ -3754,6 +8506,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_toBefore_after {
+     
+    implicit def reads
+    : Reads[OTIUMLA_toBefore_after]
+    = Json.reads[OTIUMLA_toBefore_after]
+  
+    implicit def writes
+    : Writes[OTIUMLA_toBefore_after]
+    = Json.writes[OTIUMLA_toBefore_after]
+  
+    implicit def formats
+    : Format[OTIUMLA_toBefore_after]
+    = Json.format[OTIUMLA_toBefore_after]
+
+  }
 
   /**
     * A_value_linkEndData
@@ -3767,6 +8535,22 @@ object OTIMOFLink {
   extends  OTIMOFReferenceLink
   {}
 
+  object OTIUMLA_value_linkEndData {
+     
+    implicit def reads
+    : Reads[OTIUMLA_value_linkEndData]
+    = Json.reads[OTIUMLA_value_linkEndData]
+  
+    implicit def writes
+    : Writes[OTIUMLA_value_linkEndData]
+    = Json.writes[OTIUMLA_value_linkEndData]
+  
+    implicit def formats
+    : Format[OTIUMLA_value_linkEndData]
+    = Json.format[OTIUMLA_value_linkEndData]
+
+  }
+
   /**
     * A_value_qualifierValue
     *
@@ -3778,6 +8562,22 @@ object OTIMOFLink {
     override val end2: ElementLocation )
   extends  OTIMOFReferenceLink
   {}
+
+  object OTIUMLA_value_qualifierValue {
+     
+    implicit def reads
+    : Reads[OTIUMLA_value_qualifierValue]
+    = Json.reads[OTIUMLA_value_qualifierValue]
+  
+    implicit def writes
+    : Writes[OTIUMLA_value_qualifierValue]
+    = Json.writes[OTIUMLA_value_qualifierValue]
+  
+    implicit def formats
+    : Format[OTIUMLA_value_qualifierValue]
+    = Json.format[OTIUMLA_value_qualifierValue]
+
+  }
 
 
   // <!-- Start of user code OTI MOF Link companion -->

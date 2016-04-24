@@ -1834,6 +1834,22 @@ object OTIMOFElement {
   with UMLAbstraction
   {}
 
+  object OTIUMLAbstraction {
+     
+    implicit def reads
+    : Reads[OTIUMLAbstraction]
+    = Json.reads[OTIUMLAbstraction]
+  
+    implicit def writes
+    : Writes[OTIUMLAbstraction]
+    = Json.writes[OTIUMLAbstraction]
+  
+    implicit def formats
+    : Format[OTIUMLAbstraction]
+    = Json.format[OTIUMLAbstraction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLAcceptCallAction
     * @param isLeaf Defined in RedefinableElement
@@ -1852,6 +1868,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLAcceptCallAction
   {}
+
+  object OTIUMLAcceptCallAction {
+     
+    implicit def reads
+    : Reads[OTIUMLAcceptCallAction]
+    = Json.reads[OTIUMLAcceptCallAction]
+  
+    implicit def writes
+    : Writes[OTIUMLAcceptCallAction]
+    = Json.writes[OTIUMLAcceptCallAction]
+  
+    implicit def formats
+    : Format[OTIUMLAcceptCallAction]
+    = Json.format[OTIUMLAcceptCallAction]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLAcceptEventAction
@@ -1872,6 +1904,22 @@ object OTIMOFElement {
   with UMLAcceptEventAction
   {}
 
+  object OTIUMLAcceptEventAction {
+     
+    implicit def reads
+    : Reads[OTIUMLAcceptEventAction]
+    = Json.reads[OTIUMLAcceptEventAction]
+  
+    implicit def writes
+    : Writes[OTIUMLAcceptEventAction]
+    = Json.writes[OTIUMLAcceptEventAction]
+  
+    implicit def formats
+    : Format[OTIUMLAcceptEventAction]
+    = Json.format[OTIUMLAcceptEventAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLActionExecutionSpecification
     * @param name Defined in NamedElement
@@ -1884,6 +1932,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLActionExecutionSpecification
   {}
+
+  object OTIUMLActionExecutionSpecification {
+     
+    implicit def reads
+    : Reads[OTIUMLActionExecutionSpecification]
+    = Json.reads[OTIUMLActionExecutionSpecification]
+  
+    implicit def writes
+    : Writes[OTIUMLActionExecutionSpecification]
+    = Json.writes[OTIUMLActionExecutionSpecification]
+  
+    implicit def formats
+    : Format[OTIUMLActionExecutionSpecification]
+    = Json.format[OTIUMLActionExecutionSpecification]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLActionInputPin
@@ -1909,6 +1973,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLActionInputPin
   {}
+
+  object OTIUMLActionInputPin {
+     
+    implicit def reads
+    : Reads[OTIUMLActionInputPin]
+    = Json.reads[OTIUMLActionInputPin]
+  
+    implicit def writes
+    : Writes[OTIUMLActionInputPin]
+    = Json.writes[OTIUMLActionInputPin]
+  
+    implicit def formats
+    : Format[OTIUMLActionInputPin]
+    = Json.format[OTIUMLActionInputPin]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLActivity
@@ -1937,6 +2017,22 @@ object OTIMOFElement {
   with UMLActivity
   {}
 
+  object OTIUMLActivity {
+     
+    implicit def reads
+    : Reads[OTIUMLActivity]
+    = Json.reads[OTIUMLActivity]
+  
+    implicit def writes
+    : Writes[OTIUMLActivity]
+    = Json.writes[OTIUMLActivity]
+  
+    implicit def formats
+    : Format[OTIUMLActivity]
+    = Json.format[OTIUMLActivity]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLActivityFinalNode
     * @param isLeaf Defined in RedefinableElement
@@ -1951,6 +2047,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLActivityFinalNode
   {}
+
+  object OTIUMLActivityFinalNode {
+     
+    implicit def reads
+    : Reads[OTIUMLActivityFinalNode]
+    = Json.reads[OTIUMLActivityFinalNode]
+  
+    implicit def writes
+    : Writes[OTIUMLActivityFinalNode]
+    = Json.writes[OTIUMLActivityFinalNode]
+  
+    implicit def formats
+    : Format[OTIUMLActivityFinalNode]
+    = Json.format[OTIUMLActivityFinalNode]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLActivityParameterNode
@@ -1971,6 +2083,22 @@ object OTIMOFElement {
   with UMLActivityParameterNode
   {}
 
+  object OTIUMLActivityParameterNode {
+     
+    implicit def reads
+    : Reads[OTIUMLActivityParameterNode]
+    = Json.reads[OTIUMLActivityParameterNode]
+  
+    implicit def writes
+    : Writes[OTIUMLActivityParameterNode]
+    = Json.writes[OTIUMLActivityParameterNode]
+  
+    implicit def formats
+    : Format[OTIUMLActivityParameterNode]
+    = Json.format[OTIUMLActivityParameterNode]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLActivityPartition
     * @param isDimension Defined in ActivityPartition
@@ -1987,6 +2115,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLActivityPartition
   {}
+
+  object OTIUMLActivityPartition {
+     
+    implicit def reads
+    : Reads[OTIUMLActivityPartition]
+    = Json.reads[OTIUMLActivityPartition]
+  
+    implicit def writes
+    : Writes[OTIUMLActivityPartition]
+    = Json.writes[OTIUMLActivityPartition]
+  
+    implicit def formats
+    : Format[OTIUMLActivityPartition]
+    = Json.format[OTIUMLActivityPartition]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLActor
@@ -2007,6 +2151,22 @@ object OTIMOFElement {
   with UMLActor
   {}
 
+  object OTIUMLActor {
+     
+    implicit def reads
+    : Reads[OTIUMLActor]
+    = Json.reads[OTIUMLActor]
+  
+    implicit def writes
+    : Writes[OTIUMLActor]
+    = Json.writes[OTIUMLActor]
+  
+    implicit def formats
+    : Format[OTIUMLActor]
+    = Json.format[OTIUMLActor]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLAddStructuralFeatureValueAction
     * @param isLeaf Defined in RedefinableElement
@@ -2025,6 +2185,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLAddStructuralFeatureValueAction
   {}
+
+  object OTIUMLAddStructuralFeatureValueAction {
+     
+    implicit def reads
+    : Reads[OTIUMLAddStructuralFeatureValueAction]
+    = Json.reads[OTIUMLAddStructuralFeatureValueAction]
+  
+    implicit def writes
+    : Writes[OTIUMLAddStructuralFeatureValueAction]
+    = Json.writes[OTIUMLAddStructuralFeatureValueAction]
+  
+    implicit def formats
+    : Format[OTIUMLAddStructuralFeatureValueAction]
+    = Json.format[OTIUMLAddStructuralFeatureValueAction]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLAddVariableValueAction
@@ -2045,6 +2221,22 @@ object OTIMOFElement {
   with UMLAddVariableValueAction
   {}
 
+  object OTIUMLAddVariableValueAction {
+     
+    implicit def reads
+    : Reads[OTIUMLAddVariableValueAction]
+    = Json.reads[OTIUMLAddVariableValueAction]
+  
+    implicit def writes
+    : Writes[OTIUMLAddVariableValueAction]
+    = Json.writes[OTIUMLAddVariableValueAction]
+  
+    implicit def formats
+    : Format[OTIUMLAddVariableValueAction]
+    = Json.format[OTIUMLAddVariableValueAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLAnyReceiveEvent
     * @param name Defined in NamedElement
@@ -2057,6 +2249,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLAnyReceiveEvent
   {}
+
+  object OTIUMLAnyReceiveEvent {
+     
+    implicit def reads
+    : Reads[OTIUMLAnyReceiveEvent]
+    = Json.reads[OTIUMLAnyReceiveEvent]
+  
+    implicit def writes
+    : Writes[OTIUMLAnyReceiveEvent]
+    = Json.writes[OTIUMLAnyReceiveEvent]
+  
+    implicit def formats
+    : Format[OTIUMLAnyReceiveEvent]
+    = Json.format[OTIUMLAnyReceiveEvent]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLArtifact
@@ -2079,6 +2287,22 @@ object OTIMOFElement {
   with UMLArtifact
   {}
 
+  object OTIUMLArtifact {
+     
+    implicit def reads
+    : Reads[OTIUMLArtifact]
+    = Json.reads[OTIUMLArtifact]
+  
+    implicit def writes
+    : Writes[OTIUMLArtifact]
+    = Json.writes[OTIUMLArtifact]
+  
+    implicit def formats
+    : Format[OTIUMLArtifact]
+    = Json.format[OTIUMLArtifact]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLAssociation
     * @param isAbstract Defined in Classifier
@@ -2099,6 +2323,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLAssociation
   {}
+
+  object OTIUMLAssociation {
+     
+    implicit def reads
+    : Reads[OTIUMLAssociation]
+    = Json.reads[OTIUMLAssociation]
+  
+    implicit def writes
+    : Writes[OTIUMLAssociation]
+    = Json.writes[OTIUMLAssociation]
+  
+    implicit def formats
+    : Format[OTIUMLAssociation]
+    = Json.format[OTIUMLAssociation]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLAssociationClass
@@ -2123,6 +2363,22 @@ object OTIMOFElement {
   with UMLAssociationClass
   {}
 
+  object OTIUMLAssociationClass {
+     
+    implicit def reads
+    : Reads[OTIUMLAssociationClass]
+    = Json.reads[OTIUMLAssociationClass]
+  
+    implicit def writes
+    : Writes[OTIUMLAssociationClass]
+    = Json.writes[OTIUMLAssociationClass]
+  
+    implicit def formats
+    : Format[OTIUMLAssociationClass]
+    = Json.format[OTIUMLAssociationClass]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLBehaviorExecutionSpecification
     * @param name Defined in NamedElement
@@ -2135,6 +2391,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLBehaviorExecutionSpecification
   {}
+
+  object OTIUMLBehaviorExecutionSpecification {
+     
+    implicit def reads
+    : Reads[OTIUMLBehaviorExecutionSpecification]
+    = Json.reads[OTIUMLBehaviorExecutionSpecification]
+  
+    implicit def writes
+    : Writes[OTIUMLBehaviorExecutionSpecification]
+    = Json.writes[OTIUMLBehaviorExecutionSpecification]
+  
+    implicit def formats
+    : Format[OTIUMLBehaviorExecutionSpecification]
+    = Json.format[OTIUMLBehaviorExecutionSpecification]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLBroadcastSignalAction
@@ -2152,6 +2424,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLBroadcastSignalAction
   {}
+
+  object OTIUMLBroadcastSignalAction {
+     
+    implicit def reads
+    : Reads[OTIUMLBroadcastSignalAction]
+    = Json.reads[OTIUMLBroadcastSignalAction]
+  
+    implicit def writes
+    : Writes[OTIUMLBroadcastSignalAction]
+    = Json.writes[OTIUMLBroadcastSignalAction]
+  
+    implicit def formats
+    : Format[OTIUMLBroadcastSignalAction]
+    = Json.format[OTIUMLBroadcastSignalAction]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLCallBehaviorAction
@@ -2172,6 +2460,22 @@ object OTIMOFElement {
   with UMLCallBehaviorAction
   {}
 
+  object OTIUMLCallBehaviorAction {
+     
+    implicit def reads
+    : Reads[OTIUMLCallBehaviorAction]
+    = Json.reads[OTIUMLCallBehaviorAction]
+  
+    implicit def writes
+    : Writes[OTIUMLCallBehaviorAction]
+    = Json.writes[OTIUMLCallBehaviorAction]
+  
+    implicit def formats
+    : Format[OTIUMLCallBehaviorAction]
+    = Json.format[OTIUMLCallBehaviorAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLCallEvent
     * @param name Defined in NamedElement
@@ -2184,6 +2488,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLCallEvent
   {}
+
+  object OTIUMLCallEvent {
+     
+    implicit def reads
+    : Reads[OTIUMLCallEvent]
+    = Json.reads[OTIUMLCallEvent]
+  
+    implicit def writes
+    : Writes[OTIUMLCallEvent]
+    = Json.writes[OTIUMLCallEvent]
+  
+    implicit def formats
+    : Format[OTIUMLCallEvent]
+    = Json.format[OTIUMLCallEvent]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLCallOperationAction
@@ -2204,6 +2524,22 @@ object OTIMOFElement {
   with UMLCallOperationAction
   {}
 
+  object OTIUMLCallOperationAction {
+     
+    implicit def reads
+    : Reads[OTIUMLCallOperationAction]
+    = Json.reads[OTIUMLCallOperationAction]
+  
+    implicit def writes
+    : Writes[OTIUMLCallOperationAction]
+    = Json.writes[OTIUMLCallOperationAction]
+  
+    implicit def formats
+    : Format[OTIUMLCallOperationAction]
+    = Json.format[OTIUMLCallOperationAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLCentralBufferNode
     * @param isControlType Defined in ObjectNode
@@ -2223,6 +2559,22 @@ object OTIMOFElement {
   with UMLCentralBufferNode
   {}
 
+  object OTIUMLCentralBufferNode {
+     
+    implicit def reads
+    : Reads[OTIUMLCentralBufferNode]
+    = Json.reads[OTIUMLCentralBufferNode]
+  
+    implicit def writes
+    : Writes[OTIUMLCentralBufferNode]
+    = Json.writes[OTIUMLCentralBufferNode]
+  
+    implicit def formats
+    : Format[OTIUMLCentralBufferNode]
+    = Json.format[OTIUMLCentralBufferNode]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLChangeEvent
     * @param name Defined in NamedElement
@@ -2235,6 +2587,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLChangeEvent
   {}
+
+  object OTIUMLChangeEvent {
+     
+    implicit def reads
+    : Reads[OTIUMLChangeEvent]
+    = Json.reads[OTIUMLChangeEvent]
+  
+    implicit def writes
+    : Writes[OTIUMLChangeEvent]
+    = Json.writes[OTIUMLChangeEvent]
+  
+    implicit def formats
+    : Format[OTIUMLChangeEvent]
+    = Json.format[OTIUMLChangeEvent]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLClass
@@ -2257,6 +2625,22 @@ object OTIMOFElement {
   with UMLClass
   {}
 
+  object OTIUMLClass {
+     
+    implicit def reads
+    : Reads[OTIUMLClass]
+    = Json.reads[OTIUMLClass]
+  
+    implicit def writes
+    : Writes[OTIUMLClass]
+    = Json.writes[OTIUMLClass]
+  
+    implicit def formats
+    : Format[OTIUMLClass]
+    = Json.format[OTIUMLClass]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLClassifierTemplateParameter
     * @param allowSubstitutable Defined in ClassifierTemplateParameter
@@ -2268,6 +2652,22 @@ object OTIMOFElement {
   with UMLClassifierTemplateParameter
   {}
 
+  object OTIUMLClassifierTemplateParameter {
+     
+    implicit def reads
+    : Reads[OTIUMLClassifierTemplateParameter]
+    = Json.reads[OTIUMLClassifierTemplateParameter]
+  
+    implicit def writes
+    : Writes[OTIUMLClassifierTemplateParameter]
+    = Json.writes[OTIUMLClassifierTemplateParameter]
+  
+    implicit def formats
+    : Format[OTIUMLClassifierTemplateParameter]
+    = Json.format[OTIUMLClassifierTemplateParameter]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLClause
     */
@@ -2276,6 +2676,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLClause
   {}
+
+  object OTIUMLClause {
+     
+    implicit def reads
+    : Reads[OTIUMLClause]
+    = Json.reads[OTIUMLClause]
+  
+    implicit def writes
+    : Writes[OTIUMLClause]
+    = Json.writes[OTIUMLClause]
+  
+    implicit def formats
+    : Format[OTIUMLClause]
+    = Json.format[OTIUMLClause]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLClearAssociationAction
@@ -2294,6 +2710,22 @@ object OTIMOFElement {
   with UMLClearAssociationAction
   {}
 
+  object OTIUMLClearAssociationAction {
+     
+    implicit def reads
+    : Reads[OTIUMLClearAssociationAction]
+    = Json.reads[OTIUMLClearAssociationAction]
+  
+    implicit def writes
+    : Writes[OTIUMLClearAssociationAction]
+    = Json.writes[OTIUMLClearAssociationAction]
+  
+    implicit def formats
+    : Format[OTIUMLClearAssociationAction]
+    = Json.format[OTIUMLClearAssociationAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLClearStructuralFeatureAction
     * @param isLeaf Defined in RedefinableElement
@@ -2311,6 +2743,22 @@ object OTIMOFElement {
   with UMLClearStructuralFeatureAction
   {}
 
+  object OTIUMLClearStructuralFeatureAction {
+     
+    implicit def reads
+    : Reads[OTIUMLClearStructuralFeatureAction]
+    = Json.reads[OTIUMLClearStructuralFeatureAction]
+  
+    implicit def writes
+    : Writes[OTIUMLClearStructuralFeatureAction]
+    = Json.writes[OTIUMLClearStructuralFeatureAction]
+  
+    implicit def formats
+    : Format[OTIUMLClearStructuralFeatureAction]
+    = Json.format[OTIUMLClearStructuralFeatureAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLClearVariableAction
     * @param isLeaf Defined in RedefinableElement
@@ -2327,6 +2775,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLClearVariableAction
   {}
+
+  object OTIUMLClearVariableAction {
+     
+    implicit def reads
+    : Reads[OTIUMLClearVariableAction]
+    = Json.reads[OTIUMLClearVariableAction]
+  
+    implicit def writes
+    : Writes[OTIUMLClearVariableAction]
+    = Json.writes[OTIUMLClearVariableAction]
+  
+    implicit def formats
+    : Format[OTIUMLClearVariableAction]
+    = Json.format[OTIUMLClearVariableAction]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLCollaboration
@@ -2347,6 +2811,22 @@ object OTIMOFElement {
   with UMLCollaboration
   {}
 
+  object OTIUMLCollaboration {
+     
+    implicit def reads
+    : Reads[OTIUMLCollaboration]
+    = Json.reads[OTIUMLCollaboration]
+  
+    implicit def writes
+    : Writes[OTIUMLCollaboration]
+    = Json.writes[OTIUMLCollaboration]
+  
+    implicit def formats
+    : Format[OTIUMLCollaboration]
+    = Json.format[OTIUMLCollaboration]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLCollaborationUse
     * @param name Defined in NamedElement
@@ -2359,6 +2839,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLCollaborationUse
   {}
+
+  object OTIUMLCollaborationUse {
+     
+    implicit def reads
+    : Reads[OTIUMLCollaborationUse]
+    = Json.reads[OTIUMLCollaborationUse]
+  
+    implicit def writes
+    : Writes[OTIUMLCollaborationUse]
+    = Json.writes[OTIUMLCollaborationUse]
+  
+    implicit def formats
+    : Format[OTIUMLCollaborationUse]
+    = Json.format[OTIUMLCollaborationUse]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLCombinedFragment
@@ -2375,6 +2871,22 @@ object OTIMOFElement {
   with UMLCombinedFragment
   {}
 
+  object OTIUMLCombinedFragment {
+     
+    implicit def reads
+    : Reads[OTIUMLCombinedFragment]
+    = Json.reads[OTIUMLCombinedFragment]
+  
+    implicit def writes
+    : Writes[OTIUMLCombinedFragment]
+    = Json.writes[OTIUMLCombinedFragment]
+  
+    implicit def formats
+    : Format[OTIUMLCombinedFragment]
+    = Json.format[OTIUMLCombinedFragment]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLComment
     * @param body Defined in Comment
@@ -2385,6 +2897,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLComment
   {}
+
+  object OTIUMLComment {
+     
+    implicit def reads
+    : Reads[OTIUMLComment]
+    = Json.reads[OTIUMLComment]
+  
+    implicit def writes
+    : Writes[OTIUMLComment]
+    = Json.writes[OTIUMLComment]
+  
+    implicit def formats
+    : Format[OTIUMLComment]
+    = Json.format[OTIUMLComment]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLCommunicationPath
@@ -2406,6 +2934,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLCommunicationPath
   {}
+
+  object OTIUMLCommunicationPath {
+     
+    implicit def reads
+    : Reads[OTIUMLCommunicationPath]
+    = Json.reads[OTIUMLCommunicationPath]
+  
+    implicit def writes
+    : Writes[OTIUMLCommunicationPath]
+    = Json.writes[OTIUMLCommunicationPath]
+  
+    implicit def formats
+    : Format[OTIUMLCommunicationPath]
+    = Json.format[OTIUMLCommunicationPath]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLComponent
@@ -2430,6 +2974,22 @@ object OTIMOFElement {
   with UMLComponent
   {}
 
+  object OTIUMLComponent {
+     
+    implicit def reads
+    : Reads[OTIUMLComponent]
+    = Json.reads[OTIUMLComponent]
+  
+    implicit def writes
+    : Writes[OTIUMLComponent]
+    = Json.writes[OTIUMLComponent]
+  
+    implicit def formats
+    : Format[OTIUMLComponent]
+    = Json.format[OTIUMLComponent]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLComponentRealization
     * @param name Defined in NamedElement
@@ -2442,6 +3002,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLComponentRealization
   {}
+
+  object OTIUMLComponentRealization {
+     
+    implicit def reads
+    : Reads[OTIUMLComponentRealization]
+    = Json.reads[OTIUMLComponentRealization]
+  
+    implicit def writes
+    : Writes[OTIUMLComponentRealization]
+    = Json.writes[OTIUMLComponentRealization]
+  
+    implicit def formats
+    : Format[OTIUMLComponentRealization]
+    = Json.format[OTIUMLComponentRealization]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLConditionalNode
@@ -2466,6 +3042,22 @@ object OTIMOFElement {
   with UMLConditionalNode
   {}
 
+  object OTIUMLConditionalNode {
+     
+    implicit def reads
+    : Reads[OTIUMLConditionalNode]
+    = Json.reads[OTIUMLConditionalNode]
+  
+    implicit def writes
+    : Writes[OTIUMLConditionalNode]
+    = Json.writes[OTIUMLConditionalNode]
+  
+    implicit def formats
+    : Format[OTIUMLConditionalNode]
+    = Json.format[OTIUMLConditionalNode]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLConnectableElementTemplateParameter
     */
@@ -2474,6 +3066,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLConnectableElementTemplateParameter
   {}
+
+  object OTIUMLConnectableElementTemplateParameter {
+     
+    implicit def reads
+    : Reads[OTIUMLConnectableElementTemplateParameter]
+    = Json.reads[OTIUMLConnectableElementTemplateParameter]
+  
+    implicit def writes
+    : Writes[OTIUMLConnectableElementTemplateParameter]
+    = Json.writes[OTIUMLConnectableElementTemplateParameter]
+  
+    implicit def formats
+    : Format[OTIUMLConnectableElementTemplateParameter]
+    = Json.format[OTIUMLConnectableElementTemplateParameter]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLConnectionPointReference
@@ -2487,6 +3095,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLConnectionPointReference
   {}
+
+  object OTIUMLConnectionPointReference {
+     
+    implicit def reads
+    : Reads[OTIUMLConnectionPointReference]
+    = Json.reads[OTIUMLConnectionPointReference]
+  
+    implicit def writes
+    : Writes[OTIUMLConnectionPointReference]
+    = Json.writes[OTIUMLConnectionPointReference]
+  
+    implicit def formats
+    : Format[OTIUMLConnectionPointReference]
+    = Json.format[OTIUMLConnectionPointReference]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLConnector
@@ -2505,6 +3129,22 @@ object OTIMOFElement {
   with UMLConnector
   {}
 
+  object OTIUMLConnector {
+     
+    implicit def reads
+    : Reads[OTIUMLConnector]
+    = Json.reads[OTIUMLConnector]
+  
+    implicit def writes
+    : Writes[OTIUMLConnector]
+    = Json.writes[OTIUMLConnector]
+  
+    implicit def formats
+    : Format[OTIUMLConnector]
+    = Json.format[OTIUMLConnector]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLConnectorEnd
     * @param isOrdered Defined in MultiplicityElement
@@ -2517,6 +3157,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLConnectorEnd
   {}
+
+  object OTIUMLConnectorEnd {
+     
+    implicit def reads
+    : Reads[OTIUMLConnectorEnd]
+    = Json.reads[OTIUMLConnectorEnd]
+  
+    implicit def writes
+    : Writes[OTIUMLConnectorEnd]
+    = Json.writes[OTIUMLConnectorEnd]
+  
+    implicit def formats
+    : Format[OTIUMLConnectorEnd]
+    = Json.format[OTIUMLConnectorEnd]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLConsiderIgnoreFragment
@@ -2533,6 +3189,22 @@ object OTIMOFElement {
   with UMLConsiderIgnoreFragment
   {}
 
+  object OTIUMLConsiderIgnoreFragment {
+     
+    implicit def reads
+    : Reads[OTIUMLConsiderIgnoreFragment]
+    = Json.reads[OTIUMLConsiderIgnoreFragment]
+  
+    implicit def writes
+    : Writes[OTIUMLConsiderIgnoreFragment]
+    = Json.writes[OTIUMLConsiderIgnoreFragment]
+  
+    implicit def formats
+    : Format[OTIUMLConsiderIgnoreFragment]
+    = Json.format[OTIUMLConsiderIgnoreFragment]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLConstraint
     * @param name Defined in NamedElement
@@ -2545,6 +3217,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLConstraint
   {}
+
+  object OTIUMLConstraint {
+     
+    implicit def reads
+    : Reads[OTIUMLConstraint]
+    = Json.reads[OTIUMLConstraint]
+  
+    implicit def writes
+    : Writes[OTIUMLConstraint]
+    = Json.writes[OTIUMLConstraint]
+  
+    implicit def formats
+    : Format[OTIUMLConstraint]
+    = Json.format[OTIUMLConstraint]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLContinuation
@@ -2561,6 +3249,22 @@ object OTIMOFElement {
   with UMLContinuation
   {}
 
+  object OTIUMLContinuation {
+     
+    implicit def reads
+    : Reads[OTIUMLContinuation]
+    = Json.reads[OTIUMLContinuation]
+  
+    implicit def writes
+    : Writes[OTIUMLContinuation]
+    = Json.writes[OTIUMLContinuation]
+  
+    implicit def formats
+    : Format[OTIUMLContinuation]
+    = Json.format[OTIUMLContinuation]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLControlFlow
     * @param isLeaf Defined in RedefinableElement
@@ -2575,6 +3279,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLControlFlow
   {}
+
+  object OTIUMLControlFlow {
+     
+    implicit def reads
+    : Reads[OTIUMLControlFlow]
+    = Json.reads[OTIUMLControlFlow]
+  
+    implicit def writes
+    : Writes[OTIUMLControlFlow]
+    = Json.writes[OTIUMLControlFlow]
+  
+    implicit def formats
+    : Format[OTIUMLControlFlow]
+    = Json.format[OTIUMLControlFlow]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLCreateLinkAction
@@ -2593,6 +3313,22 @@ object OTIMOFElement {
   with UMLCreateLinkAction
   {}
 
+  object OTIUMLCreateLinkAction {
+     
+    implicit def reads
+    : Reads[OTIUMLCreateLinkAction]
+    = Json.reads[OTIUMLCreateLinkAction]
+  
+    implicit def writes
+    : Writes[OTIUMLCreateLinkAction]
+    = Json.writes[OTIUMLCreateLinkAction]
+  
+    implicit def formats
+    : Format[OTIUMLCreateLinkAction]
+    = Json.format[OTIUMLCreateLinkAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLCreateLinkObjectAction
     * @param isLeaf Defined in RedefinableElement
@@ -2610,6 +3346,22 @@ object OTIMOFElement {
   with UMLCreateLinkObjectAction
   {}
 
+  object OTIUMLCreateLinkObjectAction {
+     
+    implicit def reads
+    : Reads[OTIUMLCreateLinkObjectAction]
+    = Json.reads[OTIUMLCreateLinkObjectAction]
+  
+    implicit def writes
+    : Writes[OTIUMLCreateLinkObjectAction]
+    = Json.writes[OTIUMLCreateLinkObjectAction]
+  
+    implicit def formats
+    : Format[OTIUMLCreateLinkObjectAction]
+    = Json.format[OTIUMLCreateLinkObjectAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLCreateObjectAction
     * @param isLeaf Defined in RedefinableElement
@@ -2626,6 +3378,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLCreateObjectAction
   {}
+
+  object OTIUMLCreateObjectAction {
+     
+    implicit def reads
+    : Reads[OTIUMLCreateObjectAction]
+    = Json.reads[OTIUMLCreateObjectAction]
+  
+    implicit def writes
+    : Writes[OTIUMLCreateObjectAction]
+    = Json.writes[OTIUMLCreateObjectAction]
+  
+    implicit def formats
+    : Format[OTIUMLCreateObjectAction]
+    = Json.format[OTIUMLCreateObjectAction]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLDataStoreNode
@@ -2646,6 +3414,22 @@ object OTIMOFElement {
   with UMLDataStoreNode
   {}
 
+  object OTIUMLDataStoreNode {
+     
+    implicit def reads
+    : Reads[OTIUMLDataStoreNode]
+    = Json.reads[OTIUMLDataStoreNode]
+  
+    implicit def writes
+    : Writes[OTIUMLDataStoreNode]
+    = Json.writes[OTIUMLDataStoreNode]
+  
+    implicit def formats
+    : Format[OTIUMLDataStoreNode]
+    = Json.format[OTIUMLDataStoreNode]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLDataType
     * @param isAbstract Defined in Classifier
@@ -2665,6 +3449,22 @@ object OTIMOFElement {
   with UMLDataType
   {}
 
+  object OTIUMLDataType {
+     
+    implicit def reads
+    : Reads[OTIUMLDataType]
+    = Json.reads[OTIUMLDataType]
+  
+    implicit def writes
+    : Writes[OTIUMLDataType]
+    = Json.writes[OTIUMLDataType]
+  
+    implicit def formats
+    : Format[OTIUMLDataType]
+    = Json.format[OTIUMLDataType]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLDecisionNode
     * @param isLeaf Defined in RedefinableElement
@@ -2680,6 +3480,22 @@ object OTIMOFElement {
   with UMLDecisionNode
   {}
 
+  object OTIUMLDecisionNode {
+     
+    implicit def reads
+    : Reads[OTIUMLDecisionNode]
+    = Json.reads[OTIUMLDecisionNode]
+  
+    implicit def writes
+    : Writes[OTIUMLDecisionNode]
+    = Json.writes[OTIUMLDecisionNode]
+  
+    implicit def formats
+    : Format[OTIUMLDecisionNode]
+    = Json.format[OTIUMLDecisionNode]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLDependency
     * @param name Defined in NamedElement
@@ -2693,6 +3509,22 @@ object OTIMOFElement {
   with UMLDependency
   {}
 
+  object OTIUMLDependency {
+     
+    implicit def reads
+    : Reads[OTIUMLDependency]
+    = Json.reads[OTIUMLDependency]
+  
+    implicit def writes
+    : Writes[OTIUMLDependency]
+    = Json.writes[OTIUMLDependency]
+  
+    implicit def formats
+    : Format[OTIUMLDependency]
+    = Json.format[OTIUMLDependency]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLDeployment
     * @param name Defined in NamedElement
@@ -2705,6 +3537,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLDeployment
   {}
+
+  object OTIUMLDeployment {
+     
+    implicit def reads
+    : Reads[OTIUMLDeployment]
+    = Json.reads[OTIUMLDeployment]
+  
+    implicit def writes
+    : Writes[OTIUMLDeployment]
+    = Json.writes[OTIUMLDeployment]
+  
+    implicit def formats
+    : Format[OTIUMLDeployment]
+    = Json.format[OTIUMLDeployment]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLDeploymentSpecification
@@ -2731,6 +3579,22 @@ object OTIMOFElement {
   with UMLDeploymentSpecification
   {}
 
+  object OTIUMLDeploymentSpecification {
+     
+    implicit def reads
+    : Reads[OTIUMLDeploymentSpecification]
+    = Json.reads[OTIUMLDeploymentSpecification]
+  
+    implicit def writes
+    : Writes[OTIUMLDeploymentSpecification]
+    = Json.writes[OTIUMLDeploymentSpecification]
+  
+    implicit def formats
+    : Format[OTIUMLDeploymentSpecification]
+    = Json.format[OTIUMLDeploymentSpecification]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLDestroyLinkAction
     * @param isLeaf Defined in RedefinableElement
@@ -2747,6 +3611,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLDestroyLinkAction
   {}
+
+  object OTIUMLDestroyLinkAction {
+     
+    implicit def reads
+    : Reads[OTIUMLDestroyLinkAction]
+    = Json.reads[OTIUMLDestroyLinkAction]
+  
+    implicit def writes
+    : Writes[OTIUMLDestroyLinkAction]
+    = Json.writes[OTIUMLDestroyLinkAction]
+  
+    implicit def formats
+    : Format[OTIUMLDestroyLinkAction]
+    = Json.format[OTIUMLDestroyLinkAction]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLDestroyObjectAction
@@ -2769,6 +3649,22 @@ object OTIMOFElement {
   with UMLDestroyObjectAction
   {}
 
+  object OTIUMLDestroyObjectAction {
+     
+    implicit def reads
+    : Reads[OTIUMLDestroyObjectAction]
+    = Json.reads[OTIUMLDestroyObjectAction]
+  
+    implicit def writes
+    : Writes[OTIUMLDestroyObjectAction]
+    = Json.writes[OTIUMLDestroyObjectAction]
+  
+    implicit def formats
+    : Format[OTIUMLDestroyObjectAction]
+    = Json.format[OTIUMLDestroyObjectAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLDestructionOccurrenceSpecification
     * @param name Defined in NamedElement
@@ -2781,6 +3677,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLDestructionOccurrenceSpecification
   {}
+
+  object OTIUMLDestructionOccurrenceSpecification {
+     
+    implicit def reads
+    : Reads[OTIUMLDestructionOccurrenceSpecification]
+    = Json.reads[OTIUMLDestructionOccurrenceSpecification]
+  
+    implicit def writes
+    : Writes[OTIUMLDestructionOccurrenceSpecification]
+    = Json.writes[OTIUMLDestructionOccurrenceSpecification]
+  
+    implicit def formats
+    : Format[OTIUMLDestructionOccurrenceSpecification]
+    = Json.format[OTIUMLDestructionOccurrenceSpecification]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLDevice
@@ -2803,6 +3715,22 @@ object OTIMOFElement {
   with UMLDevice
   {}
 
+  object OTIUMLDevice {
+     
+    implicit def reads
+    : Reads[OTIUMLDevice]
+    = Json.reads[OTIUMLDevice]
+  
+    implicit def writes
+    : Writes[OTIUMLDevice]
+    = Json.writes[OTIUMLDevice]
+  
+    implicit def formats
+    : Format[OTIUMLDevice]
+    = Json.format[OTIUMLDevice]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLDuration
     * @param name Defined in NamedElement
@@ -2815,6 +3743,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLDuration
   {}
+
+  object OTIUMLDuration {
+     
+    implicit def reads
+    : Reads[OTIUMLDuration]
+    = Json.reads[OTIUMLDuration]
+  
+    implicit def writes
+    : Writes[OTIUMLDuration]
+    = Json.writes[OTIUMLDuration]
+  
+    implicit def formats
+    : Format[OTIUMLDuration]
+    = Json.format[OTIUMLDuration]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLDurationConstraint
@@ -2831,6 +3775,22 @@ object OTIMOFElement {
   with UMLDurationConstraint
   {}
 
+  object OTIUMLDurationConstraint {
+     
+    implicit def reads
+    : Reads[OTIUMLDurationConstraint]
+    = Json.reads[OTIUMLDurationConstraint]
+  
+    implicit def writes
+    : Writes[OTIUMLDurationConstraint]
+    = Json.writes[OTIUMLDurationConstraint]
+  
+    implicit def formats
+    : Format[OTIUMLDurationConstraint]
+    = Json.format[OTIUMLDurationConstraint]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLDurationInterval
     * @param name Defined in NamedElement
@@ -2843,6 +3803,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLDurationInterval
   {}
+
+  object OTIUMLDurationInterval {
+     
+    implicit def reads
+    : Reads[OTIUMLDurationInterval]
+    = Json.reads[OTIUMLDurationInterval]
+  
+    implicit def writes
+    : Writes[OTIUMLDurationInterval]
+    = Json.writes[OTIUMLDurationInterval]
+  
+    implicit def formats
+    : Format[OTIUMLDurationInterval]
+    = Json.format[OTIUMLDurationInterval]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLDurationObservation
@@ -2859,6 +3835,22 @@ object OTIMOFElement {
   with UMLDurationObservation
   {}
 
+  object OTIUMLDurationObservation {
+     
+    implicit def reads
+    : Reads[OTIUMLDurationObservation]
+    = Json.reads[OTIUMLDurationObservation]
+  
+    implicit def writes
+    : Writes[OTIUMLDurationObservation]
+    = Json.writes[OTIUMLDurationObservation]
+  
+    implicit def formats
+    : Format[OTIUMLDurationObservation]
+    = Json.format[OTIUMLDurationObservation]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLElementImport
     * @param alias Defined in ElementImport
@@ -2872,6 +3864,22 @@ object OTIMOFElement {
   with UMLElementImport
   {}
 
+  object OTIUMLElementImport {
+     
+    implicit def reads
+    : Reads[OTIUMLElementImport]
+    = Json.reads[OTIUMLElementImport]
+  
+    implicit def writes
+    : Writes[OTIUMLElementImport]
+    = Json.writes[OTIUMLElementImport]
+  
+    implicit def formats
+    : Format[OTIUMLElementImport]
+    = Json.format[OTIUMLElementImport]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLElementValue
     * @param name Defined in NamedElement
@@ -2884,6 +3892,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLElementValue
   {}
+
+  object OTIUMLElementValue {
+     
+    implicit def reads
+    : Reads[OTIUMLElementValue]
+    = Json.reads[OTIUMLElementValue]
+  
+    implicit def writes
+    : Writes[OTIUMLElementValue]
+    = Json.writes[OTIUMLElementValue]
+  
+    implicit def formats
+    : Format[OTIUMLElementValue]
+    = Json.format[OTIUMLElementValue]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLEnumeration
@@ -2904,6 +3928,22 @@ object OTIMOFElement {
   with UMLEnumeration
   {}
 
+  object OTIUMLEnumeration {
+     
+    implicit def reads
+    : Reads[OTIUMLEnumeration]
+    = Json.reads[OTIUMLEnumeration]
+  
+    implicit def writes
+    : Writes[OTIUMLEnumeration]
+    = Json.writes[OTIUMLEnumeration]
+  
+    implicit def formats
+    : Format[OTIUMLEnumeration]
+    = Json.format[OTIUMLEnumeration]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLEnumerationLiteral
     * @param name Defined in NamedElement
@@ -2917,6 +3957,22 @@ object OTIMOFElement {
   with UMLEnumerationLiteral
   {}
 
+  object OTIUMLEnumerationLiteral {
+     
+    implicit def reads
+    : Reads[OTIUMLEnumerationLiteral]
+    = Json.reads[OTIUMLEnumerationLiteral]
+  
+    implicit def writes
+    : Writes[OTIUMLEnumerationLiteral]
+    = Json.writes[OTIUMLEnumerationLiteral]
+  
+    implicit def formats
+    : Format[OTIUMLEnumerationLiteral]
+    = Json.format[OTIUMLEnumerationLiteral]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLExceptionHandler
     */
@@ -2925,6 +3981,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLExceptionHandler
   {}
+
+  object OTIUMLExceptionHandler {
+     
+    implicit def reads
+    : Reads[OTIUMLExceptionHandler]
+    = Json.reads[OTIUMLExceptionHandler]
+  
+    implicit def writes
+    : Writes[OTIUMLExceptionHandler]
+    = Json.writes[OTIUMLExceptionHandler]
+  
+    implicit def formats
+    : Format[OTIUMLExceptionHandler]
+    = Json.format[OTIUMLExceptionHandler]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLExecutionEnvironment
@@ -2947,6 +4019,22 @@ object OTIMOFElement {
   with UMLExecutionEnvironment
   {}
 
+  object OTIUMLExecutionEnvironment {
+     
+    implicit def reads
+    : Reads[OTIUMLExecutionEnvironment]
+    = Json.reads[OTIUMLExecutionEnvironment]
+  
+    implicit def writes
+    : Writes[OTIUMLExecutionEnvironment]
+    = Json.writes[OTIUMLExecutionEnvironment]
+  
+    implicit def formats
+    : Format[OTIUMLExecutionEnvironment]
+    = Json.format[OTIUMLExecutionEnvironment]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLExecutionOccurrenceSpecification
     * @param name Defined in NamedElement
@@ -2959,6 +4047,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLExecutionOccurrenceSpecification
   {}
+
+  object OTIUMLExecutionOccurrenceSpecification {
+     
+    implicit def reads
+    : Reads[OTIUMLExecutionOccurrenceSpecification]
+    = Json.reads[OTIUMLExecutionOccurrenceSpecification]
+  
+    implicit def writes
+    : Writes[OTIUMLExecutionOccurrenceSpecification]
+    = Json.writes[OTIUMLExecutionOccurrenceSpecification]
+  
+    implicit def formats
+    : Format[OTIUMLExecutionOccurrenceSpecification]
+    = Json.format[OTIUMLExecutionOccurrenceSpecification]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLExpansionNode
@@ -2978,6 +4082,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLExpansionNode
   {}
+
+  object OTIUMLExpansionNode {
+     
+    implicit def reads
+    : Reads[OTIUMLExpansionNode]
+    = Json.reads[OTIUMLExpansionNode]
+  
+    implicit def writes
+    : Writes[OTIUMLExpansionNode]
+    = Json.writes[OTIUMLExpansionNode]
+  
+    implicit def formats
+    : Format[OTIUMLExpansionNode]
+    = Json.format[OTIUMLExpansionNode]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLExpansionRegion
@@ -3000,6 +4120,22 @@ object OTIMOFElement {
   with UMLExpansionRegion
   {}
 
+  object OTIUMLExpansionRegion {
+     
+    implicit def reads
+    : Reads[OTIUMLExpansionRegion]
+    = Json.reads[OTIUMLExpansionRegion]
+  
+    implicit def writes
+    : Writes[OTIUMLExpansionRegion]
+    = Json.writes[OTIUMLExpansionRegion]
+  
+    implicit def formats
+    : Format[OTIUMLExpansionRegion]
+    = Json.format[OTIUMLExpansionRegion]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLExpression
     * @param name Defined in NamedElement
@@ -3015,6 +4151,22 @@ object OTIMOFElement {
   with UMLExpression
   {}
 
+  object OTIUMLExpression {
+     
+    implicit def reads
+    : Reads[OTIUMLExpression]
+    = Json.reads[OTIUMLExpression]
+  
+    implicit def writes
+    : Writes[OTIUMLExpression]
+    = Json.writes[OTIUMLExpression]
+  
+    implicit def formats
+    : Format[OTIUMLExpression]
+    = Json.format[OTIUMLExpression]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLExtend
     * @param name Defined in NamedElement
@@ -3027,6 +4179,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLExtend
   {}
+
+  object OTIUMLExtend {
+     
+    implicit def reads
+    : Reads[OTIUMLExtend]
+    = Json.reads[OTIUMLExtend]
+  
+    implicit def writes
+    : Writes[OTIUMLExtend]
+    = Json.writes[OTIUMLExtend]
+  
+    implicit def formats
+    : Format[OTIUMLExtend]
+    = Json.format[OTIUMLExtend]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLExtension
@@ -3048,6 +4216,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLExtension
   {}
+
+  object OTIUMLExtension {
+     
+    implicit def reads
+    : Reads[OTIUMLExtension]
+    = Json.reads[OTIUMLExtension]
+  
+    implicit def writes
+    : Writes[OTIUMLExtension]
+    = Json.writes[OTIUMLExtension]
+  
+    implicit def formats
+    : Format[OTIUMLExtension]
+    = Json.format[OTIUMLExtension]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLExtensionEnd
@@ -3080,6 +4264,22 @@ object OTIMOFElement {
   with UMLExtensionEnd
   {}
 
+  object OTIUMLExtensionEnd {
+     
+    implicit def reads
+    : Reads[OTIUMLExtensionEnd]
+    = Json.reads[OTIUMLExtensionEnd]
+  
+    implicit def writes
+    : Writes[OTIUMLExtensionEnd]
+    = Json.writes[OTIUMLExtensionEnd]
+  
+    implicit def formats
+    : Format[OTIUMLExtensionEnd]
+    = Json.format[OTIUMLExtensionEnd]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLExtensionPoint
     * @param isLeaf Defined in RedefinableElement
@@ -3094,6 +4294,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLExtensionPoint
   {}
+
+  object OTIUMLExtensionPoint {
+     
+    implicit def reads
+    : Reads[OTIUMLExtensionPoint]
+    = Json.reads[OTIUMLExtensionPoint]
+  
+    implicit def writes
+    : Writes[OTIUMLExtensionPoint]
+    = Json.writes[OTIUMLExtensionPoint]
+  
+    implicit def formats
+    : Format[OTIUMLExtensionPoint]
+    = Json.format[OTIUMLExtensionPoint]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLFinalState
@@ -3110,6 +4326,22 @@ object OTIMOFElement {
   with UMLFinalState
   {}
 
+  object OTIUMLFinalState {
+     
+    implicit def reads
+    : Reads[OTIUMLFinalState]
+    = Json.reads[OTIUMLFinalState]
+  
+    implicit def writes
+    : Writes[OTIUMLFinalState]
+    = Json.writes[OTIUMLFinalState]
+  
+    implicit def formats
+    : Format[OTIUMLFinalState]
+    = Json.format[OTIUMLFinalState]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLFlowFinalNode
     * @param isLeaf Defined in RedefinableElement
@@ -3125,6 +4357,22 @@ object OTIMOFElement {
   with UMLFlowFinalNode
   {}
 
+  object OTIUMLFlowFinalNode {
+     
+    implicit def reads
+    : Reads[OTIUMLFlowFinalNode]
+    = Json.reads[OTIUMLFlowFinalNode]
+  
+    implicit def writes
+    : Writes[OTIUMLFlowFinalNode]
+    = Json.writes[OTIUMLFlowFinalNode]
+  
+    implicit def formats
+    : Format[OTIUMLFlowFinalNode]
+    = Json.format[OTIUMLFlowFinalNode]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLForkNode
     * @param isLeaf Defined in RedefinableElement
@@ -3139,6 +4387,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLForkNode
   {}
+
+  object OTIUMLForkNode {
+     
+    implicit def reads
+    : Reads[OTIUMLForkNode]
+    = Json.reads[OTIUMLForkNode]
+  
+    implicit def writes
+    : Writes[OTIUMLForkNode]
+    = Json.writes[OTIUMLForkNode]
+  
+    implicit def formats
+    : Format[OTIUMLForkNode]
+    = Json.format[OTIUMLForkNode]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLFunctionBehavior
@@ -3167,6 +4431,22 @@ object OTIMOFElement {
   with UMLFunctionBehavior
   {}
 
+  object OTIUMLFunctionBehavior {
+     
+    implicit def reads
+    : Reads[OTIUMLFunctionBehavior]
+    = Json.reads[OTIUMLFunctionBehavior]
+  
+    implicit def writes
+    : Writes[OTIUMLFunctionBehavior]
+    = Json.writes[OTIUMLFunctionBehavior]
+  
+    implicit def formats
+    : Format[OTIUMLFunctionBehavior]
+    = Json.format[OTIUMLFunctionBehavior]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLGate
     * @param name Defined in NamedElement
@@ -3179,6 +4459,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLGate
   {}
+
+  object OTIUMLGate {
+     
+    implicit def reads
+    : Reads[OTIUMLGate]
+    = Json.reads[OTIUMLGate]
+  
+    implicit def writes
+    : Writes[OTIUMLGate]
+    = Json.writes[OTIUMLGate]
+  
+    implicit def formats
+    : Format[OTIUMLGate]
+    = Json.format[OTIUMLGate]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLGeneralOrdering
@@ -3193,6 +4489,22 @@ object OTIMOFElement {
   with UMLGeneralOrdering
   {}
 
+  object OTIUMLGeneralOrdering {
+     
+    implicit def reads
+    : Reads[OTIUMLGeneralOrdering]
+    = Json.reads[OTIUMLGeneralOrdering]
+  
+    implicit def writes
+    : Writes[OTIUMLGeneralOrdering]
+    = Json.writes[OTIUMLGeneralOrdering]
+  
+    implicit def formats
+    : Format[OTIUMLGeneralOrdering]
+    = Json.format[OTIUMLGeneralOrdering]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLGeneralization
     * @param isSubstitutable Defined in Generalization
@@ -3203,6 +4515,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLGeneralization
   {}
+
+  object OTIUMLGeneralization {
+     
+    implicit def reads
+    : Reads[OTIUMLGeneralization]
+    = Json.reads[OTIUMLGeneralization]
+  
+    implicit def writes
+    : Writes[OTIUMLGeneralization]
+    = Json.writes[OTIUMLGeneralization]
+  
+    implicit def formats
+    : Format[OTIUMLGeneralization]
+    = Json.format[OTIUMLGeneralization]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLGeneralizationSet
@@ -3221,6 +4549,22 @@ object OTIMOFElement {
   with UMLGeneralizationSet
   {}
 
+  object OTIUMLGeneralizationSet {
+     
+    implicit def reads
+    : Reads[OTIUMLGeneralizationSet]
+    = Json.reads[OTIUMLGeneralizationSet]
+  
+    implicit def writes
+    : Writes[OTIUMLGeneralizationSet]
+    = Json.writes[OTIUMLGeneralizationSet]
+  
+    implicit def formats
+    : Format[OTIUMLGeneralizationSet]
+    = Json.format[OTIUMLGeneralizationSet]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLImage
     * @param content Defined in Image
@@ -3236,6 +4580,22 @@ object OTIMOFElement {
   with UMLImage
   {}
 
+  object OTIUMLImage {
+     
+    implicit def reads
+    : Reads[OTIUMLImage]
+    = Json.reads[OTIUMLImage]
+  
+    implicit def writes
+    : Writes[OTIUMLImage]
+    = Json.writes[OTIUMLImage]
+  
+    implicit def formats
+    : Format[OTIUMLImage]
+    = Json.format[OTIUMLImage]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLInclude
     * @param name Defined in NamedElement
@@ -3249,6 +4609,22 @@ object OTIMOFElement {
   with UMLInclude
   {}
 
+  object OTIUMLInclude {
+     
+    implicit def reads
+    : Reads[OTIUMLInclude]
+    = Json.reads[OTIUMLInclude]
+  
+    implicit def writes
+    : Writes[OTIUMLInclude]
+    = Json.writes[OTIUMLInclude]
+  
+    implicit def formats
+    : Format[OTIUMLInclude]
+    = Json.format[OTIUMLInclude]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLInformationFlow
     * @param name Defined in NamedElement
@@ -3261,6 +4637,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLInformationFlow
   {}
+
+  object OTIUMLInformationFlow {
+     
+    implicit def reads
+    : Reads[OTIUMLInformationFlow]
+    = Json.reads[OTIUMLInformationFlow]
+  
+    implicit def writes
+    : Writes[OTIUMLInformationFlow]
+    = Json.writes[OTIUMLInformationFlow]
+  
+    implicit def formats
+    : Format[OTIUMLInformationFlow]
+    = Json.format[OTIUMLInformationFlow]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLInformationItem
@@ -3281,6 +4673,22 @@ object OTIMOFElement {
   with UMLInformationItem
   {}
 
+  object OTIUMLInformationItem {
+     
+    implicit def reads
+    : Reads[OTIUMLInformationItem]
+    = Json.reads[OTIUMLInformationItem]
+  
+    implicit def writes
+    : Writes[OTIUMLInformationItem]
+    = Json.writes[OTIUMLInformationItem]
+  
+    implicit def formats
+    : Format[OTIUMLInformationItem]
+    = Json.format[OTIUMLInformationItem]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLInitialNode
     * @param isLeaf Defined in RedefinableElement
@@ -3295,6 +4703,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLInitialNode
   {}
+
+  object OTIUMLInitialNode {
+     
+    implicit def reads
+    : Reads[OTIUMLInitialNode]
+    = Json.reads[OTIUMLInitialNode]
+  
+    implicit def writes
+    : Writes[OTIUMLInitialNode]
+    = Json.writes[OTIUMLInitialNode]
+  
+    implicit def formats
+    : Format[OTIUMLInitialNode]
+    = Json.format[OTIUMLInitialNode]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLInputPin
@@ -3321,6 +4745,22 @@ object OTIMOFElement {
   with UMLInputPin
   {}
 
+  object OTIUMLInputPin {
+     
+    implicit def reads
+    : Reads[OTIUMLInputPin]
+    = Json.reads[OTIUMLInputPin]
+  
+    implicit def writes
+    : Writes[OTIUMLInputPin]
+    = Json.writes[OTIUMLInputPin]
+  
+    implicit def formats
+    : Format[OTIUMLInputPin]
+    = Json.format[OTIUMLInputPin]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLInstanceSpecification
     * @param name Defined in NamedElement
@@ -3334,6 +4774,22 @@ object OTIMOFElement {
   with UMLInstanceSpecification
   {}
 
+  object OTIUMLInstanceSpecification {
+     
+    implicit def reads
+    : Reads[OTIUMLInstanceSpecification]
+    = Json.reads[OTIUMLInstanceSpecification]
+  
+    implicit def writes
+    : Writes[OTIUMLInstanceSpecification]
+    = Json.writes[OTIUMLInstanceSpecification]
+  
+    implicit def formats
+    : Format[OTIUMLInstanceSpecification]
+    = Json.format[OTIUMLInstanceSpecification]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLInstanceValue
     * @param name Defined in NamedElement
@@ -3346,6 +4802,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLInstanceValue
   {}
+
+  object OTIUMLInstanceValue {
+     
+    implicit def reads
+    : Reads[OTIUMLInstanceValue]
+    = Json.reads[OTIUMLInstanceValue]
+  
+    implicit def writes
+    : Writes[OTIUMLInstanceValue]
+    = Json.writes[OTIUMLInstanceValue]
+  
+    implicit def formats
+    : Format[OTIUMLInstanceValue]
+    = Json.format[OTIUMLInstanceValue]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLInteraction
@@ -3370,6 +4842,22 @@ object OTIMOFElement {
   with UMLInteraction
   {}
 
+  object OTIUMLInteraction {
+     
+    implicit def reads
+    : Reads[OTIUMLInteraction]
+    = Json.reads[OTIUMLInteraction]
+  
+    implicit def writes
+    : Writes[OTIUMLInteraction]
+    = Json.writes[OTIUMLInteraction]
+  
+    implicit def formats
+    : Format[OTIUMLInteraction]
+    = Json.format[OTIUMLInteraction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLInteractionConstraint
     * @param name Defined in NamedElement
@@ -3382,6 +4870,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLInteractionConstraint
   {}
+
+  object OTIUMLInteractionConstraint {
+     
+    implicit def reads
+    : Reads[OTIUMLInteractionConstraint]
+    = Json.reads[OTIUMLInteractionConstraint]
+  
+    implicit def writes
+    : Writes[OTIUMLInteractionConstraint]
+    = Json.writes[OTIUMLInteractionConstraint]
+  
+    implicit def formats
+    : Format[OTIUMLInteractionConstraint]
+    = Json.format[OTIUMLInteractionConstraint]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLInteractionOperand
@@ -3396,6 +4900,22 @@ object OTIMOFElement {
   with UMLInteractionOperand
   {}
 
+  object OTIUMLInteractionOperand {
+     
+    implicit def reads
+    : Reads[OTIUMLInteractionOperand]
+    = Json.reads[OTIUMLInteractionOperand]
+  
+    implicit def writes
+    : Writes[OTIUMLInteractionOperand]
+    = Json.writes[OTIUMLInteractionOperand]
+  
+    implicit def formats
+    : Format[OTIUMLInteractionOperand]
+    = Json.format[OTIUMLInteractionOperand]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLInteractionUse
     * @param name Defined in NamedElement
@@ -3408,6 +4928,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLInteractionUse
   {}
+
+  object OTIUMLInteractionUse {
+     
+    implicit def reads
+    : Reads[OTIUMLInteractionUse]
+    = Json.reads[OTIUMLInteractionUse]
+  
+    implicit def writes
+    : Writes[OTIUMLInteractionUse]
+    = Json.writes[OTIUMLInteractionUse]
+  
+    implicit def formats
+    : Format[OTIUMLInteractionUse]
+    = Json.format[OTIUMLInteractionUse]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLInterface
@@ -3428,6 +4964,22 @@ object OTIMOFElement {
   with UMLInterface
   {}
 
+  object OTIUMLInterface {
+     
+    implicit def reads
+    : Reads[OTIUMLInterface]
+    = Json.reads[OTIUMLInterface]
+  
+    implicit def writes
+    : Writes[OTIUMLInterface]
+    = Json.writes[OTIUMLInterface]
+  
+    implicit def formats
+    : Format[OTIUMLInterface]
+    = Json.format[OTIUMLInterface]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLInterfaceRealization
     * @param name Defined in NamedElement
@@ -3440,6 +4992,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLInterfaceRealization
   {}
+
+  object OTIUMLInterfaceRealization {
+     
+    implicit def reads
+    : Reads[OTIUMLInterfaceRealization]
+    = Json.reads[OTIUMLInterfaceRealization]
+  
+    implicit def writes
+    : Writes[OTIUMLInterfaceRealization]
+    = Json.writes[OTIUMLInterfaceRealization]
+  
+    implicit def formats
+    : Format[OTIUMLInterfaceRealization]
+    = Json.format[OTIUMLInterfaceRealization]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLInterruptibleActivityRegion
@@ -3454,6 +5022,22 @@ object OTIMOFElement {
   with UMLInterruptibleActivityRegion
   {}
 
+  object OTIUMLInterruptibleActivityRegion {
+     
+    implicit def reads
+    : Reads[OTIUMLInterruptibleActivityRegion]
+    = Json.reads[OTIUMLInterruptibleActivityRegion]
+  
+    implicit def writes
+    : Writes[OTIUMLInterruptibleActivityRegion]
+    = Json.writes[OTIUMLInterruptibleActivityRegion]
+  
+    implicit def formats
+    : Format[OTIUMLInterruptibleActivityRegion]
+    = Json.format[OTIUMLInterruptibleActivityRegion]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLInterval
     * @param name Defined in NamedElement
@@ -3467,6 +5051,22 @@ object OTIMOFElement {
   with UMLInterval
   {}
 
+  object OTIUMLInterval {
+     
+    implicit def reads
+    : Reads[OTIUMLInterval]
+    = Json.reads[OTIUMLInterval]
+  
+    implicit def writes
+    : Writes[OTIUMLInterval]
+    = Json.writes[OTIUMLInterval]
+  
+    implicit def formats
+    : Format[OTIUMLInterval]
+    = Json.format[OTIUMLInterval]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLIntervalConstraint
     * @param name Defined in NamedElement
@@ -3479,6 +5079,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLIntervalConstraint
   {}
+
+  object OTIUMLIntervalConstraint {
+     
+    implicit def reads
+    : Reads[OTIUMLIntervalConstraint]
+    = Json.reads[OTIUMLIntervalConstraint]
+  
+    implicit def writes
+    : Writes[OTIUMLIntervalConstraint]
+    = Json.writes[OTIUMLIntervalConstraint]
+  
+    implicit def formats
+    : Format[OTIUMLIntervalConstraint]
+    = Json.format[OTIUMLIntervalConstraint]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLJoinNode
@@ -3497,6 +5113,22 @@ object OTIMOFElement {
   with UMLJoinNode
   {}
 
+  object OTIUMLJoinNode {
+     
+    implicit def reads
+    : Reads[OTIUMLJoinNode]
+    = Json.reads[OTIUMLJoinNode]
+  
+    implicit def writes
+    : Writes[OTIUMLJoinNode]
+    = Json.writes[OTIUMLJoinNode]
+  
+    implicit def formats
+    : Format[OTIUMLJoinNode]
+    = Json.format[OTIUMLJoinNode]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLLifeline
     * @param name Defined in NamedElement
@@ -3510,6 +5142,22 @@ object OTIMOFElement {
   with UMLLifeline
   {}
 
+  object OTIUMLLifeline {
+     
+    implicit def reads
+    : Reads[OTIUMLLifeline]
+    = Json.reads[OTIUMLLifeline]
+  
+    implicit def writes
+    : Writes[OTIUMLLifeline]
+    = Json.writes[OTIUMLLifeline]
+  
+    implicit def formats
+    : Format[OTIUMLLifeline]
+    = Json.format[OTIUMLLifeline]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLLinkEndCreationData
     * @param isReplaceAll Defined in LinkEndCreationData
@@ -3521,6 +5169,22 @@ object OTIMOFElement {
   with UMLLinkEndCreationData
   {}
 
+  object OTIUMLLinkEndCreationData {
+     
+    implicit def reads
+    : Reads[OTIUMLLinkEndCreationData]
+    = Json.reads[OTIUMLLinkEndCreationData]
+  
+    implicit def writes
+    : Writes[OTIUMLLinkEndCreationData]
+    = Json.writes[OTIUMLLinkEndCreationData]
+  
+    implicit def formats
+    : Format[OTIUMLLinkEndCreationData]
+    = Json.format[OTIUMLLinkEndCreationData]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLLinkEndData
     */
@@ -3529,6 +5193,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLLinkEndData
   {}
+
+  object OTIUMLLinkEndData {
+     
+    implicit def reads
+    : Reads[OTIUMLLinkEndData]
+    = Json.reads[OTIUMLLinkEndData]
+  
+    implicit def writes
+    : Writes[OTIUMLLinkEndData]
+    = Json.writes[OTIUMLLinkEndData]
+  
+    implicit def formats
+    : Format[OTIUMLLinkEndData]
+    = Json.format[OTIUMLLinkEndData]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLLinkEndDestructionData
@@ -3540,6 +5220,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLLinkEndDestructionData
   {}
+
+  object OTIUMLLinkEndDestructionData {
+     
+    implicit def reads
+    : Reads[OTIUMLLinkEndDestructionData]
+    = Json.reads[OTIUMLLinkEndDestructionData]
+  
+    implicit def writes
+    : Writes[OTIUMLLinkEndDestructionData]
+    = Json.writes[OTIUMLLinkEndDestructionData]
+  
+    implicit def formats
+    : Format[OTIUMLLinkEndDestructionData]
+    = Json.format[OTIUMLLinkEndDestructionData]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLLiteralBoolean
@@ -3556,6 +5252,22 @@ object OTIMOFElement {
   with UMLLiteralBoolean
   {}
 
+  object OTIUMLLiteralBoolean {
+     
+    implicit def reads
+    : Reads[OTIUMLLiteralBoolean]
+    = Json.reads[OTIUMLLiteralBoolean]
+  
+    implicit def writes
+    : Writes[OTIUMLLiteralBoolean]
+    = Json.writes[OTIUMLLiteralBoolean]
+  
+    implicit def formats
+    : Format[OTIUMLLiteralBoolean]
+    = Json.format[OTIUMLLiteralBoolean]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLLiteralInteger
     * @param name Defined in NamedElement
@@ -3571,6 +5283,22 @@ object OTIMOFElement {
   with UMLLiteralInteger
   {}
 
+  object OTIUMLLiteralInteger {
+     
+    implicit def reads
+    : Reads[OTIUMLLiteralInteger]
+    = Json.reads[OTIUMLLiteralInteger]
+  
+    implicit def writes
+    : Writes[OTIUMLLiteralInteger]
+    = Json.writes[OTIUMLLiteralInteger]
+  
+    implicit def formats
+    : Format[OTIUMLLiteralInteger]
+    = Json.format[OTIUMLLiteralInteger]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLLiteralNull
     * @param name Defined in NamedElement
@@ -3583,6 +5311,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLLiteralNull
   {}
+
+  object OTIUMLLiteralNull {
+     
+    implicit def reads
+    : Reads[OTIUMLLiteralNull]
+    = Json.reads[OTIUMLLiteralNull]
+  
+    implicit def writes
+    : Writes[OTIUMLLiteralNull]
+    = Json.writes[OTIUMLLiteralNull]
+  
+    implicit def formats
+    : Format[OTIUMLLiteralNull]
+    = Json.format[OTIUMLLiteralNull]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLLiteralReal
@@ -3599,6 +5343,22 @@ object OTIMOFElement {
   with UMLLiteralReal
   {}
 
+  object OTIUMLLiteralReal {
+     
+    implicit def reads
+    : Reads[OTIUMLLiteralReal]
+    = Json.reads[OTIUMLLiteralReal]
+  
+    implicit def writes
+    : Writes[OTIUMLLiteralReal]
+    = Json.writes[OTIUMLLiteralReal]
+  
+    implicit def formats
+    : Format[OTIUMLLiteralReal]
+    = Json.format[OTIUMLLiteralReal]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLLiteralString
     * @param name Defined in NamedElement
@@ -3614,6 +5374,22 @@ object OTIMOFElement {
   with UMLLiteralString
   {}
 
+  object OTIUMLLiteralString {
+     
+    implicit def reads
+    : Reads[OTIUMLLiteralString]
+    = Json.reads[OTIUMLLiteralString]
+  
+    implicit def writes
+    : Writes[OTIUMLLiteralString]
+    = Json.writes[OTIUMLLiteralString]
+  
+    implicit def formats
+    : Format[OTIUMLLiteralString]
+    = Json.format[OTIUMLLiteralString]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLLiteralUnlimitedNatural
     * @param name Defined in NamedElement
@@ -3628,6 +5404,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLLiteralUnlimitedNatural
   {}
+
+  object OTIUMLLiteralUnlimitedNatural {
+     
+    implicit def reads
+    : Reads[OTIUMLLiteralUnlimitedNatural]
+    = Json.reads[OTIUMLLiteralUnlimitedNatural]
+  
+    implicit def writes
+    : Writes[OTIUMLLiteralUnlimitedNatural]
+    = Json.writes[OTIUMLLiteralUnlimitedNatural]
+  
+    implicit def formats
+    : Format[OTIUMLLiteralUnlimitedNatural]
+    = Json.format[OTIUMLLiteralUnlimitedNatural]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLLoopNode
@@ -3650,6 +5442,22 @@ object OTIMOFElement {
   with UMLLoopNode
   {}
 
+  object OTIUMLLoopNode {
+     
+    implicit def reads
+    : Reads[OTIUMLLoopNode]
+    = Json.reads[OTIUMLLoopNode]
+  
+    implicit def writes
+    : Writes[OTIUMLLoopNode]
+    = Json.writes[OTIUMLLoopNode]
+  
+    implicit def formats
+    : Format[OTIUMLLoopNode]
+    = Json.format[OTIUMLLoopNode]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLManifestation
     * @param name Defined in NamedElement
@@ -3662,6 +5470,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLManifestation
   {}
+
+  object OTIUMLManifestation {
+     
+    implicit def reads
+    : Reads[OTIUMLManifestation]
+    = Json.reads[OTIUMLManifestation]
+  
+    implicit def writes
+    : Writes[OTIUMLManifestation]
+    = Json.writes[OTIUMLManifestation]
+  
+    implicit def formats
+    : Format[OTIUMLManifestation]
+    = Json.format[OTIUMLManifestation]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLMergeNode
@@ -3678,6 +5502,22 @@ object OTIMOFElement {
   with UMLMergeNode
   {}
 
+  object OTIUMLMergeNode {
+     
+    implicit def reads
+    : Reads[OTIUMLMergeNode]
+    = Json.reads[OTIUMLMergeNode]
+  
+    implicit def writes
+    : Writes[OTIUMLMergeNode]
+    = Json.writes[OTIUMLMergeNode]
+  
+    implicit def formats
+    : Format[OTIUMLMergeNode]
+    = Json.format[OTIUMLMergeNode]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLMessage
     * @param messageSort Defined in Message
@@ -3693,6 +5533,22 @@ object OTIMOFElement {
   with UMLMessage
   {}
 
+  object OTIUMLMessage {
+     
+    implicit def reads
+    : Reads[OTIUMLMessage]
+    = Json.reads[OTIUMLMessage]
+  
+    implicit def writes
+    : Writes[OTIUMLMessage]
+    = Json.writes[OTIUMLMessage]
+  
+    implicit def formats
+    : Format[OTIUMLMessage]
+    = Json.format[OTIUMLMessage]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLMessageOccurrenceSpecification
     * @param name Defined in NamedElement
@@ -3705,6 +5561,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLMessageOccurrenceSpecification
   {}
+
+  object OTIUMLMessageOccurrenceSpecification {
+     
+    implicit def reads
+    : Reads[OTIUMLMessageOccurrenceSpecification]
+    = Json.reads[OTIUMLMessageOccurrenceSpecification]
+  
+    implicit def writes
+    : Writes[OTIUMLMessageOccurrenceSpecification]
+    = Json.writes[OTIUMLMessageOccurrenceSpecification]
+  
+    implicit def formats
+    : Format[OTIUMLMessageOccurrenceSpecification]
+    = Json.format[OTIUMLMessageOccurrenceSpecification]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLModel
@@ -3722,6 +5594,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLModel
   {}
+
+  object OTIUMLModel {
+     
+    implicit def reads
+    : Reads[OTIUMLModel]
+    = Json.reads[OTIUMLModel]
+  
+    implicit def writes
+    : Writes[OTIUMLModel]
+    = Json.writes[OTIUMLModel]
+  
+    implicit def formats
+    : Format[OTIUMLModel]
+    = Json.format[OTIUMLModel]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLNode
@@ -3744,6 +5632,22 @@ object OTIMOFElement {
   with UMLNode
   {}
 
+  object OTIUMLNode {
+     
+    implicit def reads
+    : Reads[OTIUMLNode]
+    = Json.reads[OTIUMLNode]
+  
+    implicit def writes
+    : Writes[OTIUMLNode]
+    = Json.writes[OTIUMLNode]
+  
+    implicit def formats
+    : Format[OTIUMLNode]
+    = Json.format[OTIUMLNode]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLObjectFlow
     * @param isLeaf Defined in RedefinableElement
@@ -3763,6 +5667,22 @@ object OTIMOFElement {
   with UMLObjectFlow
   {}
 
+  object OTIUMLObjectFlow {
+     
+    implicit def reads
+    : Reads[OTIUMLObjectFlow]
+    = Json.reads[OTIUMLObjectFlow]
+  
+    implicit def writes
+    : Writes[OTIUMLObjectFlow]
+    = Json.writes[OTIUMLObjectFlow]
+  
+    implicit def formats
+    : Format[OTIUMLObjectFlow]
+    = Json.format[OTIUMLObjectFlow]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLOccurrenceSpecification
     * @param name Defined in NamedElement
@@ -3775,6 +5695,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLOccurrenceSpecification
   {}
+
+  object OTIUMLOccurrenceSpecification {
+     
+    implicit def reads
+    : Reads[OTIUMLOccurrenceSpecification]
+    = Json.reads[OTIUMLOccurrenceSpecification]
+  
+    implicit def writes
+    : Writes[OTIUMLOccurrenceSpecification]
+    = Json.writes[OTIUMLOccurrenceSpecification]
+  
+    implicit def formats
+    : Format[OTIUMLOccurrenceSpecification]
+    = Json.format[OTIUMLOccurrenceSpecification]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLOpaqueAction
@@ -3796,6 +5732,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLOpaqueAction
   {}
+
+  object OTIUMLOpaqueAction {
+     
+    implicit def reads
+    : Reads[OTIUMLOpaqueAction]
+    = Json.reads[OTIUMLOpaqueAction]
+  
+    implicit def writes
+    : Writes[OTIUMLOpaqueAction]
+    = Json.writes[OTIUMLOpaqueAction]
+  
+    implicit def formats
+    : Format[OTIUMLOpaqueAction]
+    = Json.format[OTIUMLOpaqueAction]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLOpaqueBehavior
@@ -3824,6 +5776,22 @@ object OTIMOFElement {
   with UMLOpaqueBehavior
   {}
 
+  object OTIUMLOpaqueBehavior {
+     
+    implicit def reads
+    : Reads[OTIUMLOpaqueBehavior]
+    = Json.reads[OTIUMLOpaqueBehavior]
+  
+    implicit def writes
+    : Writes[OTIUMLOpaqueBehavior]
+    = Json.writes[OTIUMLOpaqueBehavior]
+  
+    implicit def formats
+    : Format[OTIUMLOpaqueBehavior]
+    = Json.format[OTIUMLOpaqueBehavior]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLOpaqueExpression
     * @param body Defined in OpaqueExpression
@@ -3840,6 +5808,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLOpaqueExpression
   {}
+
+  object OTIUMLOpaqueExpression {
+     
+    implicit def reads
+    : Reads[OTIUMLOpaqueExpression]
+    = Json.reads[OTIUMLOpaqueExpression]
+  
+    implicit def writes
+    : Writes[OTIUMLOpaqueExpression]
+    = Json.writes[OTIUMLOpaqueExpression]
+  
+    implicit def formats
+    : Format[OTIUMLOpaqueExpression]
+    = Json.format[OTIUMLOpaqueExpression]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLOperation
@@ -3864,6 +5848,22 @@ object OTIMOFElement {
   with UMLOperation
   {}
 
+  object OTIUMLOperation {
+     
+    implicit def reads
+    : Reads[OTIUMLOperation]
+    = Json.reads[OTIUMLOperation]
+  
+    implicit def writes
+    : Writes[OTIUMLOperation]
+    = Json.writes[OTIUMLOperation]
+  
+    implicit def formats
+    : Format[OTIUMLOperation]
+    = Json.format[OTIUMLOperation]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLOperationTemplateParameter
     */
@@ -3872,6 +5872,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLOperationTemplateParameter
   {}
+
+  object OTIUMLOperationTemplateParameter {
+     
+    implicit def reads
+    : Reads[OTIUMLOperationTemplateParameter]
+    = Json.reads[OTIUMLOperationTemplateParameter]
+  
+    implicit def writes
+    : Writes[OTIUMLOperationTemplateParameter]
+    = Json.writes[OTIUMLOperationTemplateParameter]
+  
+    implicit def formats
+    : Format[OTIUMLOperationTemplateParameter]
+    = Json.format[OTIUMLOperationTemplateParameter]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLOutputPin
@@ -3898,6 +5914,22 @@ object OTIMOFElement {
   with UMLOutputPin
   {}
 
+  object OTIUMLOutputPin {
+     
+    implicit def reads
+    : Reads[OTIUMLOutputPin]
+    = Json.reads[OTIUMLOutputPin]
+  
+    implicit def writes
+    : Writes[OTIUMLOutputPin]
+    = Json.writes[OTIUMLOutputPin]
+  
+    implicit def formats
+    : Format[OTIUMLOutputPin]
+    = Json.format[OTIUMLOutputPin]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLPackage
     * @param URI Defined in Package
@@ -3913,6 +5945,22 @@ object OTIMOFElement {
   with UMLPackage
   {}
 
+  object OTIUMLPackage {
+     
+    implicit def reads
+    : Reads[OTIUMLPackage]
+    = Json.reads[OTIUMLPackage]
+  
+    implicit def writes
+    : Writes[OTIUMLPackage]
+    = Json.writes[OTIUMLPackage]
+  
+    implicit def formats
+    : Format[OTIUMLPackage]
+    = Json.format[OTIUMLPackage]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLPackageImport
     * @param visibility Defined in PackageImport
@@ -3924,6 +5972,22 @@ object OTIMOFElement {
   with UMLPackageImport
   {}
 
+  object OTIUMLPackageImport {
+     
+    implicit def reads
+    : Reads[OTIUMLPackageImport]
+    = Json.reads[OTIUMLPackageImport]
+  
+    implicit def writes
+    : Writes[OTIUMLPackageImport]
+    = Json.writes[OTIUMLPackageImport]
+  
+    implicit def formats
+    : Format[OTIUMLPackageImport]
+    = Json.format[OTIUMLPackageImport]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLPackageMerge
     */
@@ -3932,6 +5996,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLPackageMerge
   {}
+
+  object OTIUMLPackageMerge {
+     
+    implicit def reads
+    : Reads[OTIUMLPackageMerge]
+    = Json.reads[OTIUMLPackageMerge]
+  
+    implicit def writes
+    : Writes[OTIUMLPackageMerge]
+    = Json.writes[OTIUMLPackageMerge]
+  
+    implicit def formats
+    : Format[OTIUMLPackageMerge]
+    = Json.format[OTIUMLPackageMerge]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLParameter
@@ -3958,6 +6038,22 @@ object OTIMOFElement {
   with UMLParameter
   {}
 
+  object OTIUMLParameter {
+     
+    implicit def reads
+    : Reads[OTIUMLParameter]
+    = Json.reads[OTIUMLParameter]
+  
+    implicit def writes
+    : Writes[OTIUMLParameter]
+    = Json.writes[OTIUMLParameter]
+  
+    implicit def formats
+    : Format[OTIUMLParameter]
+    = Json.format[OTIUMLParameter]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLParameterSet
     * @param name Defined in NamedElement
@@ -3971,6 +6067,22 @@ object OTIMOFElement {
   with UMLParameterSet
   {}
 
+  object OTIUMLParameterSet {
+     
+    implicit def reads
+    : Reads[OTIUMLParameterSet]
+    = Json.reads[OTIUMLParameterSet]
+  
+    implicit def writes
+    : Writes[OTIUMLParameterSet]
+    = Json.writes[OTIUMLParameterSet]
+  
+    implicit def formats
+    : Format[OTIUMLParameterSet]
+    = Json.format[OTIUMLParameterSet]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLPartDecomposition
     * @param name Defined in NamedElement
@@ -3983,6 +6095,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLPartDecomposition
   {}
+
+  object OTIUMLPartDecomposition {
+     
+    implicit def reads
+    : Reads[OTIUMLPartDecomposition]
+    = Json.reads[OTIUMLPartDecomposition]
+  
+    implicit def writes
+    : Writes[OTIUMLPartDecomposition]
+    = Json.writes[OTIUMLPartDecomposition]
+  
+    implicit def formats
+    : Format[OTIUMLPartDecomposition]
+    = Json.format[OTIUMLPartDecomposition]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLPort
@@ -4021,6 +6149,22 @@ object OTIMOFElement {
   with UMLPort
   {}
 
+  object OTIUMLPort {
+     
+    implicit def reads
+    : Reads[OTIUMLPort]
+    = Json.reads[OTIUMLPort]
+  
+    implicit def writes
+    : Writes[OTIUMLPort]
+    = Json.writes[OTIUMLPort]
+  
+    implicit def formats
+    : Format[OTIUMLPort]
+    = Json.format[OTIUMLPort]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLPrimitiveType
     * @param isAbstract Defined in Classifier
@@ -4040,6 +6184,22 @@ object OTIMOFElement {
   with UMLPrimitiveType
   {}
 
+  object OTIUMLPrimitiveType {
+     
+    implicit def reads
+    : Reads[OTIUMLPrimitiveType]
+    = Json.reads[OTIUMLPrimitiveType]
+  
+    implicit def writes
+    : Writes[OTIUMLPrimitiveType]
+    = Json.writes[OTIUMLPrimitiveType]
+  
+    implicit def formats
+    : Format[OTIUMLPrimitiveType]
+    = Json.format[OTIUMLPrimitiveType]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLProfile
     * @param URI Defined in Package
@@ -4055,6 +6215,22 @@ object OTIMOFElement {
   with UMLProfile
   {}
 
+  object OTIUMLProfile {
+     
+    implicit def reads
+    : Reads[OTIUMLProfile]
+    = Json.reads[OTIUMLProfile]
+  
+    implicit def writes
+    : Writes[OTIUMLProfile]
+    = Json.writes[OTIUMLProfile]
+  
+    implicit def formats
+    : Format[OTIUMLProfile]
+    = Json.format[OTIUMLProfile]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLProfileApplication
     * @param isStrict Defined in ProfileApplication
@@ -4065,6 +6241,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLProfileApplication
   {}
+
+  object OTIUMLProfileApplication {
+     
+    implicit def reads
+    : Reads[OTIUMLProfileApplication]
+    = Json.reads[OTIUMLProfileApplication]
+  
+    implicit def writes
+    : Writes[OTIUMLProfileApplication]
+    = Json.writes[OTIUMLProfileApplication]
+  
+    implicit def formats
+    : Format[OTIUMLProfileApplication]
+    = Json.format[OTIUMLProfileApplication]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLProperty
@@ -4097,6 +6289,22 @@ object OTIMOFElement {
   with UMLProperty
   {}
 
+  object OTIUMLProperty {
+     
+    implicit def reads
+    : Reads[OTIUMLProperty]
+    = Json.reads[OTIUMLProperty]
+  
+    implicit def writes
+    : Writes[OTIUMLProperty]
+    = Json.writes[OTIUMLProperty]
+  
+    implicit def formats
+    : Format[OTIUMLProperty]
+    = Json.format[OTIUMLProperty]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLProtocolConformance
     */
@@ -4105,6 +6313,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLProtocolConformance
   {}
+
+  object OTIUMLProtocolConformance {
+     
+    implicit def reads
+    : Reads[OTIUMLProtocolConformance]
+    = Json.reads[OTIUMLProtocolConformance]
+  
+    implicit def writes
+    : Writes[OTIUMLProtocolConformance]
+    = Json.writes[OTIUMLProtocolConformance]
+  
+    implicit def formats
+    : Format[OTIUMLProtocolConformance]
+    = Json.format[OTIUMLProtocolConformance]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLProtocolStateMachine
@@ -4129,6 +6353,22 @@ object OTIMOFElement {
   with UMLProtocolStateMachine
   {}
 
+  object OTIUMLProtocolStateMachine {
+     
+    implicit def reads
+    : Reads[OTIUMLProtocolStateMachine]
+    = Json.reads[OTIUMLProtocolStateMachine]
+  
+    implicit def writes
+    : Writes[OTIUMLProtocolStateMachine]
+    = Json.writes[OTIUMLProtocolStateMachine]
+  
+    implicit def formats
+    : Format[OTIUMLProtocolStateMachine]
+    = Json.format[OTIUMLProtocolStateMachine]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLProtocolTransition
     * @param isLeaf Defined in RedefinableElement
@@ -4146,6 +6386,22 @@ object OTIMOFElement {
   with UMLProtocolTransition
   {}
 
+  object OTIUMLProtocolTransition {
+     
+    implicit def reads
+    : Reads[OTIUMLProtocolTransition]
+    = Json.reads[OTIUMLProtocolTransition]
+  
+    implicit def writes
+    : Writes[OTIUMLProtocolTransition]
+    = Json.writes[OTIUMLProtocolTransition]
+  
+    implicit def formats
+    : Format[OTIUMLProtocolTransition]
+    = Json.format[OTIUMLProtocolTransition]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLPseudostate
     * @param kind Defined in Pseudostate
@@ -4161,6 +6417,22 @@ object OTIMOFElement {
   with UMLPseudostate
   {}
 
+  object OTIUMLPseudostate {
+     
+    implicit def reads
+    : Reads[OTIUMLPseudostate]
+    = Json.reads[OTIUMLPseudostate]
+  
+    implicit def writes
+    : Writes[OTIUMLPseudostate]
+    = Json.writes[OTIUMLPseudostate]
+  
+    implicit def formats
+    : Format[OTIUMLPseudostate]
+    = Json.format[OTIUMLPseudostate]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLQualifierValue
     */
@@ -4169,6 +6441,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLQualifierValue
   {}
+
+  object OTIUMLQualifierValue {
+     
+    implicit def reads
+    : Reads[OTIUMLQualifierValue]
+    = Json.reads[OTIUMLQualifierValue]
+  
+    implicit def writes
+    : Writes[OTIUMLQualifierValue]
+    = Json.writes[OTIUMLQualifierValue]
+  
+    implicit def formats
+    : Format[OTIUMLQualifierValue]
+    = Json.format[OTIUMLQualifierValue]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLRaiseExceptionAction
@@ -4187,6 +6475,22 @@ object OTIMOFElement {
   with UMLRaiseExceptionAction
   {}
 
+  object OTIUMLRaiseExceptionAction {
+     
+    implicit def reads
+    : Reads[OTIUMLRaiseExceptionAction]
+    = Json.reads[OTIUMLRaiseExceptionAction]
+  
+    implicit def writes
+    : Writes[OTIUMLRaiseExceptionAction]
+    = Json.writes[OTIUMLRaiseExceptionAction]
+  
+    implicit def formats
+    : Format[OTIUMLRaiseExceptionAction]
+    = Json.format[OTIUMLRaiseExceptionAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLReadExtentAction
     * @param isLeaf Defined in RedefinableElement
@@ -4203,6 +6507,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLReadExtentAction
   {}
+
+  object OTIUMLReadExtentAction {
+     
+    implicit def reads
+    : Reads[OTIUMLReadExtentAction]
+    = Json.reads[OTIUMLReadExtentAction]
+  
+    implicit def writes
+    : Writes[OTIUMLReadExtentAction]
+    = Json.writes[OTIUMLReadExtentAction]
+  
+    implicit def formats
+    : Format[OTIUMLReadExtentAction]
+    = Json.format[OTIUMLReadExtentAction]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLReadIsClassifiedObjectAction
@@ -4223,6 +6543,22 @@ object OTIMOFElement {
   with UMLReadIsClassifiedObjectAction
   {}
 
+  object OTIUMLReadIsClassifiedObjectAction {
+     
+    implicit def reads
+    : Reads[OTIUMLReadIsClassifiedObjectAction]
+    = Json.reads[OTIUMLReadIsClassifiedObjectAction]
+  
+    implicit def writes
+    : Writes[OTIUMLReadIsClassifiedObjectAction]
+    = Json.writes[OTIUMLReadIsClassifiedObjectAction]
+  
+    implicit def formats
+    : Format[OTIUMLReadIsClassifiedObjectAction]
+    = Json.format[OTIUMLReadIsClassifiedObjectAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLReadLinkAction
     * @param isLeaf Defined in RedefinableElement
@@ -4239,6 +6575,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLReadLinkAction
   {}
+
+  object OTIUMLReadLinkAction {
+     
+    implicit def reads
+    : Reads[OTIUMLReadLinkAction]
+    = Json.reads[OTIUMLReadLinkAction]
+  
+    implicit def writes
+    : Writes[OTIUMLReadLinkAction]
+    = Json.writes[OTIUMLReadLinkAction]
+  
+    implicit def formats
+    : Format[OTIUMLReadLinkAction]
+    = Json.format[OTIUMLReadLinkAction]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLReadLinkObjectEndAction
@@ -4257,6 +6609,22 @@ object OTIMOFElement {
   with UMLReadLinkObjectEndAction
   {}
 
+  object OTIUMLReadLinkObjectEndAction {
+     
+    implicit def reads
+    : Reads[OTIUMLReadLinkObjectEndAction]
+    = Json.reads[OTIUMLReadLinkObjectEndAction]
+  
+    implicit def writes
+    : Writes[OTIUMLReadLinkObjectEndAction]
+    = Json.writes[OTIUMLReadLinkObjectEndAction]
+  
+    implicit def formats
+    : Format[OTIUMLReadLinkObjectEndAction]
+    = Json.format[OTIUMLReadLinkObjectEndAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLReadLinkObjectEndQualifierAction
     * @param isLeaf Defined in RedefinableElement
@@ -4273,6 +6641,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLReadLinkObjectEndQualifierAction
   {}
+
+  object OTIUMLReadLinkObjectEndQualifierAction {
+     
+    implicit def reads
+    : Reads[OTIUMLReadLinkObjectEndQualifierAction]
+    = Json.reads[OTIUMLReadLinkObjectEndQualifierAction]
+  
+    implicit def writes
+    : Writes[OTIUMLReadLinkObjectEndQualifierAction]
+    = Json.writes[OTIUMLReadLinkObjectEndQualifierAction]
+  
+    implicit def formats
+    : Format[OTIUMLReadLinkObjectEndQualifierAction]
+    = Json.format[OTIUMLReadLinkObjectEndQualifierAction]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLReadSelfAction
@@ -4291,6 +6675,22 @@ object OTIMOFElement {
   with UMLReadSelfAction
   {}
 
+  object OTIUMLReadSelfAction {
+     
+    implicit def reads
+    : Reads[OTIUMLReadSelfAction]
+    = Json.reads[OTIUMLReadSelfAction]
+  
+    implicit def writes
+    : Writes[OTIUMLReadSelfAction]
+    = Json.writes[OTIUMLReadSelfAction]
+  
+    implicit def formats
+    : Format[OTIUMLReadSelfAction]
+    = Json.format[OTIUMLReadSelfAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLReadStructuralFeatureAction
     * @param isLeaf Defined in RedefinableElement
@@ -4307,6 +6707,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLReadStructuralFeatureAction
   {}
+
+  object OTIUMLReadStructuralFeatureAction {
+     
+    implicit def reads
+    : Reads[OTIUMLReadStructuralFeatureAction]
+    = Json.reads[OTIUMLReadStructuralFeatureAction]
+  
+    implicit def writes
+    : Writes[OTIUMLReadStructuralFeatureAction]
+    = Json.writes[OTIUMLReadStructuralFeatureAction]
+  
+    implicit def formats
+    : Format[OTIUMLReadStructuralFeatureAction]
+    = Json.format[OTIUMLReadStructuralFeatureAction]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLReadVariableAction
@@ -4325,6 +6741,22 @@ object OTIMOFElement {
   with UMLReadVariableAction
   {}
 
+  object OTIUMLReadVariableAction {
+     
+    implicit def reads
+    : Reads[OTIUMLReadVariableAction]
+    = Json.reads[OTIUMLReadVariableAction]
+  
+    implicit def writes
+    : Writes[OTIUMLReadVariableAction]
+    = Json.writes[OTIUMLReadVariableAction]
+  
+    implicit def formats
+    : Format[OTIUMLReadVariableAction]
+    = Json.format[OTIUMLReadVariableAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLRealization
     * @param name Defined in NamedElement
@@ -4337,6 +6769,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLRealization
   {}
+
+  object OTIUMLRealization {
+     
+    implicit def reads
+    : Reads[OTIUMLRealization]
+    = Json.reads[OTIUMLRealization]
+  
+    implicit def writes
+    : Writes[OTIUMLRealization]
+    = Json.writes[OTIUMLRealization]
+  
+    implicit def formats
+    : Format[OTIUMLRealization]
+    = Json.format[OTIUMLRealization]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLReception
@@ -4359,6 +6807,22 @@ object OTIMOFElement {
   with UMLReception
   {}
 
+  object OTIUMLReception {
+     
+    implicit def reads
+    : Reads[OTIUMLReception]
+    = Json.reads[OTIUMLReception]
+  
+    implicit def writes
+    : Writes[OTIUMLReception]
+    = Json.writes[OTIUMLReception]
+  
+    implicit def formats
+    : Format[OTIUMLReception]
+    = Json.format[OTIUMLReception]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLReclassifyObjectAction
     * @param isLeaf Defined in RedefinableElement
@@ -4378,6 +6842,22 @@ object OTIMOFElement {
   with UMLReclassifyObjectAction
   {}
 
+  object OTIUMLReclassifyObjectAction {
+     
+    implicit def reads
+    : Reads[OTIUMLReclassifyObjectAction]
+    = Json.reads[OTIUMLReclassifyObjectAction]
+  
+    implicit def writes
+    : Writes[OTIUMLReclassifyObjectAction]
+    = Json.writes[OTIUMLReclassifyObjectAction]
+  
+    implicit def formats
+    : Format[OTIUMLReclassifyObjectAction]
+    = Json.format[OTIUMLReclassifyObjectAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLRedefinableTemplateSignature
     * @param isLeaf Defined in RedefinableElement
@@ -4392,6 +6872,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLRedefinableTemplateSignature
   {}
+
+  object OTIUMLRedefinableTemplateSignature {
+     
+    implicit def reads
+    : Reads[OTIUMLRedefinableTemplateSignature]
+    = Json.reads[OTIUMLRedefinableTemplateSignature]
+  
+    implicit def writes
+    : Writes[OTIUMLRedefinableTemplateSignature]
+    = Json.writes[OTIUMLRedefinableTemplateSignature]
+  
+    implicit def formats
+    : Format[OTIUMLRedefinableTemplateSignature]
+    = Json.format[OTIUMLRedefinableTemplateSignature]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLReduceAction
@@ -4412,6 +6908,22 @@ object OTIMOFElement {
   with UMLReduceAction
   {}
 
+  object OTIUMLReduceAction {
+     
+    implicit def reads
+    : Reads[OTIUMLReduceAction]
+    = Json.reads[OTIUMLReduceAction]
+  
+    implicit def writes
+    : Writes[OTIUMLReduceAction]
+    = Json.writes[OTIUMLReduceAction]
+  
+    implicit def formats
+    : Format[OTIUMLReduceAction]
+    = Json.format[OTIUMLReduceAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLRegion
     * @param isLeaf Defined in RedefinableElement
@@ -4426,6 +6938,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLRegion
   {}
+
+  object OTIUMLRegion {
+     
+    implicit def reads
+    : Reads[OTIUMLRegion]
+    = Json.reads[OTIUMLRegion]
+  
+    implicit def writes
+    : Writes[OTIUMLRegion]
+    = Json.writes[OTIUMLRegion]
+  
+    implicit def formats
+    : Format[OTIUMLRegion]
+    = Json.format[OTIUMLRegion]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLRemoveStructuralFeatureValueAction
@@ -4446,6 +6974,22 @@ object OTIMOFElement {
   with UMLRemoveStructuralFeatureValueAction
   {}
 
+  object OTIUMLRemoveStructuralFeatureValueAction {
+     
+    implicit def reads
+    : Reads[OTIUMLRemoveStructuralFeatureValueAction]
+    = Json.reads[OTIUMLRemoveStructuralFeatureValueAction]
+  
+    implicit def writes
+    : Writes[OTIUMLRemoveStructuralFeatureValueAction]
+    = Json.writes[OTIUMLRemoveStructuralFeatureValueAction]
+  
+    implicit def formats
+    : Format[OTIUMLRemoveStructuralFeatureValueAction]
+    = Json.format[OTIUMLRemoveStructuralFeatureValueAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLRemoveVariableValueAction
     * @param isLeaf Defined in RedefinableElement
@@ -4465,6 +7009,22 @@ object OTIMOFElement {
   with UMLRemoveVariableValueAction
   {}
 
+  object OTIUMLRemoveVariableValueAction {
+     
+    implicit def reads
+    : Reads[OTIUMLRemoveVariableValueAction]
+    = Json.reads[OTIUMLRemoveVariableValueAction]
+  
+    implicit def writes
+    : Writes[OTIUMLRemoveVariableValueAction]
+    = Json.writes[OTIUMLRemoveVariableValueAction]
+  
+    implicit def formats
+    : Format[OTIUMLRemoveVariableValueAction]
+    = Json.format[OTIUMLRemoveVariableValueAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLReplyAction
     * @param isLeaf Defined in RedefinableElement
@@ -4481,6 +7041,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLReplyAction
   {}
+
+  object OTIUMLReplyAction {
+     
+    implicit def reads
+    : Reads[OTIUMLReplyAction]
+    = Json.reads[OTIUMLReplyAction]
+  
+    implicit def writes
+    : Writes[OTIUMLReplyAction]
+    = Json.writes[OTIUMLReplyAction]
+  
+    implicit def formats
+    : Format[OTIUMLReplyAction]
+    = Json.format[OTIUMLReplyAction]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLSendObjectAction
@@ -4499,6 +7075,22 @@ object OTIMOFElement {
   with UMLSendObjectAction
   {}
 
+  object OTIUMLSendObjectAction {
+     
+    implicit def reads
+    : Reads[OTIUMLSendObjectAction]
+    = Json.reads[OTIUMLSendObjectAction]
+  
+    implicit def writes
+    : Writes[OTIUMLSendObjectAction]
+    = Json.writes[OTIUMLSendObjectAction]
+  
+    implicit def formats
+    : Format[OTIUMLSendObjectAction]
+    = Json.format[OTIUMLSendObjectAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLSendSignalAction
     * @param isLeaf Defined in RedefinableElement
@@ -4515,6 +7107,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLSendSignalAction
   {}
+
+  object OTIUMLSendSignalAction {
+     
+    implicit def reads
+    : Reads[OTIUMLSendSignalAction]
+    = Json.reads[OTIUMLSendSignalAction]
+  
+    implicit def writes
+    : Writes[OTIUMLSendSignalAction]
+    = Json.writes[OTIUMLSendSignalAction]
+  
+    implicit def formats
+    : Format[OTIUMLSendSignalAction]
+    = Json.format[OTIUMLSendSignalAction]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLSequenceNode
@@ -4535,6 +7143,22 @@ object OTIMOFElement {
   with UMLSequenceNode
   {}
 
+  object OTIUMLSequenceNode {
+     
+    implicit def reads
+    : Reads[OTIUMLSequenceNode]
+    = Json.reads[OTIUMLSequenceNode]
+  
+    implicit def writes
+    : Writes[OTIUMLSequenceNode]
+    = Json.writes[OTIUMLSequenceNode]
+  
+    implicit def formats
+    : Format[OTIUMLSequenceNode]
+    = Json.format[OTIUMLSequenceNode]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLSignal
     * @param isAbstract Defined in Classifier
@@ -4554,6 +7178,22 @@ object OTIMOFElement {
   with UMLSignal
   {}
 
+  object OTIUMLSignal {
+     
+    implicit def reads
+    : Reads[OTIUMLSignal]
+    = Json.reads[OTIUMLSignal]
+  
+    implicit def writes
+    : Writes[OTIUMLSignal]
+    = Json.writes[OTIUMLSignal]
+  
+    implicit def formats
+    : Format[OTIUMLSignal]
+    = Json.format[OTIUMLSignal]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLSignalEvent
     * @param name Defined in NamedElement
@@ -4567,6 +7207,22 @@ object OTIMOFElement {
   with UMLSignalEvent
   {}
 
+  object OTIUMLSignalEvent {
+     
+    implicit def reads
+    : Reads[OTIUMLSignalEvent]
+    = Json.reads[OTIUMLSignalEvent]
+  
+    implicit def writes
+    : Writes[OTIUMLSignalEvent]
+    = Json.writes[OTIUMLSignalEvent]
+  
+    implicit def formats
+    : Format[OTIUMLSignalEvent]
+    = Json.format[OTIUMLSignalEvent]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLSlot
     */
@@ -4575,6 +7231,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLSlot
   {}
+
+  object OTIUMLSlot {
+     
+    implicit def reads
+    : Reads[OTIUMLSlot]
+    = Json.reads[OTIUMLSlot]
+  
+    implicit def writes
+    : Writes[OTIUMLSlot]
+    = Json.writes[OTIUMLSlot]
+  
+    implicit def formats
+    : Format[OTIUMLSlot]
+    = Json.format[OTIUMLSlot]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLStartClassifierBehaviorAction
@@ -4592,6 +7264,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLStartClassifierBehaviorAction
   {}
+
+  object OTIUMLStartClassifierBehaviorAction {
+     
+    implicit def reads
+    : Reads[OTIUMLStartClassifierBehaviorAction]
+    = Json.reads[OTIUMLStartClassifierBehaviorAction]
+  
+    implicit def writes
+    : Writes[OTIUMLStartClassifierBehaviorAction]
+    = Json.writes[OTIUMLStartClassifierBehaviorAction]
+  
+    implicit def formats
+    : Format[OTIUMLStartClassifierBehaviorAction]
+    = Json.format[OTIUMLStartClassifierBehaviorAction]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLStartObjectBehaviorAction
@@ -4612,6 +7300,22 @@ object OTIMOFElement {
   with UMLStartObjectBehaviorAction
   {}
 
+  object OTIUMLStartObjectBehaviorAction {
+     
+    implicit def reads
+    : Reads[OTIUMLStartObjectBehaviorAction]
+    = Json.reads[OTIUMLStartObjectBehaviorAction]
+  
+    implicit def writes
+    : Writes[OTIUMLStartObjectBehaviorAction]
+    = Json.writes[OTIUMLStartObjectBehaviorAction]
+  
+    implicit def formats
+    : Format[OTIUMLStartObjectBehaviorAction]
+    = Json.format[OTIUMLStartObjectBehaviorAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLState
     * @param isLeaf Defined in RedefinableElement
@@ -4627,6 +7331,22 @@ object OTIMOFElement {
   with UMLState
   {}
 
+  object OTIUMLState {
+     
+    implicit def reads
+    : Reads[OTIUMLState]
+    = Json.reads[OTIUMLState]
+  
+    implicit def writes
+    : Writes[OTIUMLState]
+    = Json.writes[OTIUMLState]
+  
+    implicit def formats
+    : Format[OTIUMLState]
+    = Json.format[OTIUMLState]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLStateInvariant
     * @param name Defined in NamedElement
@@ -4639,6 +7359,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLStateInvariant
   {}
+
+  object OTIUMLStateInvariant {
+     
+    implicit def reads
+    : Reads[OTIUMLStateInvariant]
+    = Json.reads[OTIUMLStateInvariant]
+  
+    implicit def writes
+    : Writes[OTIUMLStateInvariant]
+    = Json.writes[OTIUMLStateInvariant]
+  
+    implicit def formats
+    : Format[OTIUMLStateInvariant]
+    = Json.format[OTIUMLStateInvariant]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLStateMachine
@@ -4663,6 +7399,22 @@ object OTIMOFElement {
   with UMLStateMachine
   {}
 
+  object OTIUMLStateMachine {
+     
+    implicit def reads
+    : Reads[OTIUMLStateMachine]
+    = Json.reads[OTIUMLStateMachine]
+  
+    implicit def writes
+    : Writes[OTIUMLStateMachine]
+    = Json.writes[OTIUMLStateMachine]
+  
+    implicit def formats
+    : Format[OTIUMLStateMachine]
+    = Json.format[OTIUMLStateMachine]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLStereotype
     * @param isAbstract Defined in Class
@@ -4684,6 +7436,22 @@ object OTIMOFElement {
   with UMLStereotype
   {}
 
+  object OTIUMLStereotype {
+     
+    implicit def reads
+    : Reads[OTIUMLStereotype]
+    = Json.reads[OTIUMLStereotype]
+  
+    implicit def writes
+    : Writes[OTIUMLStereotype]
+    = Json.writes[OTIUMLStereotype]
+  
+    implicit def formats
+    : Format[OTIUMLStereotype]
+    = Json.format[OTIUMLStereotype]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLStringExpression
     * @param name Defined in NamedElement
@@ -4698,6 +7466,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLStringExpression
   {}
+
+  object OTIUMLStringExpression {
+     
+    implicit def reads
+    : Reads[OTIUMLStringExpression]
+    = Json.reads[OTIUMLStringExpression]
+  
+    implicit def writes
+    : Writes[OTIUMLStringExpression]
+    = Json.writes[OTIUMLStringExpression]
+  
+    implicit def formats
+    : Format[OTIUMLStringExpression]
+    = Json.format[OTIUMLStringExpression]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLStructuredActivityNode
@@ -4718,6 +7502,22 @@ object OTIMOFElement {
   with UMLStructuredActivityNode
   {}
 
+  object OTIUMLStructuredActivityNode {
+     
+    implicit def reads
+    : Reads[OTIUMLStructuredActivityNode]
+    = Json.reads[OTIUMLStructuredActivityNode]
+  
+    implicit def writes
+    : Writes[OTIUMLStructuredActivityNode]
+    = Json.writes[OTIUMLStructuredActivityNode]
+  
+    implicit def formats
+    : Format[OTIUMLStructuredActivityNode]
+    = Json.format[OTIUMLStructuredActivityNode]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLSubstitution
     * @param name Defined in NamedElement
@@ -4731,6 +7531,22 @@ object OTIMOFElement {
   with UMLSubstitution
   {}
 
+  object OTIUMLSubstitution {
+     
+    implicit def reads
+    : Reads[OTIUMLSubstitution]
+    = Json.reads[OTIUMLSubstitution]
+  
+    implicit def writes
+    : Writes[OTIUMLSubstitution]
+    = Json.writes[OTIUMLSubstitution]
+  
+    implicit def formats
+    : Format[OTIUMLSubstitution]
+    = Json.format[OTIUMLSubstitution]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLTemplateBinding
     */
@@ -4739,6 +7555,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLTemplateBinding
   {}
+
+  object OTIUMLTemplateBinding {
+     
+    implicit def reads
+    : Reads[OTIUMLTemplateBinding]
+    = Json.reads[OTIUMLTemplateBinding]
+  
+    implicit def writes
+    : Writes[OTIUMLTemplateBinding]
+    = Json.writes[OTIUMLTemplateBinding]
+  
+    implicit def formats
+    : Format[OTIUMLTemplateBinding]
+    = Json.format[OTIUMLTemplateBinding]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLTemplateParameter
@@ -4749,6 +7581,22 @@ object OTIMOFElement {
   with UMLTemplateParameter
   {}
 
+  object OTIUMLTemplateParameter {
+     
+    implicit def reads
+    : Reads[OTIUMLTemplateParameter]
+    = Json.reads[OTIUMLTemplateParameter]
+  
+    implicit def writes
+    : Writes[OTIUMLTemplateParameter]
+    = Json.writes[OTIUMLTemplateParameter]
+  
+    implicit def formats
+    : Format[OTIUMLTemplateParameter]
+    = Json.format[OTIUMLTemplateParameter]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLTemplateParameterSubstitution
     */
@@ -4758,6 +7606,22 @@ object OTIMOFElement {
   with UMLTemplateParameterSubstitution
   {}
 
+  object OTIUMLTemplateParameterSubstitution {
+     
+    implicit def reads
+    : Reads[OTIUMLTemplateParameterSubstitution]
+    = Json.reads[OTIUMLTemplateParameterSubstitution]
+  
+    implicit def writes
+    : Writes[OTIUMLTemplateParameterSubstitution]
+    = Json.writes[OTIUMLTemplateParameterSubstitution]
+  
+    implicit def formats
+    : Format[OTIUMLTemplateParameterSubstitution]
+    = Json.format[OTIUMLTemplateParameterSubstitution]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLTemplateSignature
     */
@@ -4766,6 +7630,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLTemplateSignature
   {}
+
+  object OTIUMLTemplateSignature {
+     
+    implicit def reads
+    : Reads[OTIUMLTemplateSignature]
+    = Json.reads[OTIUMLTemplateSignature]
+  
+    implicit def writes
+    : Writes[OTIUMLTemplateSignature]
+    = Json.writes[OTIUMLTemplateSignature]
+  
+    implicit def formats
+    : Format[OTIUMLTemplateSignature]
+    = Json.format[OTIUMLTemplateSignature]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLTestIdentityAction
@@ -4784,6 +7664,22 @@ object OTIMOFElement {
   with UMLTestIdentityAction
   {}
 
+  object OTIUMLTestIdentityAction {
+     
+    implicit def reads
+    : Reads[OTIUMLTestIdentityAction]
+    = Json.reads[OTIUMLTestIdentityAction]
+  
+    implicit def writes
+    : Writes[OTIUMLTestIdentityAction]
+    = Json.writes[OTIUMLTestIdentityAction]
+  
+    implicit def formats
+    : Format[OTIUMLTestIdentityAction]
+    = Json.format[OTIUMLTestIdentityAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLTimeConstraint
     * @param firstEvent Defined in TimeConstraint
@@ -4798,6 +7694,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLTimeConstraint
   {}
+
+  object OTIUMLTimeConstraint {
+     
+    implicit def reads
+    : Reads[OTIUMLTimeConstraint]
+    = Json.reads[OTIUMLTimeConstraint]
+  
+    implicit def writes
+    : Writes[OTIUMLTimeConstraint]
+    = Json.writes[OTIUMLTimeConstraint]
+  
+    implicit def formats
+    : Format[OTIUMLTimeConstraint]
+    = Json.format[OTIUMLTimeConstraint]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLTimeEvent
@@ -4814,6 +7726,22 @@ object OTIMOFElement {
   with UMLTimeEvent
   {}
 
+  object OTIUMLTimeEvent {
+     
+    implicit def reads
+    : Reads[OTIUMLTimeEvent]
+    = Json.reads[OTIUMLTimeEvent]
+  
+    implicit def writes
+    : Writes[OTIUMLTimeEvent]
+    = Json.writes[OTIUMLTimeEvent]
+  
+    implicit def formats
+    : Format[OTIUMLTimeEvent]
+    = Json.format[OTIUMLTimeEvent]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLTimeExpression
     * @param name Defined in NamedElement
@@ -4827,6 +7755,22 @@ object OTIMOFElement {
   with UMLTimeExpression
   {}
 
+  object OTIUMLTimeExpression {
+     
+    implicit def reads
+    : Reads[OTIUMLTimeExpression]
+    = Json.reads[OTIUMLTimeExpression]
+  
+    implicit def writes
+    : Writes[OTIUMLTimeExpression]
+    = Json.writes[OTIUMLTimeExpression]
+  
+    implicit def formats
+    : Format[OTIUMLTimeExpression]
+    = Json.format[OTIUMLTimeExpression]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLTimeInterval
     * @param name Defined in NamedElement
@@ -4839,6 +7783,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLTimeInterval
   {}
+
+  object OTIUMLTimeInterval {
+     
+    implicit def reads
+    : Reads[OTIUMLTimeInterval]
+    = Json.reads[OTIUMLTimeInterval]
+  
+    implicit def writes
+    : Writes[OTIUMLTimeInterval]
+    = Json.writes[OTIUMLTimeInterval]
+  
+    implicit def formats
+    : Format[OTIUMLTimeInterval]
+    = Json.format[OTIUMLTimeInterval]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLTimeObservation
@@ -4854,6 +7814,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLTimeObservation
   {}
+
+  object OTIUMLTimeObservation {
+     
+    implicit def reads
+    : Reads[OTIUMLTimeObservation]
+    = Json.reads[OTIUMLTimeObservation]
+  
+    implicit def writes
+    : Writes[OTIUMLTimeObservation]
+    = Json.writes[OTIUMLTimeObservation]
+  
+    implicit def formats
+    : Format[OTIUMLTimeObservation]
+    = Json.format[OTIUMLTimeObservation]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLTransition
@@ -4872,6 +7848,22 @@ object OTIMOFElement {
   with UMLTransition
   {}
 
+  object OTIUMLTransition {
+     
+    implicit def reads
+    : Reads[OTIUMLTransition]
+    = Json.reads[OTIUMLTransition]
+  
+    implicit def writes
+    : Writes[OTIUMLTransition]
+    = Json.writes[OTIUMLTransition]
+  
+    implicit def formats
+    : Format[OTIUMLTransition]
+    = Json.format[OTIUMLTransition]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLTrigger
     * @param name Defined in NamedElement
@@ -4884,6 +7876,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLTrigger
   {}
+
+  object OTIUMLTrigger {
+     
+    implicit def reads
+    : Reads[OTIUMLTrigger]
+    = Json.reads[OTIUMLTrigger]
+  
+    implicit def writes
+    : Writes[OTIUMLTrigger]
+    = Json.writes[OTIUMLTrigger]
+  
+    implicit def formats
+    : Format[OTIUMLTrigger]
+    = Json.format[OTIUMLTrigger]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLUnmarshallAction
@@ -4902,6 +7910,22 @@ object OTIMOFElement {
   with UMLUnmarshallAction
   {}
 
+  object OTIUMLUnmarshallAction {
+     
+    implicit def reads
+    : Reads[OTIUMLUnmarshallAction]
+    = Json.reads[OTIUMLUnmarshallAction]
+  
+    implicit def writes
+    : Writes[OTIUMLUnmarshallAction]
+    = Json.writes[OTIUMLUnmarshallAction]
+  
+    implicit def formats
+    : Format[OTIUMLUnmarshallAction]
+    = Json.format[OTIUMLUnmarshallAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLUsage
     * @param name Defined in NamedElement
@@ -4914,6 +7938,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLUsage
   {}
+
+  object OTIUMLUsage {
+     
+    implicit def reads
+    : Reads[OTIUMLUsage]
+    = Json.reads[OTIUMLUsage]
+  
+    implicit def writes
+    : Writes[OTIUMLUsage]
+    = Json.writes[OTIUMLUsage]
+  
+    implicit def formats
+    : Format[OTIUMLUsage]
+    = Json.format[OTIUMLUsage]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLUseCase
@@ -4933,6 +7973,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLUseCase
   {}
+
+  object OTIUMLUseCase {
+     
+    implicit def reads
+    : Reads[OTIUMLUseCase]
+    = Json.reads[OTIUMLUseCase]
+  
+    implicit def writes
+    : Writes[OTIUMLUseCase]
+    = Json.writes[OTIUMLUseCase]
+  
+    implicit def formats
+    : Format[OTIUMLUseCase]
+    = Json.format[OTIUMLUseCase]
+
+  }
 
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLValuePin
@@ -4959,6 +8015,22 @@ object OTIMOFElement {
   with UMLValuePin
   {}
 
+  object OTIUMLValuePin {
+     
+    implicit def reads
+    : Reads[OTIUMLValuePin]
+    = Json.reads[OTIUMLValuePin]
+  
+    implicit def writes
+    : Writes[OTIUMLValuePin]
+    = Json.writes[OTIUMLValuePin]
+  
+    implicit def formats
+    : Format[OTIUMLValuePin]
+    = Json.format[OTIUMLValuePin]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLValueSpecificationAction
     * @param isLeaf Defined in RedefinableElement
@@ -4976,6 +8048,22 @@ object OTIMOFElement {
   with UMLValueSpecificationAction
   {}
 
+  object OTIUMLValueSpecificationAction {
+     
+    implicit def reads
+    : Reads[OTIUMLValueSpecificationAction]
+    = Json.reads[OTIUMLValueSpecificationAction]
+  
+    implicit def writes
+    : Writes[OTIUMLValueSpecificationAction]
+    = Json.writes[OTIUMLValueSpecificationAction]
+  
+    implicit def formats
+    : Format[OTIUMLValueSpecificationAction]
+    = Json.format[OTIUMLValueSpecificationAction]
+
+  }
+
   /**
     * @param otiMOFElementLocation The element location of an OTIUMLVariable
     * @param isOrdered Defined in MultiplicityElement
@@ -4992,6 +8080,22 @@ object OTIMOFElement {
   extends OTIMOFElement
   with UMLVariable
   {}
+
+  object OTIUMLVariable {
+     
+    implicit def reads
+    : Reads[OTIUMLVariable]
+    = Json.reads[OTIUMLVariable]
+  
+    implicit def writes
+    : Writes[OTIUMLVariable]
+    = Json.writes[OTIUMLVariable]
+  
+    implicit def formats
+    : Format[OTIUMLVariable]
+    = Json.format[OTIUMLVariable]
+
+  }
 
   // <!-- Start of user code OTI MOF Element companion -->
   
