@@ -588,6 +588,13 @@ object OTIMOFElement {
   {}
 
   /**
+    * 
+    */
+  trait UMLDiagram
+		extends UMLNamedElement
+  {}
+
+  /**
     * A DirectedRelationship represents a relationship between a collection of source model Elements and a collection of target model Elements.
     */
   trait UMLDirectedRelationship
@@ -3728,6 +3735,35 @@ object OTIMOFElement {
     implicit def formats
     : Format[OTIUMLDevice]
     = Json.format[OTIUMLDevice]
+
+  }
+
+  /**
+    * @param otiMOFElementLocation The element location of an OTIUMLDiagram
+    * @param name Defined in NamedElement
+    * @param visibility Defined in NamedElement
+    */
+  case class OTIUMLDiagram
+  ( override val otiMOFElementLocation: ElementLocation,
+    name: Option[String],
+    visibility: Option[UMLVisibilityKind])
+  extends OTIMOFElement
+  with UMLDiagram
+  {}
+
+  object OTIUMLDiagram {
+     
+    implicit def reads
+    : Reads[OTIUMLDiagram]
+    = Json.reads[OTIUMLDiagram]
+  
+    implicit def writes
+    : Writes[OTIUMLDiagram]
+    = Json.writes[OTIUMLDiagram]
+  
+    implicit def formats
+    : Format[OTIUMLDiagram]
+    = Json.format[OTIUMLDiagram]
 
   }
 

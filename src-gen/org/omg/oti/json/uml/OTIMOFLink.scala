@@ -5883,6 +5883,118 @@ object OTIMOFLink {
 
   }
 
+  /**
+    * MD_diagramOwner_ownedDiagram
+    *
+    * @param: end1 MD_diagramOwner_ownedDiagram::diagramOwner: Namespace [0..1] { unordered, unique, reference }
+    * @param: end2 Namespace::ownedDiagram: Diagram [0..*] { unordered, unique, composite }
+    */
+  case class OTIUMLMD_diagramOwner_ownedDiagram
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFCompositeLink
+  {}
+
+  object OTIUMLMD_diagramOwner_ownedDiagram {
+     
+    implicit def reads
+    : Reads[OTIUMLMD_diagramOwner_ownedDiagram]
+    = Json.reads[OTIUMLMD_diagramOwner_ownedDiagram]
+  
+    implicit def writes
+    : Writes[OTIUMLMD_diagramOwner_ownedDiagram]
+    = Json.writes[OTIUMLMD_diagramOwner_ownedDiagram]
+  
+    implicit def formats
+    : Format[OTIUMLMD_diagramOwner_ownedDiagram]
+    = Json.format[OTIUMLMD_diagramOwner_ownedDiagram]
+
+  }
+
+
+  /**
+    * A_action_actionExecutionSpecification
+    *
+    * @param: end1 A_action_actionExecutionSpecification::actionExecutionSpecification: ActionExecutionSpecification [0..*] { unordered, unique, reference }
+    * @param: end2 ActionExecutionSpecification::action: Action [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_action_actionExecutionSpecification
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_action_actionExecutionSpecification {
+     
+    implicit def reads
+    : Reads[OTIUMLA_action_actionExecutionSpecification]
+    = Json.reads[OTIUMLA_action_actionExecutionSpecification]
+  
+    implicit def writes
+    : Writes[OTIUMLA_action_actionExecutionSpecification]
+    = Json.writes[OTIUMLA_action_actionExecutionSpecification]
+  
+    implicit def formats
+    : Format[OTIUMLA_action_actionExecutionSpecification]
+    = Json.format[OTIUMLA_action_actionExecutionSpecification]
+
+  }
+
+  /**
+    * A_actual_templateParameterSubstitution
+    *
+    * @param: end1 A_actual_templateParameterSubstitution::templateParameterSubstitution: TemplateParameterSubstitution [0..*] { unordered, unique, reference }
+    * @param: end2 TemplateParameterSubstitution::actual: ParameterableElement [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_actual_templateParameterSubstitution
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_actual_templateParameterSubstitution {
+     
+    implicit def reads
+    : Reads[OTIUMLA_actual_templateParameterSubstitution]
+    = Json.reads[OTIUMLA_actual_templateParameterSubstitution]
+  
+    implicit def writes
+    : Writes[OTIUMLA_actual_templateParameterSubstitution]
+    = Json.writes[OTIUMLA_actual_templateParameterSubstitution]
+  
+    implicit def formats
+    : Format[OTIUMLA_actual_templateParameterSubstitution]
+    = Json.format[OTIUMLA_actual_templateParameterSubstitution]
+
+  }
+
+  /**
+    * A_addition_include
+    *
+    * @param: end1 A_addition_include::include: Include [0..*] { unordered, unique, reference }
+    * @param: end2 Include::addition: UseCase [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_addition_include
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_addition_include {
+     
+    implicit def reads
+    : Reads[OTIUMLA_addition_include]
+    = Json.reads[OTIUMLA_addition_include]
+  
+    implicit def writes
+    : Writes[OTIUMLA_addition_include]
+    = Json.writes[OTIUMLA_addition_include]
+  
+    implicit def formats
+    : Format[OTIUMLA_addition_include]
+    = Json.format[OTIUMLA_addition_include]
+
+  }
 
   /**
     * A_annotatedElement_comment
@@ -5909,6 +6021,34 @@ object OTIMOFLink {
     implicit def formats
     : Format[OTIUMLA_annotatedElement_comment]
     = Json.format[OTIUMLA_annotatedElement_comment]
+
+  }
+
+  /**
+    * A_appliedProfile_profileApplication
+    *
+    * @param: end1 A_appliedProfile_profileApplication::profileApplication: ProfileApplication [0..*] { unordered, unique, reference }
+    * @param: end2 ProfileApplication::appliedProfile: Profile [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_appliedProfile_profileApplication
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_appliedProfile_profileApplication {
+     
+    implicit def reads
+    : Reads[OTIUMLA_appliedProfile_profileApplication]
+    = Json.reads[OTIUMLA_appliedProfile_profileApplication]
+  
+    implicit def writes
+    : Writes[OTIUMLA_appliedProfile_profileApplication]
+    = Json.writes[OTIUMLA_appliedProfile_profileApplication]
+  
+    implicit def formats
+    : Format[OTIUMLA_appliedProfile_profileApplication]
+    = Json.format[OTIUMLA_appliedProfile_profileApplication]
 
   }
 
@@ -5965,6 +6105,90 @@ object OTIMOFLink {
     implicit def formats
     : Format[OTIUMLA_before_toAfter]
     = Json.format[OTIUMLA_before_toAfter]
+
+  }
+
+  /**
+    * A_behavior_behaviorExecutionSpecification
+    *
+    * @param: end1 A_behavior_behaviorExecutionSpecification::behaviorExecutionSpecification: BehaviorExecutionSpecification [0..*] { unordered, unique, reference }
+    * @param: end2 BehaviorExecutionSpecification::behavior: Behavior [0..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_behavior_behaviorExecutionSpecification
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_behavior_behaviorExecutionSpecification {
+     
+    implicit def reads
+    : Reads[OTIUMLA_behavior_behaviorExecutionSpecification]
+    = Json.reads[OTIUMLA_behavior_behaviorExecutionSpecification]
+  
+    implicit def writes
+    : Writes[OTIUMLA_behavior_behaviorExecutionSpecification]
+    = Json.writes[OTIUMLA_behavior_behaviorExecutionSpecification]
+  
+    implicit def formats
+    : Format[OTIUMLA_behavior_behaviorExecutionSpecification]
+    = Json.format[OTIUMLA_behavior_behaviorExecutionSpecification]
+
+  }
+
+  /**
+    * A_behavior_callBehaviorAction
+    *
+    * @param: end1 A_behavior_callBehaviorAction::callBehaviorAction: CallBehaviorAction [0..*] { unordered, unique, reference }
+    * @param: end2 CallBehaviorAction::behavior: Behavior [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_behavior_callBehaviorAction
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_behavior_callBehaviorAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_behavior_callBehaviorAction]
+    = Json.reads[OTIUMLA_behavior_callBehaviorAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_behavior_callBehaviorAction]
+    = Json.writes[OTIUMLA_behavior_callBehaviorAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_behavior_callBehaviorAction]
+    = Json.format[OTIUMLA_behavior_callBehaviorAction]
+
+  }
+
+  /**
+    * A_behavior_opaqueExpression
+    *
+    * @param: end1 A_behavior_opaqueExpression::opaqueExpression: OpaqueExpression [0..*] { unordered, unique, reference }
+    * @param: end2 OpaqueExpression::behavior: Behavior [0..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_behavior_opaqueExpression
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_behavior_opaqueExpression {
+     
+    implicit def reads
+    : Reads[OTIUMLA_behavior_opaqueExpression]
+    = Json.reads[OTIUMLA_behavior_opaqueExpression]
+  
+    implicit def writes
+    : Writes[OTIUMLA_behavior_opaqueExpression]
+    = Json.writes[OTIUMLA_behavior_opaqueExpression]
+  
+    implicit def formats
+    : Format[OTIUMLA_behavior_opaqueExpression]
+    = Json.format[OTIUMLA_behavior_opaqueExpression]
 
   }
 
@@ -6111,6 +6335,34 @@ object OTIMOFLink {
   }
 
   /**
+    * A_classifier_createObjectAction
+    *
+    * @param: end1 A_classifier_createObjectAction::createObjectAction: CreateObjectAction [0..*] { unordered, unique, reference }
+    * @param: end2 CreateObjectAction::classifier: Classifier [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_classifier_createObjectAction
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_classifier_createObjectAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_classifier_createObjectAction]
+    = Json.reads[OTIUMLA_classifier_createObjectAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_classifier_createObjectAction]
+    = Json.writes[OTIUMLA_classifier_createObjectAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_classifier_createObjectAction]
+    = Json.format[OTIUMLA_classifier_createObjectAction]
+
+  }
+
+  /**
     * A_classifier_instanceSpecification
     *
     * @param: end1 A_classifier_instanceSpecification::instanceSpecification: InstanceSpecification [0..*] { unordered, unique, reference }
@@ -6163,6 +6415,34 @@ object OTIMOFLink {
     implicit def formats
     : Format[OTIUMLA_classifier_readExtentAction]
     = Json.format[OTIUMLA_classifier_readExtentAction]
+
+  }
+
+  /**
+    * A_classifier_readIsClassifiedObjectAction
+    *
+    * @param: end1 A_classifier_readIsClassifiedObjectAction::readIsClassifiedObjectAction: ReadIsClassifiedObjectAction [0..*] { unordered, unique, reference }
+    * @param: end2 ReadIsClassifiedObjectAction::classifier: Classifier [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_classifier_readIsClassifiedObjectAction
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_classifier_readIsClassifiedObjectAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_classifier_readIsClassifiedObjectAction]
+    = Json.reads[OTIUMLA_classifier_readIsClassifiedObjectAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_classifier_readIsClassifiedObjectAction]
+    = Json.writes[OTIUMLA_classifier_readIsClassifiedObjectAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_classifier_readIsClassifiedObjectAction]
+    = Json.format[OTIUMLA_classifier_readIsClassifiedObjectAction]
 
   }
 
@@ -6279,6 +6559,34 @@ object OTIMOFLink {
   }
 
   /**
+    * A_connector_message
+    *
+    * @param: end1 A_connector_message::message: Message [0..*] { unordered, unique, reference }
+    * @param: end2 Message::connector: Connector [0..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_connector_message
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_connector_message {
+     
+    implicit def reads
+    : Reads[OTIUMLA_connector_message]
+    = Json.reads[OTIUMLA_connector_message]
+  
+    implicit def writes
+    : Writes[OTIUMLA_connector_message]
+    = Json.writes[OTIUMLA_connector_message]
+  
+    implicit def formats
+    : Format[OTIUMLA_connector_message]
+    = Json.format[OTIUMLA_connector_message]
+
+  }
+
+  /**
     * A_constrainedElement_constraint
     *
     * @param: end1 A_constrainedElement_constraint::constraint: Constraint [0..*] { unordered, unique, reference }
@@ -6364,6 +6672,62 @@ object OTIMOFLink {
   }
 
   /**
+    * A_contract_interfaceRealization
+    *
+    * @param: end1 A_contract_interfaceRealization::interfaceRealization: InterfaceRealization [0..*] { unordered, unique, reference }
+    * @param: end2 InterfaceRealization::contract: Interface [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_contract_interfaceRealization
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_contract_interfaceRealization {
+     
+    implicit def reads
+    : Reads[OTIUMLA_contract_interfaceRealization]
+    = Json.reads[OTIUMLA_contract_interfaceRealization]
+  
+    implicit def writes
+    : Writes[OTIUMLA_contract_interfaceRealization]
+    = Json.writes[OTIUMLA_contract_interfaceRealization]
+  
+    implicit def formats
+    : Format[OTIUMLA_contract_interfaceRealization]
+    = Json.format[OTIUMLA_contract_interfaceRealization]
+
+  }
+
+  /**
+    * A_contract_substitution
+    *
+    * @param: end1 A_contract_substitution::substitution: Substitution [0..*] { unordered, unique, reference }
+    * @param: end2 Substitution::contract: Classifier [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_contract_substitution
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_contract_substitution {
+     
+    implicit def reads
+    : Reads[OTIUMLA_contract_substitution]
+    = Json.reads[OTIUMLA_contract_substitution]
+  
+    implicit def writes
+    : Writes[OTIUMLA_contract_substitution]
+    = Json.writes[OTIUMLA_contract_substitution]
+  
+    implicit def formats
+    : Format[OTIUMLA_contract_substitution]
+    = Json.format[OTIUMLA_contract_substitution]
+
+  }
+
+  /**
     * A_conveyed_conveyingFlow
     *
     * @param: end1 A_conveyed_conveyingFlow::conveyingFlow: InformationFlow [0..*] { unordered, unique, reference }
@@ -6416,6 +6780,62 @@ object OTIMOFLink {
     implicit def formats
     : Format[OTIUMLA_covered_coveredBy]
     = Json.format[OTIUMLA_covered_coveredBy]
+
+  }
+
+  /**
+    * A_covered_events
+    *
+    * @param: end1 A_covered_events::events: OccurrenceSpecification [0..*] { ordered, unique, reference }
+    * @param: end2 OccurrenceSpecification::covered: Lifeline [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_covered_events
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_covered_events {
+     
+    implicit def reads
+    : Reads[OTIUMLA_covered_events]
+    = Json.reads[OTIUMLA_covered_events]
+  
+    implicit def writes
+    : Writes[OTIUMLA_covered_events]
+    = Json.writes[OTIUMLA_covered_events]
+  
+    implicit def formats
+    : Format[OTIUMLA_covered_events]
+    = Json.format[OTIUMLA_covered_events]
+
+  }
+
+  /**
+    * A_covered_stateInvariant
+    *
+    * @param: end1 A_covered_stateInvariant::stateInvariant: StateInvariant [0..*] { unordered, unique, reference }
+    * @param: end2 StateInvariant::covered: Lifeline [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_covered_stateInvariant
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_covered_stateInvariant {
+     
+    implicit def reads
+    : Reads[OTIUMLA_covered_stateInvariant]
+    = Json.reads[OTIUMLA_covered_stateInvariant]
+  
+    implicit def writes
+    : Writes[OTIUMLA_covered_stateInvariant]
+    = Json.writes[OTIUMLA_covered_stateInvariant]
+  
+    implicit def formats
+    : Format[OTIUMLA_covered_stateInvariant]
+    = Json.format[OTIUMLA_covered_stateInvariant]
 
   }
 
@@ -6504,6 +6924,34 @@ object OTIMOFLink {
   }
 
   /**
+    * A_decisionInput_decisionNode
+    *
+    * @param: end1 A_decisionInput_decisionNode::decisionNode: DecisionNode [0..*] { unordered, unique, reference }
+    * @param: end2 DecisionNode::decisionInput: Behavior [0..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_decisionInput_decisionNode
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_decisionInput_decisionNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_decisionInput_decisionNode]
+    = Json.reads[OTIUMLA_decisionInput_decisionNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_decisionInput_decisionNode]
+    = Json.writes[OTIUMLA_decisionInput_decisionNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_decisionInput_decisionNode]
+    = Json.format[OTIUMLA_decisionInput_decisionNode]
+
+  }
+
+  /**
     * A_decomposedAs_lifeline
     *
     * @param: end1 A_decomposedAs_lifeline::lifeline: Lifeline [1..1] { unordered, unique, reference }
@@ -6528,6 +6976,62 @@ object OTIMOFLink {
     implicit def formats
     : Format[OTIUMLA_decomposedAs_lifeline]
     = Json.format[OTIUMLA_decomposedAs_lifeline]
+
+  }
+
+  /**
+    * A_default_templateParameter
+    *
+    * @param: end1 A_default_templateParameter::templateParameter: TemplateParameter [0..*] { unordered, unique, reference }
+    * @param: end2 TemplateParameter::default: ParameterableElement [0..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_default_templateParameter
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_default_templateParameter {
+     
+    implicit def reads
+    : Reads[OTIUMLA_default_templateParameter]
+    = Json.reads[OTIUMLA_default_templateParameter]
+  
+    implicit def writes
+    : Writes[OTIUMLA_default_templateParameter]
+    = Json.writes[OTIUMLA_default_templateParameter]
+  
+    implicit def formats
+    : Format[OTIUMLA_default_templateParameter]
+    = Json.format[OTIUMLA_default_templateParameter]
+
+  }
+
+  /**
+    * A_definingFeature_slot
+    *
+    * @param: end1 A_definingFeature_slot::slot: Slot [0..*] { unordered, unique, reference }
+    * @param: end2 Slot::definingFeature: StructuralFeature [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_definingFeature_slot
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_definingFeature_slot {
+     
+    implicit def reads
+    : Reads[OTIUMLA_definingFeature_slot]
+    = Json.reads[OTIUMLA_definingFeature_slot]
+  
+    implicit def writes
+    : Writes[OTIUMLA_definingFeature_slot]
+    = Json.writes[OTIUMLA_definingFeature_slot]
+  
+    implicit def formats
+    : Format[OTIUMLA_definingFeature_slot]
+    = Json.format[OTIUMLA_definingFeature_slot]
 
   }
 
@@ -6612,6 +7116,34 @@ object OTIMOFLink {
     implicit def formats
     : Format[OTIUMLA_edge_inPartition]
     = Json.format[OTIUMLA_edge_inPartition]
+
+  }
+
+  /**
+    * A_end_linkEndData
+    *
+    * @param: end1 A_end_linkEndData::linkEndData: LinkEndData [0..*] { unordered, unique, reference }
+    * @param: end2 LinkEndData::end: Property [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_end_linkEndData
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_end_linkEndData {
+     
+    implicit def reads
+    : Reads[OTIUMLA_end_linkEndData]
+    = Json.reads[OTIUMLA_end_linkEndData]
+  
+    implicit def writes
+    : Writes[OTIUMLA_end_linkEndData]
+    = Json.writes[OTIUMLA_end_linkEndData]
+  
+    implicit def formats
+    : Format[OTIUMLA_end_linkEndData]
+    = Json.format[OTIUMLA_end_linkEndData]
 
   }
 
@@ -6701,6 +7233,90 @@ object OTIMOFLink {
   }
 
   /**
+    * A_event_timeObservation
+    *
+    * @param: end1 A_event_timeObservation::timeObservation: TimeObservation [0..*] { unordered, unique, reference }
+    * @param: end2 TimeObservation::event: NamedElement [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_event_timeObservation
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_event_timeObservation {
+     
+    implicit def reads
+    : Reads[OTIUMLA_event_timeObservation]
+    = Json.reads[OTIUMLA_event_timeObservation]
+  
+    implicit def writes
+    : Writes[OTIUMLA_event_timeObservation]
+    = Json.writes[OTIUMLA_event_timeObservation]
+  
+    implicit def formats
+    : Format[OTIUMLA_event_timeObservation]
+    = Json.format[OTIUMLA_event_timeObservation]
+
+  }
+
+  /**
+    * A_event_trigger
+    *
+    * @param: end1 A_event_trigger::trigger: Trigger [0..*] { unordered, unique, reference }
+    * @param: end2 Trigger::event: Event [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_event_trigger
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_event_trigger {
+     
+    implicit def reads
+    : Reads[OTIUMLA_event_trigger]
+    = Json.reads[OTIUMLA_event_trigger]
+  
+    implicit def writes
+    : Writes[OTIUMLA_event_trigger]
+    = Json.writes[OTIUMLA_event_trigger]
+  
+    implicit def formats
+    : Format[OTIUMLA_event_trigger]
+    = Json.format[OTIUMLA_event_trigger]
+
+  }
+
+  /**
+    * A_exceptionInput_exceptionHandler
+    *
+    * @param: end1 A_exceptionInput_exceptionHandler::exceptionHandler: ExceptionHandler [0..*] { unordered, unique, reference }
+    * @param: end2 ExceptionHandler::exceptionInput: ObjectNode [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_exceptionInput_exceptionHandler
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_exceptionInput_exceptionHandler {
+     
+    implicit def reads
+    : Reads[OTIUMLA_exceptionInput_exceptionHandler]
+    = Json.reads[OTIUMLA_exceptionInput_exceptionHandler]
+  
+    implicit def writes
+    : Writes[OTIUMLA_exceptionInput_exceptionHandler]
+    = Json.writes[OTIUMLA_exceptionInput_exceptionHandler]
+  
+    implicit def formats
+    : Format[OTIUMLA_exceptionInput_exceptionHandler]
+    = Json.format[OTIUMLA_exceptionInput_exceptionHandler]
+
+  }
+
+  /**
     * A_exceptionType_exceptionHandler
     *
     * @param: end1 A_exceptionType_exceptionHandler::exceptionHandler: ExceptionHandler [0..*] { unordered, unique, reference }
@@ -6781,6 +7397,62 @@ object OTIMOFLink {
     implicit def formats
     : Format[OTIUMLA_exit_connectionPointReference]
     = Json.format[OTIUMLA_exit_connectionPointReference]
+
+  }
+
+  /**
+    * A_extendedCase_extend
+    *
+    * @param: end1 A_extendedCase_extend::extend: Extend [0..*] { unordered, unique, reference }
+    * @param: end2 Extend::extendedCase: UseCase [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_extendedCase_extend
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_extendedCase_extend {
+     
+    implicit def reads
+    : Reads[OTIUMLA_extendedCase_extend]
+    = Json.reads[OTIUMLA_extendedCase_extend]
+  
+    implicit def writes
+    : Writes[OTIUMLA_extendedCase_extend]
+    = Json.writes[OTIUMLA_extendedCase_extend]
+  
+    implicit def formats
+    : Format[OTIUMLA_extendedCase_extend]
+    = Json.format[OTIUMLA_extendedCase_extend]
+
+  }
+
+  /**
+    * A_extendedRegion_region
+    *
+    * @param: end1 A_extendedRegion_region::region: Region [0..*] { unordered, unique, reference }
+    * @param: end2 Region::extendedRegion: Region [0..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_extendedRegion_region
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_extendedRegion_region {
+     
+    implicit def reads
+    : Reads[OTIUMLA_extendedRegion_region]
+    = Json.reads[OTIUMLA_extendedRegion_region]
+  
+    implicit def writes
+    : Writes[OTIUMLA_extendedRegion_region]
+    = Json.writes[OTIUMLA_extendedRegion_region]
+  
+    implicit def formats
+    : Format[OTIUMLA_extendedRegion_region]
+    = Json.format[OTIUMLA_extendedRegion_region]
 
   }
 
@@ -6870,10 +7542,122 @@ object OTIMOFLink {
   }
 
   /**
+    * A_finish_executionSpecification
+    *
+    * @param: end1 A_finish_executionSpecification::executionSpecification: ExecutionSpecification [0..*] { unordered, unique, reference }
+    * @param: end2 ExecutionSpecification::finish: OccurrenceSpecification [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_finish_executionSpecification
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_finish_executionSpecification {
+     
+    implicit def reads
+    : Reads[OTIUMLA_finish_executionSpecification]
+    = Json.reads[OTIUMLA_finish_executionSpecification]
+  
+    implicit def writes
+    : Writes[OTIUMLA_finish_executionSpecification]
+    = Json.writes[OTIUMLA_finish_executionSpecification]
+  
+    implicit def formats
+    : Format[OTIUMLA_finish_executionSpecification]
+    = Json.format[OTIUMLA_finish_executionSpecification]
+
+  }
+
+  /**
+    * A_formal_templateParameterSubstitution
+    *
+    * @param: end1 A_formal_templateParameterSubstitution::templateParameterSubstitution: TemplateParameterSubstitution [0..*] { unordered, unique, reference }
+    * @param: end2 TemplateParameterSubstitution::formal: TemplateParameter [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_formal_templateParameterSubstitution
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_formal_templateParameterSubstitution {
+     
+    implicit def reads
+    : Reads[OTIUMLA_formal_templateParameterSubstitution]
+    = Json.reads[OTIUMLA_formal_templateParameterSubstitution]
+  
+    implicit def writes
+    : Writes[OTIUMLA_formal_templateParameterSubstitution]
+    = Json.writes[OTIUMLA_formal_templateParameterSubstitution]
+  
+    implicit def formats
+    : Format[OTIUMLA_formal_templateParameterSubstitution]
+    = Json.format[OTIUMLA_formal_templateParameterSubstitution]
+
+  }
+
+  /**
+    * A_generalMachine_protocolConformance
+    *
+    * @param: end1 A_generalMachine_protocolConformance::protocolConformance: ProtocolConformance [0..*] { unordered, unique, reference }
+    * @param: end2 ProtocolConformance::generalMachine: ProtocolStateMachine [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_generalMachine_protocolConformance
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_generalMachine_protocolConformance {
+     
+    implicit def reads
+    : Reads[OTIUMLA_generalMachine_protocolConformance]
+    = Json.reads[OTIUMLA_generalMachine_protocolConformance]
+  
+    implicit def writes
+    : Writes[OTIUMLA_generalMachine_protocolConformance]
+    = Json.writes[OTIUMLA_generalMachine_protocolConformance]
+  
+    implicit def formats
+    : Format[OTIUMLA_generalMachine_protocolConformance]
+    = Json.format[OTIUMLA_generalMachine_protocolConformance]
+
+  }
+
+  /**
+    * A_general_generalization
+    *
+    * @param: end1 A_general_generalization::generalization: Generalization [0..*] { unordered, unique, reference }
+    * @param: end2 Generalization::general: Classifier [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_general_generalization
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_general_generalization {
+     
+    implicit def reads
+    : Reads[OTIUMLA_general_generalization]
+    = Json.reads[OTIUMLA_general_generalization]
+  
+    implicit def writes
+    : Writes[OTIUMLA_general_generalization]
+    = Json.writes[OTIUMLA_general_generalization]
+  
+    implicit def formats
+    : Format[OTIUMLA_general_generalization]
+    = Json.format[OTIUMLA_general_generalization]
+
+  }
+
+  /**
     * A_generalizationSet_generalization
     *
-    * @param: end1 Generalization::generalizationSet: GeneralizationSet [0..*] { unordered, unique, reference }
-    * @param: end2 GeneralizationSet::generalization: Generalization [0..*] { unordered, unique, reference }
+    * @param: end1 GeneralizationSet::generalization: Generalization [0..*] { unordered, unique, reference }
+    * @param: end2 Generalization::generalizationSet: GeneralizationSet [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_generalizationSet_generalization
   ( override val end1: ElementLocation,
@@ -6898,10 +7682,94 @@ object OTIMOFLink {
   }
 
   /**
+    * A_handlerBody_exceptionHandler
+    *
+    * @param: end1 A_handlerBody_exceptionHandler::exceptionHandler: ExceptionHandler [0..*] { unordered, unique, reference }
+    * @param: end2 ExceptionHandler::handlerBody: ExecutableNode [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_handlerBody_exceptionHandler
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_handlerBody_exceptionHandler {
+     
+    implicit def reads
+    : Reads[OTIUMLA_handlerBody_exceptionHandler]
+    = Json.reads[OTIUMLA_handlerBody_exceptionHandler]
+  
+    implicit def writes
+    : Writes[OTIUMLA_handlerBody_exceptionHandler]
+    = Json.writes[OTIUMLA_handlerBody_exceptionHandler]
+  
+    implicit def formats
+    : Format[OTIUMLA_handlerBody_exceptionHandler]
+    = Json.format[OTIUMLA_handlerBody_exceptionHandler]
+
+  }
+
+  /**
+    * A_importedElement_import
+    *
+    * @param: end1 A_importedElement_import::import: ElementImport [0..*] { unordered, unique, reference }
+    * @param: end2 ElementImport::importedElement: PackageableElement [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_importedElement_import
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_importedElement_import {
+     
+    implicit def reads
+    : Reads[OTIUMLA_importedElement_import]
+    = Json.reads[OTIUMLA_importedElement_import]
+  
+    implicit def writes
+    : Writes[OTIUMLA_importedElement_import]
+    = Json.writes[OTIUMLA_importedElement_import]
+  
+    implicit def formats
+    : Format[OTIUMLA_importedElement_import]
+    = Json.format[OTIUMLA_importedElement_import]
+
+  }
+
+  /**
+    * A_importedPackage_packageImport
+    *
+    * @param: end1 A_importedPackage_packageImport::packageImport: PackageImport [0..*] { unordered, unique, reference }
+    * @param: end2 PackageImport::importedPackage: Package [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_importedPackage_packageImport
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_importedPackage_packageImport {
+     
+    implicit def reads
+    : Reads[OTIUMLA_importedPackage_packageImport]
+    = Json.reads[OTIUMLA_importedPackage_packageImport]
+  
+    implicit def writes
+    : Writes[OTIUMLA_importedPackage_packageImport]
+    = Json.writes[OTIUMLA_importedPackage_packageImport]
+  
+    implicit def formats
+    : Format[OTIUMLA_importedPackage_packageImport]
+    = Json.format[OTIUMLA_importedPackage_packageImport]
+
+  }
+
+  /**
     * A_inInterruptibleRegion_node
     *
-    * @param: end1 ActivityNode::inInterruptibleRegion: InterruptibleActivityRegion [0..*] { unordered, unique, reference }
-    * @param: end2 InterruptibleActivityRegion::node: ActivityNode [0..*] { unordered, unique, reference }
+    * @param: end1 InterruptibleActivityRegion::node: ActivityNode [0..*] { unordered, unique, reference }
+    * @param: end2 ActivityNode::inInterruptibleRegion: InterruptibleActivityRegion [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_inInterruptibleRegion_node
   ( override val end1: ElementLocation,
@@ -6928,8 +7796,8 @@ object OTIMOFLink {
   /**
     * A_inPartition_node
     *
-    * @param: end1 ActivityNode::inPartition: ActivityPartition [0..*] { unordered, unique, reference }
-    * @param: end2 ActivityPartition::node: ActivityNode [0..*] { unordered, unique, reference }
+    * @param: end1 ActivityPartition::node: ActivityNode [0..*] { unordered, unique, reference }
+    * @param: end2 ActivityNode::inPartition: ActivityPartition [0..*] { unordered, unique, reference }
     */
   case class OTIUMLA_inPartition_node
   ( override val end1: ElementLocation,
@@ -7122,6 +7990,34 @@ object OTIMOFLink {
   }
 
   /**
+    * A_instance_instanceValue
+    *
+    * @param: end1 A_instance_instanceValue::instanceValue: InstanceValue [0..*] { unordered, unique, reference }
+    * @param: end2 InstanceValue::instance: InstanceSpecification [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_instance_instanceValue
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_instance_instanceValue {
+     
+    implicit def reads
+    : Reads[OTIUMLA_instance_instanceValue]
+    = Json.reads[OTIUMLA_instance_instanceValue]
+  
+    implicit def writes
+    : Writes[OTIUMLA_instance_instanceValue]
+    = Json.writes[OTIUMLA_instance_instanceValue]
+  
+    implicit def formats
+    : Format[OTIUMLA_instance_instanceValue]
+    = Json.format[OTIUMLA_instance_instanceValue]
+
+  }
+
+  /**
     * A_interruptingEdge_interrupts
     *
     * @param: end1 ActivityEdge::interrupts: InterruptibleActivityRegion [0..1] { unordered, unique, reference }
@@ -7146,6 +8042,90 @@ object OTIMOFLink {
     implicit def formats
     : Format[OTIUMLA_interruptingEdge_interrupts]
     = Json.format[OTIUMLA_interruptingEdge_interrupts]
+
+  }
+
+  /**
+    * A_max_durationInterval
+    *
+    * @param: end1 A_max_durationInterval::durationInterval: DurationInterval [0..*] { unordered, unique, reference }
+    * @param: end2 DurationInterval::max: Duration [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_max_durationInterval
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_max_durationInterval {
+     
+    implicit def reads
+    : Reads[OTIUMLA_max_durationInterval]
+    = Json.reads[OTIUMLA_max_durationInterval]
+  
+    implicit def writes
+    : Writes[OTIUMLA_max_durationInterval]
+    = Json.writes[OTIUMLA_max_durationInterval]
+  
+    implicit def formats
+    : Format[OTIUMLA_max_durationInterval]
+    = Json.format[OTIUMLA_max_durationInterval]
+
+  }
+
+  /**
+    * A_max_interval
+    *
+    * @param: end1 A_max_interval::interval: Interval [0..*] { unordered, unique, reference }
+    * @param: end2 Interval::max: ValueSpecification [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_max_interval
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_max_interval {
+     
+    implicit def reads
+    : Reads[OTIUMLA_max_interval]
+    = Json.reads[OTIUMLA_max_interval]
+  
+    implicit def writes
+    : Writes[OTIUMLA_max_interval]
+    = Json.writes[OTIUMLA_max_interval]
+  
+    implicit def formats
+    : Format[OTIUMLA_max_interval]
+    = Json.format[OTIUMLA_max_interval]
+
+  }
+
+  /**
+    * A_max_timeInterval
+    *
+    * @param: end1 A_max_timeInterval::timeInterval: TimeInterval [0..*] { unordered, unique, reference }
+    * @param: end2 TimeInterval::max: TimeExpression [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_max_timeInterval
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_max_timeInterval {
+     
+    implicit def reads
+    : Reads[OTIUMLA_max_timeInterval]
+    = Json.reads[OTIUMLA_max_timeInterval]
+  
+    implicit def writes
+    : Writes[OTIUMLA_max_timeInterval]
+    = Json.writes[OTIUMLA_max_timeInterval]
+  
+    implicit def formats
+    : Format[OTIUMLA_max_timeInterval]
+    = Json.format[OTIUMLA_max_timeInterval]
 
   }
 
@@ -7175,6 +8155,34 @@ object OTIMOFLink {
     implicit def formats
     : Format[OTIUMLA_memberEnd_association]
     = Json.format[OTIUMLA_memberEnd_association]
+
+  }
+
+  /**
+    * A_mergedPackage_packageMerge
+    *
+    * @param: end1 A_mergedPackage_packageMerge::packageMerge: PackageMerge [0..*] { unordered, unique, reference }
+    * @param: end2 PackageMerge::mergedPackage: Package [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_mergedPackage_packageMerge
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_mergedPackage_packageMerge {
+     
+    implicit def reads
+    : Reads[OTIUMLA_mergedPackage_packageMerge]
+    = Json.reads[OTIUMLA_mergedPackage_packageMerge]
+  
+    implicit def writes
+    : Writes[OTIUMLA_mergedPackage_packageMerge]
+    = Json.writes[OTIUMLA_mergedPackage_packageMerge]
+  
+    implicit def formats
+    : Format[OTIUMLA_mergedPackage_packageMerge]
+    = Json.format[OTIUMLA_mergedPackage_packageMerge]
 
   }
 
@@ -7259,6 +8267,90 @@ object OTIMOFLink {
     implicit def formats
     : Format[OTIUMLA_method_specification]
     = Json.format[OTIUMLA_method_specification]
+
+  }
+
+  /**
+    * A_min_durationInterval
+    *
+    * @param: end1 A_min_durationInterval::durationInterval: DurationInterval [0..*] { unordered, unique, reference }
+    * @param: end2 DurationInterval::min: Duration [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_min_durationInterval
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_min_durationInterval {
+     
+    implicit def reads
+    : Reads[OTIUMLA_min_durationInterval]
+    = Json.reads[OTIUMLA_min_durationInterval]
+  
+    implicit def writes
+    : Writes[OTIUMLA_min_durationInterval]
+    = Json.writes[OTIUMLA_min_durationInterval]
+  
+    implicit def formats
+    : Format[OTIUMLA_min_durationInterval]
+    = Json.format[OTIUMLA_min_durationInterval]
+
+  }
+
+  /**
+    * A_min_interval
+    *
+    * @param: end1 A_min_interval::interval: Interval [0..*] { unordered, unique, reference }
+    * @param: end2 Interval::min: ValueSpecification [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_min_interval
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_min_interval {
+     
+    implicit def reads
+    : Reads[OTIUMLA_min_interval]
+    = Json.reads[OTIUMLA_min_interval]
+  
+    implicit def writes
+    : Writes[OTIUMLA_min_interval]
+    = Json.writes[OTIUMLA_min_interval]
+  
+    implicit def formats
+    : Format[OTIUMLA_min_interval]
+    = Json.format[OTIUMLA_min_interval]
+
+  }
+
+  /**
+    * A_min_timeInterval
+    *
+    * @param: end1 A_min_timeInterval::timeInterval: TimeInterval [0..*] { unordered, unique, reference }
+    * @param: end2 TimeInterval::min: TimeExpression [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_min_timeInterval
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_min_timeInterval {
+     
+    implicit def reads
+    : Reads[OTIUMLA_min_timeInterval]
+    = Json.reads[OTIUMLA_min_timeInterval]
+  
+    implicit def writes
+    : Writes[OTIUMLA_min_timeInterval]
+    = Json.writes[OTIUMLA_min_timeInterval]
+  
+    implicit def formats
+    : Format[OTIUMLA_min_timeInterval]
+    = Json.format[OTIUMLA_min_timeInterval]
 
   }
 
@@ -7403,6 +8495,90 @@ object OTIMOFLink {
   }
 
   /**
+    * A_onPort_invocationAction
+    *
+    * @param: end1 A_onPort_invocationAction::invocationAction: InvocationAction [0..*] { unordered, unique, reference }
+    * @param: end2 InvocationAction::onPort: Port [0..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_onPort_invocationAction
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_onPort_invocationAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_onPort_invocationAction]
+    = Json.reads[OTIUMLA_onPort_invocationAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_onPort_invocationAction]
+    = Json.writes[OTIUMLA_onPort_invocationAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_onPort_invocationAction]
+    = Json.format[OTIUMLA_onPort_invocationAction]
+
+  }
+
+  /**
+    * A_operation_callEvent
+    *
+    * @param: end1 A_operation_callEvent::callEvent: CallEvent [0..*] { unordered, unique, reference }
+    * @param: end2 CallEvent::operation: Operation [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_operation_callEvent
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_operation_callEvent {
+     
+    implicit def reads
+    : Reads[OTIUMLA_operation_callEvent]
+    = Json.reads[OTIUMLA_operation_callEvent]
+  
+    implicit def writes
+    : Writes[OTIUMLA_operation_callEvent]
+    = Json.writes[OTIUMLA_operation_callEvent]
+  
+    implicit def formats
+    : Format[OTIUMLA_operation_callEvent]
+    = Json.format[OTIUMLA_operation_callEvent]
+
+  }
+
+  /**
+    * A_operation_callOperationAction
+    *
+    * @param: end1 A_operation_callOperationAction::callOperationAction: CallOperationAction [0..*] { unordered, unique, reference }
+    * @param: end2 CallOperationAction::operation: Operation [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_operation_callOperationAction
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_operation_callOperationAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_operation_callOperationAction]
+    = Json.reads[OTIUMLA_operation_callOperationAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_operation_callOperationAction]
+    = Json.writes[OTIUMLA_operation_callOperationAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_operation_callOperationAction]
+    = Json.format[OTIUMLA_operation_callOperationAction]
+
+  }
+
+  /**
     * A_operation_templateParameter_parameteredElement
     *
     * @param: end1 OperationTemplateParameter::parameteredElement: Operation [1..1] { unordered, unique, reference }
@@ -7515,6 +8691,34 @@ object OTIMOFLink {
   }
 
   /**
+    * A_parameter_activityParameterNode
+    *
+    * @param: end1 A_parameter_activityParameterNode::activityParameterNode: ActivityParameterNode [0..*] { unordered, unique, reference }
+    * @param: end2 ActivityParameterNode::parameter: Parameter [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_parameter_activityParameterNode
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_parameter_activityParameterNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_parameter_activityParameterNode]
+    = Json.reads[OTIUMLA_parameter_activityParameterNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_parameter_activityParameterNode]
+    = Json.writes[OTIUMLA_parameter_activityParameterNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_parameter_activityParameterNode]
+    = Json.format[OTIUMLA_parameter_activityParameterNode]
+
+  }
+
+  /**
     * A_parameter_templateSignature
     *
     * @param: end1 A_parameter_templateSignature::templateSignature: TemplateSignature [0..*] { unordered, unique, reference }
@@ -7546,8 +8750,8 @@ object OTIMOFLink {
   /**
     * A_parameteredElement_templateParameter
     *
-    * @param: end1 TemplateParameter::parameteredElement: ParameterableElement [1..1] { unordered, unique, reference }
-    * @param: end2 ParameterableElement::templateParameter: TemplateParameter [0..1] { unordered, unique, reference }
+    * @param: end1 ParameterableElement::templateParameter: TemplateParameter [0..1] { unordered, unique, reference }
+    * @param: end2 TemplateParameter::parameteredElement: ParameterableElement [1..1] { unordered, unique, reference }
     */
   case class OTIUMLA_parameteredElement_templateParameter
   ( override val end1: ElementLocation,
@@ -7568,6 +8772,34 @@ object OTIMOFLink {
     implicit def formats
     : Format[OTIUMLA_parameteredElement_templateParameter]
     = Json.format[OTIUMLA_parameteredElement_templateParameter]
+
+  }
+
+  /**
+    * A_partWithPort_connectorEnd
+    *
+    * @param: end1 A_partWithPort_connectorEnd::connectorEnd: ConnectorEnd [0..*] { unordered, unique, reference }
+    * @param: end2 ConnectorEnd::partWithPort: Property [0..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_partWithPort_connectorEnd
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_partWithPort_connectorEnd {
+     
+    implicit def reads
+    : Reads[OTIUMLA_partWithPort_connectorEnd]
+    = Json.reads[OTIUMLA_partWithPort_connectorEnd]
+  
+    implicit def writes
+    : Writes[OTIUMLA_partWithPort_connectorEnd]
+    = Json.writes[OTIUMLA_partWithPort_connectorEnd]
+  
+    implicit def formats
+    : Format[OTIUMLA_partWithPort_connectorEnd]
+    = Json.format[OTIUMLA_partWithPort_connectorEnd]
 
   }
 
@@ -7680,6 +8912,62 @@ object OTIMOFLink {
     implicit def formats
     : Format[OTIUMLA_predecessorClause_successorClause]
     = Json.format[OTIUMLA_predecessorClause_successorClause]
+
+  }
+
+  /**
+    * A_protocol_port
+    *
+    * @param: end1 A_protocol_port::port: Port [0..*] { unordered, unique, reference }
+    * @param: end2 Port::protocol: ProtocolStateMachine [0..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_protocol_port
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_protocol_port {
+     
+    implicit def reads
+    : Reads[OTIUMLA_protocol_port]
+    = Json.reads[OTIUMLA_protocol_port]
+  
+    implicit def writes
+    : Writes[OTIUMLA_protocol_port]
+    = Json.writes[OTIUMLA_protocol_port]
+  
+    implicit def formats
+    : Format[OTIUMLA_protocol_port]
+    = Json.format[OTIUMLA_protocol_port]
+
+  }
+
+  /**
+    * A_qualifier_qualifierValue
+    *
+    * @param: end1 A_qualifier_qualifierValue::qualifierValue: QualifierValue [0..*] { unordered, unique, reference }
+    * @param: end2 QualifierValue::qualifier: Property [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_qualifier_qualifierValue
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_qualifier_qualifierValue {
+     
+    implicit def reads
+    : Reads[OTIUMLA_qualifier_qualifierValue]
+    = Json.reads[OTIUMLA_qualifier_qualifierValue]
+  
+    implicit def writes
+    : Writes[OTIUMLA_qualifier_qualifierValue]
+    = Json.writes[OTIUMLA_qualifier_qualifierValue]
+  
+    implicit def formats
+    : Format[OTIUMLA_qualifier_qualifierValue]
+    = Json.format[OTIUMLA_qualifier_qualifierValue]
 
   }
 
@@ -8188,6 +9476,118 @@ object OTIMOFLink {
   }
 
   /**
+    * A_redefinedState_state
+    *
+    * @param: end1 A_redefinedState_state::state: State [0..*] { unordered, unique, reference }
+    * @param: end2 State::redefinedState: State [0..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_redefinedState_state
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_redefinedState_state {
+     
+    implicit def reads
+    : Reads[OTIUMLA_redefinedState_state]
+    = Json.reads[OTIUMLA_redefinedState_state]
+  
+    implicit def writes
+    : Writes[OTIUMLA_redefinedState_state]
+    = Json.writes[OTIUMLA_redefinedState_state]
+  
+    implicit def formats
+    : Format[OTIUMLA_redefinedState_state]
+    = Json.format[OTIUMLA_redefinedState_state]
+
+  }
+
+  /**
+    * A_redefinedTransition_transition
+    *
+    * @param: end1 A_redefinedTransition_transition::transition: Transition [0..*] { unordered, unique, reference }
+    * @param: end2 Transition::redefinedTransition: Transition [0..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_redefinedTransition_transition
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_redefinedTransition_transition {
+     
+    implicit def reads
+    : Reads[OTIUMLA_redefinedTransition_transition]
+    = Json.reads[OTIUMLA_redefinedTransition_transition]
+  
+    implicit def writes
+    : Writes[OTIUMLA_redefinedTransition_transition]
+    = Json.writes[OTIUMLA_redefinedTransition_transition]
+  
+    implicit def formats
+    : Format[OTIUMLA_redefinedTransition_transition]
+    = Json.format[OTIUMLA_redefinedTransition_transition]
+
+  }
+
+  /**
+    * A_reducer_reduceAction
+    *
+    * @param: end1 A_reducer_reduceAction::reduceAction: ReduceAction [0..*] { unordered, unique, reference }
+    * @param: end2 ReduceAction::reducer: Behavior [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_reducer_reduceAction
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_reducer_reduceAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_reducer_reduceAction]
+    = Json.reads[OTIUMLA_reducer_reduceAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_reducer_reduceAction]
+    = Json.writes[OTIUMLA_reducer_reduceAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_reducer_reduceAction]
+    = Json.format[OTIUMLA_reducer_reduceAction]
+
+  }
+
+  /**
+    * A_refersTo_interactionUse
+    *
+    * @param: end1 A_refersTo_interactionUse::interactionUse: InteractionUse [0..*] { unordered, unique, reference }
+    * @param: end2 InteractionUse::refersTo: Interaction [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_refersTo_interactionUse
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_refersTo_interactionUse {
+     
+    implicit def reads
+    : Reads[OTIUMLA_refersTo_interactionUse]
+    = Json.reads[OTIUMLA_refersTo_interactionUse]
+  
+    implicit def writes
+    : Writes[OTIUMLA_refersTo_interactionUse]
+    = Json.writes[OTIUMLA_refersTo_interactionUse]
+  
+    implicit def formats
+    : Format[OTIUMLA_refersTo_interactionUse]
+    = Json.format[OTIUMLA_refersTo_interactionUse]
+
+  }
+
+  /**
     * A_replyToCall_replyAction
     *
     * @param: end1 A_replyToCall_replyAction::replyAction: ReplyAction [0..1] { unordered, unique, reference }
@@ -8272,6 +9672,146 @@ object OTIMOFLink {
   }
 
   /**
+    * A_represents_activityPartition
+    *
+    * @param: end1 A_represents_activityPartition::activityPartition: ActivityPartition [0..*] { unordered, unique, reference }
+    * @param: end2 ActivityPartition::represents: Element [0..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_represents_activityPartition
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_represents_activityPartition {
+     
+    implicit def reads
+    : Reads[OTIUMLA_represents_activityPartition]
+    = Json.reads[OTIUMLA_represents_activityPartition]
+  
+    implicit def writes
+    : Writes[OTIUMLA_represents_activityPartition]
+    = Json.writes[OTIUMLA_represents_activityPartition]
+  
+    implicit def formats
+    : Format[OTIUMLA_represents_activityPartition]
+    = Json.format[OTIUMLA_represents_activityPartition]
+
+  }
+
+  /**
+    * A_represents_lifeline
+    *
+    * @param: end1 A_represents_lifeline::lifeline: Lifeline [0..*] { unordered, unique, reference }
+    * @param: end2 Lifeline::represents: ConnectableElement [0..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_represents_lifeline
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_represents_lifeline {
+     
+    implicit def reads
+    : Reads[OTIUMLA_represents_lifeline]
+    = Json.reads[OTIUMLA_represents_lifeline]
+  
+    implicit def writes
+    : Writes[OTIUMLA_represents_lifeline]
+    = Json.writes[OTIUMLA_represents_lifeline]
+  
+    implicit def formats
+    : Format[OTIUMLA_represents_lifeline]
+    = Json.format[OTIUMLA_represents_lifeline]
+
+  }
+
+  /**
+    * A_returnValueRecipient_interactionUse
+    *
+    * @param: end1 A_returnValueRecipient_interactionUse::interactionUse: InteractionUse [0..*] { unordered, unique, reference }
+    * @param: end2 InteractionUse::returnValueRecipient: Property [0..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_returnValueRecipient_interactionUse
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_returnValueRecipient_interactionUse {
+     
+    implicit def reads
+    : Reads[OTIUMLA_returnValueRecipient_interactionUse]
+    = Json.reads[OTIUMLA_returnValueRecipient_interactionUse]
+  
+    implicit def writes
+    : Writes[OTIUMLA_returnValueRecipient_interactionUse]
+    = Json.writes[OTIUMLA_returnValueRecipient_interactionUse]
+  
+    implicit def formats
+    : Format[OTIUMLA_returnValueRecipient_interactionUse]
+    = Json.format[OTIUMLA_returnValueRecipient_interactionUse]
+
+  }
+
+  /**
+    * A_selection_objectFlow
+    *
+    * @param: end1 A_selection_objectFlow::objectFlow: ObjectFlow [0..*] { unordered, unique, reference }
+    * @param: end2 ObjectFlow::selection: Behavior [0..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_selection_objectFlow
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_selection_objectFlow {
+     
+    implicit def reads
+    : Reads[OTIUMLA_selection_objectFlow]
+    = Json.reads[OTIUMLA_selection_objectFlow]
+  
+    implicit def writes
+    : Writes[OTIUMLA_selection_objectFlow]
+    = Json.writes[OTIUMLA_selection_objectFlow]
+  
+    implicit def formats
+    : Format[OTIUMLA_selection_objectFlow]
+    = Json.format[OTIUMLA_selection_objectFlow]
+
+  }
+
+  /**
+    * A_selection_objectNode
+    *
+    * @param: end1 A_selection_objectNode::objectNode: ObjectNode [0..*] { unordered, unique, reference }
+    * @param: end2 ObjectNode::selection: Behavior [0..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_selection_objectNode
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_selection_objectNode {
+     
+    implicit def reads
+    : Reads[OTIUMLA_selection_objectNode]
+    = Json.reads[OTIUMLA_selection_objectNode]
+  
+    implicit def writes
+    : Writes[OTIUMLA_selection_objectNode]
+    = Json.writes[OTIUMLA_selection_objectNode]
+  
+    implicit def formats
+    : Format[OTIUMLA_selection_objectNode]
+    = Json.format[OTIUMLA_selection_objectNode]
+
+  }
+
+  /**
     * A_sendEvent_endMessage
     *
     * @param: end1 A_sendEvent_endMessage::endMessage: Message [0..1] { unordered, unique, reference }
@@ -8324,6 +9864,230 @@ object OTIMOFLink {
     implicit def formats
     : Format[OTIUMLA_setupPart_loopNode]
     = Json.format[OTIUMLA_setupPart_loopNode]
+
+  }
+
+  /**
+    * A_signal_broadcastSignalAction
+    *
+    * @param: end1 A_signal_broadcastSignalAction::broadcastSignalAction: BroadcastSignalAction [0..*] { unordered, unique, reference }
+    * @param: end2 BroadcastSignalAction::signal: Signal [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_signal_broadcastSignalAction
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_signal_broadcastSignalAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_signal_broadcastSignalAction]
+    = Json.reads[OTIUMLA_signal_broadcastSignalAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_signal_broadcastSignalAction]
+    = Json.writes[OTIUMLA_signal_broadcastSignalAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_signal_broadcastSignalAction]
+    = Json.format[OTIUMLA_signal_broadcastSignalAction]
+
+  }
+
+  /**
+    * A_signal_reception
+    *
+    * @param: end1 A_signal_reception::reception: Reception [0..*] { unordered, unique, reference }
+    * @param: end2 Reception::signal: Signal [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_signal_reception
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_signal_reception {
+     
+    implicit def reads
+    : Reads[OTIUMLA_signal_reception]
+    = Json.reads[OTIUMLA_signal_reception]
+  
+    implicit def writes
+    : Writes[OTIUMLA_signal_reception]
+    = Json.writes[OTIUMLA_signal_reception]
+  
+    implicit def formats
+    : Format[OTIUMLA_signal_reception]
+    = Json.format[OTIUMLA_signal_reception]
+
+  }
+
+  /**
+    * A_signal_sendSignalAction
+    *
+    * @param: end1 A_signal_sendSignalAction::sendSignalAction: SendSignalAction [0..*] { unordered, unique, reference }
+    * @param: end2 SendSignalAction::signal: Signal [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_signal_sendSignalAction
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_signal_sendSignalAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_signal_sendSignalAction]
+    = Json.reads[OTIUMLA_signal_sendSignalAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_signal_sendSignalAction]
+    = Json.writes[OTIUMLA_signal_sendSignalAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_signal_sendSignalAction]
+    = Json.format[OTIUMLA_signal_sendSignalAction]
+
+  }
+
+  /**
+    * A_signal_signalEvent
+    *
+    * @param: end1 A_signal_signalEvent::signalEvent: SignalEvent [0..*] { unordered, unique, reference }
+    * @param: end2 SignalEvent::signal: Signal [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_signal_signalEvent
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_signal_signalEvent {
+     
+    implicit def reads
+    : Reads[OTIUMLA_signal_signalEvent]
+    = Json.reads[OTIUMLA_signal_signalEvent]
+  
+    implicit def writes
+    : Writes[OTIUMLA_signal_signalEvent]
+    = Json.writes[OTIUMLA_signal_signalEvent]
+  
+    implicit def formats
+    : Format[OTIUMLA_signal_signalEvent]
+    = Json.format[OTIUMLA_signal_signalEvent]
+
+  }
+
+  /**
+    * A_signature_message
+    *
+    * @param: end1 A_signature_message::message: Message [0..*] { unordered, unique, reference }
+    * @param: end2 Message::signature: NamedElement [0..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_signature_message
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_signature_message {
+     
+    implicit def reads
+    : Reads[OTIUMLA_signature_message]
+    = Json.reads[OTIUMLA_signature_message]
+  
+    implicit def writes
+    : Writes[OTIUMLA_signature_message]
+    = Json.writes[OTIUMLA_signature_message]
+  
+    implicit def formats
+    : Format[OTIUMLA_signature_message]
+    = Json.format[OTIUMLA_signature_message]
+
+  }
+
+  /**
+    * A_signature_templateBinding
+    *
+    * @param: end1 A_signature_templateBinding::templateBinding: TemplateBinding [0..*] { unordered, unique, reference }
+    * @param: end2 TemplateBinding::signature: TemplateSignature [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_signature_templateBinding
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_signature_templateBinding {
+     
+    implicit def reads
+    : Reads[OTIUMLA_signature_templateBinding]
+    = Json.reads[OTIUMLA_signature_templateBinding]
+  
+    implicit def writes
+    : Writes[OTIUMLA_signature_templateBinding]
+    = Json.writes[OTIUMLA_signature_templateBinding]
+  
+    implicit def formats
+    : Format[OTIUMLA_signature_templateBinding]
+    = Json.format[OTIUMLA_signature_templateBinding]
+
+  }
+
+  /**
+    * A_start_executionSpecification
+    *
+    * @param: end1 A_start_executionSpecification::executionSpecification: ExecutionSpecification [0..*] { unordered, unique, reference }
+    * @param: end2 ExecutionSpecification::start: OccurrenceSpecification [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_start_executionSpecification
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_start_executionSpecification {
+     
+    implicit def reads
+    : Reads[OTIUMLA_start_executionSpecification]
+    = Json.reads[OTIUMLA_start_executionSpecification]
+  
+    implicit def writes
+    : Writes[OTIUMLA_start_executionSpecification]
+    = Json.writes[OTIUMLA_start_executionSpecification]
+  
+    implicit def formats
+    : Format[OTIUMLA_start_executionSpecification]
+    = Json.format[OTIUMLA_start_executionSpecification]
+
+  }
+
+  /**
+    * A_structuralFeature_structuralFeatureAction
+    *
+    * @param: end1 A_structuralFeature_structuralFeatureAction::structuralFeatureAction: StructuralFeatureAction [0..*] { unordered, unique, reference }
+    * @param: end2 StructuralFeatureAction::structuralFeature: StructuralFeature [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_structuralFeature_structuralFeatureAction
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_structuralFeature_structuralFeatureAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_structuralFeature_structuralFeatureAction]
+    = Json.reads[OTIUMLA_structuralFeature_structuralFeatureAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_structuralFeature_structuralFeatureAction]
+    = Json.writes[OTIUMLA_structuralFeature_structuralFeatureAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_structuralFeature_structuralFeatureAction]
+    = Json.format[OTIUMLA_structuralFeature_structuralFeatureAction]
 
   }
 
@@ -8524,6 +10288,202 @@ object OTIMOFLink {
   }
 
   /**
+    * A_transformation_objectFlow
+    *
+    * @param: end1 A_transformation_objectFlow::objectFlow: ObjectFlow [0..*] { unordered, unique, reference }
+    * @param: end2 ObjectFlow::transformation: Behavior [0..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_transformation_objectFlow
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_transformation_objectFlow {
+     
+    implicit def reads
+    : Reads[OTIUMLA_transformation_objectFlow]
+    = Json.reads[OTIUMLA_transformation_objectFlow]
+  
+    implicit def writes
+    : Writes[OTIUMLA_transformation_objectFlow]
+    = Json.writes[OTIUMLA_transformation_objectFlow]
+  
+    implicit def formats
+    : Format[OTIUMLA_transformation_objectFlow]
+    = Json.format[OTIUMLA_transformation_objectFlow]
+
+  }
+
+  /**
+    * A_type_collaborationUse
+    *
+    * @param: end1 A_type_collaborationUse::collaborationUse: CollaborationUse [0..*] { unordered, unique, reference }
+    * @param: end2 CollaborationUse::type: Collaboration [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_type_collaborationUse
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_type_collaborationUse {
+     
+    implicit def reads
+    : Reads[OTIUMLA_type_collaborationUse]
+    = Json.reads[OTIUMLA_type_collaborationUse]
+  
+    implicit def writes
+    : Writes[OTIUMLA_type_collaborationUse]
+    = Json.writes[OTIUMLA_type_collaborationUse]
+  
+    implicit def formats
+    : Format[OTIUMLA_type_collaborationUse]
+    = Json.format[OTIUMLA_type_collaborationUse]
+
+  }
+
+  /**
+    * A_type_connector
+    *
+    * @param: end1 A_type_connector::connector: Connector [0..*] { unordered, unique, reference }
+    * @param: end2 Connector::type: Association [0..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_type_connector
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_type_connector {
+     
+    implicit def reads
+    : Reads[OTIUMLA_type_connector]
+    = Json.reads[OTIUMLA_type_connector]
+  
+    implicit def writes
+    : Writes[OTIUMLA_type_connector]
+    = Json.writes[OTIUMLA_type_connector]
+  
+    implicit def formats
+    : Format[OTIUMLA_type_connector]
+    = Json.format[OTIUMLA_type_connector]
+
+  }
+
+  /**
+    * A_type_extensionEnd
+    *
+    * @param: end1 A_type_extensionEnd::extensionEnd: ExtensionEnd [0..*] { unordered, unique, reference }
+    * @param: end2 ExtensionEnd::type: Stereotype [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_type_extensionEnd
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_type_extensionEnd {
+     
+    implicit def reads
+    : Reads[OTIUMLA_type_extensionEnd]
+    = Json.reads[OTIUMLA_type_extensionEnd]
+  
+    implicit def writes
+    : Writes[OTIUMLA_type_extensionEnd]
+    = Json.writes[OTIUMLA_type_extensionEnd]
+  
+    implicit def formats
+    : Format[OTIUMLA_type_extensionEnd]
+    = Json.format[OTIUMLA_type_extensionEnd]
+
+  }
+
+  /**
+    * A_type_typedElement
+    *
+    * @param: end1 A_type_typedElement::typedElement: TypedElement [0..*] { unordered, unique, reference }
+    * @param: end2 TypedElement::type: Type [0..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_type_typedElement
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_type_typedElement {
+     
+    implicit def reads
+    : Reads[OTIUMLA_type_typedElement]
+    = Json.reads[OTIUMLA_type_typedElement]
+  
+    implicit def writes
+    : Writes[OTIUMLA_type_typedElement]
+    = Json.writes[OTIUMLA_type_typedElement]
+  
+    implicit def formats
+    : Format[OTIUMLA_type_typedElement]
+    = Json.format[OTIUMLA_type_typedElement]
+
+  }
+
+  /**
+    * A_unmarshallType_unmarshallAction
+    *
+    * @param: end1 A_unmarshallType_unmarshallAction::unmarshallAction: UnmarshallAction [0..*] { unordered, unique, reference }
+    * @param: end2 UnmarshallAction::unmarshallType: Classifier [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_unmarshallType_unmarshallAction
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_unmarshallType_unmarshallAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_unmarshallType_unmarshallAction]
+    = Json.reads[OTIUMLA_unmarshallType_unmarshallAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_unmarshallType_unmarshallAction]
+    = Json.writes[OTIUMLA_unmarshallType_unmarshallAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_unmarshallType_unmarshallAction]
+    = Json.format[OTIUMLA_unmarshallType_unmarshallAction]
+
+  }
+
+  /**
+    * A_utilizedElement_manifestation
+    *
+    * @param: end1 A_utilizedElement_manifestation::manifestation: Manifestation [0..*] { unordered, unique, reference }
+    * @param: end2 Manifestation::utilizedElement: PackageableElement [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_utilizedElement_manifestation
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_utilizedElement_manifestation {
+     
+    implicit def reads
+    : Reads[OTIUMLA_utilizedElement_manifestation]
+    = Json.reads[OTIUMLA_utilizedElement_manifestation]
+  
+    implicit def writes
+    : Writes[OTIUMLA_utilizedElement_manifestation]
+    = Json.writes[OTIUMLA_utilizedElement_manifestation]
+  
+    implicit def formats
+    : Format[OTIUMLA_utilizedElement_manifestation]
+    = Json.format[OTIUMLA_utilizedElement_manifestation]
+
+  }
+
+  /**
     * A_value_linkEndData
     *
     * @param: end1 A_value_linkEndData::linkEndData: LinkEndData [0..1] { unordered, unique, reference }
@@ -8576,6 +10536,34 @@ object OTIMOFLink {
     implicit def formats
     : Format[OTIUMLA_value_qualifierValue]
     = Json.format[OTIUMLA_value_qualifierValue]
+
+  }
+
+  /**
+    * A_variable_variableAction
+    *
+    * @param: end1 A_variable_variableAction::variableAction: VariableAction [0..*] { unordered, unique, reference }
+    * @param: end2 VariableAction::variable: Variable [1..1] { unordered, unique, reference }
+    */
+  case class OTIUMLA_variable_variableAction
+  ( override val end1: ElementLocation,
+    override val end2: ElementLocation )
+  extends  OTIMOFReferenceLink
+  {}
+
+  object OTIUMLA_variable_variableAction {
+     
+    implicit def reads
+    : Reads[OTIUMLA_variable_variableAction]
+    = Json.reads[OTIUMLA_variable_variableAction]
+  
+    implicit def writes
+    : Writes[OTIUMLA_variable_variableAction]
+    = Json.writes[OTIUMLA_variable_variableAction]
+  
+    implicit def formats
+    : Format[OTIUMLA_variable_variableAction]
+    = Json.format[OTIUMLA_variable_variableAction]
 
   }
 
