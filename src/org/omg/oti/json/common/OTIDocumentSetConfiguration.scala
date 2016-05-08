@@ -56,14 +56,6 @@ object OTIDocumentSetConfiguration {
   : OTIDocumentSetConfiguration
   = OTIDocumentSetConfiguration(documents=Vector.empty[OTIDocumentConfiguration])
 
-  implicit def reads
-  : Writes[OTIDocumentSetConfiguration]
-  = Json.writes[OTIDocumentSetConfiguration]
-
-  implicit def writes
-  : Reads[OTIDocumentSetConfiguration]
-  = Json.reads[OTIDocumentSetConfiguration]
-
   implicit def formats
   : Format[OTIDocumentSetConfiguration]
   = Json.format[OTIDocumentSetConfiguration]

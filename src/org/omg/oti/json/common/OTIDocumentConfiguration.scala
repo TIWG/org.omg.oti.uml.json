@@ -102,14 +102,6 @@ object OTIDocumentConfiguration {
     }
   }
 
-  implicit def reads
-  : Writes[OTIDocumentConfiguration]
-  = Json.writes[OTIDocumentConfiguration]
-
-  implicit def writes
-  : Reads[OTIDocumentConfiguration]
-  = Json.reads[OTIDocumentConfiguration]
-
   implicit def formats
   : Format[OTIDocumentConfiguration]
   = Json.format[OTIDocumentConfiguration]

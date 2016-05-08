@@ -183,14 +183,6 @@ object ElementLocation {
 
   }
 
-  implicit val writes
-  : Writes[ElementLocation]
-  = Variants.writes[ElementLocation]((__ \ "type").write[String])
-
-  implicit val reads
-  : Reads[ElementLocation]
-  = Variants.reads[ElementLocation]((__ \ "type").read[String])
-
   implicit val formats
   : Format[ElementLocation]
   = Variants.format[ElementLocation]((__ \ "type").format[String])
@@ -209,14 +201,6 @@ object ElementLocation_OTI_ID {
 
   }
 
-  implicit val writes
-  : Writes[ElementLocation_OTI_ID]
-  = Json.writes[ElementLocation_OTI_ID]
-
-  implicit val reads
-  : Reads[ElementLocation_OTI_ID]
-  = Json.reads[ElementLocation_OTI_ID]
-
   implicit val formats
   : Format[ElementLocation_OTI_ID]
   = Json.format[ElementLocation_OTI_ID]
@@ -234,14 +218,6 @@ object ElementLocation_ToolSpecific_ID {
     = taggedStringOrdering[OTIPrimitiveTypes.TOOL_SPECIFIC_ID].compare(x.element_id, y.element_id)
 
   }
-
-  implicit val writes
-  : Writes[ElementLocation_ToolSpecific_ID]
-  = Json.writes[ElementLocation_ToolSpecific_ID]
-
-  implicit val reads
-  : Reads[ElementLocation_ToolSpecific_ID]
-  = Json.reads[ElementLocation_ToolSpecific_ID]
 
   implicit val formats
   : Format[ElementLocation_ToolSpecific_ID]
@@ -268,14 +244,6 @@ object ElementLocation_OTI_ID_OTI_URL {
 
   }
 
-  implicit val writes
-  : Writes[ElementLocation_OTI_ID_OTI_URL]
-  = Json.writes[ElementLocation_OTI_ID_OTI_URL]
-
-  implicit val reads
-  : Reads[ElementLocation_OTI_ID_OTI_URL]
-  = Json.reads[ElementLocation_OTI_ID_OTI_URL]
-
   implicit val formats
   : Format[ElementLocation_OTI_ID_OTI_URL]
   = Json.format[ElementLocation_OTI_ID_OTI_URL]
@@ -301,14 +269,6 @@ object ElementLocation_ToolSpecific_ID_OTI_URL {
 
   }
 
-  implicit val writes
-  : Writes[ElementLocation_ToolSpecific_ID_OTI_URL]
-  = Json.writes[ElementLocation_ToolSpecific_ID_OTI_URL]
-
-  implicit val reads
-  : Reads[ElementLocation_ToolSpecific_ID_OTI_URL]
-  = Json.reads[ElementLocation_ToolSpecific_ID_OTI_URL]
-
   implicit val formats
   : Format[ElementLocation_ToolSpecific_ID_OTI_URL]
   = Json.format[ElementLocation_ToolSpecific_ID_OTI_URL]
@@ -333,14 +293,6 @@ object ElementLocation_ToolSpecific_ID_URL {
     }
 
   }
-
-  implicit val writes
-  : Writes[ElementLocation_ToolSpecific_ID_URL]
-  = Json.writes[ElementLocation_ToolSpecific_ID_URL]
-
-  implicit val reads
-  : Reads[ElementLocation_ToolSpecific_ID_URL]
-  = Json.reads[ElementLocation_ToolSpecific_ID_URL]
 
   implicit val formats
   : Format[ElementLocation_ToolSpecific_ID_URL]
