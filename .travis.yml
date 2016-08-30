@@ -16,6 +16,7 @@ jdk:
 - oraclejdk8
 
 language: scala
+
 scala:
 - 2.11.8
 
@@ -30,9 +31,8 @@ before_install:
 - git config --global user.email "nobody@nobody.org"
 - git config --global user.name "Travis CI"
 
-script:
-- if [ "x$TRAVIS_TAG" = "x" ]; then sbt -jvm-opts travis/jvmopts.compile signedArtifacts; else sbt -jvm-opts travis/jvmopts.compile -Dproject.version=$TRAVIS_TAG publishSigned ghpagesPushSite; fi
 
-# workaround for https://github.com/travis-ci/travis-ci/issues/3487
-env:
-  secure: DX6CpCu3mNF4dfSia2wv6mkn2tsIHzjPKly3I/34yANBVWnrOF1vDEr0iZXHf9RJsoTd3Ng39bKCG4uj/BZSOVpkZlG+5yv/e9kRVd22BA6Df0WjWGw4Z4W2DMI04MG/VXCdoWC9liT/rPsShpMPtT114WoEyu8YTWwapzvIdXWbOP12c0TMHhqKF/7XvZZcs4kgLRxG3wYFpcg6+Ngc2L4N+3cj8UCqDejAm8pqr0nbnF98Rnhe6d7+AxdMD1TdpNcgCrUelpeTxYNiI5TRjfE4kY35hbJimRpcCtCvjyYVy8vQLXLTX8qsV0JuQr51iDbPRLWZMGWtJBRbgefCXVgj0uMZkPB45Q6pCUAIgV0GGHMa1iNMQx3R0Jaxc4q7HN0fK1ghiJX65o4fOz/q41pV5uFPm3z+4BFaKEKFs164rYVlf9E0o2nU8Gqe8hrQw2h61yau1PLS/W7AKm12ZbYs7v2t3jNadpjNjHrIShUpHfscKJZ9acoyptkZX51JM5xP1fc39cLgs05M/Z+3dsXYcB53VAss0J69JCHid4r62wYl4HOunt05nAnHGVp/sgmBn70gJlYzfGCGKEAAz6p4jo/MNWiXmBFLMfDo00V0NmmFT7+Jlvz/LSV6a84IyxbYT3FsPBkUMCr4EhijPXD4/lC4si1Y1xXRP4O7X1Q=
+script:
+- [ ${TRAVIS_SECURE_ENV_VARS} == true ] && chmod 777 ./scripts/travis-deploy.sh && ./scripts/travis-deploy.sh
+- [ ${TRAVIS_SECURE_ENV_VARS} == false ] && chmod 777 ./scripts/travis-build.sh && ./scripts/travis-build.sh
+
