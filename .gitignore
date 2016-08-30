@@ -5,6 +5,7 @@
 *.bak
 *~
 bin
+gh-pages
 *links.json
 local.*
 project/project
