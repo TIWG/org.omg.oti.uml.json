@@ -2,6 +2,8 @@ sbtPlugin := false
 
 name := "org.omg.oti.uml.json.schema"
 
+description := "Json serialization for OMG Tool-Interoperability API for OMG-compliant UML 2.5 & later."
+
 moduleName := "org.omg.oti.uml.json.schema"
 
 organization := "TIWG"

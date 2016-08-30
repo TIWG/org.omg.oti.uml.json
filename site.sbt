@@ -7,6 +7,12 @@ enablePlugins(SiteScaladocPlugin)
 import com.typesafe.sbt.SbtGhPages._
 
 preprocessVars in Preprocess := Map(
+  "REPO" -> "org.omg.oti",
+  "ORG" -> organization.value,
+  "org" -> organization.value.toLowerCase,
+  "ORG_NAME" -> organizationName.value,
+  "DESC" -> description.value,
+  "PKG" -> moduleName.value,
   "CONTRIBUTORS" -> {
     val commit = Process("git rev-parse HEAD").lines.head
     val p1 = Process(s"git shortlog -sne --no-merges $commit")
