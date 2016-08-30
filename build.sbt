@@ -7,16 +7,7 @@ import spray.json._, DefaultJsonProtocol._
 import gov.nasa.jpl.imce.sbt._
 import gov.nasa.jpl.imce.sbt.ProjectHelper._
 
-useGpg := true
-
 updateOptions := updateOptions.value.withCachedResolution(true)
-
-developers := List(
-  Developer(
-    id="rouquett",
-    name="Nicolas F. Rouquette",
-    email="nicolas.f.rouquette@jpl.nasa.gov",
-    url=url("https://gateway.jpl.nasa.gov/personal/rouquett/default.aspx")))
 
 import scala.io.Source
 import scala.util.control.Exception._
@@ -98,12 +89,6 @@ resolvers := {
 
 shellPrompt in ThisBuild := { state => Project.extract(state).currentRef.project + "> " }
 
-lazy val mdRoot = SettingKey[File]("md-root", "MagicDraw Installation Directory")
-
-lazy val specsRoot = SettingKey[File]("specs-root", "MagicDraw DynamicScripts Test Specification Directory")
-
-lazy val runMDTests = taskKey[Unit]("Run MagicDraw DynamicScripts Unit Tests")
-
 /*
  * For now, we can't compile in strict mode because the Scala macros used for generating the JSon adapters
  * results in a compilation warning:
@@ -121,13 +106,9 @@ lazy val core = Project("org-omg-oti-uml-json", file("."))
   //.settings(docSettings(diagrams=false))
   .settings(IMCEReleasePlugin.packageReleaseProcessSettings)
   .settings(
-    IMCEKeys.licenseYearOrRange := "2014-2016",
+    IMCEKeys.licenseYearOrRange := "2016",
     IMCEKeys.organizationInfo := IMCEPlugin.Organizations.oti,
     IMCEKeys.targetJDK := IMCEKeys.jdk18.value,
-
-    organization := "org.omg.tiwg",
-    organizationHomepage :=
-      Some(url("http://www.omg.org/members/sysml-rtf-wiki/doku.php?id=rtf5:groups:tools_infrastructure:index")),
 
     buildInfoPackage := "org.omg.oti.uml.json",
     buildInfoKeys ++= Seq[BuildInfoKey](BuildInfoKey.action("buildDateUTC") { buildUTCDate.value }),
@@ -140,9 +121,6 @@ lazy val core = Project("org-omg-oti-uml-json", file("."))
     },
 
     git.baseVersion := Versions.version,
-
-    scalaSource in Compile :=
-      baseDirectory.value / "src",
       
     unmanagedSourceDirectories in Compile +=
       baseDirectory.value / "src-gen",
@@ -161,18 +139,14 @@ lazy val core = Project("org-omg-oti-uml-json", file("."))
 
     unmanagedClasspath in Compile <++= unmanagedJars in Compile,
 
+    resolvers += Resolver.bintrayRepo("jpl-imce", "gov.nasa.jpl.imce"),
+
     libraryDependencies +=
-      "gov.nasa.jpl.imce.thirdParty" %% "other-scala-libraries" % Versions_other_scala_libraries.version artifacts
-        Artifact("other-scala-libraries", "zip", "zip", Some("resource"), Seq(), None, Map()),
+      "gov.nasa.jpl.imce" %% "imce.third_party.other_scala_libraries" % Versions_other_scala_libraries.version
+        artifacts
+        Artifact("imce.third_party.other_scala_libraries", "zip", "zip", Some("resource"), Seq(), None, Map()),
 
-    extractArchives := {},
-
-    IMCEKeys.nexusJavadocRepositoryRestAPIURL2RepositoryName := Map(
-      "https://oss.sonatype.org/service/local" -> "releases",
-      "https://cae-nexuspro.jpl.nasa.gov/nexus/service/local" -> "JPL",
-      "https://cae-nexuspro.jpl.nasa.gov/nexus/content/groups/jpl.beta.group" -> "JPL Beta Group",
-      "https://cae-nexuspro.jpl.nasa.gov/nexus/content/groups/jpl.public.group" -> "JPL Public Group"),
-    IMCEKeys.pomRepositoryPathRegex := """\<repositoryPath\>\s*([^\"]*)\s*\<\/repositoryPath\>""".r
+    extractArchives := {}
 
   )
 
