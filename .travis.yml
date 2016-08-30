@@ -33,6 +33,6 @@ before_install:
 
 
 script:
-- [ ${TRAVIS_SECURE_ENV_VARS} == true ] && chmod 777 ./scripts/travis-deploy.sh && ./scripts/travis-deploy.sh
-- [ ${TRAVIS_SECURE_ENV_VARS} == false ] && chmod 777 ./scripts/travis-build.sh && ./scripts/travis-build.sh
+- ./scripts/travis-build.sh
+- ./scripts/travis-deploy.sh
 
