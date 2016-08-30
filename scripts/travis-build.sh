@@ -6,5 +6,4 @@ set -ev
 
 [ -n "${TRAVIS_TAG}" ] && exit 0;
 
-sbt -jvm-opts travis/jvmopts.compile artifacts makeSite
-
+sbt -jvm-opts travis/jvmopts.compile compile test
