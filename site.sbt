@@ -23,7 +23,7 @@ preprocessVars in Preprocess := Map(
         s"""<a href="https://github.com/${organization.value}/${moduleName.value}/tree/$tag">$tag</a>"""
       case _ =>
         val v = version.value
-        git.gitHeadCommit.value.fold[String]("CASE1-" + v) { sha =>
+        git.gitHeadCommit.value.fold[String](v) { sha =>
           if (git.gitUncommittedChanges.value)
             v
           else

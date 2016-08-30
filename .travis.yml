@@ -28,6 +28,7 @@ before_install:
 - chmod 600 local.*
 - eval `ssh-agent -s`
 - ssh-add local.deploy_key
+- git config --global push.default simple
 - git config --global user.email "nobody@nobody.org"
 - git config --global user.name "Travis CI"
 

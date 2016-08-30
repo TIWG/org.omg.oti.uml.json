@@ -98,10 +98,10 @@ shellPrompt in ThisBuild := { state => Project.extract(state).currentRef.project
  * ^
  *
  */
-lazy val core = Project("org-omg-oti-uml-json", file("."))
+lazy val core = Project("org-omg-oti-uml-json-schema", file("."))
   .enablePlugins(IMCEGitPlugin)
   .enablePlugins(IMCEReleasePlugin)
-  .settings(dynamicScriptsResourceSettings(Some("org.omg.oti.uml.json")))
+  .settings(dynamicScriptsResourceSettings(Some("org.omg.oti.uml.json.schema")))
   //.settings(IMCEPlugin.strictScalacFatalWarningsSettings)
   //.settings(docSettings(diagrams=false))
   .settings(IMCEReleasePlugin.packageReleaseProcessSettings)
@@ -110,7 +110,7 @@ lazy val core = Project("org-omg-oti-uml-json", file("."))
     IMCEKeys.organizationInfo := IMCEPlugin.Organizations.oti,
     IMCEKeys.targetJDK := IMCEKeys.jdk18.value,
 
-    buildInfoPackage := "org.omg.oti.uml.json",
+    buildInfoPackage := "org.omg.oti.uml.json.schema",
     buildInfoKeys ++= Seq[BuildInfoKey](BuildInfoKey.action("buildDateUTC") { buildUTCDate.value }),
 
     projectID := {
