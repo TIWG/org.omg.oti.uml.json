@@ -1,0 +1,248 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>extent - org.omg.oti.json.extent</title>
+          <meta name="description" content="extent - org.omg.oti.json.extent" />
+          <meta name="keywords" content="extent org.omg.oti.json.extent" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'org.omg.oti.json.extent.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="org">org</a>.<a href="../../../package.html" class="extype" name="org.omg">omg</a>.<a href="../../package.html" class="extype" name="org.omg.oti">oti</a>.<a href="../package.html" class="extype" name="org.omg.oti.json">json</a></p>
+        <h1>extent</h1><span class="permalink">
+      <a href="../../../../../index.html#org.omg.oti.json.extent.package" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">extent</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.omg.oti.json.extent.DocumentLocation" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="DocumentLocationextendsAnyRef"></a>
+      <a id="DocumentLocation:DocumentLocation"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="DocumentLocation.html"><span class="name">DocumentLocation</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#org.omg.oti.json.extent.package@DocumentLocationextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Abstraction for the location of a Document container of OTI MOF Elements &amp; Links.</p><div class="fullcomment"><div class="comment cmt"><p>Abstraction for the location of a Document container of OTI MOF Elements &amp; Links.
+There are two variants
+- an OTI Document as the container of all UML Elements in scope of a UML Package/Profile
+- a tool-specific document resource identified by a tool-specific URL
+</p></div></div>
+    </li><li name="org.omg.oti.json.extent.OTIDocumentExtent" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OTIDocumentExtentextendsProductwithSerializable"></a>
+      <a id="OTIDocumentExtent:OTIDocumentExtent"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="OTIDocumentExtent.html"><span class="name">OTIDocumentExtent</span></a><span class="params">(<span name="documentLocation">documentLocation: <a href="DocumentLocation.html" class="extype" name="org.omg.oti.json.extent.DocumentLocation">DocumentLocation</a></span>, <span name="elementExtent">elementExtent: <span class="extype" name="scala.collection.immutable.Vector">Vector</span>[<a href="../uml/OTIMOFElement.html" class="extype" name="org.omg.oti.json.uml.OTIMOFElement">OTIMOFElement</a>] = <span class="symbol">Vector.empty[OTIMOFElement]</span></span>, <span name="compositeLinkExtent">compositeLinkExtent: <span class="extype" name="scala.collection.immutable.Vector">Vector</span>[<a href="../uml/OTIMOFCompositeLink.html" class="extype" name="org.omg.oti.json.uml.OTIMOFCompositeLink">OTIMOFCompositeLink</a>] = <span class="symbol">Vector.empty[OTIMOFCompositeLink]</span></span>, <span name="compositeOrderedLinkExtent">compositeOrderedLinkExtent: <span class="extype" name="scala.collection.immutable.Vector">Vector</span>[<a href="../uml/OTIMOFCompositeOrderedLink.html" class="extype" name="org.omg.oti.json.uml.OTIMOFCompositeOrderedLink">OTIMOFCompositeOrderedLink</a>] = <span class="defval" name="Vector.empty[OTIMOFCompositeOrderedLink]">...</span></span>, <span name="referenceLinkExtent">referenceLinkExtent: <span class="extype" name="scala.collection.immutable.Vector">Vector</span>[<a href="../uml/OTIMOFReferenceLink.html" class="extype" name="org.omg.oti.json.uml.OTIMOFReferenceLink">OTIMOFReferenceLink</a>] = <span class="symbol">Vector.empty[OTIMOFReferenceLink]</span></span>, <span name="referenceOrderedLinkExtent">referenceOrderedLinkExtent: <span class="extype" name="scala.collection.immutable.Vector">Vector</span>[<a href="../uml/OTIMOFReferenceOrderedLink.html" class="extype" name="org.omg.oti.json.uml.OTIMOFReferenceOrderedLink">OTIMOFReferenceOrderedLink</a>] = <span class="defval" name="Vector.empty[OTIMOFReferenceOrderedLink]">...</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#org.omg.oti.json.extent.package@OTIDocumentExtentextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.omg.oti.json.extent.OTIDocumentLocation" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="OTIDocumentLocationextendsDocumentLocationwithProductwithSerializable"></a>
+      <a id="OTIDocumentLocation:OTIDocumentLocation"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="OTIDocumentLocation.html"><span class="name">OTIDocumentLocation</span></a><span class="params">(<span name="otiCharacteristics">otiCharacteristics: <a href="../common/OTISpecificationRootCharacteristics.html" class="extype" name="org.omg.oti.json.common.OTISpecificationRootCharacteristics">OTISpecificationRootCharacteristics</a></span>, <span name="toolSpecificPackageID">toolSpecificPackageID: <span class="extype" name="scalaz.@@">@@</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="../common/OTIPrimitiveTypes$$TOOL_SPECIFIC_ID.html" class="extype" name="org.omg.oti.json.common.OTIPrimitiveTypes.TOOL_SPECIFIC_ID">TOOL_SPECIFIC_ID</a>]</span>, <span name="toolSpecificPackageURL">toolSpecificPackageURL: <span class="extype" name="scalaz.@@">@@</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="../common/OTIPrimitiveTypes$$TOOL_SPECIFIC_URL.html" class="extype" name="org.omg.oti.json.common.OTIPrimitiveTypes.TOOL_SPECIFIC_URL">TOOL_SPECIFIC_URL</a>]</span>)</span><span class="result"> extends <a href="DocumentLocation.html" class="extype" name="org.omg.oti.json.extent.DocumentLocation">DocumentLocation</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#org.omg.oti.json.extent.package@OTIDocumentLocationextendsDocumentLocationwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The location of an OTI Document
+</p><div class="fullcomment"><div class="comment cmt"><p>The location of an OTI Document
+</p></div><dl class="paramcmts block"><dt class="param">otiCharacteristics</dt><dd class="cmt"><p>the characteristics of the OTI Document</p></dd><dt class="param">toolSpecificPackageID</dt><dd class="cmt"><p>the tool-specific ID of the OTI Document UML Package/profile scope</p></dd><dt class="param">toolSpecificPackageURL</dt><dd class="cmt"><p>the tool-specific URL of the OTI Document UML Package/profile scope</p></dd></dl></div>
+    </li><li name="org.omg.oti.json.extent.ToolSpecificDocumentLocation" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ToolSpecificDocumentLocationextendsDocumentLocationwithProductwithSerializable"></a>
+      <a id="ToolSpecificDocumentLocation:ToolSpecificDocumentLocation"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ToolSpecificDocumentLocation.html"><span class="name">ToolSpecificDocumentLocation</span></a><span class="params">(<span name="toolSpecificDocumentLocation">toolSpecificDocumentLocation: <span class="extype" name="scalaz.@@">@@</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="../common/OTIPrimitiveTypes$$TOOL_SPECIFIC_URL.html" class="extype" name="org.omg.oti.json.common.OTIPrimitiveTypes.TOOL_SPECIFIC_URL">TOOL_SPECIFIC_URL</a>]</span>)</span><span class="result"> extends <a href="DocumentLocation.html" class="extype" name="org.omg.oti.json.extent.DocumentLocation">DocumentLocation</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#org.omg.oti.json.extent.package@ToolSpecificDocumentLocationextendsDocumentLocationwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A tool-specific document location
+</p><div class="fullcomment"><div class="comment cmt"><p>A tool-specific document location
+</p></div><dl class="paramcmts block"><dt class="param">toolSpecificDocumentLocation</dt><dd class="cmt"><p>the tool-specific URL specifying the location of a document</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="org.omg.oti.json.extent.DocumentLocation" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DocumentLocation"></a>
+      <a id="DocumentLocation:DocumentLocation"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DocumentLocation$.html"><span class="name">DocumentLocation</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#org.omg.oti.json.extent.package@DocumentLocation" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.omg.oti.json.extent.OTIDocumentExtent" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OTIDocumentExtent"></a>
+      <a id="OTIDocumentExtent:OTIDocumentExtent"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="OTIDocumentExtent$.html"><span class="name">OTIDocumentExtent</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#org.omg.oti.json.extent.package@OTIDocumentExtent" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.omg.oti.json.extent.OTIDocumentLocation" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="OTIDocumentLocation"></a>
+      <a id="OTIDocumentLocation:OTIDocumentLocation"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="OTIDocumentLocation$.html"><span class="name">OTIDocumentLocation</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#org.omg.oti.json.extent.package@OTIDocumentLocation" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.omg.oti.json.extent.ToolSpecificDocumentLocation" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ToolSpecificDocumentLocation"></a>
+      <a id="ToolSpecificDocumentLocation:ToolSpecificDocumentLocation"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ToolSpecificDocumentLocation$.html"><span class="name">ToolSpecificDocumentLocation</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#org.omg.oti.json.extent.package@ToolSpecificDocumentLocation" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
