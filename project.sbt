@@ -1,23 +1,23 @@
 sbtPlugin := false
 
-name := "org.omg.oti.uml.json"
+name := "org.omg.oti.uml.json.schema"
 
-moduleName := "org.omg.oti.uml.json"
+moduleName := "org.omg.oti.uml.json.schema"
 
 organization := "TIWG"
 
-homepage := Some(url("https://github.com/TIWG/org.omg.oti.uml.json"))
+homepage := Some(url(s"https://github.com/${organization.value}/${moduleName.value}"))
 
 organizationName := "OMG Tool-Infrastructure Working Group"
 
-organizationHomepage := Some(url("https://github.com/TIWG"))
+organizationHomepage := Some(url(s"https://github.com/${organization.value}"))
 
-git.remoteRepo := "git@github.com:TIWG/org.omg.oti.uml.json"
+git.remoteRepo := s"git@github.com:${organization.value}/${moduleName.value}"
 
 startYear := Some(2016)
 
 scmInfo := Some(ScmInfo(
-  browseUrl = url("https://github.com/TIWG/org.omg.oti.uml.json"),
+  browseUrl = url(s"https://github.com/${organization.value}/${moduleName.value}"),
   connection = "scm:"+git.remoteRepo.value))
 
 developers := List(
