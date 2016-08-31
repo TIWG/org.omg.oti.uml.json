@@ -26,14 +26,14 @@ preprocessVars in Preprocess := Map(
   "VERSION" -> {
     git.gitCurrentTags.value match {
       case Seq(tag) =>
-        s"""<a href="https://github.com/${organization.value}/${moduleName.value}/tree/$tag">$tag</a>"""
+        s"""<a href="https://github.com/TIWG/${moduleName.value}/tree/$tag">$tag</a>"""
       case _ =>
         val v = version.value
         git.gitHeadCommit.value.fold[String](v) { sha =>
           if (git.gitUncommittedChanges.value)
             v
           else
-            s"""<a href="https://github.com/${organization.value}/${moduleName.value}/tree/$sha">$v</a>"""
+            s"""<a href="https://github.com/TIWG/${moduleName.value}/tree/$sha">$v</a>"""
         }
     }
   }
