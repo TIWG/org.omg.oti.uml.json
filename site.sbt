@@ -7,9 +7,9 @@ enablePlugins(SiteScaladocPlugin)
 import com.typesafe.sbt.SbtGhPages._
 
 preprocessVars in Preprocess := Map(
-  "REPO" -> "org.omg.oti",
-  "ORG" -> organization.value,
-  "org" -> organization.value.toLowerCase,
+  "REPO" -> "org.omg.tiwg",
+  "ORG" -> "TIWG",
+  "SUBJECT" -> "tiwg",
   "ORG_NAME" -> organizationName.value,
   "DESC" -> description.value,
   "PKG" -> moduleName.value,

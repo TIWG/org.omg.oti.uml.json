@@ -6,7 +6,7 @@ description := "Json serialization for OMG Tool-Interoperability API for OMG-com
 
 moduleName := "org.omg.oti.uml.json.schema"
 
-organization := "TIWG"
+organization := "org.omg.tiwg"
 
 homepage := Some(url(s"https://github.com/${organization.value}/${moduleName.value}"))
 
