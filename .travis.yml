@@ -1,6 +1,11 @@
 # Use container-based infrastructure
 sudo: false
 
+addons:
+  apt:
+    packages:
+      - graphviz
+
 # These directories are cached to S3 at the end of the build
 cache:
   directories:
