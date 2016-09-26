@@ -1,8 +1,17 @@
 # OMG Tool-Interchange JSon serialization support for OMG UML 2.5 compliant modeling tools
 
 [![Build Status](https://travis-ci.org/TIWG/org.omg.oti.uml.json.schema.svg?branch=master)](https://travis-ci.org/TIWG/org.omg.oti.uml.json.schema)
-[ ![Download](https://api.bintray.com/packages/tiwg/org.omg.oti/org.omg.oti.mof.schema/images/download.svg) ](https://bintray.com/tiwg/org.omg.oti/org.omg.oti.mof.schema/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/tiwg/org.omg.tiwg/org.omg.oti.uml.json.schema/images/download.svg) ](https://bintray.com/tiwg/org.omg.tiwg/org.omg.oti.uml.json.schema/_latestVersion)
  
+## Usage
+
+```
+resolvers += Resolver.bintrayRepo("tiwg", "org.omg.tiwg")
+libraryDependencies += "org.omg.tiwg" %% "org.omg.oti.uml.json.schema" % "<version>"
+```
+
+## Description
+
 This library defines a collection of Algebraic Data Types (ADTs) -- data structures without any behavior -- corresponding
 to the OMG UML 2.5 specification augmented with support for representing additional information for managing
 UML models using the OMG Tool-Interchange API (OTI).

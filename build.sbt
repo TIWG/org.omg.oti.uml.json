@@ -10,6 +10,15 @@ import gov.nasa.jpl.imce.sbt.ProjectHelper._
 updateOptions := updateOptions.value.withCachedResolution(true)
 
 import scala.io.Source
+import scala.util.control.Exception._
+
+resolvers := {
+  val previous = resolvers.value
+  if (git.gitUncommittedChanges.value)
+    Seq[Resolver](Resolver.mavenLocal) ++ previous
+  else
+    previous
+}
 
 shellPrompt in ThisBuild := { state => Project.extract(state).currentRef.project + "> " }
 
@@ -98,23 +107,29 @@ def dynamicScriptsResourceSettings(dynamicScriptsProjectName: Option[String] = N
       normalizedName.value + "_" + scalaBinaryVersion.value + "-" + version.value + "-resource",
 
     // contents of the '*-resource.zip' to be produced by 'universal:packageBin'
-    mappings in Universal in packageBin ++= {
-      val dir = baseDirectory.value
-      val bin = (packageBin in Compile).value
-      val src = (packageSrc in Compile).value
-      val doc = (packageDoc in Compile).value
-      val binT = (packageBin in Test).value
-      val srcT = (packageSrc in Test).value
-      val docT = (packageDoc in Test).value
+    mappings in Universal <++= (
+      baseDirectory,
+      packageBin in Compile,
+      packageSrc in Compile,
+      packageDoc in Compile,
+      packageBin in Test,
+      packageSrc in Test,
+      packageDoc in Test,
+      streams) map {
+      (base, bin, src, doc, binT, srcT, docT, s) =>
+        val file2name =
+          addIfExists(base, ".classpath") ++
+          addIfExists(bin, "lib/" + bin.name) ++
+          addIfExists(binT, "lib/" + binT.name) ++
+          addIfExists(src, "lib.sources/" + src.name) ++
+          addIfExists(srcT, "lib.sources/" + srcT.name) ++
+          addIfExists(doc, "lib.javadoc/" + doc.name) ++
+          addIfExists(docT, "lib.javadoc/" + docT.name)
 
-      addIfExists(dir / ".classpath", ".classpath") ++
-        addIfExists(dir / "README.md", "README.md") ++
-        addIfExists(bin, "lib/" + bin.name) ++
-        addIfExists(binT, "lib/" + binT.name) ++
-        addIfExists(src, "lib.sources/" + src.name) ++
-        addIfExists(srcT, "lib.sources/" + srcT.name) ++
-        addIfExists(doc, "lib.javadoc/" + doc.name) ++
-        addIfExists(docT, "lib.javadoc/" + docT.name)
+        s.log.info(s"file2name entries: ${file2name.size}")
+        s.log.info(file2name.mkString("\n"))
+
+        file2name
     },
 
     artifacts <+= (name in Universal) { n => Artifact(n, "zip", "zip", Some("resource"), Seq(), None, Map()) },

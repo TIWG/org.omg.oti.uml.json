@@ -5,7 +5,7 @@ import de.heikoseeberger.sbtheader.HeaderPlugin
 import de.heikoseeberger.sbtheader.license.Apache2_0
 
 headers := Map(
-  "scala" -> Apache2_0("2015", "California Institute of Technology (\"Caltech\").\nU.S. Government sponsorship acknowledged.")
+  "scala" -> Apache2_0("2016", "California Institute of Technology (\"Caltech\").\nU.S. Government sponsorship acknowledged.")
 )
 
 import com.typesafe.sbt.license.{LicenseInfo, DepModuleInfo}
