@@ -4,6 +4,8 @@ licenses in GlobalScope += "Apache-2.0" -> url("http://www.apache.org/licenses/L
 import de.heikoseeberger.sbtheader.HeaderPlugin
 import de.heikoseeberger.sbtheader.license.Apache2_0
 
+startYear := Some(2016)
+
 headers := Map(
   "scala" -> Apache2_0("2016", "California Institute of Technology (\"Caltech\").\nU.S. Government sponsorship acknowledged.")
 )
