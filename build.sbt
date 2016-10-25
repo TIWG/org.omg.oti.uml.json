@@ -35,7 +35,9 @@ lazy val core = Project("org-omg-oti-uml-json-schema", file("."))
   .enablePlugins(IMCEGitPlugin)
   .enablePlugins(IMCEReleasePlugin)
   .settings(dynamicScriptsResourceSettings(Some("org.omg.oti.uml.json.schema")))
-  .settings(IMCEPlugin.strictScalacFatalWarningsSettings)
+  // 'unused import at line 1' in OTIMOFElement, ElementLocation, DocumentLocation
+  // this is a problem with the Variants.format macro
+  //.settings(IMCEPlugin.strictScalacFatalWarningsSettings)
   .settings(IMCEReleasePlugin.packageReleaseProcessSettings)
   .settings(
     IMCEKeys.licenseYearOrRange := "2016",
