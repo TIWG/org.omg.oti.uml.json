@@ -58,9 +58,15 @@ dumpLicenseReport := {
   dumpLicenseReport.value
 }
 
-makeSite <<= makeSite.dependsOn(dumpLicenseReport)
+makeSite := {
+  val _ = dumpLicenseReport
+  makeSite.value
+}
 
-siteMappings <<= siteMappings.dependsOn(dumpLicenseReport)
+siteMappings := {
+  val _ = dumpLicenseReport
+  siteMappings.value
+}
 
 siteMappings += (licenseReportDir.value / "LicenseReportOfAggregatedSBTPluginsAndLibraries.html") -> "LicenseReportOfAggregatedSBTPluginsAndLibraries.html"
 siteMappings += dependencySvgFile.value -> "dependencies.svg"
