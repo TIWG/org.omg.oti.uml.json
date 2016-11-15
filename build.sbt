@@ -71,7 +71,7 @@ lazy val core = Project("org-omg-oti-uml-json-schema", file("."))
     // disable publishing the test sources jar
     publishArtifact in(Test, packageSrc) := false,
 
-    unmanagedClasspath in Compile <++= unmanagedJars in Compile,
+    unmanagedClasspath in Compile ++= (unmanagedJars in Compile).value,
 
     resolvers += Resolver.bintrayRepo("jpl-imce", "gov.nasa.jpl.imce"),
 
