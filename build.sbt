@@ -34,7 +34,7 @@ shellPrompt in ThisBuild := { state => Project.extract(state).currentRef.project
 lazy val core = Project("org-omg-oti-uml-json-schema", file("."))
   .enablePlugins(IMCEGitPlugin)
   .enablePlugins(IMCEReleasePlugin)
-  .settings(dynamicScriptsResourceSettings(Some("org.omg.oti.uml.json.schema")))
+  .settings(dynamicScriptsResourceSettings("org.omg.oti.uml.json.schema"))
   // 'unused import at line 1' in OTIMOFElement, ElementLocation, DocumentLocation
   // this is a problem with the Variants.format macro
   //.settings(IMCEPlugin.strictScalacFatalWarningsSettings)
@@ -84,7 +84,7 @@ lazy val core = Project("org-omg-oti-uml-json-schema", file("."))
 
   )
 
-def dynamicScriptsResourceSettings(dynamicScriptsProjectName: Option[String] = None): Seq[Setting[_]] = {
+def dynamicScriptsResourceSettings(projectName: String): Seq[Setting[_]] = {
 
   import com.typesafe.sbt.packager.universal.UniversalPlugin.autoImport._
 
@@ -96,13 +96,7 @@ def dynamicScriptsResourceSettings(dynamicScriptsProjectName: Option[String] = N
 
   Seq(
     // the '*-resource.zip' archive will start from: 'dynamicScripts/<dynamicScriptsProjectName>'
-    com.typesafe.sbt.packager.Keys.topLevelDirectory in Universal := {
-      val projectName = dynamicScriptsProjectName.getOrElse(baseDirectory.value.getName)
-      require(
-        QUALIFIED_NAME.pattern.matcher(projectName).matches,
-        s"The project name, '$projectName` is not a valid Java qualified name")
-      Some(projectName)
-    },
+    com.typesafe.sbt.packager.Keys.topLevelDirectory in Universal := None,
 
     // name the '*-resource.zip' in the same way as other artifacts
     com.typesafe.sbt.packager.Keys.packageName in Universal :=
@@ -118,14 +112,15 @@ def dynamicScriptsResourceSettings(dynamicScriptsProjectName: Option[String] = N
       val srcT = (packageSrc in Test).value
       val docT = (packageDoc in Test).value
 
-      addIfExists(dir / ".classpath", ".classpath") ++
-        addIfExists(dir / "README.md", "README.md") ++
-          addIfExists(bin, "lib/" + bin.name) ++
-          addIfExists(binT, "lib/" + binT.name) ++
-          addIfExists(src, "lib.sources/" + src.name) ++
-          addIfExists(srcT, "lib.sources/" + srcT.name) ++
-          addIfExists(doc, "lib.javadoc/" + doc.name) ++
-          addIfExists(docT, "lib.javadoc/" + docT.name)
+      (dir * ".classpath").pair(rebase(dir, projectName)) ++
+        (dir * "*.md").pair(rebase(dir, projectName)) ++
+        (dir / "resources" ***).pair(rebase(dir, projectName)) ++
+        addIfExists(bin, projectName + "/lib/" + bin.name) ++
+        addIfExists(binT, projectName + "/lib/" + binT.name) ++
+        addIfExists(src, projectName + "/lib.sources/" + src.name) ++
+        addIfExists(srcT, projectName + "/lib.sources/" + srcT.name) ++
+        addIfExists(doc, projectName + "/lib.javadoc/" + doc.name) ++
+        addIfExists(docT, projectName + "/lib.javadoc/" + docT.name)
     },
 
     artifacts += {
