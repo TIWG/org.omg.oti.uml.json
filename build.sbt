@@ -22,22 +22,11 @@ resolvers := {
 
 shellPrompt in ThisBuild := { state => Project.extract(state).currentRef.project + "> " }
 
-/*
- * For now, we can't compile in strict mode because the Scala macros used for generating the JSon adapters
- * results in a compilation warning:
- *
- * Warning:(1, 0) Unused import
- * / *
- * ^
- *
- */
 lazy val core = Project("org-omg-oti-uml-json-schema", file("."))
   .enablePlugins(IMCEGitPlugin)
   .enablePlugins(IMCEReleasePlugin)
   .settings(dynamicScriptsResourceSettings("org.omg.oti.uml.json.schema"))
-  // 'unused import at line 1' in OTIMOFElement, ElementLocation, DocumentLocation
-  // this is a problem with the Variants.format macro
-  //.settings(IMCEPlugin.strictScalacFatalWarningsSettings)
+  .settings(IMCEPlugin.strictScalacFatalWarningsSettings)
   .settings(IMCEReleasePlugin.packageReleaseProcessSettings)
   .settings(
     IMCEKeys.licenseYearOrRange := "2016",
@@ -75,10 +64,18 @@ lazy val core = Project("org-omg-oti-uml-json-schema", file("."))
 
     resolvers += Resolver.bintrayRepo("jpl-imce", "gov.nasa.jpl.imce"),
 
+    resolvers += "Artima Maven Repository" at "http://repo.artima.com/releases",
+    scalacOptions in (Compile, compile) += s"-P:artima-supersafe:config-file:${baseDirectory.value}/project/supersafe.cfg",
+    scalacOptions in (Test, compile) += s"-P:artima-supersafe:config-file:${baseDirectory.value}/project/supersafe.cfg",
+    scalacOptions in (Compile, doc) += "-Xplugin-disable:artima-supersafe",
+    scalacOptions in (Compile, doc) -= "-Xfatal-warnings",
+    scalacOptions in (Test, doc) += "-Xplugin-disable:artima-supersafe",
+    scalacOptions in (Test, doc) -= "-Xfatal-warnings",
+
     libraryDependencies +=
       "gov.nasa.jpl.imce" %% "imce.third_party.other_scala_libraries" % Versions_other_scala_libraries.version
         artifacts
-        Artifact("imce.third_party.other_scala_libraries", "zip", "zip", Some("resource"), Seq(), None, Map()),
+        Artifact("imce.third_party.other_scala_libraries", "zip", "zip", "resource"),
 
     extractArchives := {}
 
