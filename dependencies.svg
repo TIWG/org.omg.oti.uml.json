@@ -9,12 +9,12 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 10550.9)">
 <title>dependency&#45;graph</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-10550.9 7136,-10550.9 7136,4 -4,4"/>
-<!-- org.omg.tiwg:org.omg.oti.uml.json.schema_2.11:3.4.3 -->
-<g id="node1" class="node"><title>org.omg.tiwg:org.omg.oti.uml.json.schema_2.11:3.4.3</title>
+<!-- org.omg.tiwg:org.omg.oti.uml.json.schema_2.11:3.4.4 -->
+<g id="node1" class="node"><title>org.omg.tiwg:org.omg.oti.uml.json.schema_2.11:3.4.4</title>
 <ellipse fill="none" stroke="black" cx="154" cy="-7599" rx="153.384" ry="35.2113"/>
 <text text-anchor="start" x="116.5" y="-7609.8" font-family="Times,serif" font-size="14.00">org.omg.tiwg</text>
 <text text-anchor="start" x="53.5" y="-7595.8" font-family="Times,serif" font-weight="bold" font-size="14.00">org.omg.oti.uml.json.schema_2.11</text>
-<text text-anchor="start" x="140" y="-7581.8" font-family="Times,serif" font-size="14.00">3.4.3</text>
+<text text-anchor="start" x="140" y="-7581.8" font-family="Times,serif" font-size="14.00">3.4.4</text>
 </g>
 <!-- gov.nasa.jpl.imce:imce.third_party.other_scala_libraries_2.11:3.4.0 -->
 <g id="node2" class="node"><title>gov.nasa.jpl.imce:imce.third_party.other_scala_libraries_2.11:3.4.0</title>
@@ -23,8 +23,8 @@
 <text text-anchor="start" x="411" y="-1469.8" font-family="Times,serif" font-weight="bold" font-size="14.00">imce.third_party.other_scala_libraries_2.11</text>
 <text text-anchor="start" x="525" y="-1455.8" font-family="Times,serif" font-size="14.00">3.4.0</text>
 </g>
-<!-- org.omg.tiwg:org.omg.oti.uml.json.schema_2.11:3.4.3&#45;&gt;gov.nasa.jpl.imce:imce.third_party.other_scala_libraries_2.11:3.4.0 -->
-<g id="edge1" class="edge"><title>org.omg.tiwg:org.omg.oti.uml.json.schema_2.11:3.4.3&#45;&gt;gov.nasa.jpl.imce:imce.third_party.other_scala_libraries_2.11:3.4.0</title>
+<!-- org.omg.tiwg:org.omg.oti.uml.json.schema_2.11:3.4.4&#45;&gt;gov.nasa.jpl.imce:imce.third_party.other_scala_libraries_2.11:3.4.0 -->
+<g id="edge1" class="edge"><title>org.omg.tiwg:org.omg.oti.uml.json.schema_2.11:3.4.4&#45;&gt;gov.nasa.jpl.imce:imce.third_party.other_scala_libraries_2.11:3.4.0</title>
 <path fill="none" stroke="black" d="M157.201,-7563.79C186.635,-7093 501.881,-2050.71 535.161,-1518.4"/>
 <polygon fill="black" stroke="black" points="538.656,-1518.6 535.786,-1508.41 531.669,-1518.17 538.656,-1518.6"/>
 </g>
@@ -35,8 +35,8 @@
 <text text-anchor="start" x="3837" y="-1735.8" font-family="Times,serif" font-weight="bold" font-size="14.00">scalac&#45;scapegoat&#45;plugin_2.11</text>
 <text text-anchor="start" x="3907" y="-1721.8" font-family="Times,serif" font-size="14.00">1.0.0</text>
 </g>
-<!-- org.omg.tiwg:org.omg.oti.uml.json.schema_2.11:3.4.3&#45;&gt;com.sksamuel.scapegoat:scalac&#45;scapegoat&#45;plugin_2.11:1.0.0 -->
-<g id="edge544" class="edge"><title>org.omg.tiwg:org.omg.oti.uml.json.schema_2.11:3.4.3&#45;&gt;com.sksamuel.scapegoat:scalac&#45;scapegoat&#45;plugin_2.11:1.0.0</title>
+<!-- org.omg.tiwg:org.omg.oti.uml.json.schema_2.11:3.4.4&#45;&gt;com.sksamuel.scapegoat:scalac&#45;scapegoat&#45;plugin_2.11:1.0.0 -->
+<g id="edge544" class="edge"><title>org.omg.tiwg:org.omg.oti.uml.json.schema_2.11:3.4.4&#45;&gt;com.sksamuel.scapegoat:scalac&#45;scapegoat&#45;plugin_2.11:1.0.0</title>
 <path fill="none" stroke="black" d="M157.742,-7634.53C179.176,-7906.35 324.686,-9646 538,-9646 538,-9646 538,-9646 1782,-9646 2924.45,-9646 3047.84,-8778.42 3490,-7725 3733.36,-7145.2 3715.65,-5535.07 3746,-4907 3748.02,-4865.24 3748.01,-1935.63 3764,-1897 3784.22,-1848.16 3827.54,-1806.31 3863.41,-1777.97"/>
 <polygon fill="black" stroke="black" points="3865.64,-1780.67 3871.41,-1771.78 3861.36,-1775.13 3865.64,-1780.67"/>
 </g>
