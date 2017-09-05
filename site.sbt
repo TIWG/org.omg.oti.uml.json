@@ -4,7 +4,7 @@ enablePlugins(PreprocessPlugin)
 
 enablePlugins(SiteScaladocPlugin)
 
-import com.typesafe.sbt.SbtGhPages._
+enablePlugins(GhpagesPlugin)
 
 preprocessVars in Preprocess := Map(
   "REPO" -> "org.omg.tiwg",
@@ -40,8 +40,6 @@ preprocessVars in Preprocess := Map(
 )
 
 target in preprocess := (target in makeSite).value
-
-ghpages.settings
 
 dependencyDotFile := baseDirectory.value / "target" / "dependencies.dot"
 

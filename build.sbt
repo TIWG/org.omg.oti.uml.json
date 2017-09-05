@@ -24,10 +24,8 @@ shellPrompt in ThisBuild := { state => Project.extract(state).currentRef.project
 
 lazy val core = Project("org-omg-oti-uml-json-schema", file("."))
   .enablePlugins(IMCEGitPlugin)
-  .enablePlugins(IMCEReleasePlugin)
   .settings(dynamicScriptsResourceSettings("org.omg.oti.uml.json.schema"))
   .settings(IMCEPlugin.strictScalacFatalWarningsSettings)
-  .settings(IMCEReleasePlugin.packageReleaseProcessSettings)
   .settings(
     IMCEKeys.licenseYearOrRange := "2016",
     IMCEKeys.organizationInfo := IMCEPlugin.Organizations.oti,
@@ -75,10 +73,7 @@ lazy val core = Project("org-omg-oti-uml-json-schema", file("."))
     libraryDependencies +=
       "gov.nasa.jpl.imce" %% "imce.third_party.other_scala_libraries" % Versions_other_scala_libraries.version
         artifacts
-        Artifact("imce.third_party.other_scala_libraries", "zip", "zip", "resource"),
-
-    extractArchives := {}
-
+        Artifact("imce.third_party.other_scala_libraries", "zip", "zip", "resource")
   )
 
 def dynamicScriptsResourceSettings(projectName: String): Seq[Setting[_]] = {
